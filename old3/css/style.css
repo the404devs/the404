@@ -1,0 +1,619 @@
+/*#8d3d8c*/
+
+:root {
+    --foreground: #ffffff;
+    --background: #151824;
+    --background-transparent: rgba(21, 24, 36, 0.7);
+    --accent: #b20acb;
+    --highlight: #800080;
+    --highlight-transparent: rgba(128, 0, 128, 0.8);
+    --text: #f1d7df;
+    --border: #ffffff;
+    --important: #b20acb;
+    --bold: #b20acb;
+    --link: #0acbb2;
+    --background-gradient: linear-gradient(to right, #59c173, #a17fe0, #5d26c1);
+    --text-dark: #151824;
+}
+
+@font-face {
+    font-family: "Camaraderie";
+    src: url("Camaraderie.otf");
+}
+
+@font-face {
+    font-family: "Roboto";
+    /*src: url("FOT-ChiaroStd-B.otf");*/
+    src: url("Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: "Inconsolata";
+    src: url("Inconsolata-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("Raleway-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Overpass";
+    src: url("Overpass-Bold.ttf");
+}
+
+b {
+    color: var(--bold);
+}
+
+body {
+    /* background-color: var(--background); */
+    /* background: linear-gradient(to right, rgba(254, 203, 111, 1) 0%, rgba(252, 155, 112, 1) 15%, rgba(237, 106, 111, 1) 30%, rgba(203, 78, 108, 1) 48%, rgba(140, 65, 104, 1) 65%, rgba(81, 60, 99, 1) 82%, #393b62 100%); */
+    /* background: linear-gradient(90deg, rgba(87, 12, 14, 1) 0%, rgba(128, 0, 128, 1) 50%, rgba(255, 80, 0, 1) 100%); */
+    /* background: linear-gradient(45deg, rgba(196, 72, 0, 1) 0%, rgba(75, 2, 72, 1) 26%, rgba(44, 0, 62, 1) 50%, rgba(75, 2, 72, 1) 73%, rgba(196, 72, 0, 1) 100%); */
+    background: var(--background-gradient);
+    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
+    font-family: "Roboto";
+    margin: 0;
+    overflow-x: hidden;
+    height: max-content;
+}
+
+.header {
+    font-family: "Camaraderie";
+    font-size: 2em;
+    /* color: var(--background-transparent); */
+    color: black;
+    /* height: 101px; */
+    width: 100%;
+    position: fixed;
+    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    box-shadow: black 0px 2px 10px, black 0px -2px 10px;
+    top: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10;
+    height: 3.2em;
+    border-bottom: solid var(--border) 2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, var(--foreground) 50%, var(--foreground) calc(50% + 2px), rgba(255, 255, 255, 0) calc(50% + 2px));
+}
+
+#header-text {
+    margin: 0px 20px 20px 2.5%;
+    padding-top: 8px;
+    font-weight: normal;
+    -webkit-text-stroke-color: var(--accent);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke: var(--accent) 2px;
+    paint-order: stroke fill;
+}
+
+#header-text:before {
+    content: "Owen Goodwin";
+    font-family: "Raleway";
+    color: var(--foreground);
+    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    position: absolute;
+    font-size: 18px;
+    text-align: right;
+    font-weight: normal;
+    top: 76px;
+    left: calc(2.5% + 102px);
+    -webkit-text-stroke: 0;
+}
+
+#header-text:after {
+    position: absolute;
+    /* background-color: var(--background); */
+    background-color: black;
+    width: 229px;
+    height: 10px;
+    left: 2.5%;
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    top: 65px;
+    z-index: -1;
+    margin: -1px;
+    border: 2px solid var(--accent);
+    content: " ";
+}
+
+.tab-wrapper {
+    text-align: right;
+    color: var(--foreground);
+    text-shadow: none;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    font-family: "Raleway";
+    display: -webkit-box;
+    z-index: 1;
+}
+
+#nav-tab-wrapper {
+    top: 132px;
+    transition: 0.2s all;
+    display: none;
+}
+
+@media (max-width:850px) {
+    #nav-tab-wrapper {
+        display: -webkit-box;
+    }
+}
+
+.tab {
+    border-bottom: solid var(--border) 1px;
+    background: linear-gradient(135deg, transparent 20.75px, var(--border) 20.75px, var(--border) 21.75px, transparent 21.75px);
+    text-align: left;
+    font-size: 18px;
+    transition: 0.1s padding ease-in;
+    cursor: pointer;
+    height: 75px;
+    padding-right: 30px;
+    padding-left: 51px;
+    padding-bottom: 3.5px;
+    padding-top: 4.5px;
+    overflow: hidden;
+    text-align: right;
+    margin-right: -16px;
+    position: relative;
+    z-index: 2;
+    top: -3px;
+    text-shadow: 1px 2px 2px var(--background-transparent), -1px 2px 2px var(--background-transparent);
+}
+
+.tab:before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 1px !important;
+    top: 0;
+    left: 30px;
+    border-top: 1px solid var(--border);
+}
+
+#tab2 {
+    padding-right: 40px;
+    padding-left: 60px;
+    top: -11px;
+}
+
+#tab3 {
+    padding-right: 50px;
+    padding-left: 54px;
+    top: -19px;
+}
+
+#nav-tab {
+    background: linear-gradient(135deg, transparent 21.5px, var(--border) 21.5px, var(--border) 22.5px, var(--background) 22.5px);
+    font-size: 19px;
+    padding-left: 40px;
+}
+
+#nav-tab:hover {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 21.5px, var(--foreground) 21.5px, var(--foreground) 22.5px, #59c173 22.5px, #a17fe0, #5d26c1)!important;
+}
+
+#tab1:hover {
+    padding-right: 60px;
+}
+
+#tab2:hover {
+    padding-right: 70px;
+}
+
+#tab3:hover {
+    padding-right: 80px
+}
+
+#nav-tab:hover {
+    padding-right: 60px;
+}
+
+.tab:hover {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 20.75px, var(--foreground) 20.75px, var(--foreground) 21.75px, #59c173 21.75px, #a17fe0, #5d26c1)!important;
+    color: var(--text-dark);
+    text-shadow: none;
+}
+
+.tab.active {
+    font-weight: bold;
+}
+
+.content {
+    background: transparent;
+    color: var(--text);
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 110px;
+    /* padding-top: 25px; */
+    /* padding-bottom: 25px; */
+    font-size: 18px;
+    overflow: hidden;
+    display: table;
+}
+
+.post-head {
+    font-family: Overpass;
+    font-size: 1.3em;
+    text-decoration: underline;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    color: var(--important);
+}
+
+.post-date {
+    font-family: Raleway;
+    margin-top: 0;
+    padding-top: 0;
+    text-decoration: underline;
+    color: var(--important);
+    font-weight: normal;
+}
+
+.post {
+    font-family: "Roboto";
+    border: 1px solid var(--border);
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 10px;
+    /* margin-top: -1px; */
+    background-color: var(--background-transparent);
+    /* backdrop-filter: blur(10px); */
+    width: 75%;
+    transition: 0.2s width;
+}
+
+.nav {
+    width: 15%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 18px;
+    padding-bottom: 0px;
+    border: 1px solid var(--border);
+    background-color: var(--background-transparent);
+    right: 2.5%;
+    top: 125px;
+    position: fixed;
+    font-size: 10px;
+    max-height: calc(100% - 160px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* scrollbar-width: thin; */
+}
+
+.nav::-webkit-scrollbar {
+    width: 0px;
+    visibility: hidden!important;
+    display: none!important;
+}
+
+#close,
+#down {
+    position: fixed;
+    border: 1px solid var(--border);
+    text-align: center;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+    /* width: 24px!important; */
+    height: 16px!important;
+    transition: 0.25s all;
+    font-family: "Inconsolata";
+    background-color: var(--background);
+    margin-top: -19px;
+    margin-left: 193px;
+    font-size: 16px;
+    display: none;
+    text-shadow: none;
+    z-index: 1;
+    width: unset;
+}
+
+#close:hover,
+#down:hover {
+    color: var(--text-dark);
+}
+
+#down {
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: -11px;
+    font-size: 15px;
+}
+
+@media (max-width: 850px) {
+    .nav {
+        right: -230px;
+        backdrop-filter: blur(5px);
+        width: 200px;
+        transition: 0.2s all;
+    }
+    .post {
+        width: inherit;
+    }
+    #close,
+    #down {
+        display: -webkit-box
+    }
+}
+
+.nav .link {
+    cursor: pointer;
+    font-family: "Raleway";
+    font-size: 15px
+}
+
+.link {
+    color: var(--link);
+    font-weight: bold;
+    text-decoration: none;
+    border-style: solid;
+    border-color: var(--link);
+    border-width: 0;
+    position: sticky;
+    z-index: 0;
+    padding: 0 !important;
+}
+
+.link:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px !important;
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+    box-shadow: black 0px 2px 3px;
+}
+
+.link:hover:before {
+    visibility: visible;
+    width: calc(100% + 1px);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    border-top: 1px solid var(--border);
+}
+
+.important-top-thing {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.important-top-thing .button span:after {
+    top: -2px;
+}
+
+.pane {
+    transition: 0.25s all;
+    position: absolute;
+    margin-right: 2.5%;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.blob {
+    /* background-color: var(--background); */
+    background-color: var(--background-transparent);
+    /* backdrop-filter: blur(10px); */
+    border: 1px solid var(--border);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.blob h2 {
+    font-size: 1.75em;
+    font-family: Overpass;
+    color: var(--important);
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
+}
+
+.blob img {
+    float: left;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+.blob button {
+    margin: 5px 0 5px 0;
+}
+
+.blob a,
+.blob p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.blob .downloadlink {
+    padding: 0;
+}
+
+.blob .downloadlink .button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.button {
+    border: 1px solid var(--border);
+    background-color: transparent;
+    color: var(--foreground);
+    text-align: center;
+    font-size: 20px;
+    width: 200px;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-family: "Raleway";
+    overflow: hidden;
+    height: 31px;
+    position: sticky;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.2s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: -2px;
+    right: -50px;
+    transition: 0.2s;
+}
+
+.button:hover i {
+    color: var(--text-dark);
+}
+
+.button:hover span {
+    padding-right: 25px;
+    color: var(--text-dark);
+}
+
+.button:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 0%;
+    background-color: transparent;
+    transition: all 0.1s ease-out;
+    z-index: -1;
+}
+
+.button:hover:before {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    /* background-color: var(--highlight); */
+    background: var(--background-gradient);
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0px;
+    color: var(--text-dark);
+}
+
+.row {
+    display: -webkit-flex;
+    display: flex;
+    margin-left: 0px;
+    background-color: var(--background-transparent);
+    /* backdrop-filter: blur(10px); */
+    padding: 10px;
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 1050px) {
+    .row {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+
+/* @media only screen and (max-device-width: 800px) {
+    .header {
+        transform: scale(2);
+    }
+} */
+
+.column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-family: Roboto;
+    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
+}
+
+i {
+    font-size: 40px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+    text-align: center;
+    width: 50px;
+}
+
+.big-button {
+    display: inline-block;
+    text-align: left;
+    font-size: 20px;
+    width: 300px;
+    height: 62px;
+    padding: 10px;
+    margin-top: -1px;
+}
+
+.big-button label {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.big-button:hover {
+    color: var(--text-dark);
+}
+
+input,
+textarea {
+    background-color: transparent;
+    color: var(--foreground);
+    border: 1px solid var(--border);
+    resize: none;
+    font-family: "Raleway";
+    margin-top: -1px;
+    width: 300px;
+    padding: 2px;
+    transition: 0.25s all;
+}
+
+input {
+    font-size: 16px;
+}
+
+input:hover,
+textarea:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-family: "Raleway";
+    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
+}
+
+h4 {
+    font-family: "Raleway";
+    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
+}
+
+.creeper {
+    /*aw man*/
+    margin: 2px;
+}
+
+.body-image {
+    width: 370px;
+    border: 1px solid var(--border);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+}
+
+ul {
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}

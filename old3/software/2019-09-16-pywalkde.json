@@ -1,0 +1,11 @@
+[{
+    "Name": "Pywal-KDE",
+    "Version": "0.0.1",
+    "Release": "September 16, 2019",
+    "Current": "September 16, 2019",
+    "Language": ["Python"],
+    "Category": ["Utilities"],
+    "Button1Text": "GitHub",
+    "Button1Link": "https://github.com/the404devs/pywal-kde",
+    "Description": "A fork of dylanaraps' <a class='link' href='https://github.com/dylanaraps/pywal'>Pywal</a>, an amazing command-line tool that allows you to set your wallpaper, and generates a matching colour-scheme for your terminal. It also exports those colours in a CSS format (among others), which can be easily be used by other applications to unify your desktop experience. (For example, VSCode and my custom browser start page both take colours from Pywal.)<br>For some strange reason, pywal fails to set the wallpaper on KDE Plasma, leaving the user to manually change the wallpaper. As a Plasma user, I found this rather inconvenient, so I fixed it."
+}]

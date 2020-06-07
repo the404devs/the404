@@ -1,0 +1,14 @@
+[{
+    "Name": "Computer Science Simulator 2017",
+    "Version": "5",
+    "Release": "June 5, 2017",
+    "Current": "June 15, 2017",
+    "Language": ["C#"],
+    "Category": ["Games"],
+    "Image": "img/cs17.png",
+    "Button1Text": "GitHub",
+    "Button1Link": "https://github.com/the404devs/cs17",
+    "Button2Text": "View Site",
+    "Button2Link": "https://the404devs.github.io/cs17",
+    "Description": "The game that sparked so many memes. This was our final project for Grade 11, and our teacher said we could make whatever we wanted so long as it used everything we learned this year. Normally, we would get a month to work on it but because our class was so behind we only had 10 days for it. We wasted the first few days trying to think of something to do, because we had no real ideas. <br>Eventually we got stuck with this idea, which was suggested by me as a joke. We had big plans for it, but because we only had 2 weeks and we focused mostly on the classroom moving system we had to cut out a whole lot. Thanks to bonus marks and a popularity contest (of course our game is the class favourite when literally everyone in the class is in the game), we got 102%. <br>We planed on doing a 2018 edition for our summative the next year, everyone including our teacher asked for a sequel, but we decided to make something a little different. <br><br>Computer Science Simulator: <s>2019</s> <s>2020</s> 2021 Edition coming soon?"
+}]
