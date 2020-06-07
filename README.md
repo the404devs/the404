@@ -7,6 +7,13 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 
 Owing to some hosting troubles unfolding at the moment, I'm hastily chucking the site on Github, with plans to migrate the thing to Github Pages in the near future. This means replacing all of the PHP code (including the stuff I just wrote a few hours ago, sigh) with something else. F in the chat, boys.
 
+### *4.0.0 (06/07/20)*
+----------------------
+- Archived 3.X version, found under the `old3` directory.
+- Moved blog and software entries to Firebase.
+- Replaced PHP code that reads data from JSON files to generate site with JS/jQuery code that reads from Firebase.
+
+
 ### *3.7.2 (06/06/20)*
 ----------------------
 - Added navigation menu to blog pane, allowing for easy finding of the different articles.
