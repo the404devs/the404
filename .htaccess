@@ -7,3 +7,6 @@ ErrorDocument 502 /errors/502.html
 ErrorDocument 503 /errors/503.html
 DirectoryIndex index.php index.html
 
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^the404.nl [NC]
+RewriteRule ^(.*)$ http://www.the404.nl/$1 [L,R=301]
