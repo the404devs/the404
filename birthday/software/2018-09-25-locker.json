@@ -1,0 +1,12 @@
+[{
+    "Name": "Locker",
+    "Version": "1.0.1",
+    "Release": "September 25, 2018",
+    "Current": "September 27, 2018",
+    "Language": ["C#"],
+    "Category": ["Utilities"],
+    "Image": "img/locker.png",
+    "Button1Text": "GitHub",
+    "Button1Link": "https://github.com/the404devs/locker",
+    "Description": "This application creates a hidden folder, allowing the user to access it with a password. You can store your top-secret government documents in here, or whatever files you want to keep private.<br><br><b>v1.0.1 (09/27/18):</b> Added option to move files and folders around within the Locker. Code documented. Minor bug fixes and error handling."
+}]

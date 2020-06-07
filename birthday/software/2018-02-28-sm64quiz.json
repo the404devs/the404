@@ -1,0 +1,14 @@
+[{
+    "Name": "Super Mario 64 Quiz",
+    "Version": "1",
+    "Release": "February 28, 2018",
+    "Current": "February 28, 2018",
+    "Language": ["PHP", "JS", "HTML"],
+    "Category": ["Games"],
+    "Image": "img/mariohead.png",
+    "Button1Text": "Go",
+    "Button1Link": "software/mario/MarioHome.html",
+    "Button2Text": "GitHub",
+    "Button2Link": "https://github.com/the404devs/sm64quiz",
+    "Description": "Our first project for Grade 12 ICS, we had to use PHP to make a quiz website. We based ours around our favourite game. I put in a lot of work to make it look really good without realizing I was actually doing super-advanced stuff (for the level of experience of the class, that is). Our teacher liked it, and put it on his \"hall of fame,\" and we got away with 100%. It was super fun to make, and there are a whole bunch of different GIFs you'll see at the end depending on your mark."
+}]

@@ -1,0 +1,11 @@
+[{
+    "Name": "Biome Display",
+    "Version": "0.0.2",
+    "Release": "May 31, 2020",
+    "Current": "June 2, 2020",
+    "Language": ["mcfunction"],
+    "Category": ["Minecraft"],
+    "Button1Text": "GitHub",
+    "Button1Link": "https://github.com/the404devs/biome_display",
+    "Description": "A datapack for Minecraft that shows the name of the current biome the player is in at the bottom of the screen. Can be handy in some situations.<br><br><b>v0.0.2 (06/02/20):</b> Fixed misnamed tags. Added startup message."
+}]

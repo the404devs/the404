@@ -1,0 +1,16 @@
+# Wavefront .mtl file  -  created by SpaceDraw
+
+# File created: 18-01-30, 17:35
+
+newmtl Material02
+Ns 0.0
+d 1.0
+Tr 0.0
+illum 2
+Ka 0.79999995 0.79999995 0.79999995 
+Kd 0.79999995 0.79999995 0.79999995 
+Ks 0.0 0.0 0.0 
+Ke 0.50189996 0.50189996 0.50189996 
+map_Ka Toad_grp.png
+map_Kd Toad_grp.png
+
