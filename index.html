@@ -13,11 +13,12 @@
     <link rel="manifest" href="/site.webmanifest">
     <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/html2canvas.min.js"></script>
-    <script type="text/javascript" src="js/remove-branding.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
 </head>
 
-<body onload="showPanes(1)">
+<body onload="load()">
     <div class="header">
         <h1 id="header-text">THE404.NL</h1>
         <div class="tab-wrapper" style="margin-top: 0px;">
@@ -38,146 +39,139 @@
 				</button> -->
         </div>
         <div id="home" class="pane">
-            <div class="post">
-                <h3 class="post-head">The404 is temporarily unavaliable.</h3>
-                <h4 class="post-date">06/06/20</h4>
-                <p>I'm currently working on the404 v4, and migrating the site over to Github pages. This means rewriting most of the site. In the meantime, enjoy the endless void.
-                    <br>
-                    <a class=link href="https://www.github.com/the404devs/the404">404 on Github!</a>
+            <div class="nav" id="blog-nav">
+                <span class="button" id="down" onclick="navScroll()" title="Scroll to Bottom">⇩</span>
+                <span class="button" id="close" onclick="hideNav()" title="Close Menu">×</span>
+
+            </div>
+            <div class="tab-wrapper" id="nav-tab-wrapper">
+                <span class="tab" id="nav-tab" onclick="showNav()" title="Blog Menu">☰</span>
+            </div>
+        </div>
+        <div id="about" class="pane">
+            <div class="row">
+                <p>
+                    Welcome! I started the404 on January 18th, 2018. This site has become my own little corner of the internet, and hosts a variety of different projects I have worked on over the years.
                 </p>
             </div>
-
-        </div>
-        <div>
-            <div id="about" class="pane">
-                <div class="row">
-                    <p>
-                        Welcome! I started the404 on January 18th, 2018. This site has become my own little corner of the internet, and hosts a variety of different projects I have worked on over the years.
-                    </p>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="column">
-                        <h3>Get in touch!</h3>
-                        <button class="big-button button" id="twitter" onclick="location.href='https://twitter.com/the404devs'">
-							<i class="fab fa-twitter"></i> @the404devs
-						</button>
-                        <br>
-                        <button class="big-button button" id="email" onclick="location.href='mailto:the404devs@gmail.com'">
-							<i class="fa fa-envelope"></i> the404devs@gmail.com
-						</button>
-                        <br>
-                        <button class="big-button button" id="discord">
-							<i class="fab fa-discord"></i> @the404devs#0810
-						</button>
-                        <br>
-                        <button class="big-button button" id="github" onclick="location.href='https://github.com/the404devs'">
-							<i class="fab fa-github"></i> the404devs
-						</button>
-                        <br>
-                        <button class="big-button button" id="reddit" onclick="location.href='https://www.reddit.com/user/the404devs'">
-							<i class="fab fa-reddit"></i> u/the404devs
-						</button>
-                        <br>
-                        <br>
-                    </div>
-                    <div class="column">
-                        <h3>Send feedback here!</h3>
-                        <form action="contact.php" method="POST">
-                            <input type="email" name="return-address" placeholder="Your e-mail address" required>
-                            <br>
-                            <textarea name="emailContent" rows="14" cols="40" placeholder="Type your thoughts here..."></textarea>
-                            <br>
-                            <br>
-                            <button type="submit" class="button"><span>Send!</span></button>
-                        </form>
-                    </div>
-                    <div class="column">
-                        <h3>The404 Archives!</h3>
-                        <button class="big-button button archive" onclick="location.href='old/index.html'">
-						     <i class="fas fa-archive"></i> The404 v1 <label>(01/18/18 - 08/27/18)</label>
-						</button>
-                        <br>
-                        <button class="big-button button archive" onclick="location.href='old2/index.html'">
-						     <i class="fas fa-archive"></i> The404 v2 <label>(08/27/18 - 03/10/19)</label>
-						</button>
-                        <br>
-                        <button class="big-button button archive" onclick="location.href='old3/index.html'">
-						     <i class="fas fa-archive"></i> The404 v3 <label>(03/10/19 - 06/07/20)</label>
-						</button>
-                        <br>
-                        <button class="big-button button archive" onclick="location.href='https://the404devs.github.io/grade11_site/'">
-						     <i class="fas fa-archive"></i> ICS 11 <label>(2017)</label>
-						</button>
-                        <br>
-                        <button class="big-button button archive" onclick="location.href='https://the404devs.github.io/grade12_site/'">
-						     <i class="fas fa-archive"></i> ICS 12 <label>(2018)</label>
-						</button>
-                        <br>
-                        <button class="big-button button archive" onclick="location.href='https://the404devs.github.io/stuco/indexNEW.html'">
-						     <i class="fas fa-archive"></i> Stuco <label>(2018)</label>
-						</button>
-                        <br>
-                        <button class="big-button button archive" onclick="location.href='cps530'">
-						     <i class="fas fa-archive"></i> CPS530 <label>(2019)</label>
-						</button>
-                        <br>
-                        <button class="big-button button archive" onclick="location.href='birthday.html'">
-						     <i class="fas fa-archive"></i> Birthday Retro Style <label>(2020)</label>
-						</button>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="column" style="text-align: center;">
-                        <h3 class="creeper post-head">The404 Minecraft Server</h3>
-                        <h4 class="creeper">Connect to <b style="color: var(--link)">mc.the404.nl</b> to join!</h4>
-                        <h4 class="creeper">The server currently runs version 1.15.2</h4>
-                        <div id="rest"></div>
-                    </div>
-                </div>
-                <br>
-                <div class="blob">
-                    <label>the404.nl</label>
+            <br>
+            <div class="row">
+                <div class="column">
+                    <h3>Get in touch!</h3>
+                    <button class="big-button button" id="twitter" onclick="location.href='https://twitter.com/the404devs'">
+						<i class="fab fa-twitter"></i> @the404devs
+					</button>
                     <br>
-                    <label>v4.0.0</label>
+                    <button class="big-button button" id="email" onclick="location.href='mailto:the404devs@gmail.com'">
+						<i class="fa fa-envelope"></i> the404devs@gmail.com
+					</button>
                     <br>
-                    <label>06/07/20 08:32</label>
+                    <button class="big-button button" id="discord">
+						<i class="fab fa-discord"></i> @the404devs#0810
+					</button>
                     <br>
-                    <label id="404time"></label>
+                    <button class="big-button button" id="github" onclick="location.href='https://github.com/the404devs'">
+						<i class="fab fa-github"></i> the404devs
+					</button>
+                    <br>
+                    <button class="big-button button" id="reddit" onclick="location.href='https://www.reddit.com/user/the404devs'">
+						<i class="fab fa-reddit"></i> u/the404devs
+					</button>
+                    <br>
+                    <br>
                 </div>
+                <div class="column">
+                    <h3>Send feedback here!</h3>
+                    <form action="contact.php" method="POST">
+                        <input type="email" name="return-address" placeholder="Your e-mail address" required>
+                        <br>
+                        <textarea name="emailContent" rows="14" cols="40" placeholder="Type your thoughts here..."></textarea>
+                        <br>
+                        <br>
+                        <button type="submit" class="button"><span>Send!</span></button>
+                    </form>
+                </div>
+                <div class="column">
+                    <h3>The404 Archives!</h3>
+                    <button class="big-button button archive" onclick="location.href='old/index.html'">
+							<i class="fas fa-archive"></i> The404 v1 <label>(01/18/18 - 08/27/18)</label>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='old2/index.html'">
+							<i class="fas fa-archive"></i> The404 v2 <label>(08/27/18 - 03/10/19)</label>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='old3/index.html'">
+							<i class="fas fa-archive"></i> The404 v3 <label>(03/10/19 - 06/07/20)</label>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='https://the404devs.github.io/grade11_site/'">
+							<i class="fas fa-archive"></i> ICS 11 <label>(2017)</label>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='https://the404devs.github.io/grade12_site/'">
+							<i class="fas fa-archive"></i> ICS 12 <label>(2018)</label>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='https://the404devs.github.io/stuco/indexNEW.html'">
+							<i class="fas fa-archive"></i> Stuco <label>(2018)</label>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='cps530'">
+							<i class="fas fa-archive"></i> CPS530 <label>(2019)</label>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='birthday.html'">
+							<i class="fas fa-archive"></i> Birthday Retro Style <label>(2020)</label>
+					</button>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column" style="text-align: center;">
+                    <h3 class="creeper post-head">The404 Minecraft Server</h3>
+                    <h4 class="creeper">Connect to <b style="color: var(--link)">mc.the404.nl</b> to join!</h4>
+                    <h4 class="creeper">The server currently runs version 1.15.2</h4>
+                    <div id="rest"></div>
+                </div>
+            </div>
+            <br>
+            <div class="blob">
+                <label>the404.nl</label>
+                <br>
+                <label>v4.0.0</label>
+                <br>
+                <label>06/07/20 08:32</label>
+                <br>
+                <label id="404time"></label>
+            </div>
 
-                <script>
-                    var e = new Date(2018, 0, 18, 18, 45);
-                    var d = new Date();
-                    var dif = (d.getTime() - e.getTime()) / 1000;
+            <script>
+                var e = new Date(2018, 0, 18, 18, 45);
+                var d = new Date();
+                var dif = (d.getTime() - e.getTime()) / 1000;
 
+                document.getElementById("404time").innerHTML = dif;
+                var time = setInterval(timer, 1000);
+
+                function timer() {
+                    d = new Date();
+                    dif = Math.round((d.getTime() - e.getTime()) / 1000);
                     document.getElementById("404time").innerHTML = dif;
-                    var time = setInterval(timer, 1000);
+                }
+            </script>
+        </div>
+        <div id="software" class="pane">
 
-                    function timer() {
-                        d = new Date();
-                        dif = Math.round((d.getTime() - e.getTime()) / 1000);
-                        document.getElementById("404time").innerHTML = dif;
-                    }
-                </script>
-            </div>
-            <div id="software" class="pane">
-
-            </div>
         </div>
         <div>
             <!-- This is a debug div. Pay it no mind. -->
         </div>
         <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/firebase.js"></script>
         <script type="text/javascript" src="js/mc.js"></script>
-        <script type="text/javascript" src="js/html2canvas.min.js"></script>
-        <script type="text/javascript" src="js/remove-branding.js"></script>
-        <script>
-            console.log("%c" + art, "color:#b20acb; font-weight: bold; font-size:12px")
-        </script>
 </body>
 
 </html>

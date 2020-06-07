@@ -1,4 +1,4 @@
-function showPanes(n) {
+var showPanes = function(n) {
     var i;
     var panes = document.getElementsByClassName("pane");
     var tabs = document.getElementsByClassName("tab");
@@ -55,7 +55,6 @@ var scrollToElem = function(id) {
     if (window.innerWidth < 850) {
         hideNav();
     }
-
 }
 
 var showNav = function() {
@@ -70,6 +69,12 @@ var hideNav = function() {
 
 var navScroll = function() {
     document.getElementById("blog-nav").scrollBy({ top: document.getElementById("blog-nav").scrollHeight, behavior: "smooth" });
+}
+
+var load = function() {
+    console.log("%c" + art, "color:#b20acb; font-weight: bold; font-size:12px");
+    loadFromFire();
+    //showPanes() is now called within loadFromFire()
 }
 
 

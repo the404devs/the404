@@ -279,6 +279,7 @@ body {
     max-height: calc(100% - 160px);
     overflow-y: scroll;
     overflow-x: hidden;
+    z-index: 1;
     /* scrollbar-width: thin; */
 }
 
