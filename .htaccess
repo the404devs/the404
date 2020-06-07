@@ -1,0 +1,9 @@
+php_value session.auto_start 1
+ErrorDocument 403 http://the403.tk/
+ErrorDocument 404 /errors/404.html
+ErrorDocument 451 /errors/451.html
+ErrorDocument 500 /errors/500.html
+ErrorDocument 502 /errors/502.html
+ErrorDocument 503 /errors/503.html
+DirectoryIndex index.php index.html
+
