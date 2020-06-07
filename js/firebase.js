@@ -1,7 +1,3 @@
-// const firebase = require("firebase");
-// // Required for side-effects
-// require("firebase/firestore");
-
 // Initialize Cloud Firestore through Firebase
 var firebaseConfig = {
     apiKey: "AIzaSyAgr0eoCO6hOcxM-5OWXM8sE8BogIsMMiA",
@@ -28,16 +24,14 @@ var db = firebase.firestore();
 // });
 
 var loadFromFire = async function() {
-    const posts = []
+    const posts = [];
     await db.collection("blog").get().then((querySnapshot) => {
-
         querySnapshot.forEach((doc) => {
             posts.push({ id: doc.id, ...doc.data() })
         })
-    })
+    });
 
     posts.reverse().forEach(post => {
-
         var date = ('0' + post.Month).slice(-2) + "/" + ('0' + post.Day).slice(-2) + "/" + post.Year;
         $("#home").append(
             $("<div>").addClass("post").append(
@@ -59,7 +53,55 @@ var loadFromFire = async function() {
                 $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(date)
             ).append($("<br>")).append($("<br>"));
         }
+    });
 
+    const software = [];
+    await db.collection("software").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            software.push({ id: doc.id, ...doc.data() })
+        })
+    });
+
+    software.forEach(soft => {
+        //check for additional buttons
+        var btn2, btn3 = "";
+        if (soft.Button2) {
+            var btn2 = $("<a>").addClass("downloadLink").attr("href", soft.Button2[1]).append($("<button>").addClass("button").append($("<span>").html(soft.Button2[0])));
+        }
+        if (soft.Button3) {
+            var btn3 = $("<a>").addClass("downloadLink").attr("href", soft.Button3[1]).append($("<button>").addClass("button").append($("<span>").html(soft.Button3[0])));
+        }
+        //check for image
+        var img = "";
+        if (soft.Image) {
+            img = $("<img>").attr("width", "100px").attr("src", soft.Image)
+        }
+        $("#software").append(
+            $("<div>").addClass("blob").append(
+                $("<h2>").html(soft.Name)
+            ).append(img).append(
+                $("<ul>").append(
+                    $("<li>").html("<b>Version:</b> " + soft.Version)
+                ).append(
+                    $("<li>").html("<b>Release Date:</b> " + soft.Release)
+                ).append(
+                    $("<li>").html("<b>Last Update:</b> " + soft.Current)
+                ).append(
+                    $("<li>").html("<b>Language:</b> " + soft.Language.join().replace(/,/g, ", "))
+                )
+                .append(
+                    $("<li>").html("<b>Tags:</b> " + soft.Tags.join().replace(/,/g, ", "))
+                )
+            ).append(
+                $("<p>").html(soft.Description)
+            ).append(
+                $("<a>").addClass("downloadLink").attr("href", soft.Button1[1]).append(
+                    $("<button>").addClass("button").append(
+                        $("<span>").html(soft.Button1[0])
+                    )
+                )
+            ).append(btn2).append(btn3).attr("tag", soft.Tags.join().replace(/,/g, ", "))
+        );
     });
     showPanes(1);
 }
