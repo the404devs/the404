@@ -105,3 +105,20 @@ var loadFromFire = async function() {
     });
     showPanes(1);
 }
+
+var sendFeedback = function() {
+    var email = $("#feed-email").val();
+    var feedback = $("#feed-body").val();
+    if (email == "" || feedback == "") {
+        alert("Please fill in all fields before submitting!")
+        return;
+    } else {
+        db.collection("feedback").add({
+            Email: email,
+            Feedback: feedback
+        });
+        $("#feed-email").val("");
+        $("#feed-body").val("");
+        alert("Success!");
+    }
+}

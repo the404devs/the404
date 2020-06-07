@@ -82,14 +82,12 @@
                 </div>
                 <div class="column">
                     <h3>Send feedback here!</h3>
-                    <form action="contact.php" method="POST">
-                        <input type="email" name="return-address" placeholder="Your e-mail address" required>
-                        <br>
-                        <textarea name="emailContent" rows="14" cols="40" placeholder="Type your thoughts here..."></textarea>
-                        <br>
-                        <br>
-                        <button type="submit" class="button"><span>Send!</span></button>
-                    </form>
+                    <input id="feed-email" type="email" name="return-address" placeholder="Your e-mail address">
+                    <br>
+                    <textarea id="feed-body" name="emailContent" rows="14" cols="40" placeholder="Type your thoughts here..."></textarea>
+                    <br>
+                    <br>
+                    <button class="button" onclick="sendFeedback()"><span>Send!</span></button>
                 </div>
                 <div class="column">
                     <h3>The404 Archives!</h3>
@@ -143,7 +141,7 @@
                 <br>
                 <label>v4.0.0</label>
                 <br>
-                <label>06/07/20 08:32</label>
+                <label>06/07/20 15:25</label>
                 <br>
                 <label id="404time"></label>
             </div>
