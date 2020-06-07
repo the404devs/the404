@@ -119,6 +119,6 @@ var sendFeedback = function() {
         });
         $("#feed-email").val("");
         $("#feed-body").val("");
-        alert("Success!");
+        alert("Success!\nI'll get back to you soon.");
     }
 }
