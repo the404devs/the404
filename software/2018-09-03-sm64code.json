@@ -1,0 +1,14 @@
+[{
+    "Name": "Super Mario 64 Colour Code Generator",
+    "Version": "1.1.1",
+    "Release": "September 3, 2018",
+    "Current": "March 10, 2019",
+    "Language": ["JS", "jQuery"],
+    "Category": ["Games"],
+    "Image": "img/bljrainbow.png",
+    "Button1Text": "Go",
+    "Button1Link": "https://the404devs.github.io/sm64code/",
+    "Button2Text": "GitHub",
+    "Button2Link": "https://github.com/the404devs/sm64code",
+    "Description": "A quick tool I made in order to refresh my Javascript skills. Allows users to create their own cheat code to change Mario's colour in SM64. <br><br><b>v1.1 (09/16/18):</b> Added support for all 4 SM64 versions.<br><b>v1.1.1 (03/10/19):</b> Minor tweaks. Happy Mario Day!"
+}]

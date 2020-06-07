@@ -1,0 +1,14 @@
+[{
+    "Name": "Crazy 8s",
+    "Version": "1",
+    "Release": "May 29, 2018",
+    "Current": "May 29, 2018",
+    "Language": ["Java"],
+    "Category": ["Games"],
+    "Image": "img/crazy8.png",
+    "Button1Text": "GitHub",
+    "Button1Link": "https://github.com/the404devs/crazy8",
+    "Button2Text": "View Site",
+    "Button2Link": "https://the404devs.github.io/crazy8",
+    "Description": "A really low-effort Java game for Grade 12 CS. The website was designed to look like a blatant rip off of the Connect 4 one. This project was centered around OOP. The best thing about the game is the AI. The game creates enough AI players as it needs to so there is always a 4-player match, and early on into coding the part which checks how many people are playing and creates the correct of AIs so there are 4 players, I realized the user could simply say 0 people are playing, causing the game to create a match between 4 AI players. This was fun to play around with, so I just left it in. It can take up to an hour (I've timed it before) for one of the AIs to win. AI players are assigned random names, most of which are memes. Sometimes, the AI players will say rude comments or dumb CS jokes or other random things after their turns. There are plenty of memes in the taunts as well. Only fun because of the AI, but you can play with friends as well."
+}]

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#ffffff">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- project css file -->
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+    
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Get all "navbar-burger" elements
+            var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+
+                // Add a click event on each of them
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+
+                        // Get the target from the "data-target" attribute
+                        var target = $el.dataset.target;
+                        var $target = document.getElementById(target);
+
+                        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                        $el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+
+                    });
+                });
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+    
+    <section class="hero is-dark is-fullheight"
+        style="background-image: url('https://images.unsplash.com/photo-1541718366506-c16ed9459a7f'); background-repeat: no-repeat; width: 100%; background-size: cover;">
+        <!-- Hero head: will stick at the top -->
+
+        <div class="hero-head">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="container">
+
+                    <!-- logo or branding image on left side -->
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="/">
+                            <!-- <img src="https://bulma.io/images/bulma-logo.png" -->
+                            <!-- alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28"> -->
+                        </a>
+                        <div class="navbar-burger" data-target="navbar-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
+                    <div class="navbar-menu" id="navbar-menu">
+                        <!-- navbar items | left side -->
+
+                        <!-- navbar items | right side -->
+                        <div class="navbar-end">
+                            <a class="navbar-item" href="/">home</a>
+                            <a class="navbar-item" href="/tutorial">Tutorial</a>
+                            <a class="navbar-item is-active" href="/demo">Demo</a>
+
+                            <a class="navbar-item" href="/install">installation guide</a>
+                            <a class="navbar-item" href="/whynodejs">NodeJs Info</a>
+                            <a class="navbar-item" href="/whybulma">Bulma Info</a>
+                            <a class="navbar-item" href="/conclusion">Conclusion</a>
+                            <a class="navbar-item" href="/credits">Credits</a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+            <div class="container has-text-centered">
+
+
+                <img src="http://socialwedia.com/avatars/ryersonuniversity.png" style="width:30px; height: 30px;"
+                    alt="CPS530 final project">
+                <h1 class="title is-1">CPS530 Final Project</h1>
+
+
+            </div>
+        </div>
+    </section>
+    <br>
+    <section class="section">
+        <div class="container" style="margin-bottom: 3%">
+            <div class="columns">
+                <div class="column">
+                    <img src="https://mixkit.imgix.net/art/326/326-original.png-1000h.png?q=80&fm=jpg&h=700&q=50&dpr=2"
+                        width="80%">
+                </div>
+                <div class="column">
+
+                    <h1 class="title is-1">Project Info</h1>
+                    <p class="has-text-justified is-size-6-desktop is-size-6-mobile"
+                        style="line-height: 1.6em; word-wrap:break-word;">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eligendi obcaecati illo? Quaerat impedit cum earum ipsam odio ab et ut, corporis fuga doloremque officiis numquam totam reiciendis tempora tempore.
+                    </p>
+                    <p class="has-text-justified is-size-6-desktop is-size-6-mobile"
+                        style="line-height: 1.6em; word-wrap:break-word; margin-top: 2%;">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Ratione non ipsum sed magni odit cupiditate delectus consectetur
+                        natus ducimus voluptas quia sapiente porro quisquam ex, praesentium repellendus? Adipisci,
+                        beatae labore!</p>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="background: linear-gradient(89.4deg, #155C95 2.61%, rgba(188, 237, 150, 0) 299.2%); height: 3.5rem; ">
+        <h1 class="title is-1" style="color: whitesmoke">Lorem Ipsum</h1>
+
+
+    </div>
+    <section class="section">
+
+        <div class="container" style="margin-bottom: 3%">
+            <div class="columns">
+                <div class="column">
+                    <div class="box is-one-quarter">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                </div>
+                <div class="column">
+                    <div class="box is-full">Autem commodi rerum animi quos architecto, magni sapiente cumque iure harum
+                        rem fugit earum natus nam reprehenderit perferendis eligendi mollitia quia quod! tours</div>
+                </div>
+
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="box is-full">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus tempora
+                        qui aspernatur iusto </div>
+                </div>
+                <div class="column">
+                    <div class="box is-full">perspiciatis, tempore hic quis necessitatibus veniam doloremque dignissimos
+                        similique, dolorem molestias possimus culpa ut ad sapiente enim?</div>
+                </div>
+                <div class="column">
+                    <div class="box is-tw">similique, dolorem molestias possimus culpa</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero is-medium"
+        style="background-image: url('https://images.unsplash.com/photo-1463130456064-77fda7f96d6b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'); background-repeat: no-repeat; width: 100%; background-size: cover;">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Lorem Ipsum This is what we offer
+                </h1>
+                <br>
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    Lorem ipsum dolor sit amet consectetur
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    lorem <u>ipsum</u> tempore hic quis necessitatibus.
+                                    <br>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    doloremque dignissimos similique
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    dolorem molestias possimus culpar <u>ad sapiente</u>
+                                    <br>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+<footer class="footer">
+        <div class="container content has-text-centered">
+    
+            <img src="http://socialwedia.com/avatars/ryersonuniversity.png" class="is-pulled-left" width="50"
+                style="margin-bottom: 5%">
+    
+            <a href="/">Home</a>
+            <a href="#" style="margin-left: 3%;">Tutorial</a>
+            <a href="#" style="margin-left: 3%;">Demo</a>
+    
+            <a href="/install" style="margin-left: 3%;">installation guide</a>
+            <a href="/whynodejs" style="margin-left: 3%;">NodeJs Info</a>
+            <a href="/whybulma" style="margin-left: 3%;">Bulma Info</a>
+            <a href="/conclusion" style="margin-left: 3%;">Conclusion</a>
+            <a href="/credits" style="margin-left: 3%;">Credits</a>
+    
+        </div>
+    </footer>
+
+</html>

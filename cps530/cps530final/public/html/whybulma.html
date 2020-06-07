@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CPS530: Final Project</title>
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Bulma Version 0.8.x-->
+    <link rel='stylesheet' href='https://unpkg.com/bulma@0.8.0/css/bulma.min.css'>
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link rel='stylesheet' href='https://kingsora.github.io/OverlayScrollbars/etc/os-theme-thin-dark.css'>
+    <link rel='stylesheet' href="../css/main.css">
+    <link rel='stylesheet' href="../css/prism.css">
+    <link rel="stylesheet" href="../css/cheatsheet.css">
+
+    <!-- jQuery - used for smooth scrolling when transitioning between sections -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- <section class="hero is-primary is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+                <div class="container">
+
+                    logo or branding image on left side
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="/">
+                            <img src="https://bulma.io/images/bulma-logo.png"
+                            alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+                        </a>
+                        <div class="navbar-burger" data-target="navbar-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    children of navbar-menu must be navbar-start and/or navbar-end
+                    <div class="navbar-menu" id="navbar-menu">
+                        navbar items | left side
+
+                        navbar items | right side
+                        <div class="navbar-end">
+                            <a class="navbar-item is-active" href="/"> 1</a>
+                            <a class="navbar-item" href="#">2</a>
+                            <a class="navbar-item" href="#">3</a>
+                            <a class="navbar-item" href="#">4</a>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+        Hero content: will be in the left
+        <div class="hero-body">
+            <div class="container has-text-left">
+
+
+                <img src="http://socialwedia.com/avatars/ryersonuniversity.png" style="width:30px; height: 30px;"
+                    alt="CPS530 final project">
+                <h1 class="title is-size-1 is-size-1-mobile">CPS530 Final Project</h1>
+                <h2 class="subtitle is-size-3 is-size-4-mobile">Why Bulma?</h2>
+                <a class="button is-link is-rounded is-size-1-mobile" onclick="typeWriterPopularity()"
+                    href="#popularity">How Popular is Bulma?</a>
+
+            </div>
+        </div>
+    </section> -->
+
+    <section class="hero is-medium is-info is-bold" id="popularity">
+
+            <div class="hero-head">
+
+
+                    <nav class="navbar" role="navigation" aria-label="main navigation">
+                        <div class="container">
+        
+                            <!-- logo or branding image on left side -->
+                            <div class="navbar-brand">
+                                <a class="navbar-item" href="/">
+                                    <!-- <img src="https://bulma.io/images/bulma-logo.png" -->
+                                    <!-- alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28"> -->
+                                </a>
+                                <div class="navbar-burger" data-target="navbar-menu">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+        
+                            <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
+                            <div class="navbar-menu" id="navbar-menu">
+                                <!-- navbar items | left side -->
+        
+                                <!-- navbar items | right side -->
+                                <div class="navbar-end">
+                                        <a class="navbar-item" href="/">home</a>
+                                        <a class="navbar-item" href="/tutorial">Tutorial</a>
+                                        <a class="navbar-item" href="/demo">Demo</a>
+        
+                                        <a class="navbar-item" href="/install">installation guide</a>
+                                        <a class="navbar-item" href="/whynodejs">NodeJs Info</a>
+                                        <a class="navbar-item is-active" href="/whybulma">Bulma Info</a>
+                                        <a class="navbar-item" href="/conclusion">Conclusion</a>
+                                        <a class="navbar-item" href="/credits">Credits</a>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-size-1">
+                    How Popular is Bulma?
+                </h1>
+                <br>
+                <h2 class="subtitle is-size-3">
+                    Bulma is the third most popular css framework on Github. There are roughly 37,000 developers star
+                    the project on Github
+                </h2>
+                <div class="has-text-right"><a class="button is-link is-rounded " onclick="typeWriterStrengths()"
+                        href="#strengths">What are the strengths and weaknesses of Bulma?</a></div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-medium is-info is-bold" id="strengths">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-size-1">
+                    Bulma's Strengths and Weaknesses
+                </h1>
+                <br>
+                <h2 class="subtitle is-size-3">
+                    Bulma is based on Flexbox and much more customizable compared to other CSS frameworks. it also has a
+                    big developer community. on the downside Bulma is not supported in older browsers
+                </h2>
+                <ol type="i" class="is-size-6">
+                    <li>
+                        Since it is flexbox, it is widely supported across desktop and mobile browsers. Flexbox also
+                        makes it easy to create repeatable elements
+                    </li>
+                    <li>
+                        Bulma also have no default styling, unlike Bootstrap or Material which have rigid styling. It is
+                        also small and pure css, which you can modify by using Saas.
+                    </li>
+                    <li>
+                        Bulma have a big developer community that are ready to help you build your next website
+                    </li>
+                    <li>
+                        Weakness of bulma is, it only partially supports older browsers like Internet Explorer. this
+                        means that it will run slower on IE10.
+                    </li>
+                </ol>
+                <br>
+                <div class="has-text-right"><a class="button is-link is-rounded " onclick="typeWriterStrengths()"
+                        href="#prefers">Which developers prefers Bulma?</a></div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-medium is-info is-bold" id="prefers">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-size-1">
+                    Which developers mostly use Bulma and for what kind of websites?
+                </h1>
+                <br>
+                <h2 class="subtitle is-size-3">
+                    Bulma is used primarily by front end developer. since Bulma is based on flexbox, it can be used for
+                    any kind of website ranging from content heavy website to static website. Because it is easily
+                    modifiable via Sass, the aesthetic of the website would look very creative.
+
+                </h2>
+                <div class="has-text-right"><a class="button is-link is-rounded " onclick="typeWriterDevelopers()"
+                        href="/install">How to install
+                        Bulma?</a></div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+
+
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    
+                // Get all "navbar-burger" elements
+                var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+                // Check if there are any navbar burgers
+                if ($navbarBurgers.length > 0) {
+    
+                    // Add a click event on each of them
+                    $navbarBurgers.forEach(function ($el) {
+                        $el.addEventListener('click', function () {
+    
+                            // Get the target from the "data-target" attribute
+                            var target = $el.dataset.target;
+                            var $target = document.getElementById(target);
+    
+                            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                            $el.classList.toggle('is-active');
+                            $target.classList.toggle('is-active');
+    
+                        });
+                    });
+                }
+    
+            });
+        </script>
+
+    <script>
+        window.addEventListener('resize', () => {
+            const divs = document.querySelectorAll(".menu-list");
+            if (window.innerWidth < 768) {
+                divs.forEach(div => div.classList.add("tags"));
+            } else {
+                divs.forEach(div => div.classList.remove("tags"));
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            //The first argument are the elements to which the plugin shall be initialized
+            //The second argument has to be at least a empty object or a object with your desired options
+            var instance = OverlayScrollbars(document.querySelectorAll("body"), {});
+
+            //Smooth scrolling to target element when button is pressed.
+            $("a[href^='#']").click(function (e) {
+                e.preventDefault();
+                instance.scroll($($(this).attr("href")), 500);
+            });
+        });
+    </script>
+</body>
+
+</html>

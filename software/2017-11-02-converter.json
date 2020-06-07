@@ -1,0 +1,12 @@
+[{
+    "Name": "Converter",
+    "Version": "1",
+    "Release": "November 2, 2017",
+    "Current": "November 2, 2017",
+    "Language": ["C#"],
+    "Category": ["Utilities"],
+    "Image": "img/convert-icon2.png",
+    "Button1Text": "GitHub",
+    "Button1Link": "https://github.com/the404devs/converter",
+    "Description": "A quick thing I made to do conversions between units of length and temperature. I think there are some easter eggs hidden in the program as well. This thing is utterly useless."
+}]

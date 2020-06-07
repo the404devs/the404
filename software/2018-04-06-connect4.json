@@ -1,0 +1,14 @@
+[{
+    "Name": "Connect 4",
+    "Version": "1",
+    "Release": "April 6, 2018",
+    "Current": "April 6, 2018",
+    "Language": ["Java"],
+    "Category": ["Games"],
+    "Image": "img/connect4.png",
+    "Button1Text": "Go",
+    "Button1Link": "https://the404devs.github.io/connect4",
+    "Button2Text": "GitHub",
+    "Button2Link": "https://github.com/the404devs/connect4",
+    "Description": "We started with Java in Grade 12, and our first Java project was to create a game in a Java console program. We settled on Connect 4, simply because we thought we could throw in a bunch of shitty Connect 4 memes, which were relevant back then. The AI was the highlight of the game, because we actually made it try and stop the player from winning by looking for 3-in-a-rows, instead of our boring original AI that just picked a random spot. You can play with a friend or against the computer. Another easy 100%."
+}]

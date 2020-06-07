@@ -1,0 +1,378 @@
+/*#8955a2
+#724c8b
+#7103ba
+#1b2b34*/
+* {
+  box-sizing: border-box;
+}
+
+@font-face{
+	font-family: "camaraderie";
+	src: url("Camaraderie.otf");
+}
+
+@font-face{
+	font-family: "Roboto";
+	src: url("Roboto-Regular.ttf");
+}
+
+body{
+	margin: 0;
+	background-color: black;
+	font-family: "Roboto";
+}
+
+hr{
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+}
+
+h1{
+	margin: 20px;
+}
+
+.blob{
+  background-color: #724c8b;
+  border-style: solid;
+  border-radius: 4px;
+  border-width: 2px;
+  border-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.blob img{
+  float: left;
+  margin-right: 30px;
+}
+
+.blob button{
+  margin: 5px;
+}
+
+.container-fluid{
+  padding: 20px 30px;
+}
+
+.header{
+	font-family: "camaraderie";
+	font-size: 2em;
+	color: purple;
+	margin-left: 20%;
+  animation: move 0.1s;
+  transition: 0.5s;
+}
+.post-head{
+  text-decoration: underline;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.post-date{
+  margin-top: 0;
+  padding-top:0;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.content{
+	background-color: purple;
+}
+
+.tab {
+  width: auto;
+  margin: 2px;
+  font-size: 1.6vw;
+  font-family: "roboto";
+  background-color: black;
+  border-radius: 10px 10px 0 0;
+  border-color: white;
+  color: white;
+  border-width: 2px;
+  border-style: solid;
+  border-bottom-style: none;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.5s ease;
+  vertical-align: bottom;
+  text-align: center;
+  padding: 5px 10px 5px 10px;
+  top: 2px;
+  cursor: pointer;
+}
+
+.tab:hover {
+	background-color: purple;
+	color: white;
+	transition: all 0.25s;
+}
+
+.active {
+  background-color: purple;
+  color: white;
+}
+
+.active:hover{
+  background-color: purple;
+}
+
+.tabWrapper{
+  /*bottom: 0;*/
+  /*height: 30px;*/
+  text-align: center;
+  color: black;
+  background-color: black;
+  text-shadow: none;
+  border-bottom-style: solid;
+  border-bottom-color: white;
+  border-bottom-width: 2px; 
+}
+
+.button2 {	
+	/*text-decoration: none;*/
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 4px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	/*padding: 40px;*/
+	width: 200px;
+	transition: all 0.25s;
+	cursor: pointer;
+	/*margin: auto;*/
+	font-family: "roboto";
+	overflow: hidden;
+	height: 30px;
+}
+
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2:hover{
+  background-color: purple;
+}
+
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -50px;
+  transition: 0.25s;
+}
+
+.button2:hover span {
+  padding-right: 25px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0px; 
+}
+
+.downloadlink{
+	border: none;
+}
+
+.link{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-style: solid;
+  border-color: white;
+  border-width: 0;
+  position: sticky;
+}
+
+.link:before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px!important;
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid;
+  /*visibility: hidden;*/
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s; 
+}
+
+.link:hover:before{
+  visibility: visible;
+  width: 100%;
+}
+
+
+textarea{
+	background-color: black;
+	color: white;
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 4px;
+	resize: none;
+	font-family: "roboto";
+}
+
+.row {
+  display: -webkit-flex;
+  display: flex;
+  margin-left: 0px;  
+}
+@media (max-width: 800px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  /*height: 300px;*/
+  text-align: center;
+  font-family: roboto;
+  text-shadow: none;
+}
+
+i{
+  padding-top: 2px;
+  font-size: 25px;
+}
+
+.socialButton {  
+  /*text-decoration: none;*/
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50px;
+  background-color: black;
+  color: white;
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+  /*padding: 40px;*/
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-left: 11px;
+  padding-bottom: 5px;
+  width: 50px;
+  height: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  /*margin: auto;*/
+  font-family: "roboto";
+  overflow: hidden;
+  /*height: 30px;*/
+}
+
+.socialButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  font-size: 18px;
+  padding-top: 2px;
+}
+
+.socialButton:hover{
+  background-color: purple;
+}
+
+#twitter:hover{
+  width: 175px;
+}
+
+#email:hover{
+  width:260px;
+}
+
+#discord:hover{
+  width:230px;
+}
+
+#github:hover{
+  width: 160px;
+}
+
+#twitter span:after {
+  content: '@the404devs';
+  position: absolute;
+  opacity: 0;
+  padding-top: 4px;
+  left: 50px;
+  transition: 0.25s;
+}
+
+#email span:after {
+  content: 'the404devs@gmail.com';
+  position: absolute;
+  opacity: 0;
+  padding-top: 4px;
+  left: 50px;
+  transition: 0.25s;
+}
+
+#discord span:after {
+  content: '@the404devs#0810';
+  position: absolute;
+  opacity: 0;
+  padding-top: 4px;
+  left: 50px;
+  transition: 0.25s;
+}
+
+#github span:after {
+  content: 'the404devs';
+  position: absolute;
+  opacity: 0;
+  padding-top: 4px;
+  left: 50px;
+  transition: 0.25s;
+}
+
+.socialButton:hover span {
+  width: 100%;
+  text-align: left;
+}
+
+#twitter:hover span:after {
+  opacity: 1;
+  left: 40px; 
+}
+#email:hover span:after {
+  opacity: 1;
+  left: 40px;
+}
+#discord:hover span:after {
+  opacity: 1;
+  left: 40px;
+}
+#github:hover span:after {
+  opacity: 1;
+  left: 40px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+@keyframes move{
+  0%{margin-left: 0%}
+  50%{margin-left: 0%}
+  100%{margin-left: 20%}
+}

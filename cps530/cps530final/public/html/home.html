@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CPS530: Final Project</title>
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Bulma Version 0.8.x-->
+    <link rel='stylesheet' href='https://unpkg.com/bulma@0.8.0/css/bulma.min.css'>
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link rel='stylesheet' href='https://kingsora.github.io/OverlayScrollbars/etc/os-theme-thin-dark.css'>
+    <link rel='stylesheet' href="../css/prism.css">
+    <link rel='stylesheet' href="../css/main.css">
+    <link rel="stylesheet" href="../css/cheatsheet.css">
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="container">
+
+                    <!-- logo or branding image on left side -->
+                    <div class="navbar-brand">
+                        <!-- <a class="navbar-item" href="/">
+                            <img src="http://socialwedia.com/avatars/ryersonuniversity.png"
+                            alt="Ryerson University Logo" width="112" height="28">
+                        </a> -->
+                        <div class="navbar-burger" data-target="navbar-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
+                    <div class="navbar-menu" id="navbar-menu">
+                        <!-- navbar items | left side -->
+
+                        <!-- navbar items | right side -->
+                                <div class="navbar-end">
+                                        <a class="navbar-item is-active" href="/">home</a>
+                                        <a class="navbar-item" href="/tutorial">Tutorial</a>
+                                        <a class="navbar-item" href="/demo">Demo</a>
+        
+                                        <a class="navbar-item" href="/install">installation guide</a>
+                                        <a class="navbar-item" href="/whynodejs">NodeJs Info</a>
+                                        <a class="navbar-item" href="/whybulma">Bulma Info</a>
+                                        <a class="navbar-item" href="/conclusion">Conclusion</a>
+                                        <a class="navbar-item" href="/credits">Credits</a>
+                                </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Hero content: will be in the left -->
+        <div class="hero-body">
+            <div class="container has-text-left">
+
+
+                <img src="http://socialwedia.com/avatars/ryersonuniversity.png" style="width:30px; height: 30px;"
+                    alt="CPS530 final project">
+                <h1 class="title is-size-1 is-size-1-mobile">CPS530 Final Project</h1>
+                <h2 class="subtitle is-size-3 is-size-4-mobile">A website created with NodeJs and Bulma!</h2>
+                <a class="button is-link is-rounded is-size-1-mobile" onclick="typeWriterPopularity()"
+                    href="/demo">See Demo Page</a>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+
+
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    
+                // Get all "navbar-burger" elements
+                var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+                // Check if there are any navbar burgers
+                if ($navbarBurgers.length > 0) {
+    
+                    // Add a click event on each of them
+                    $navbarBurgers.forEach(function ($el) {
+                        $el.addEventListener('click', function () {
+    
+                            // Get the target from the "data-target" attribute
+                            var target = $el.dataset.target;
+                            var $target = document.getElementById(target);
+    
+                            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                            $el.classList.toggle('is-active');
+                            $target.classList.toggle('is-active');
+    
+                        });
+                    });
+                }
+    
+            });
+        </script>
+
+    <script>
+        window.addEventListener('resize', () => {
+            const divs = document.querySelectorAll(".menu-list");
+            if (window.innerWidth < 768) {
+                divs.forEach(div => div.classList.add("tags"));
+            } else {
+                divs.forEach(div => div.classList.remove("tags"));
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            //The first argument are the elements to which the plugin shall be initialized
+            //The second argument has to be at least a empty object or a object with your desired options
+            OverlayScrollbars(document.querySelectorAll("body"), {});
+        });
+    </script>
+</body>
+
+</html>

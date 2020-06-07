@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <title>404Editor</title>
+      <link rel="stylesheet" href="css/app.css" type="text/css" media="screen" charset="utf-8">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico"> 
+    </head>
+    <body>
+    	<h2 id="welcome">Welcome to 404Editor!</h2>
+    	<div id="header" class="header">
+		    <div id="workspaceName">
+		    	Workspace: 
+		    </div> 
+	  	</div>
+        
+        <div id="editor"></div>
+        <div id="loader"></div>   
+	    <div id="buttons">
+	    	<br>
+	        <div id="popcan4" onmouseenter="document.getElementById('popup4').style.visibility = 'visible';" onmouseleave="document.getElementById('popup4').style.visibility = 'hidden'">
+	        	<span class="navButton" style="font-size:30px;cursor:pointer;" onclick= "location.href = 'http://www.the404.nl'" ><i class="fa fa-home"></i></span> 
+	        	<span class="popup" id="popup4">The404 Home</span>
+	        </div>
+	        <br> 
+	        <br> 
+	        <br> 
+	        <br> 
+	        <div id="popcan6" onmouseenter="document.getElementById('popup6').style.visibility = 'visible';" onmouseleave="document.getElementById('popup6').style.visibility = 'hidden'">
+	        	<span class="navButton" style="font-size:30px;cursor:pointer;" onclick="document.getElementById('createmodal').style.display = 'block'" ><i class="fa fa-plus"></i></span> 
+	        	<span class="popup" id="popup6">Create a new workspace</span>
+	        </div>
+	        <br> 
+	        <br> 
+	        <br> 
+	        <br> 
+	        <div id="popcan1" onmouseenter="document.getElementById('popup1').style.visibility = 'visible';" onmouseleave="document.getElementById('popup1').style.visibility = 'hidden'">
+	        	<span class="navButton" style="font-size:30px;cursor:pointer;" onclick="document.getElementById('joinmodal').style.display = 'block'" ><i class="fa fa-sign-in"></i></span> 
+	        	<span class="popup" id="popup1">Join a workspace</span>
+	        </div>	        
+	        
+	        <br> 
+	        <br> 
+	        <br> 
+	        <br> 
+	        <div id="popcan2" onmouseenter="document.getElementById('popup2').style.visibility = 'visible';" onmouseleave="document.getElementById('popup2').style.visibility = 'hidden'">
+	        	<span class="navButton" style="font-size:30px;cursor:pointer;" onclick="download()"><i class="fa fa-download"></i></span> 
+	        	<span class="popup" id="popup2">Download current file</span>
+	        </div>
+	        
+	        <br> 
+	        <br> 
+	        <br> 
+	        <br> 
+	        <div id="popcan3" onmouseenter="document.getElementById('popup3').style.visibility = 'visible';" onmouseleave="document.getElementById('popup3').style.visibility = 'hidden'">
+	        	<span class="navButton" style="font-size:30px;cursor:pointer;" onclick="delWork()"><i class="fa fa-trash"></i></span> 
+	        	<span class="popup" id="popup3">Delete current workspace</span>
+	        </div>
+	        <br> 
+	        <br> 
+	        <br> 
+	        <br> 
+	        <div id="popcan5" onmouseenter="document.getElementById('popup5').style.visibility = 'visible';" onmouseleave="document.getElementById('popup5').style.visibility = 'hidden'">
+	        	<span class="navButton" style="font-size:30px;cursor:pointer;" onclick="document.getElementById('prefmodal').style.display = 'block'"><i class="fa fa-gear"></i></span> 
+	        	<span class="popup" id="popup5">Preferences</span>
+	        </div>
+	        
+	    </div>
+
+	    <div id="prefmodal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close" onclick="document.getElementById('prefmodal').style.display = 'none';document.getElementById('keyChangeInput').value=Url.queryString('key')">&times;</span>
+					<h3>Editor Preferences</h3>
+				</div>
+				<div class="modal-body" style="max-height: 400px;">	
+				<!-- overflow-y:scroll ^^ -->					
+					<div>  
+						<label>Editor Theme: </label>  	    
+			      		<select id="select-theme" class="select-input">
+			    			<optgroup label="Light">
+						        <option value="ace/theme/chrome">Chrome</option>
+						        <option value="ace/theme/clouds">Clouds</option>
+						        <option value="ace/theme/crimson_editor">Crimson Editor</option>
+						        <option value="ace/theme/dawn">Dawn</option>
+						        <option value="ace/theme/dreamweaver">Dreamweaver</option>
+						        <option value="ace/theme/eclipse">Eclipse</option>
+						        <option value="ace/theme/github">GitHub</option>
+						        <option value="ace/theme/iplastic">IPlastic</option>
+						        <option value="ace/theme/solarized_light">Solarized Light</option>
+						        <option value="ace/theme/textmate">TextMate</option>
+						        <option value="ace/theme/tomorrow">Tomorrow</option>
+						        <option value="ace/theme/xcode">XCode</option>
+						        <option value="ace/theme/kuroir">Kuroir</option>
+						        <option value="ace/theme/katzenmilch">KatzenMilch</option>
+						        <option value="ace/theme/sqlserver">SQL Server</option>
+			    			</optgroup>
+			    			<optgroup label="Dark">
+						        <option value="ace/theme/ambiance">Ambiance</option>
+						        <option value="ace/theme/chaos">Chaos</option>
+						        <option value="ace/theme/clouds_midnight">Clouds Midnight</option>
+						        <option value="ace/theme/cobalt">Cobalt</option>
+						        <option value="ace/theme/gruvbox">Gruvbox</option>
+						        <option value="ace/theme/idle_fingers">idle Fingers</option>
+						        <option value="ace/theme/kr_theme">krTheme</option>
+						        <option value="ace/theme/merbivore">Merbivore</option>
+						        <option value="ace/theme/merbivore_soft">Merbivore Soft</option>
+						        <option value="ace/theme/mono_industrial">Mono Industrial</option>
+						        <option value="ace/theme/monokai">Monokai</option>
+						        <option value="ace/theme/pastel_on_dark">Pastel on dark</option>
+						        <option value="ace/theme/solarized_dark">Solarized Dark</option>
+						        <option value="ace/theme/terminal">Terminal</option>
+						        <option value="ace/theme/tomorrow_night">Tomorrow Night</option>
+						        <option value="ace/theme/tomorrow_night_blue">Tomorrow Night Blue</option>
+						        <option value="ace/theme/tomorrow_night_bright">Tomorrow Night Bright</option>
+						        <option value="ace/theme/tomorrow_night_eighties">Tomorrow Night 80s</option>
+						        <option value="ace/theme/twilight">Twilight</option>
+						        <option value="ace/theme/vibrant_ink">Vibrant Ink</option>
+			    			</optgroup>
+			      		</select>
+			      		<br>
+			      		<br>
+			      		<label>Language: </label>
+			      		<select id="select-lang" class="select-input">
+						    <option value="batchfile" id=".bat">Batch</option>
+						    <option value="c_cpp" id=".c">C and C++</option>
+						    <option value="csharp" id=".cs">C#</option>
+						    <option value="css" id=".css">CSS</option>
+						    <option value="html" id=".html">HTML</option>
+						    <option value="ini" id=".ini">INI</option>
+						    <option value="java" id=".java">Java</option>
+						    <option value="javascript" id=".js">JavaScript</option>
+						    <option value="json" id=".json">JSON</option>
+						    <option value="lua" id=".lua">Lua</option>
+						    <option value="php" id=".php">PHP</option>
+						    <option value="python" id=".py">Python</option>
+						    <option value="text" id=".txt">Text</option>
+						    <option value="vbscript" id=".vbs">VBScript</option>
+						    <option value="xml" id=".xml">XML</option>
+			      		</select>
+			      		<br>
+			      		<br>
+			      		<label>Key: </label>
+			      		<input type="text" name="keyChange" id="keyChangeInput" class="input" style="width: 90%" value="">
+			      		<br>
+			      		<button class="button2" id="keyUpdateBtn" onclick="document.getElementById('keyChangeInput').value=keygen();" style="margin-left:5%;width:65%"><span>New Random Key</span></button>
+			      		<br>
+			      		<button class="button2" id="keyUpdateBtn" onclick="updateKey()" style="margin-left:5%;width:65%"><span>Update Key</span></button>      		
+			      		<br>
+			      		<label>Share this key with anyone who wishes to access your workspace.</label>
+			  		</div>
+				</div>
+				<div class="modal-footer">
+					<p style="color: white; font-family: 'roboto'">v1.2.1 11/21/18</p>						
+				</div>
+			</div>
+		</div>
+       
+        <div id="joinmodal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close" onclick="document.getElementById('joinmodal').style.display = 'none'">&times;</span>
+					<h3>Join Workspace</h3>
+				</div>
+				<div class="modal-body" style="max-height: 400px;">						
+					<form>
+		          		<input class="input" name="id" placeholder="Type name to join workspace" required>
+		          		<br>
+		          		<input class="input" name="key" placeholder="Workspace key" required>
+		          		<br>
+		          		<input type="submit" style="display: none;">
+		       		</form> 
+				</div>
+				<div class="modal-footer">
+					<p style="color: white; font-family: 'roboto'">Press 'enter' to join a workspace</p>						
+				</div>
+			</div>
+		</div>
+
+		<div id="createmodal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close" onclick="document.getElementById('createmodal').style.display = 'none'">&times;</span>
+					<h3>Create Workspace</h3>
+				</div>
+				<div class="modal-body" style="max-height: 400px;">						
+					<form>
+		          		<input class="input" name="id" placeholder="Name for your workspace" required>
+		          		<br>
+		          		<input type="hidden" name="makeNew" value="true">
+		          		<input type="submit" style="display: none;">
+		       		</form> 
+				</div>
+				<div class="modal-footer">
+					<p style="color: white; font-family: 'roboto'">Press 'enter' to create a workspace</p>						
+				</div>
+			</div>
+		</div>
+
+  		<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+  		<script>
+	      // Initialize Firebase
+	      var config = {
+	        apiKey: "AIzaSyB4NTU1ziKd7YcrNzpPZSKU6ZKyJwX81zI",
+	        authDomain: "editor-8a0f1.firebaseapp.com",
+	        databaseURL: "https://editor-8a0f1.firebaseio.com",
+	        projectId: "editor-8a0f1",
+	        storageBucket: "editor-8a0f1.appspot.com",
+	        messagingSenderId: "215947375655"
+	      };
+	      firebase.initializeApp(config);
+	    </script>
+  		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/urljs/2.3.1/url.min.js"></script>
+  		<script type="text/javascript" src="js/app.js"></script>
+  		<script type="text/javascript" src="../js/remove-branding.js"></script>
+    </body>
+</html>

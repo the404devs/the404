@@ -1,0 +1,209 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Document</title>
+<script type="text/javascript" src="../js/notify.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<style type="text/css">
+*{
+-webkit-box-sizing:border-box;
+box-sizing:border-box;
+font-family: "Segoe UI";
+}
+body,div,html{
+margin:0;
+padding:0
+}
+img{
+vertical-align:top
+}
+html{
+width:320px;
+height:auto;
+font-size:13px
+}
+html body{
+padding-top:6px
+}
+html.mobile{
+width:100%
+}
+html.mobile body{
+padding-top:12px
+}
+html.mobile #O{
+-webkit-box-shadow:0 -4px 8px rgba(0,0,0,.3);
+box-shadow:0 -4px 8px rgba(0,0,0,.3);
+border:none
+}
+html.mobile #O:after,html.mobile #O:before{
+display:none
+}
+html.mobile #A{
+-webkit-box-pack:end;
+-ms-flex-pack:end;
+justify-content:flex-end;
+-webkit-box-orient:horizontal;
+-webkit-box-direction:normal;
+-ms-flex-direction:row;
+flex-direction:row
+}
+html.mobile button{
+font-size:110%;
+font-weight:700;
+text-transform:uppercase;
+color:#aaa;
+border:none;
+-webkit-box-shadow:none;
+box-shadow:none
+}
+html.mobile button#B2{
+background-color:#4179f8;
+color:#fff;
+border-radius:4px
+}
+body{
+width:100%;
+font-size:100%;
+font-family:sans-serif;
+color:#111;
+margin:0;
+padding:0
+}
+#O{
+display:-webkit-box;
+display:-ms-flexbox;
+display:flex;
+position:relative;
+z-index:2;
+background-color:#fff;
+padding:4px 16px 20px;
+border:1px solid #ccc;
+border-radius:2px;
+-webkit-animation:a .6s both .1s;
+animation:a .6s both .1s
+}
+#O.hide{
+-webkit-animation:b .3s both .1s;
+animation:b .3s both .1s
+}
+#O:after{
+top:-5px;
+width:8px;
+border:1px solid #ccc;
+z-index:1;
+-webkit-transform:rotate(45deg);
+-ms-transform:rotate(45deg);
+transform:rotate(45deg)}#O:after,#O:before{display:block;
+content:"";
+position:absolute;
+height:8px;
+background-color:#fff
+}
+#O:before{
+width:12px;
+z-index:2;
+top:0;
+left:15px
+}
+#C{
+-webkit-box-flex:1;
+-ms-flex-positive:1;
+flex-grow:1
+}
+#S{
+display:block;
+position:relative;
+top:26px;
+width:16px;
+height:30px;
+margin-right:10px
+}
+#S img{
+width:100%;
+height:auto;
+margin-top:15px
+}
+#T h1,#T p{
+margin-top:13px
+}
+#T h1{
+position:relative;
+left:-26px;
+font-size:100%;
+font-weight:400
+}
+#A{display:-webkit-box;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-pack:start;
+-ms-flex-pack:start;
+justify-content:flex-start;
+-webkit-box-orient:horizontal;
+-webkit-box-direction:reverse;
+-ms-flex-direction:row-reverse;
+flex-direction:row-reverse;
+margin-top:13px
+}
+button{
+font-size:100%;
+border:1px solid #ccc;
+border-radius:2px;
+-webkit-box-shadow:0 2px 1px rgba(0,0,0,.1);
+box-shadow:0 2px 1px rgba(0,0,0,.1);
+background-color:#fff;
+padding:8px 13px!important;
+display:inline-block;
+margin-left:4px!important;
+cursor:pointer
+}
+button#B2{
+font-weight:700;
+border-color:#00d992
+}
+@-webkit-keyframes a{
+0%{-webkit-transform:translateY(10%);
+transform:translateY(10%);
+opacity:0
+}
+to{
+-webkit-transform:translateY(0);
+transform:translateY(0);
+opacity:
+1}}
+@keyframes a{
+0%{-webkit-transform:translateY(10%);
+transform:translateY(10%);
+opacity:0}to{-webkit-transform:translateY(0);
+transform:translateY(0);
+opacity:1}}
+@-webkit-keyframes b{
+0%{-webkit-transform:translateY(0);
+transform:translateY(0);
+opacity:1}to{-webkit-transform:translateY(-10%);
+transform:translateY(-10%);opacity:0}}
+@keyframes b{0%{-webkit-transform:translateY(0);
+transform:translateY(0);
+opacity:1}to{-webkit-transform:translateY(-10%);
+transform:translateY(-10%);opacity:0}}
+</style>
+</head>
+<body>
+<div id="O">
+	<div id="S">
+		<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MzUuNSIgaGVpZ2h0PSI1MzUuNSIgdmlld0JveD0iMCAwIDUzNS41IDUzNS41Ij48cGF0aCBkPSJNMTQyLjggNTMuNTVsLTM1LjctMzUuN0M0NS45IDYzLjc1IDUuMSAxMzUuMTUgMCAyMTYuNzVoNTFjNS4xLTY4Ljg1IDM4LjI1LTEyNy41IDkxLjgtMTYzLjJ6bTM0MS43IDE2My4yaDUxYy01LjEtODEuNi00My4zNS0xNTMtMTA0LjU1LTE5OC45bC0zNS43IDM1LjdjNTEgMzUuNyA4NC4xNSA5NC4zNSA4OS4yNSAxNjMuMnptLTUxIDEyLjc1YzAtNzkuMDUtNTMuNTUtMTQyLjgtMTI3LjUtMTYwLjY1VjUxYzAtMjAuNC0xNy44NS0zOC4yNS0zOC4yNS0zOC4yNVMyMjkuNSAzMC42IDIyOS41IDUxdjE3Ljg1QzE1NS41NSA4Ni43IDEwMiAxNTAuNDUgMTAyIDIyOS41djE0MC4yNWwtNTEgNTF2MjUuNWg0MzMuNXYtMjUuNWwtNTEtNTFWMjI5LjV6TTI2Ny43NSA1MjIuNzVoMTAuMmMxNy44NS0yLjU1IDMwLjYtMTUuMyAzNS43LTMwLjYgMi41NS01LjEwMSA1LjEtMTIuNzUgNS4xLTIwLjRoLTEwMmMwIDI4LjA1IDIyLjk1IDUxIDUxIDUxeiIvPjwvc3ZnPg==" alt="ring">
+	</div>
+	<div id="C">
+		<div id="T">
+			<h1>Notifications</h1>
+			<p> We've updated our privacy policy. </p>
+		</div>
+		<div id="A">
+			<button type="button" id="B1">Deny</button> 
+			<button type="button" id="B2" onclick="Allow();">Allow</button>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

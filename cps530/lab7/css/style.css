@@ -1,0 +1,71 @@
+@font-face{
+    font-family: "Mario";
+    src: url("SuperMario256.ttf");
+}
+@font-face{
+    font-family: "RalewaySB";
+    src: url("Raleway-SemiBold.ttf");
+}
+
+.draggable{
+    position: absolute;
+}
+
+#canvas{
+    border: 3px solid red;
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: white 0px 2px 3px, white 0px -2px 3px;
+    background-image: url("../img/base.png");
+}
+
+#download{
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    font-family: "RalewaySB";
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    border: 3px solid white;
+    cursor: pointer;
+    transition: 0.1s all;
+    text-shadow: 1px 2px 3px maroon, -1px 2px 3px maroon;
+}
+#download:hover{
+    background: rgba(255,0,0,0.3);
+}
+
+body{
+    margin: 3px;
+    text-align: right;
+    background-image: url(../img/background.png);
+    font-family: "RalewaySB";
+    font-size: 22px;
+    color: white;
+    text-shadow: 1px 2px 3px maroon, -1px 2px 3px maroon;
+}
+
+#left-eye, #right-eye, #mouth{
+    z-index:1;
+}
+#left-eyebrow, #right-eyebrow, #stache{
+    z-index:2;
+}
+#nose{
+    z-index:3;
+}
+
+h1{
+    font-family: "Mario";
+    color: red;
+    text-shadow: 1px 2px 3px grey, -1px 2px 3px grey;
+    text-decoration: underline;
+    line-height: 50px;
+}
+
+b{color:yellow}

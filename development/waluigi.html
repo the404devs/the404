@@ -1,0 +1,132 @@
+<html lang="en">
+	<head> 
+		<title> 
+			404 - Goodwin's Site 
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../sheet.css">
+		<link rel="stylesheet" type="text/css" href="devsheet.css">
+        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+		<script src="../nav.js"></script>
+		<script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'></script> 
+		<script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
+
+        <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link>
+	</head>
+	<body style="background-color: white;">
+
+
+		
+            	<script type="text/javascript">
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var player;
+var cursors;
+
+function removeLogo () {
+
+    game.input.onDown.remove(removeLogo, this);
+    logo.kill();
+    playbtn.kill();
+
+}
+
+    function preload() {
+        //game.load.spritesheet('wahWalkDown', 'wahWalkDown.png', 72, 94);
+        //game.load.spritesheet('wahWalkR', 'wahWalkR.png', 72, 94);
+        //game.load.spritesheet('wahWalkL', 'wahWalkL.png', 72, 94);
+        game.load.spritesheet('wahWalk', 'images/wahWalk.png', 72, 94);
+        //game.load.spritesheet('leftAnim', 'wahWalkL.png', 72, 94);
+        //game.load.spritesheet('rightAnim', 'wahWalkR.png', 72, 94);
+        game.load.image('background', 'images/floor.png');
+        game.load.image('logo', 'images/title.png');
+        game.load.image('play', 'images/playsmall.png');
+    }
+
+    function create() {
+
+
+
+    //var wahWalkDown = game.add.sprite(300, 200, 'wahWalkDown');
+    //var wahWalkR = game.add.sprite(400, 200, 'wahWalkR');
+    //var wahWalkL = game.add.sprite(500, 200, 'wahWalkL');
+
+    //  Here we add a new animation called 'walk'
+    //  Because we didn't give any other parameters it's going to make an animation from all available frames in the 'wahWalkDown' sprite sheet
+    //var walkD = wahWalkDown.animations.add('walk');
+    //var walkR = wahWalkR.animations.add('walk');
+    //var walkL = wahWalkL.animations.add('walk');
+
+    //  And this starts the animation playing by using its key ("walk")
+    //  30 is the frame rate (30fps)
+    //  true means it will loop when it finishes
+    //wahWalkDown.animations.play('walk', 2, true);
+    //wahWalkR.animations.play('walk', 2, true);
+    //wahWalkL.animations.play('walk', 2, true);
+    game.add.tileSprite(0, 0, 800, 600, 'background');
+
+    cursors = game.input.keyboard.createCursorKeys();
+
+    player = game.add.sprite(32, 32, 'wahWalk');
+
+
+
+    game.physics.arcade.enable(player);
+
+    //player.body.bounce.y = 0.2;
+    //player.body.gravity.y = 300;
+    player.body.collideWorldBounds = true;
+
+    player.animations.add('walkDown', [0, 1, 2, 3], 10, true);
+    player.animations.add('walkLeft', [4, 5, 6, 7], 10, true);
+    player.animations.add('walkRight', [8, 9, 10, 11], 10, true);
+    player.animations.add('walkUp', [12, 13, 14, 15], 10, true);
+    //player.animations.play('walk');
+    //player.animations.play('walk', 10, true);
+
+    logo = game.add.sprite(0, 0, 'logo');
+    playbtn = game.add.sprite(300, 450, 'play');
+    logo.fixedToCamera = true;
+    playbtn.fixedToCamera = true;
+    game.input.onDown.add(removeLogo, this);
+
+}
+
+function update() {
+//alert("");
+    if (cursors.down.isDown)
+    {
+        player.animations.play('walkDown', 10, true);
+        player.body.velocity.y=100;
+        player.body.velocity.x=0;
+    }
+    else if (cursors.right.isDown)
+    {
+        player.animations.play('walkRight', 10, true);
+        player.body.velocity.x=100;
+        player.body.velocity.y=0;
+    }
+    else if (cursors.left.isDown)
+    {
+        player.animations.play('walkLeft', 10, true);
+        player.body.velocity.x=-100;
+        player.body.velocity.y=0;
+    }
+    else if (cursors.up.isDown)
+    {
+        player.animations.play('walkUp', 10, true);
+        player.body.velocity.y=-100;
+        player.body.velocity.x=0;
+    }
+    else
+    {
+        player.body.velocity.x=0;
+        player.body.velocity.y=0;
+        player.animations.stop();
+        player.frame = 0;
+    }
+}
+</script>
+
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>bruh</title>
+		<style type="text/css">
+			:root{
+			  --foreground: #ffffff;
+			  --background: #151824;
+			  --accent: #b20acb;
+			  --highlight: #800080;
+			  --text: #e3bac7;
+			  --border: #ffffff;
+			  --important: #b20acb;
+			  --bold: #b20acb;
+			  --link: #8d3d8c;
+			}
+			@font-face{
+				font-family: "Camaraderie";
+				src: url("font/Camaraderie.otf");
+			}
+			body{
+				background-color: var(--background);
+				font-family: "Roboto";
+				margin:0;
+				overflow-x: hidden;
+			}
+			.header{
+				font-family: "Camaraderie";
+				font-size: 2em;
+				color: var(--background);
+				height: 101px;
+				border-bottom: solid var(--border) 1px;
+				background: linear-gradient(135deg, rgba(255,255,255,0) 50%,var(--foreground) 50%,var(--foreground) calc(50% + 1px),rgba(255,255,255,0) calc(50% + 1px));
+			}
+			#header-text{
+				margin: 0px 20px 20px 2.5%;
+				padding-top: 8px; 
+				font-weight: normal;
+				-webkit-text-stroke-color: var(--accent);
+				-webkit-text-stroke-width: 2px;
+			}
+			#header-text:before{
+				content: "The404.nl - Owen Goodwin";
+				font-family: "Raleway";
+				color: var(--foreground);
+				text-shadow: none;
+				position: absolute;
+				font-size: 10px;
+				text-align: right;
+				font-weight: normal;
+				top: 78px;
+				left: calc(4% + 20px);
+				-webkit-text-stroke: 0;
+			}
+			#header-text:after{
+				position: absolute;
+				background-color: var(--background);
+				width: 165px;
+				height: 10px;
+				left: 2.5%;
+				top: 65px;
+				z-index: -1;
+				margin: -1px;
+				border: 2px solid var(--accent);
+				content: " ";
+			}
+			.content{
+				background-color: var(--background);
+				color: var(--text);
+				/*margin-left: 2.5%;*/
+				/*margin-right: 2.5%;*/
+				/*padding-top: 25px;*/
+				/*padding-bottom: 25px;*/
+				margin-top: -18px;
+				font-size:18px;
+			}
+			.blob{
+				background: linear-gradient(45deg, rgba(255,255,255,0) 5%,var(--accent) 5%,var(--accent) 95%, rgba(255,255,255,0) 95%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<h1 id="header-text">CPS530</h1>
+		</div>
+		<div class="content">
+			<div class="blob">
+				<p>fuck</p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Windows 98
+		</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/windows.ico">
+		<style>
+			/* cursed_internal_css */
+			/* please don't force me to do css like this again. it's cruel. */
+			@font-face{
+				font-family: "MS Sans Serif 8pt";
+				src: url("font/M8pt.woff");
+			}
+			@font-face{
+				font-family: "Inconsolata";
+				src: url("font/Inconsolata-Regular.ttf");
+			}
+			@font-face{
+				font-family: "Camaraderie";
+				src: url("font/Camaraderie.otf");
+			}
+			ul{list-style-type: none;}
+			li{font-weight: bold;}
+			li:before{content: "> "}
+			body{
+				background-color:teal;
+				margin: 0;
+				overflow: hidden;
+				font-family: "MS Sans Serif 8pt";
+				color: green;
+				font-size: 16px;
+
+			}
+			#content{
+				opacity: 0;
+				transition: 0.25s;
+				background-color: black;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				padding-top: 5px;
+				padding-left: 20px;
+				z-index: -1;
+				animation: textShadow 1.6s infinite;
+			}
+			h1{
+				font-family: Camaraderie;
+				color: green;
+				font-size: 3em;
+				font-weight: normal;
+				text-decoration: underline;
+				text-shadow: 1px 1px 2px lime;
+				animation: textShadow 1.6s infinite;
+				margin: 0;
+			}
+			h5{
+				color: red;
+				text-shadow: 1px 1px 2px orangered;
+				animation: textShadow 1.6s infinite;
+			}
+			hr{
+				border-color: green;
+				box-shadow: 1px 1px 2px lime;
+				animation: textShadow 1.6s infinite;
+			}
+			a{
+				color: green;
+			}
+			#login{
+				position: absolute;
+				top: 215px;
+				left: calc(50% - 229px);
+			}
+			#tip{
+				position: absolute;
+				top: 10%;
+				left: 5%;
+			}
+			#ok{
+				width: 75px;
+				height: 24px;
+				top: 248px;
+				left: calc(50% + 141px);
+				opacity: 0;
+			}
+			#msg-ok{
+				width: 75px;
+				height: 24px;
+				top:332px;
+				left:calc(50% - 38px);
+				opacity: 0;
+			}
+			input{
+				font-family: "MS Sans Serif 8pt";
+				font-size: 8px;
+				position: absolute;				
+				background-color: transparent;
+				border: none;
+				color: black;
+				outline: none;
+			}
+			#username{
+				top: 287px;
+				left: calc(50% - 60px);
+			}
+			#password{
+				top: 318px;
+				left: calc(50% - 60px);
+			}
+			#pass-wrong-msg{
+				display: none;
+			}
+			#pass-wrong-img{
+				position: absolute;
+				top: 250px;
+				left: calc(50% - 148px);
+			}
+			::selection{
+				background-color: #133382;
+				color: white;
+			}
+			/*The remainder of the CSS isn't mine, and was taken from 
+			http://aleclownes.com/2017/02/01/crt-display.html
+			Obviously its not crucial to the page in any way,
+			I just thought it really added to the atmosphere of the page,
+			which, in case you haven't noticed yet, is something I put too much effort into.
+
+			If it hurts your eyes, I'm sorry. Let me know and I'll get rid of it in the future.*/
+			@keyframes flicker {
+				  0% {
+				    opacity: 0.27861;
+				  }
+				  5% {
+				    opacity: 0.34769;
+				  }
+				  10% {
+				    opacity: 0.23604;
+				  }
+				  15% {
+				    opacity: 0.90626;
+				  }
+				  20% {
+				    opacity: 0.18128;
+				  }
+				  25% {
+				    opacity: 0.83891;
+				  }
+				  30% {
+				    opacity: 0.65583;
+				  }
+				  35% {
+				    opacity: 0.67807;
+				  }
+				  40% {
+				    opacity: 0.26559;
+				  }
+				  45% {
+				    opacity: 0.84693;
+				  }
+				  50% {
+				    opacity: 0.96019;
+				  }
+				  55% {
+				    opacity: 0.08594;
+				  }
+				  60% {
+				    opacity: 0.20313;
+				  }
+				  65% {
+				    opacity: 0.71988;
+				  }
+				  70% {
+				    opacity: 0.53455;
+				  }
+				  75% {
+				    opacity: 0.37288;
+				  }
+				  80% {
+				    opacity: 0.71428;
+				  }
+				  85% {
+				    opacity: 0.70419;
+				  }
+				  90% {
+				    opacity: 0.7003;
+				  }
+				  95% {
+				    opacity: 0.36108;
+				  }
+				  100% {
+				    opacity: 0.24387;
+				  }
+			}
+			@keyframes textShadow {
+			  0% {
+			    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  5% {
+			    text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  10% {
+			    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  15% {
+			    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  20% {
+			    text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  25% {
+			    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  30% {
+			    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  35% {
+			    text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  40% {
+			    text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  45% {
+			    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  50% {
+			    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  55% {
+			    text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  60% {
+			    text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  65% {
+			    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  70% {
+			    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  75% {
+			    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  80% {
+			    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  85% {
+			    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  90% {
+			    text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  95% {
+			    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  100% {
+			    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			}
+			.crt::after {
+			  content: " ";
+			  display: block;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  bottom: 0;
+			  right: 0;
+			  background: rgba(18, 16, 16, 0.02);
+			  opacity: 0;
+			  z-index: 2;
+			  pointer-events: none;
+			  animation: flicker 1.6s infinite;
+			}
+			.crt::before {
+			  content: " ";
+			  display: block;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  bottom: 0;
+			  right: 0;
+			  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+			  z-index: 2;
+			  background-size: 100% 2px, 3px 100%;
+			  pointer-events: none;
+			}
+			.crt {
+			  animation: textShadow 1.6s infinite!important;
+			}
+		</style>
+	</head>
+	<body class="crt">		
+		<form action="#" id="login-form" onsubmit='validate(); return false' autocomplete="off">
+			<img id="tip" src="img/tip.png" alt="Image of a Win98-style dialog, telling you the username is 'the404' and the password is 'insecure'">
+			<img id="login" src="img/logon.png" alt="Image of a Win98-style login form">
+			<input type="submit" id="ok" onclick="validate()" onmousedown="document.getElementById('login').src = 'img/logon2.png'" onmouseup="document.getElementById('login').src = 'img/logon.png'" onmouseleave="document.getElementById('login').src = 'img/logon.png'">
+			<input type="text" id="username" autofocus spellcheck="false">
+			<input type="password" id="password">
+		</form>
+		<div id="pass-wrong-msg">
+			<img id="pass-wrong-img" src="img/incorrect.png" alt="Image of a Win98-style dialog informing you that you entered incorrect login info.">
+			<input type="submit" id="msg-ok" onclick="document.getElementById('pass-wrong-msg').style.display='none'; document.getElementById('username').focus();" onmousedown="document.getElementById('pass-wrong-img').src = 'img/incorrect2.png'" onmouseup="document.getElementById('pass-wrong-img').src = 'img/incorrect.png'" onmouseleave="document.getElementById('pass-wrong-img').src = 'img/incorrect.png'">			
+			<audio id="err-sound" src="audio/chord.wav"></audio>
+		</div>
+		<div id="content">
+			<h1>CPS530 Lab 1</h1>
+			<hr>
+			<h4>404 Identity Authentication System</h4>
+			<ul>
+				<li><u>Name:</u> Owen Goodwin</li>
+				<li><u>ID:</u> 500909196</li>
+				<li><u>Alias:</u> the404</li>
+			</ul>
+			<!-- <br> -->
+			<h5>Could not access database. 2 files recovered.</h5>
+			<ul>
+				<li><a href="tech-report.html">tech-report.html</a></li>
+				<li><a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fscs.ryerson.ca%2F~ogoodwin%2F">validation_check</a></li>
+			</ul>		
+					
+		</div>
+		<script>
+			function validate(){
+				if (document.getElementById("username").value=="the404" && document.getElementById("password").value=="insecure") {
+					document.getElementById("login-form").style.display = "none";
+					document.getElementById("content").style.opacity = 1;
+					document.body.style.background.color = "black";
+				}
+				else{
+					document.getElementById("pass-wrong-msg").style.display="block";
+					document.getElementById("msg-ok").focus();
+					document.getElementById("username").value = "";
+					document.getElementById("password").value = "";
+					document.getElementById("err-sound").pause();
+					document.getElementById("err-sound").currentTime = 0;
+					document.getElementById("err-sound").play();
+				}
+			}
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+			    var elements = document.getElementsByTagName("INPUT");
+			    for (var i = 0; i < elements.length; i++) {
+			        elements[i].oninvalid = function(e) {
+			            e.target.setCustomValidity("");
+			            if (!e.target.validity.valid) {
+			                e.target.setCustomValidity("");
+			            }
+			        };
+			        elements[i].oninput = function(e) {
+			            e.target.setCustomValidity("");
+			        };
+			    }
+			});
+		</script>
+	</body>
+</html>

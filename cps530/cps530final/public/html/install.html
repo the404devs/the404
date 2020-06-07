@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CPS530: Final Project</title>
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Bulma Version 0.8.x-->
+    <link rel='stylesheet' href='https://unpkg.com/bulma@0.8.0/css/bulma.min.css'>
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link rel='stylesheet' href='https://kingsora.github.io/OverlayScrollbars/etc/os-theme-thin-dark.css'>
+    <link rel='stylesheet' href="../css/main.css">
+    <link rel='stylesheet' href="../css/prism.css">
+    <link rel="stylesheet" href="../css/cheatsheet.css">
+
+    <!-- jQuery - used for smooth scrolling when transitioning between sections -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+
+    <style>
+        .install-button {
+            display: inline-block;
+            padding: 10px;
+            font-size: 24px;
+        }
+
+        .sidenote {
+            margin: 0 0 10px 0;
+        }
+
+        #opener {
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <section class="hero is-medium is-info is-bold" id="overview">
+
+            <div class="hero-head">
+
+
+                    <nav class="navbar" role="navigation" aria-label="main navigation">
+                        <div class="container">
+        
+                            <!-- logo or branding image on left side -->
+                            <div class="navbar-brand">
+                                <a class="navbar-item" href="/">
+                                    <!-- <img src="https://bulma.io/images/bulma-logo.png" -->
+                                    <!-- alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28"> -->
+                                </a>
+                                <div class="navbar-burger" data-target="navbar-menu">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+        
+                            <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
+                            <div class="navbar-menu" id="navbar-menu">
+                                <!-- navbar items | left side -->
+        
+                                <!-- navbar items | right side -->
+                                <div class="navbar-end">
+                                        <a class="navbar-item" href="/">home</a>
+                                        <a class="navbar-item" href="/tutorial">Tutorial</a>
+                                        <a class="navbar-item" href="/demo">Demo</a>
+        
+                                        <a class="navbar-item is-active" href="/install">installation guide</a>
+                                        <a class="navbar-item" href="/whynodejs">NodeJs Info</a>
+                                        <a class="navbar-item" href="/whybulma">Bulma Info</a>
+                                        <a class="navbar-item" href="/conclusion">Conclusion</a>
+                                        <a class="navbar-item" href="/credits">Credits</a>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-size-1">
+                    Installation Guide.
+                </h1>
+                <br>
+                <h2 id="opener" class="subtitle is-size-3">
+                    How to install bulma and NodeJs.
+                </h2>
+                <p class="sidenote">Note we will be providing instuctions for windows only.</p>
+                <div class="has-text-right install-button"><a class="button is-link is-rounded " onclick="typeWriterStrengths()" href="#bulma">How to install Bulma?</a></div>
+                <div class="has-text-right install-button"><a class="button is-link is-rounded " onclick="typeWriterStrengths()" href="#node">How to install NodeJs?</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-medium is-info is-bold" id="bulma">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-size-1">
+                    How to install Bulma using a Content Delivery Network.
+                </h1>
+                <br>
+                <h2 class="subtitle is-size-3">
+                    
+                </h2>
+                <ol>
+                    <li>Follow this <a href="https://www.jsdelivr.com/package/npm/bulma">Link</a> to find the official Bulma CDN.</li>
+
+                    <li>Click on /npm/bulma@0.8.0/css</li>
+
+                    <li>Select /npm/bulma@0.8.0/css/bulma.css
+                        <br>
+                        This will select the most basic configuration of Bulma, which we recommend for beginners.
+                    </li>
+
+                    <li>Click on Show & Configure All Links
+                        <br>
+                        Located to the right.
+                    </li>
+
+                    <li>
+                        Select HTML output on the new screen
+                    </li>
+
+                    <li>Copy and paste the generated link on to any HTML page in the head sections to begin using Bulma
+                        <br>
+                        Note, no configurations of Bulma come with any JS.
+                        <br>
+                        It's upto each developer to add his/her own JS.
+                    </li>
+
+
+                </ol>
+
+                <br>
+
+                <div class="has-text-right"><a class="button is-link is-rounded " onclick="typeWriterStrengths()"
+                        href="#node">How to install NodeJs.</a></div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-medium is-info is-bold" id="node">
+            <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title is-size-1">
+                            How to install NodeJs.
+                        </h1>
+                        <br>
+                        <h2 class="subtitle is-size-3">
+                            Steps
+                        </h2>
+
+                        <ol>
+                            <li>Download the windows installer from <a targer="_blank" href="https://nodejs.org/en/">nodejs.org</a>
+                            <br>
+                            We recommend Version 12.13.1 or any other Long Term Support (LTS) version for the best compatibility.
+                            </li>
+
+                            <li>Run the installer</li>
+
+                            <li>Follow installer propmpts
+                                <br>
+                                For beginners we recommend keeping the default installation settings
+                                <br>
+                                Keep hitting next and accept the TOS and License agreements untill installation is complete.
+                            </li>
+
+                            <li>Test the installation
+                                <br>
+                                Open your preferred terminal and type "node -v" to make sure the correct version was installed
+                                <br>
+                                Congradulations! You have succesfully installed NodeJs and NPM on to your machine.
+                            </li>
+
+                            
+                        </ol>
+
+        
+                    </div>
+                </div>
+    </section>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+
+
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    
+                // Get all "navbar-burger" elements
+                var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+                // Check if there are any navbar burgers
+                if ($navbarBurgers.length > 0) {
+    
+                    // Add a click event on each of them
+                    $navbarBurgers.forEach(function ($el) {
+                        $el.addEventListener('click', function () {
+    
+                            // Get the target from the "data-target" attribute
+                            var target = $el.dataset.target;
+                            var $target = document.getElementById(target);
+    
+                            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                            $el.classList.toggle('is-active');
+                            $target.classList.toggle('is-active');
+    
+                        });
+                    });
+                }
+    
+            });
+    </script>
+
+    <script>
+        window.addEventListener('resize', () => {
+            const divs = document.querySelectorAll(".menu-list");
+            if (window.innerWidth < 768) {
+                divs.forEach(div => div.classList.add("tags"));
+            } else {
+                divs.forEach(div => div.classList.remove("tags"));
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            //The first argument are the elements to which the plugin shall be initialized
+            //The second argument has to be at least a empty object or a object with your desired options
+            var instance = OverlayScrollbars(document.querySelectorAll("body"), {});
+
+            //Smooth scrolling to target element when button is pressed.
+            $("a[href^='#']").click(function (e) {
+                e.preventDefault();
+                instance.scroll($($(this).attr("href")), 500);
+            });
+        });
+    </script>
+</body>
+
+</html>

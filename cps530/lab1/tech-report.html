@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Windows 98
+		</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/windows.ico">
+		<style>
+			/* cursed_internal_css */
+			/* please don't force me to do css like this again. it's cruel. */
+			@font-face{
+				font-family: "MS Sans Serif 8pt";
+				src: url("font/M8pt.woff");
+			}
+			@font-face{
+				font-family: "Inconsolata";
+				src: url("font/Inconsolata-Regular.ttf");
+			}
+			@font-face{
+				font-family: "Camaraderie";
+				src: url("font/Camaraderie.otf");
+			}
+			ul{list-style-type: none;}
+			li{font-weight: bold;}
+			li:before{content: "> "}
+			body{
+				background-color: black;
+				margin: 0;
+				/*overflow: hidden;*/
+				font-family: "MS Sans Serif 8pt";
+				color: green;
+				font-size: 16px;
+			}
+			#content{
+				/*opacity: 0;*/
+				transition: 0.25s;
+				background-color: black;
+				/*position: absolute;*/
+				/*width: 100%;*/
+				/*height: 100%;*/
+				padding-top: 5px;
+				padding-left: 20px;
+				/*z-index: -1;*/
+				animation: textShadow 1.6s infinite;
+
+			}
+			h1{
+				font-family: Camaraderie;
+				color: green;
+				font-size: 3em;
+				font-weight: normal;
+				text-decoration: underline;
+				text-shadow: 1px 1px 2px lime;
+				margin: 0;
+				animation: textShadow 1.6s infinite;
+
+			}
+			h5{
+				color: red;
+				text-shadow: 1px 1px 2px orangered;
+			}
+			hr{
+				border-color: green;
+				box-shadow: 1px 1px 2px lime;
+			}
+			a{
+				color: green;
+			}
+			/*The remainder of the CSS isn't mine, and was taken from 
+			http://aleclownes.com/2017/02/01/crt-display.html
+			Obviously its not crucial to the page in any way,
+			I just thought it really added to the atmosphere of the page,
+			which, in case you haven't noticed yet, is something I put too much effort into.
+
+			If it hurts your eyes, I'm sorry. Let me know and I'll get rid of it in the future.*/
+			@keyframes flicker {
+				  0% {
+				    opacity: 0.27861;
+				  }
+				  5% {
+				    opacity: 0.34769;
+				  }
+				  10% {
+				    opacity: 0.23604;
+				  }
+				  15% {
+				    opacity: 0.90626;
+				  }
+				  20% {
+				    opacity: 0.18128;
+				  }
+				  25% {
+				    opacity: 0.83891;
+				  }
+				  30% {
+				    opacity: 0.65583;
+				  }
+				  35% {
+				    opacity: 0.67807;
+				  }
+				  40% {
+				    opacity: 0.26559;
+				  }
+				  45% {
+				    opacity: 0.84693;
+				  }
+				  50% {
+				    opacity: 0.96019;
+				  }
+				  55% {
+				    opacity: 0.08594;
+				  }
+				  60% {
+				    opacity: 0.20313;
+				  }
+				  65% {
+				    opacity: 0.71988;
+				  }
+				  70% {
+				    opacity: 0.53455;
+				  }
+				  75% {
+				    opacity: 0.37288;
+				  }
+				  80% {
+				    opacity: 0.71428;
+				  }
+				  85% {
+				    opacity: 0.70419;
+				  }
+				  90% {
+				    opacity: 0.7003;
+				  }
+				  95% {
+				    opacity: 0.36108;
+				  }
+				  100% {
+				    opacity: 0.24387;
+				  }
+			}
+			@keyframes textShadow {
+			  0% {
+			    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  5% {
+			    text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  10% {
+			    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  15% {
+			    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  20% {
+			    text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  25% {
+			    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  30% {
+			    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  35% {
+			    text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  40% {
+			    text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  45% {
+			    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  50% {
+			    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  55% {
+			    text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  60% {
+			    text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  65% {
+			    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  70% {
+			    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  75% {
+			    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  80% {
+			    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  85% {
+			    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  90% {
+			    text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  95% {
+			    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  100% {
+			    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			}
+			.crt::after {
+			  content: " ";
+			  display: block;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  bottom: 0;
+			  right: 0;
+			  background: rgba(18, 16, 16, 0.02);
+			  opacity: 0;
+			  z-index: 2;
+			  pointer-events: none;
+			  animation: flicker 1.6s infinite;
+			}
+			.crt::before {
+			  content: " ";
+			  display: block;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  bottom: 0;
+			  right: 0;
+			  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+			  z-index: 2;
+			  background-size: 100% 2px, 3px 100%;
+			  pointer-events: none;
+			}
+			.crt {
+			  animation: textShadow 1.6s infinite;
+			}
+
+			.expand{
+				cursor: pointer;
+			}
+			#expandable{
+				overflow: hidden;
+				transition: 0.25s all ease-in;
+			}
+			.item{
+				width: 95%;
+				padding-left: 30px;
+			}
+		</style>
+	</head>
+	<body class="crt">		
+		<div id="content">
+			<h1>CPS530 Lab 1</h1>
+			<hr>		
+			<h4>ITEM 404-12: HTML PRITNOUT - RECOVERED DATA</h4>
+			<div class="item">
+				<label class="expand" onclick="expand()">+ Expand</label>
+				<hr>
+				<div id="expandable" style="height: 0px;">
+					<code>
+						<pre>
+&lt!DOCTYPE html&gt
+&lthtml lang="en"&gt
+	&lthead&gt
+		&lttitle&gt
+			Windows 98
+		&lt/title&gt
+		&ltlink rel="shortcut icon" type="image/x-icon" href="img/windows.ico"&gt
+		&ltstyle&gt
+			/* cursed_internal_css */
+			/* please don't force me to do css like this again. it's cruel. */
+			@font-face{
+				font-family: "MS Sans Serif 8pt";
+				src: url("font/M8pt.woff");
+			}
+			ul{list-style-type: none;}
+			li{font-weight: bold;}
+			li:before{content: "&gt "}
+			body{
+				background-color:teal;
+				margin: 0;
+				overflow: hidden;
+				font-family: "MS Sans Serif 8pt";
+				color: green;
+				font-size: 16px;
+
+			}
+			#content{
+				opacity: 0;
+				transition: 0.25s;
+				background-color: black;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				padding-top: 5px;
+				padding-left: 20px;
+				z-index: -1;
+				animation: textShadow 1.6s infinite;
+			}
+			h1{
+				font-family: Camaraderie;
+				color: green;
+				font-size: 3em;
+				font-weight: normal;
+				text-decoration: underline;
+				text-shadow: 1px 1px 2px lime;
+				animation: textShadow 1.6s infinite;
+				margin: 0;
+			}
+			h5{
+				color: red;
+				text-shadow: 1px 1px 2px orangered;
+				animation: textShadow 1.6s infinite;
+			}
+			hr{
+				border-color: green;
+				box-shadow: 1px 1px 2px lime;
+				animation: textShadow 1.6s infinite;
+			}
+			a{
+				color: green;
+			}
+			#login{
+				position: absolute;
+				top: 215px;
+				left: calc(50% - 229px);
+			}
+			#tip{
+				position: absolute;
+				top: 10%;
+				left: 5%;
+			}
+			#ok{
+				width: 75px;
+				height: 24px;
+				top: 248px;
+				left: calc(50% + 141px);
+				opacity: 0;
+			}
+			#msg-ok{
+				width: 75px;
+				height: 24px;
+				top:332px;
+				left:calc(50% - 38px);
+				opacity: 0;
+			}
+			input{
+				font-family: "MS Sans Serif 8pt";
+				font-size: 8px;
+				position: absolute;				
+				background-color: transparent;
+				border: none;
+				color: black;
+				outline: none;
+			}
+			#username{
+				top: 287px;
+				left: calc(50% - 60px);
+			}
+			#password{
+				top: 318px;
+				left: calc(50% - 60px);
+			}
+			#pass-wrong-msg{
+				display: none;
+			}
+			#pass-wrong-img{
+				position: absolute;
+				top: 250px;
+				left: calc(50% - 148px);
+			}
+			::selection{
+				background-color: #133382;
+				color: white;
+			}
+			/*The remainder of the CSS isn't mine, and was taken from 
+			http://aleclownes.com/2017/02/01/crt-display.html
+			Obviously its not crucial to the page in any way,
+			I just thought it really added to the atmosphere of the page,
+			which, in case you haven't noticed yet, is something I put too much effort into.
+
+			If it hurts your eyes, I'm sorry. Let me know and I'll get rid of it in the future.*/
+			@keyframes flicker {
+				  0% {
+				    opacity: 0.27861;
+				  }
+				  5% {
+				    opacity: 0.34769;
+				  }
+				  10% {
+				    opacity: 0.23604;
+				  }
+				  15% {
+				    opacity: 0.90626;
+				  }
+				  20% {
+				    opacity: 0.18128;
+				  }
+				  25% {
+				    opacity: 0.83891;
+				  }
+				  30% {
+				    opacity: 0.65583;
+				  }
+				  35% {
+				    opacity: 0.67807;
+				  }
+				  40% {
+				    opacity: 0.26559;
+				  }
+				  45% {
+				    opacity: 0.84693;
+				  }
+				  50% {
+				    opacity: 0.96019;
+				  }
+				  55% {
+				    opacity: 0.08594;
+				  }
+				  60% {
+				    opacity: 0.20313;
+				  }
+				  65% {
+				    opacity: 0.71988;
+				  }
+				  70% {
+				    opacity: 0.53455;
+				  }
+				  75% {
+				    opacity: 0.37288;
+				  }
+				  80% {
+				    opacity: 0.71428;
+				  }
+				  85% {
+				    opacity: 0.70419;
+				  }
+				  90% {
+				    opacity: 0.7003;
+				  }
+				  95% {
+				    opacity: 0.36108;
+				  }
+				  100% {
+				    opacity: 0.24387;
+				  }
+			}
+			@keyframes textShadow {
+			  0% {
+			    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  5% {
+			    text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  10% {
+			    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  15% {
+			    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  20% {
+			    text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  25% {
+			    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  30% {
+			    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  35% {
+			    text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  40% {
+			    text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  45% {
+			    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  50% {
+			    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  55% {
+			    text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  60% {
+			    text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  65% {
+			    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  70% {
+			    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  75% {
+			    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  80% {
+			    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  85% {
+			    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  90% {
+			    text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  95% {
+			    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			  100% {
+			    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+			  }
+			}
+			.crt::after {
+			  content: " ";
+			  display: block;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  bottom: 0;
+			  right: 0;
+			  background: rgba(18, 16, 16, 0.02);
+			  opacity: 0;
+			  z-index: 2;
+			  pointer-events: none;
+			  animation: flicker 1.6s infinite;
+			}
+			.crt::before {
+			  content: " ";
+			  display: block;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  bottom: 0;
+			  right: 0;
+			  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+			  z-index: 2;
+			  background-size: 100% 2px, 3px 100%;
+			  pointer-events: none;
+			}
+			.crt {
+			  animation: textShadow 1.6s infinite!important;
+			}
+		&lt/style&gt
+	&lt/head&gt
+	&ltbody class="crt"&gt		
+		&ltform action="#" id="login-form" onsubmit='validate(); return false' autocomplete="off"&gt
+			&ltimg id="tip" src="img/tip.png" alt="Image of a Win98-style dialog, telling you the username is 'the404' and the password is 'insecure'"&gt
+			&ltimg id="login" src="img/logon.png" alt="Image of a Win98-style login form"&gt
+			&ltinput type="submit" id="ok" onclick="validate()" onmousedown="document.getElementById('login').src = 'img/logon2.png'" onmouseup="document.getElementById('login').src = 'img/logon.png'" onmouseleave="document.getElementById('login').src = 'img/logon.png'"&gt
+			&ltinput type="text" id="username" autofocus spellcheck="false"&gt
+			&ltinput type="password" id="password"&gt
+		&lt/form&gt
+		&ltdiv id="pass-wrong-msg"&gt
+			&ltimg id="pass-wrong-img" src="img/incorrect.png" alt="Image of a Win98-style dialog informing you that you entered incorrect login info."&gt
+			&ltinput type="submit" id="msg-ok" onclick="document.getElementById('pass-wrong-msg').style.display='none'; document.getElementById('username').focus();" onmousedown="document.getElementById('pass-wrong-img').src = 'img/incorrect2.png'" onmouseup="document.getElementById('pass-wrong-img').src = 'img/incorrect.png'" onmouseleave="document.getElementById('pass-wrong-img').src = 'img/incorrect.png'"&gt			
+			&ltaudio id="err-sound" src="audio/chord.wav"&gt&lt/audio&gt
+		&lt/div&gt
+		&ltdiv id="content"&gt
+			&lth1&gtCPS530 Lab 1&lt/h1&gt
+			&lthr&gt
+			&lth4&gt404 Identity Authentication System&lt/h4&gt
+			&ltul&gt
+				&ltli&gt&ltu&gtName:&lt/u&gt Owen Goodwin&lt/li&gt
+				&ltli&gt&ltu&gtID:&lt/u&gt 500909196&lt/li&gt
+				&ltli&gt&ltu&gtAlias:&lt/u&gt the404&lt/li&gt
+			&lt/ul&gt
+			&lt!-- &ltbr&gt --&gt
+			&lth5&gtCould not access database. 2 files recovered.&lt/h5&gt
+			&ltul&gt
+				&ltli&gt&lta href="tech-report.html"&gttech-report.html&lt/a&gt&lt/li&gt
+				&ltli&gt&lta href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fscs.ryerson.ca%2F~ogoodwin%2F"&gtvalidation_check&lt/a&gt&lt/li&gt
+			&lt/ul&gt		
+					
+		&lt/div&gt
+		&ltscript&gt
+			function validate(){
+				if (document.getElementById("username").value=="the404" && document.getElementById("password").value=="insecure") {
+					document.getElementById("login-form").style.display = "none";
+					document.getElementById("content").style.opacity = 1;
+					document.body.style.background.color = "black";
+				}
+				else{
+					document.getElementById("pass-wrong-msg").style.display="block";
+					document.getElementById("msg-ok").focus();
+					document.getElementById("username").value = "";
+					document.getElementById("password").value = "";
+					document.getElementById("err-sound").pause();
+					document.getElementById("err-sound").currentTime = 0;
+					document.getElementById("err-sound").play();
+				}
+			}
+		&lt/script&gt
+		&ltscript&gt
+			document.addEventListener("DOMContentLoaded", function() {
+			    var elements = document.getElementsByTagName("INPUT");
+			    for (var i = 0; i < elements.length; i++) {
+			        elements[i].oninvalid = function(e) {
+			            e.target.setCustomValidity("");
+			            if (!e.target.validity.valid) {
+			                e.target.setCustomValidity("");
+			            }
+			        };
+			        elements[i].oninput = function(e) {
+			            e.target.setCustomValidity("");
+			        };
+			    }
+			});
+		&lt/script&gt
+	&lt/body&gt
+&lt/html&gt
+						</pre>
+					</code>
+				</div>
+			</div>
+			<hr>
+			<h4>ITEM 404-56: SECURITY DETAILS</h4>
+			<div class="item">
+				<code>
+					The webpage is protected with a snazzy-looking input form. 
+					Using some simple JS, we can check if the given username and password match the correct credentials.
+					It's horribly insecure, all it takes is some madlad to press F12 and the whole world comes crashing down around us.
+					The validation function is given below. From one glance, it should be glaringly obvious why this form of 'security' isn't ideal.
+				</code>		
+				<br>
+				<br>		
+				<label>APPENDIX 404-56-A: VALIDATE() METHOD</label>
+				<!-- <br> -->
+				<code style="padding-left: 30px;">
+					<pre>
+function validate(){
+	if (document.getElementById("username").value=="the404" && document.getElementById("password").value=="insecure") {
+		document.getElementById("login-form").style.display = "none";
+		document.getElementById("content").style.opacity = 1;
+		document.body.style.background.color = "black";
+	}
+	else{
+		document.getElementById("pass-wrong-msg").style.display="block";
+		document.getElementById("msg-ok").focus();
+		document.getElementById("username").value = "";
+		document.getElementById("password").value = "";
+		document.getElementById("err-sound").pause();
+		document.getElementById("err-sound").currentTime = 0;
+		document.getElementById("err-sound").play();
+	}
+}
+					</pre>
+				</code>
+			</div>
+			<hr>		
+			<h4>ITEM 404-64: &ltPRE&gt TAG</h4>
+			<div class="item">
+				<hr>
+				<code>
+					Now, I know what you're saying. We're supposed to use that new tag in our actual page, not our technical report.
+					<br>
+					This actually kind of happened by accident though. You see, I've been doing websites for a few years now and I've used pretty much any tag that comes to mind, 
+					and the one's that don't wouldn't really have a place on the page for this lab, no good way to put them to use without going really far out of my way to incorporate them.
+					(You could say I've already done that, though. I mean, just look at it.) 
+					<br>
+					Regardless, there isn't much new to me, 
+					but when writing this report I found myself using the &ltpre&gt tag to show nicely formatted code blocks, like the JS and HTML printouts.
+					As I'm sure you're aware, the tabs and newlines you type in your editor mean nothing to the browser. Normally you'd need a mess of &ltbr&gts and whatnot to get things looking good,
+					but I discovered the &ltpre&gt tag is used to define preformatted text, which means I can throw in some nicely formatted code and it'll actually render as typed.
+					Pretty nifty.
+				</code>
+			</div>
+			<hr>		
+			<h4>ITEM 404-78: DIFFERENCES BETWEEN PLATFORMS</h4>
+			<div class="item">
+				<hr>
+				<code>
+					Font sizes vary depending on the platform. Text seems bigger on mobile devices, thanks to responsive font sizes. Some elements are rendered with these by default, while some aren't.
+					This makes some elements seem like they have small text on mobile devices. This is easily rectified, but I just didn't bother to, as I needed something to talk about here.
+					Other than that, nothing more than the usual spacing and font-rendering differences are present, and those are pretty minor.
+				</code>
+			</div>
+			<hr>		
+			<h4>ITEM 404-93: TIME OF CREATION</h4>
+			<div class="item">
+				<hr>
+				<code>
+					As HTML is something I've been doing for quite some time now, I felt it was necessary to make a goofy-looking site like this. 
+					As is tradition, I spent way more time perfecting the look of the page, before realizing I had little time left to write the actual stuff that mattered, 
+					so here I am Tuesday afternoon, putting the finishing touches on this thing. In total, the time spent writing the required content of this page was about an hour, 
+					while the time to perfect the overall aesthetic of the pages took approximately [DATA EXPUNGED] hours, including photoshopping images for the login form and whatnot. 
+					I do hope it put a smile on your face.
+				</code>
+			</div>
+			<br>
+		</div>
+		<script>
+			function expand() {
+				if (document.getElementById('expandable').style.height=="0px"){
+					document.getElementById('expandable').style.height="max-content";
+				}
+				else{
+					document.getElementById('expandable').style.height="0px";
+				}
+			}
+		</script>
+	</body>
+</html>

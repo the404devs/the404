@@ -1,0 +1,84 @@
+:root {
+    --brown: #570c0e;
+    --silver: #c0c0c0;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url("segoe-ui.ttf");
+}
+
+@font-face {
+    font-family: "Candara";
+    src: url("Candara.ttf");
+}
+
+@font-face {
+    font-family: "Candara Bold";
+    src: url("Candarab.ttf");
+}
+
+@font-face {
+    font-family: "Candara Italic";
+    src: url("Candarai.ttf");
+}
+
+body {
+    background-color: black;
+    font-family: "Segoe UI";
+}
+
+.header {
+    background: white;
+    width: 100%;
+    color: var(--brown);
+    text-align: center;
+    font-family: Candara;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    font-size: 24px;
+}
+
+hr {
+    border-color: turquoise;
+    border-width: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.header2 {
+    background-color: var(--silver);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+h2 {
+    background-color: white;
+    font-family: Candara;
+    color: var(--brown);
+    font-size: 24px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+.pane {
+    background-color: var(--silver);
+    font-family: "Segoe UI";
+    /* transition: 0.25s all; */
+    /* position: absolute; */
+    margin-right: 20px;
+    width: 100%;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.body-image {
+    width: 370px;
+    /* border: 1px solid var(--border);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black; */
+}
+
+.inner-line {
+    border: 1px solid black;
+}

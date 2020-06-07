@@ -1,0 +1,23 @@
+#divtoshow {
+  position:absolute;
+  display:none;color:white;
+  background-color:black;}
+
+.game {
+  width:70%;
+  height:70%;
+  background-color:#570c0c;
+  cursor:none;
+  margin-left: 15%;
+}
+
+.gamebox {
+  margin-left: 15%;
+  background-color: silver;
+  height: 90%;
+  width: 100%;
+}
+
+canvas {
+  background-color: grey;
+}

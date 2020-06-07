@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=GFS+Didot&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#ffffff">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+
+                // Add a click event on each of them
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+
+                        // Get the target from the "data-target" attribute
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+
+                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                        el.classList.toggle('is-active is-dark');
+                        $target.classList.toggle('is-active is-dark');
+
+                    });
+                });
+            }
+
+        });
+    </script>
+    <style>
+        h1,h2,h3,h4,h5,h6{
+            font-family: 'GFS Didot', serif;
+        }
+        body {
+            background-color:#1c1c1e;
+            size: 1.6rem;;
+            font-family: 'Montserrat', serif;
+        }
+
+        a{
+            color: 5fa9ee;
+        }
+
+
+        textarea {
+            /* background-image: url("beanstalk.png"); */
+            background-color: #262626;
+            background-size: 100%;
+            background-repeat: repeat;
+            color: #fefefe;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+
+        footer > div > a {
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="http://socialwedia.com/avatars/ryersonuniversity.png" width="28" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-end">
+                    <a class="navbar-item">
+                        Home
+                    </a>
+
+                    <a class="navbar-item">
+                        Why Bulma
+                    </a>
+
+                    <a class="navbar-item">
+                        Why NodeJS
+                    </a>
+
+                    <a class="navbar-item">
+                        Team
+                    </a>
+
+                    <a class="navbar-item">
+                        Tutorials
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav> -->
+    <nav class="navbar is-dark " role="navigation" aria-label="main navigation">
+        <div class="container">
+
+            <!-- logo or branding image on left side -->
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="http://socialwedia.com/avatars/ryersonuniversity.png"
+                    alt="Ryerson University Logo" width="40" height="45">
+                </a>
+                <div class="navbar-burger" data-target="navbar-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
+            <div class="navbar-menu" id="navbar-menu">
+                <!-- navbar items | left side -->
+
+                <!-- navbar items | right side -->
+                        <div class="navbar-end">
+                                <a class="navbar-item is-active" href="/">Home</a>
+                                <a class="navbar-item" href="/tutorial">Tutorial</a>
+                                <a class="navbar-item" href="/demo">Demo</a>
+
+                                <a class="navbar-item" href="/install">installation guide</a>
+                                <a class="navbar-item" href="/whynodejs">NodeJs Info</a>
+                                <a class="navbar-item" href="/whybulma">Bulma Info</a>
+                                <a class="navbar-item" href="/conclusion">Conclusion</a>
+                                <a class="navbar-item" href="/credits">Credits</a>
+                        </div>
+
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered is-1" style="color: white;">Build a Great Looking Website with Bulma </h1>
+            <div class="box">
+                <!-- <div class="card-image">
+                    <figure class="image is-3by1">
+                        <img src="https://bulma.io/images/bulma-banner.png" alt="Placeholder image">
+                    </figure>
+                </div> -->
+                <div class="box-content" style="">
+                    <p class="" style="opacity: 70%; margin-bottom: 2%;">October 28, 2019</p>
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="https://qph.fs.quoracdn.net/main-qimg-87001d2ce810c2f48c97032cbc905939.webp" alt="Placeholder image">
+                            </figure>
+                        </div>
+
+                        <div class="media-content">
+                            <p class="title is-2">CPS530</p>
+                            <p class="subtitle is-4">@CPS530</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 0.6%;">
+                        <p style="margin-bottom: 0.6%;">In this tutorial we are going to build a landing page using <a>@bulmaio</a>.</p>
+
+                        <br>
+                <a class="button is-info" href="https://github.com/HasheebKazi/cps530final/blob/master/public/html/layout.html">View Code on Github</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <div class="columns">
+                <div class="column is-one-third">
+                    <div class="box is-half">
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content" style="line-height: 20%;">
+                                    <h2 class="subtitle is-3">Table of Content</h2><br>
+                                    <a class="subtitle is-5 has-text-link" href="#setUp">Set up environment</a><br>
+                                    <a class="subtitle is-5 has-text-link" href="#buildHero">Setting up the Hero
+                                        section</a><br>
+                                    <!-- <a class="subtitle is-5 has-text-link" href="#buildHero"></a><br> -->
+                                    <a class="subtitle is-5 has-text-link" href="#buildContents">Building the
+                                        contents</a><br>
+                                    <a class="subtitle is-5 has-text-link" href="#buildFooters">Set up footers</a><br>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="box">
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">In this tutorial, we are going to make a
+                    beautiful landing page. A landing page is page where
+                    businesses can present who they are, what they do, what they offer, etc. Businesses want to have a
+                    landing page in order for them to have an online presence, so their customers, clients or business
+                    partners can quickly see what they are up to.
+                </p>
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    Since landing page is an important part of business in the 21st century. The landing page itself
+                    needs to look appealing, as it is a representation of the business itself on the web. But, what
+                    makes a website appealing? a website is appealing as long as it caters to user needs and maximize
+                    user experience, it also needs to have structure.
+                </p>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">In terms of landing page, we can divide the
+                    sections into 4. We need navigation bar for users to
+                    easily navigate on our website. Landing page also usually contains a <code>hero</code>, the hero can be used to
+                    present the business product or services, usually in the hero section, there is also a
+                    call-to-action button. we also need the <code>contents</code> of the business and lastly the <code>footer</code>. in this
+                    tutorial, we are going to build these <code>sections</code> from top to bottom using Bulma.
+                </p>
+                <br>
+
+                <h2 id="setUp" class="is-size-3">Set Up environment</h2>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    Before we start building on Bulma, we need to set up our environment, we can grab a starter template
+                    on Bulma or we can get Bulma's <code>CSS</code> file from the provided <code>CDN</code>.
+                </p>
+
+
+
+                <textarea disabled rows="20" cols="51" style="width: 100%;;" readonly>
+
+
+                            <!DOCTYPE html>
+                               <html>
+                              
+                               <head>
+                                  <meta charset='utf-8'>
+                                  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+                                  <title>Landing Page</title>
+                                  <meta name='viewport' content='width=device-width, initial-scale=1'>
+                                  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+                               </head>
+                                
+                               <body>
+                                
+                               
+
+                                
+                    </textarea>
+                <br>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    What we do here is we just attach a minified <code>CSS</code> provided by Bulma, it will automatically fetch the
+                    <code>CSS</code> from the <code>CDN</code> so we don't need to have file locally in order to work with Bulma.
+                </p>
+
+                <h2 id="buildHero" class="is-size-3">Setting up the Hero section</h2>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    We are going to start building page from top to bottom. Inside of the <code>body</code> tag, we want
+                    to set up of Hero section. In Bulma, Hero is build from section and it has 2 sub-sections. We can
+                    specify these two sections by referring them with their class <code>hero-head</code> and
+                    <code>hero-body</code> </p>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    In the parent <code>section</code> tag, we can specify the background to be used in the Hero and
+                    adjust the background property as needed.
+
+                </p>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    Since we want to have our navigation bar on top of the hero section, we can write the
+                    <code>navbar</code> as part
+                    of <code>hero-head</code>, this navbar also have to be mobile responsive so that users still have
+                    the best
+                    experience when browsing the website.
+
+                </p>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">In the <code>hero-body</code>, we can have
+                    the image, title of the website, and call-to-action button. In essence, we put every content we want
+                    to show in the Hero in <code>hero-body</code>.
+                </p>
+                <textarea disabled rows="20" cols="51" style="width: 100%;;" readonly>
+
+
+                        <section class="hero is-dark is-fullheight"
+                        style="background-image: url('https://images.unsplash.com/photo-1541718366506-c16ed9459a7f'); background-repeat: no-repeat; width: 100%; background-size: cover;">
+                        <!-- Hero head: will stick at the top -->
+                
+                        <div class="hero-head">
+                            <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+                                <div class="container">
+                
+                                    <!-- logo or branding image on left side -->
+                                    <div class="navbar-brand">
+                                        <a class="navbar-item" href="/">
+                                            
+                                        </a>
+                                        <div class="navbar-burger" data-target="navbar-menu">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                
+                                    <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
+                                    <div class="navbar-menu" id="navbar-menu">
+                                        <!-- navbar items | left side -->
+                
+                                        <!-- navbar items | right side -->
+                                        <div class="navbar-end">
+                                            <a class="navbar-item is-active" href="/">home</a>
+                                            <a class="navbar-item" href="#">Tutorial</a>
+                                            <a class="navbar-item" href="#">Demo</a>
+                
+                                            <a class="navbar-item" href="/install">installation guide</a>
+                                            <a class="navbar-item" href="/whynodejs">NodeJs Info</a>
+                                            <a class="navbar-item" href="/whybulma">Bulma Info</a>
+                                            <a class="navbar-item" href="/conclusion">Conclusion</a>
+                                            <a class="navbar-item" href="/credits">Credits</a>
+                
+                                        </div>
+                
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Hero content: will be in the middle -->
+                        <div class="hero-body">
+                            <div class="container has-text-centered">
+                
+                
+                                <img src="http://socialwedia.com/avatars/ryersonuniversity.png" style="width:30px; height: 30px;"
+                                    alt="CPS530 final project">
+                                <h1 class="title is-1">CPS530 Final Project</h1>
+                
+                
+                            </div>
+                        </div>
+                    </section>
+                    </textarea>
+                <br>
+
+
+                <h2 id="buildContents" class="is-size-3">Building the Contents</h2>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    Next, we want to setup the content of the website itself. The idea of building the content in Bulma
+                    is easy as it is similar to other frameworks like Bootstrap.
+                </p>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    Before we start building the content, we need to understand the concept of <code>column</code> in
+                    Bulma. To build
+                    a <code>column</code> we need to have a <code>columns</code> container. This container will hold all
+                    the sub-column. The
+                    <code>column</code> itself have equal width within them, for example if you have 2 columns, the
+                    container will be
+                    divided by 50:50 for each column, it goes the same way if you have 4 columns, the container will be
+                    divided by 4 and each column will fill out 25% of the width of columns container.
+
+                </p>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    In this <code>section</code>, we will have a <code>columns</code> container that will have 2
+                    subcolumn, one <code>column</code> to hold
+                    image and another <code>column</code> is to hold the description. We also put the
+                    <code>columns</code> in a <code>container</code> so that
+                    it is always in the center of the page.
+                </p>
+                <textarea disabled rows="20" cols="51" style="width: 100%;;" readonly>
+
+                        <section class="section">
+                                <div class="container" style="margin-bottom: 3%">
+                                    <div class="columns">
+                                        <div class="column">
+                                            <img src="https://mixkit.imgix.net/art/326/326-original.png-1000h.png?q=80&fm=jpg&h=700&q=50&dpr=2"
+                                                width="80%">
+                                        </div>
+                                        <div class="column">
+                        
+                                            <h1 class="title is-1">Project Info</h1>
+                                            <p class="has-text-justified is-size-6-desktop is-size-6-mobile"
+                                                style="line-height: 1.6em; word-wrap:break-word;">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eligendi obcaecati illo? Quaerat impedit cum earum ipsam odio ab et ut, corporis fuga doloremque officiis numquam totam reiciendis tempora tempore.
+                                            </p>
+                                            <p class="has-text-justified is-size-6-desktop is-size-6-mobile"
+                                                style="line-height: 1.6em; word-wrap:break-word; margin-top: 2%;">Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Ratione non ipsum sed magni odit cupiditate delectus consectetur
+                                                natus ducimus voluptas quia sapiente porro quisquam ex, praesentium repellendus? Adipisci,
+                                                beatae labore!</p>
+                        
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                </textarea>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    Since we understand the concept of <code>column</code> in bulma, we can stretch its ability beyond
+                    dividing the
+                    sub columns equally. Here, what we do is we just add another class property to our <code>div</code>
+                    tag, we
+                    specify that these are boxes so it has border-radius property and make the corners look rounded by
+                    using <code>box</code> property. We
+                    also specify the size like <code>is-one-quarter</code> or <code>is-full</code> wide. These are
+                    similar approach that Pinterest
+                    used to make their home feed.
+                </p>
+
+                <textarea disabled rows="20" cols="51" style="width: 100%;;" readonly>
+
+                        <section class="section">
+
+                                <div class="container" style="margin-bottom: 3%">
+                                    <div class="columns">
+                                        <div class="column">
+                                            <div class="box is-one-quarter">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="box is-full">Autem commodi rerum animi quos architecto, magni sapiente cumque iure harum
+                                                rem fugit earum natus nam reprehenderit perferendis eligendi mollitia quia quod! tours</div>
+                                        </div>
+                        
+                                    </div>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <div class="box is-full">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus tempora
+                                                qui aspernatur iusto </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="box is-full">perspiciatis, tempore hic quis necessitatibus veniam doloremque dignissimos
+                                                similique, dolorem molestias possimus culpa ut ad sapiente enim?</div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="box is-tw">similique, dolorem molestias possimus culpa</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                </textarea>
+
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    In the last part of the content page we build a medium hero section, the concept is the same as in
+                    building our first Hero, the difference is we specify the size of this Hero as
+                    <code>is-medium</code>. We also
+                    close our <code>body</code> tag by the end Hero section.
+                </p>
+                <textarea disabled rows="20" cols="51" style="width: 100%;;" readonly>
+
+                        <section class="hero is-medium"
+        style="background-image: url('https://images.unsplash.com/photo-1463130456064-77fda7f96d6b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'); background-repeat: no-repeat; width: 100%; background-size: cover;">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Lorem Ipsum This is what we offer
+                </h1>
+                <br>
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    Lorem ipsum dolor sit amet consectetur
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    lorem <u>ipsum</u> tempore hic quis necessitatibus.
+                                    <br>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    doloremque dignissimos similique
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    dolorem molestias possimus culpar <u>ad sapiente</u>
+                                    <br>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+                </textarea>
+                <br>
+                <h2 id="buildFooters" class="is-size-3">Set up Footers</h2>
+
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                    After you close the <code>body</code> tag, we setup the footer by specify the <code>footer</code>
+                    tag along with the content you want to have in the <code>footer</code>.
+                    In this part, we put every content of the <code>footer</code> in the <code>container</code>. Then we
+                    override, the <code>img</code> to the
+                    left by specifying <code>is-pulled-left</code> while the rest of the content is in the center.
+                </p>
+
+                <textarea disabled rows="20" cols="51" style="width: 100%;;" readonly>
+
+                        <footer class="footer">
+                                <div class="container content has-text-centered">
+                            
+                                    <img src="http://socialwedia.com/avatars/ryersonuniversity.png" class="is-pulled-left" width="50"
+                                        style="margin-bottom: 5%">
+                            
+                            
+                                        <a  href="/">Home</a>
+                                        <a  href="#">Tutorial</a>
+                                        <a  href="#">Demo</a>
+                            
+                                        <a  href="/install">installation guide</a>
+                                        <a  href="/whynodejs">NodeJs Info</a>
+                                        <a  href="/whybulma">Bulma Info</a>
+                                        <a  href="/conclusion">Conclusion</a>
+                                        <a  href="/credits">Credits</a>
+                            
+                                </div>
+                            </footer>
+
+                </textarea>
+                <p class="subtitle is-6 is-spaced" style="line-height: 1.7;">
+                        And don’t forget to close the <code>/html</code> tag and that is essentially all that we need to build a great looking website based on Bulma. if you are feeling lost at anytime during this tutorial, feel free to check out the source code on Github                
+                </p>
+                <a class="button is-info" href="https://github.com/HasheebKazi/cps530final/blob/master/public/html/layout.html">View Code on Github</a>
+            </div>
+        </div>
+
+    </section>
+</body>
+<footer class="footer" style="background-color: hsl(0, 0%, 21%);">
+    <div class="container content has-text-centered">
+
+        <img src="http://socialwedia.com/avatars/ryersonuniversity.png" class="is-pulled-left" width="50"
+            style="margin-bottom: 5%">
+
+        <a href="/">Home</a>
+        <a href="#" style="margin-left: 3%;">Tutorial</a>
+        <a href="/demo" style="margin-left: 3%;">Demo</a>
+
+        <a href="/install" style="margin-left: 3%;">installation guide</a>
+        <a href="/whynodejs" style="margin-left: 3%;">NodeJs Info</a>
+        <a href="/whybulma" style="margin-left: 3%;">Bulma Info</a>
+        <a href="/conclusion" style="margin-left: 3%;">Conclusion</a>
+        <a href="/credits" style="margin-left: 3%;">Credits</a>
+
+    </div>
+</footer>
+
+</html>

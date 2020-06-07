@@ -1,0 +1,390 @@
+* {
+  box-sizing: border-box;
+}
+@font-face{
+  font-family: "camaraderie";
+  src: url("../../css/Camaraderie.otf");
+}
+@font-face{
+  font-family: "roboto";
+  src: url("../../css/Roboto-Regular.ttf");
+}
+
+@font-face{
+  font-family: "roboto-mono";
+  src: url("ROBOTOMONO-REGULAR_0.TTF");
+}
+.ace_print-margin{
+  visibility: hidden !important;
+}
+
+body{
+  background-color: purple;
+  margin: 0;
+}
+
+i{
+  padding-top: 3px;
+}
+
+label{
+  font-family: "roboto";
+  color: white;
+}
+
+#header{
+  top: 0;
+  position: fixed;
+  height: 3em;
+  width: 100%;
+  background-color: purple;
+  display: none;
+  z-index: 10000001
+}
+
+#editor {
+  position: absolute;
+  /*padding-top: 50px;*/
+  top: 3.8em;
+  right: 0;
+  left: 75px;
+  display: none;
+  height: 92%;
+  z-index: 10000000;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  font-size: 0.8em !important;
+  font-family: "roboto-mono" !important;
+}
+
+#workspaceName{
+  position: absolute;
+  padding-top: 10px;
+  padding-left: 80px;
+  color: white;
+  font-family: "camaraderie";
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-shadow: none;
+  overflow-x: hidden;
+}
+
+#buttons{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 75px;
+  background-color: purple;
+  display: inline-block;
+  text-align: left;
+  padding-left: 10px;
+  z-index: 10000002;
+  display: none;
+}
+
+.controls {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  z-index: 1;
+  font-family: "roboto";
+  width: 15%;
+  text-align: right;
+}
+
+.select-input{
+  height: 30px;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: black;
+  width: auto;
+  margin-top: 2px;
+  padding-left: 5px;
+}
+
+.select-input:hover{
+  background-color: purple;
+  transition: 0.5s;
+}
+
+.input{
+  height: 30px;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: black;
+  display:inline-block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
+  padding-left: 5px;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 11;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 8px solid white;
+  border-radius: 50%;
+  border-top: 8px solid purple;
+  border-bottom: 8px solid purple;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+h2 {
+  text-align: center;
+  font-family: 'camaraderie';
+  font-size: 50px;
+  margin-top: 85px;
+  color: white;
+}
+
+h3{
+  text-align: left;
+  font-family: "roboto";
+}
+
+.navButton{
+  color: white;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  text-align: center;  
+  border-radius: 50px;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  background-color: black;
+}
+
+.navButton:hover{
+  background-color: purple;
+  transition: 0.25s;
+}
+
+.popup{
+  visibility: hidden;
+  width: 150px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  margin-left: 55px;
+  margin-top: 10px;
+  position: absolute;
+  z-index: 10000000;
+  font-family: roboto;
+  font-size: 12px;
+  opacity: 0;
+}
+#popcan1:hover .popup{
+  transition: 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
+
+#popcan2:hover .popup{
+  transition: 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
+
+#popcan3:hover .popup{
+  transition: 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
+
+#popcan4:hover .popup{
+  transition: 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
+
+#popcan5:hover .popup{
+  transition: 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
+
+#popcan6:hover .popup{
+  transition: 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown-container {
+  background-color: #222;
+  text-indent: 8px;
+
+  height: 0px;
+  width: 250px;
+  z-index: 1;
+  
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000002; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  transition: 0.5s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: rgba(128,0,128,0.9);
+  margin: auto;
+  padding: 0;
+  border: 1px solid white;
+  border-radius: 4px;
+  overflow: auto;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: all 0.5s;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* Add Animation */
+@-webkit-keyframes animatebottom {
+    from {top:0; opacity:1} 
+    to {top:-300px; opacity:0}
+}
+
+@keyframes animatebottom {
+    from {top:0; opacity:1}
+    to {top:-300px; opacity:0}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: purple;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.modal-body {
+  /*padding: 5px 16px;
+  text-align: left;
+  margin-left: 20%;*/
+  margin: 5% 10% 5% 10%;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+    border-radius: 4px;
+    /*position: absolute;*/
+    width: 100%;
+}
+
+.button2 {  
+  height: 30px;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: black;
+  display:inline-block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
+  padding-left: 5px;
+  font-family: 'roboto';
+  font-size: 15px;
+}
+
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2:hover{
+  background-color: purple;
+}
+
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -50px;
+  transition: 0.25s;
+}
+
+.button2:hover span {
+  padding-right: 25px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0px; 
+}

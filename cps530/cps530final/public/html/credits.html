@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CPS530: Final Project</title>
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Bulma Version 0.8.x-->
+    <link rel='stylesheet' href='https://unpkg.com/bulma@0.8.0/css/bulma.min.css'>
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link rel='stylesheet' href='https://kingsora.github.io/OverlayScrollbars/etc/os-theme-thin-dark.css'>
+    <link rel='stylesheet' href="../css/prism.css">
+    <link rel="stylesheet" href="../css/cheatsheet.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        h1,h2,h3,h4,h5,h6{
+            font-family: 'GFS Didot', serif;
+        }
+        body {
+            background-color:#1c1c1e;
+            size: 1.6rem;;
+            font-family: 'Montserrat', serif;
+        }
+
+        a{
+            color: 5fa9ee;
+        }
+
+
+        textarea {
+            /* background-image: url("beanstalk.png"); */
+            background-color: #262626;
+            background-size: 100%;
+            background-repeat: repeat;
+            color: #fefefe;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+
+        footer > div > a {
+            color:white;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <section class="hero is-medium is-dark is-bold" id="overview">
+
+            <div class="hero-head">
+
+
+                    <nav class="navbar" role="navigation" aria-label="main navigation">
+                        <div class="container">
+        
+                            <!-- logo or branding image on left side -->
+                            <div class="navbar-brand">
+                                <a class="navbar-item" href="/">
+                                    <!-- <img src="https://bulma.io/images/bulma-logo.png" -->
+                                    <!-- alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28"> -->
+                                </a>
+                                <div class="navbar-burger" data-target="navbar-menu">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+        
+                            <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
+                            <div class="navbar-menu" id="navbar-menu">
+                                <!-- navbar items | left side -->
+        
+                                <!-- navbar items | right side -->
+                                <div class="navbar-end">
+                                    <a class="navbar-item" href="/">Home</a>
+                                    <a class="navbar-item" href="/tutorial">Tutorial</a>
+                                    <a class="navbar-item" href="/demo">Demo</a>
+        
+                                    <a class="navbar-item" href="/install">Installation guide</a>
+                                    <a class="navbar-item" href="/whynodejs">NodeJs Info</a>
+                                    <a class="navbar-item" href="/whybulma">Bulma Info</a>
+                                    <a class="navbar-item" href="/conclusion">Conclusion</a>
+                                    <a class="navbar-item is-active" href="/credits">Credits</a>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-size-1">
+                    Credits
+                </h1>
+                <br>
+                <h2 class="subtitle is-size-3">
+                    Here are the work that we've done, for each group member.
+                </h2>
+                <div class="has-text-right"><a class="button is-light is-rounded " href="#p1">See credits!</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-medium is-white is-bold" id="p1">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-size-1">
+                    Hasheeb Kazi
+                </h1>
+                <h2 class="subtitle is-size-4">
+                    Student #: 500535798
+                </h2>
+                <br>
+                <h2 class="subtitle is-size-3">
+                    I created the backend server which includes all the routing and controller code. I also created content for the frontend pages and implemented the navigation. Finally I deployed the application to <a href="https://damp-basin-23323.herokuapp.com/" target="_blank">Heroku</a>.
+                </h2>
+                <div class="has-text-right">
+                    <a class="button is-light is-rounded " onclick="typeWriterStrengths()" href="#p2"><img src="https://img.icons8.com/metro/26/000000/circled-chevron-right.png"></a>                    
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-medium is-dark is-bold" id="p2">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title is-size-1">
+                        Al Alwaini
+                    </h1>
+                    <h2 class="subtitle is-size-4">
+                        Student #: 500666534
+                    </h2>
+                    <br>
+                    <h2 class="subtitle is-size-3">
+                        I deal with the front end. I also craft the UI and UX for each pages, making the the example landing page, and writing the tutorial
+                    </h2>
+                    <div class="has-text-right">
+                        <a class="button is-white is-rounded " onclick="typeWriterStrengths()" href="#p3"><img src="https://img.icons8.com/metro/26/000000/circled-chevron-right.png"></a>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero is-medium is-white is-bold" id="p3">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title is-size-1">
+                            Nicholas Rynkowski
+                        </h1>
+                        <h2 class="subtitle is-size-4">
+                            Student #: 500825294
+                        </h2>
+                        <br>
+                        <h2 class="subtitle is-size-3">
+                            Helped with CSS and final product revision.
+                        </h2>
+                        <div class="has-text-right">
+                    <a class="button is-light is-rounded " onclick="typeWriterStrengths()" href="#p4"><img src="https://img.icons8.com/metro/26/000000/circled-chevron-right.png"></a>                    
+                
+                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hero is-medium is-dark is-bold" id="p4">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title is-size-1">
+                                Owen Goodwin
+                            </h1>
+                            <h2 class="subtitle is-size-4">
+                                Student #: 500909196
+                            </h2>
+                            <br>
+                            <h2 class="subtitle is-size-3">
+                                Worked on conclusion and credits pages, as well as some eye candy things like smooth scrolling and animations for a consistent user experience. 
+                            </h2>
+                            <div class="has-text-right">
+                                <!-- Shouldn't need a button on the last one -->
+                                <!-- If we put in a references section, we'll use the button for that -->
+                                <!-- <a class="button is-link is-rounded " onclick="typeWriterStrengths()" href="#p4">Credits person 2!</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    
+                // Get all "navbar-burger" elements
+                var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+                // Check if there are any navbar burgers
+                if ($navbarBurgers.length > 0) {
+    
+                    // Add a click event on each of them
+                    $navbarBurgers.forEach(function ($el) {
+                        $el.addEventListener('click', function () {
+    
+                            // Get the target from the "data-target" attribute
+                            var target = $el.dataset.target;
+                            var $target = document.getElementById(target);
+    
+                            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                            $el.classList.toggle('is-active');
+                            $target.classList.toggle('is-active');
+    
+                        });
+                    });
+                }
+    
+            });
+        </script>
+
+    <script>
+        window.addEventListener('resize', () => {
+            const divs = document.querySelectorAll(".menu-list");
+            if (window.innerWidth < 768) {
+                divs.forEach(div => div.classList.add("tags"));
+            } else {
+                divs.forEach(div => div.classList.remove("tags"));
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            //The first argument are the elements to which the plugin shall be initialized
+            //The second argument has to be at least a empty object or a object with your desired options
+            var instance = OverlayScrollbars(document.querySelectorAll("body"), {});
+
+            //Smooth scrolling to target element when button is pressed.
+            $("a[href^='#']").click(function(e) {
+                e.preventDefault();
+                instance.scroll($($(this).attr("href")), 500);
+            });
+        });
+    </script>
+</body>
+
+</html>

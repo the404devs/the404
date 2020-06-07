@@ -1,0 +1,58 @@
+@font-face{
+	font-family: "RalewaySB";
+	src: url("Raleway-SemiBold.ttf");
+}
+
+body{
+    background-image: url(../sask-frost.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin:0;
+    padding-top: 115px;
+    text-align: center;
+}
+
+#header {
+    width: 100%;
+    height: 85px;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e2c2f4;
+    padding-left: 10px;
+    top: 0px;
+    text-align: left;
+    padding-top: 15px;
+    z-index: 1;
+    margin-top: 0;
+    font-size: 2.6em;
+    color: #e2c2f4;
+    text-decoration: underline;
+    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    box-shadow: black 0px 2px 3px, black 0px -2px 3px;
+    font-family: "RalewaySB";
+}
+
+#name {
+    /* font-size: 0.3em; */
+    font-family: "RalewaySB";
+    text-decoration: underline;
+    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    color: #e2c2f4;
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    z-index: 2;
+}
+
+div{
+    font-family: "RalewaySB";
+    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    box-shadow: black 0px 2px 3px, black 0px -2px 3px;
+    color: #e2c2f4;
+    border: 1px solid #e2c2f4;
+    backdrop-filter: blur(10px);
+    /* width: 100px; */
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+}

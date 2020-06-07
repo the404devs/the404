@@ -1,0 +1,26 @@
+@font-face{
+    font-family: "RalewaySB";
+    src: url("Raleway-SemiBold.ttf");
+}
+
+body{
+    background-color: #151824;
+    font-family: RalewaySB;
+    text-align: center;
+}
+
+h1{
+    color: white;
+    margin-bottom: 0;
+}
+
+h2{
+    color: grey;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+img{
+    height: 50%;
+    border-radius: 10px;
+}

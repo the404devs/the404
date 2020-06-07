@@ -1,0 +1,12 @@
+.navbar {
+    border: 0;
+}
+
+
+a.button.is-link{
+    transition: 0.2s ease all;
+}
+a.button.is-link:hover {
+    transform: scale(1.05);
+    background-color: navy;
+}
