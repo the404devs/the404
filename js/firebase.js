@@ -40,10 +40,9 @@ var loadFromFire = async function() {
         console.log("%cNo software cache, falling back to server", "color:red;font-weight:bold;font-style:italic;");
     }
 
-    console.log("%cQuerying cookie for cache status...", "color:lightblue;font-weight:bold;font-style:italic;")
+    console.log("%cQuerying cookie for cache status...", "color:lightblue;font-weight:bold;font-style:italic;");
     if (document.cookie.includes("cache-time")) {
         console.log("%cFound cache cookie. Cache is probably fresh, no need to update.", "color:green;font-weight:bold;font-style:italic;");
-
     } else {
         console.log("%cNo cache cookie, cache must be expired.", "color:orange;font-weight:bold;font-style:italic;");
         blogSnapshot = await db.collection("blog").get({ source: 'server' });
