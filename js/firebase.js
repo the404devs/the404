@@ -26,10 +26,6 @@ var loadFromFire = async function() {
     if (blogSnapshot) {
         console.log("%cUsing cached blog db", "color:green;font-weight:bold;font-style:italic;");
         console.log(blogSnapshot);
-        if (forceServer) {
-            blogSnapshot = "";
-            blogSnapshot = await db.collection("blog").get({ source: 'server' });
-        }
     } else {
         blogSnapshot = await db.collection("blog").get({ source: 'server' });
         console.log("%cNo blog cache, falling back to server", "color:red;font-weight:bold;font-style:italic;");
@@ -39,11 +35,6 @@ var loadFromFire = async function() {
     if (softSnapshot) {
         console.log("%cUsing cached software db", "color:green;font-weight:bold;font-style:italic;");
         console.log(softSnapshot);
-        if (forceServer) {
-            softSnapshot = "";
-            softSnapshot = await db.collection("software").get({ source: 'server' });
-        }
-
     } else {
         softSnapshot = await db.collection("software").get({ source: 'server' });
         console.log("%cNo software cache, falling back to server", "color:red;font-weight:bold;font-style:italic;");
@@ -51,7 +42,7 @@ var loadFromFire = async function() {
 
     console.log("%cQuerying cookie for cache status...", "color:lightblue;font-weight:bold;font-style:italic;")
     if (document.cookie.includes("cache-time")) {
-        console.log("%cFound cache cookie. Cache is fresh, no need to update.", "color:green;font-weight:bold;font-style:italic;");
+        console.log("%cFound cache cookie. Cache is probably fresh, no need to update.", "color:green;font-weight:bold;font-style:italic;");
 
     } else {
         console.log("%cNo cache cookie, cache must be expired.", "color:orange;font-weight:bold;font-style:italic;");
