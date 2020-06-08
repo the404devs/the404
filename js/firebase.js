@@ -158,10 +158,8 @@ var login = function() {
     console.log("%cthe403 login system", "color:cyan;font-weight:bold;font-style:italic;");
     console.log("%cInit login attempt...", "color:yellow;font-weight:bold;font-style:italic;");
     let fields = $("#login-form").serializeArray();
-    // let email = fields[0]['value'];
-    // let password = fields[1]['value'];
-    let email = "the404devs@gmail.com";
-    let password = "EvilArchie15";
+    let email = fields[0]['value'];
+    let password = fields[1]['value'];
 
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(function(user) {
