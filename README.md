@@ -13,6 +13,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
     - Removed old blog and software JSON files.
 - Replaced PHP code that reads data from JSON files to generate site with JS/jQuery code that reads from Firebase.
     - Firebase code found within `js/firebase.js`
+    - In order to reduce the amount of read requests sent to Firebase (there's a limit of 50k per day), the DB is cached, and we use a cookie to validate the age of the cache. We only update the cache DB if the current cache is over an hour old, or if the cookie magically disappears.
 - Altered archives that use PHP to simply use a snapshot of a generated index. These include `old2`, `old3`, `birthday`
 - Separated Birthday archive from the main site, cleaning the place up a bit.
 - New feedback system. Instead of directly emailing me, feedback is saved in the Firebase DB.
