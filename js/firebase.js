@@ -152,6 +152,7 @@ var logout = function() {
     console.log("%cUser logged out, bye bye!", "color:green;font-weight:bold;font-style:italic;");
     firebase.auth().signOut();
     document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
+    document.cookie = document.cookie.replace("cache-time", "cache-time-old");
     location.href = 'https://the404.nl/';
 }
 var login = function() {
@@ -171,6 +172,7 @@ var login = function() {
             $("#sign-out").fadeIn();
         })
         .catch(function(error) {
+            alert("Bad password.")
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
