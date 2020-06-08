@@ -1,0 +1,484 @@
+* {
+  box-sizing: border-box;
+}
+
+/*Import our special Mario font*/
+@font-face{
+	font-family: "mario";
+  src: url("SuperMario256.ttf");
+}
+
+/* Style the header*/
+.header {
+  padding: 10px;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  font-family: "mario";
+  margin-left: 0px;
+  height: 1000px;
+  text-shadow: 2px 2px #000000;
+	
+}
+/* Style the footer */
+.footer {
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Segoe UI";
+  color: white;
+  margin-left: 0px;
+}
+
+/* Alternate footer */
+.specialFooter {
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Segoe UI";
+  color: white;
+  margin-left: 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/*Main content of the page*/
+.content {
+  align-self: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.7);
+  font-family: "mario";
+  text-shadow: 2px 2px #ffffff;
+  color: black;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/*Give columns proper layout*/
+.column {
+	font-size: 20px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+/*Row is what contains the columns*/
+.row {
+  display: -webkit-flex;
+  display: flex;
+  margin-left: 0px;
+}
+
+
+/* Responsive layout - makes the columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+   }
+}
+
+/*Page body - this is for the image of Mario in the background*/
+body
+{
+	margin: 0;
+	font-family: "Segoe UI";
+  background-image: url(../images/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+hr
+{
+	margin-left: 0px;
+  color: #000000;
+	border-color: #000000;
+	border-width: 2px;
+	border-style: single;
+  border-radius: 1px;
+}
+
+i {
+  font-size:30px;
+  color: white;
+  float: right;
+}
+
+form 
+{
+  font-size: 20px;
+  font-style: "Segoe UI";
+}
+
+.formInput{
+  font-size: 20px;
+  color: white;
+  font-style: "Segoe UI";
+  background-color: #570c0c;
+  border-style: none;
+  position: relative;
+  left: 10;
+}
+
+.scroll-right {
+  align-self: center;
+  height: 75px;	
+  overflow: hidden;
+  position: relative;
+  background-image: url(../images/bricks.png);
+  z-index: 9999;
+  color: pink;
+  border: 1px solid white;
+  margin-left: 0px;
+}
+
+.scroll-right span {
+  display: inline;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  /* Starting position */
+  -moz-transform:translateX(100%);
+  -webkit-transform:translateX(100%);	
+  transform:translateX(100%);
+  /* Apply animation to this element */	
+  -moz-animation: scroll-right 15s linear infinite;
+  -webkit-animation: scroll-right 15s linear infinite;
+  animation: scroll-right 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-right {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-right {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-right {
+ 0%   { 
+  -moz-transform: translateX(-100%); /* Browser bug fix */
+  -webkit-transform: translateX(-100%); /* Browser bug fix */
+  transform: translateX(-100%); 		
+ }
+ 100% { 
+  -moz-transform: translateX(100%); /* Browser bug fix */
+  -webkit-transform: translateX(100%); /* Browser bug fix */
+  transform: translateX(100%); 
+ }
+}
+
+.wrapper{
+  text-align: center;
+}
+
+.footerWrapper{
+  width: 100%;
+  position: absolute;
+}
+
+.footButton{
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.footButton:hover{
+  color: black;
+  background-color:lightblue;
+  transition: 0.5s;
+  border-radius: 50px;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 450px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: auto;
+  font-family: "mario";
+  overflow: hidden;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  right: -20px;
+  transition: 0.25s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.qzbutton {
+  border-radius: 4px;
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: auto;
+  font-family: "mario";
+  overflow: hidden;
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '\00bb';
+
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  right: -20px;
+  transition: 0.25s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.mySlides {
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+  height: 500px;
+}
+.slideImg {
+  text-align: center;
+  vertical-align: middle;
+  z-index: 0;
+  text-shadow: 2px 2px #000000;
+  height: 500px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 0;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 2px 2px #000000;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  text-shadow: 2px 2px #000000;
+}
+
+/* Number text (1/3 etc) */
+.qznumbertext {
+  color: #000000;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+
+/* Slideshow container, in the quiz form */
+.quiz-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  z-index: 0;
+  vertical-align: middle;
+}
+
+.quizSlide {
+  display: none;
+  padding: 50px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 3px;
+  text-shadow: 0px 0px #000000;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(255,0,0,0.8);
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+#henry {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.accordion {
+  background-color: lightblue; 
+  border-radius: 10px;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.open, .accordion:hover {
+ background-color: #6094fc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.open:after {
+  content: "\2212";
+    
+}
+
+.panel {
+  font-family: "Segoe UI";
+  padding: 0 18px;
+  border-radius: 10px;
+  background-color: #8fc3ff;
+  text-shadow: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}

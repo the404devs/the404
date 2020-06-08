@@ -1,0 +1,2065 @@
+THE SUPER MARIO 64 QUIZ
+BY OWEN AND KEVIN
+
+HOMEPAGE (mariohome.html)
+************************************************************************************************************************
+************************************************************************************************************************
+<!--Mario 64 Quiz in PHP by Owen and Kevin
+	Mr. Krnic
+	March 2nd, 2018
+	Homepage for the quiz-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title> 
+			ICS4U Assignment #1 
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<!--Header div, this is the first thing the user sees.-->
+			<div class="header">
+				<h1>
+					Super Mario 64
+				</h1> 
+
+				<h4>
+					<img src="images/coin.gif" height="30px">
+					The Quiz
+					<img src="images/coin.gif" height="30px">
+				</h4>
+			</div>
+
+			<!--Bar with Mario running across the screen-->	
+			<div id="navbar">
+				<div class="scroll-right"> 
+					<span>
+						<img id="runImage" src="images/run/2.gif" height="50px">
+					</span>
+				</div>
+				<script type="text/javascript">
+					//This script block is to make the bar of running Marios stay at the top of the page.
+					window.onscroll = function() {myFunction()};
+					var navbar = document.getElementById("navbar");
+					var sticky = navbar.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset >= sticky) {
+					    navbar.classList.add("sticky")
+					  } else {
+					    navbar.classList.remove("sticky");
+					  }
+					}
+				</script>
+			</div>
+
+			<br>
+
+			<!--Slideshow containing some nice images.-->
+			<div class="slideshow-container">
+
+				<!--Each mySlides div contains a number, such as 1/6,
+					an image, and a caption. 
+					Only one of these divs is shown at a time.-->
+				<div class="mySlides fade">
+				  	<div class="numbertext">1 / 6</div>
+				  	<img class="slideImg" src="images/box.jpg">
+				  	<div class="text">Box art for Super Mario 64</div>
+				</div>
+
+				<div class="mySlides fade">
+				  	<div class="numbertext">2 / 6</div>
+				  	<img class="slideImg" src="images/mariotitle.png">
+				  	<div class="text">Logo</div>
+				</div>
+
+				<div class="mySlides fade">
+				  	<div class="numbertext">3 / 6</div>
+				  	<img class="slideImg" src="images/ending.jpg">
+				  	<div class="text">Ending of Super Mario 64</div>
+				</div>
+
+				<div class="mySlides fade">
+				  	<div class="numbertext">4 / 6</div>
+				  	<img class="slideImg" src="images/mario.gif">
+				  	<div class="text">Mario's Face</div>
+				</div>
+
+				<div class="mySlides fade">
+				  	<div class="numbertext">5 / 6</div>
+				  	<img class="slideImg" src="images/mario2.gif">
+				  	<div class="text">Mario Sleeping</div>
+				</div>
+
+				<div class="mySlides fade">
+				  	<div class="numbertext">6 / 6</div>
+				  	<img class="slideImg" src="images/blj.gif">
+					<div class="text">The Backwards Long Jump, an iconic glitch from the game</div>
+				</div>
+			</div>
+
+			<br>
+
+			<!--Dots below the slideshow, to show which slide is active-->
+			<div style="text-align:center">
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+
+			<script type="text/javascript">
+				//This script block is what cycles through each fo the mySlides divs, to create the slideshow effect.
+				var slideIndex = 0;
+				showSlides();
+
+				function showSlides() {
+				    var i;
+				    var slides = document.getElementsByClassName("mySlides");
+				    var dots = document.getElementsByClassName("dot");
+				    for (i = 0; i < slides.length; i++) {
+				       slides[i].style.display = "none";  
+				    }
+				    slideIndex++;
+				    if (slideIndex > slides.length) {slideIndex = 1}    
+				    for (i = 0; i < dots.length; i++) {
+				        dots[i].className = dots[i].className.replace(" active", "");
+				    }
+				    slides[slideIndex-1].style.display = "block";  
+				    dots[slideIndex-1].className += " active";
+				    setTimeout(showSlides, 5000); // Change image every 5 seconds
+				}
+			</script>
+
+			<!--Main page content-->
+			<div class="content">
+				<p>
+					Super Mario 64 was released in 1996 as the flagship game for Nintendo's newest console, the Nintendo 64. Ever since, the game has been beloved by fans. Mario's first journey into the third dimension brought revolutionary graphics to the world of video games.
+				</p>
+				<br>
+				<p>
+					By hopping through the magical paintings hanging on the walls of Peach's Castle, Mario collects Power Stars in order to defeat Bowser and rescue the Princess. He visits many fascinating worlds, and makes some new friends on his way. Running across the plains, through the desert, diving deep under the seas and from snow and ice to lava and fire and even high above the clouds, Mario is on a quest like no other.
+				</p>
+				<br>
+				<br>
+				<p>
+					This quiz was made for our Unit 1 Assignment in Grade 12 Computer Science. It employs a fanatical blend of HTML, CSS, PHP and JavaScript in order to deliver a wonderful user experience while also delivering some nostalgia for our favourite game.
+				</p>
+				<br>
+				<br>
+				<div class="wrapper">
+					<a href="quiz1.html"><button type="submit" class="button"><span>Take me to the quiz! </span></button></a>
+					<br>
+					<p>Already done the quiz?</p>
+					<a href="results.html"><button type="submit" class="button"><span>View Results! </span></button></a>
+				</div>
+				<br>
+			</div>
+
+			<!--Meme, just a little image moving back and forth. Try clicking it. -->
+			<div id="henry">
+				<img src="images/henry.png" width="100px" height="100px" id="henryImg" onclick="location.href='https://www.youtube.com/watch?v=kpk2tdsPh0A';">
+			</div>
+			
+
+			<!--Standard footer for all pages, with some navigation buttons as well.-->
+			<div class="footer">
+				<p> 					
+					This page was last updated on <b>02/28/18 at 10:44</b>
+				</p>
+
+				<div class="footerWrapper">
+					<span class="footButton" style="font-size:30px;cursor:pointer;left: 0;" onclick="location.href = 'http://www.sdsscomputers.com/OwenGoodwin/UNITS/UNIT1';"><i" class="fa fa-laptop"></i></span></a>
+					<span class="footButton" style="font-size:30px;cursor:pointer;right: 25px;" onclick="location.href = 'help.html';"><i" class="fa fa-question-circle-o"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+QUIZ INPUT PAGE (quiz1.html)
+************************************************************************************************************************
+************************************************************************************************************************
+<!--Mario 64 Quiz in PHP by Owen and Kevin
+	Mr. Krnic
+	March 2nd, 2018
+	This is the actual quiz part the user sees-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title> 
+			ICS4U Assignment #1 
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+	<body>
+		<div id="fadeout">
+			
+			<!--Bar with Mario running across the screen-->	
+			<div id="navbar">
+				<div class="scroll-right"> 
+					<span>
+						<img id="runImage" src="images/run/5.gif" height="50px">
+					</span>
+				</div>
+				<script type="text/javascript">
+					//This script block is to make the bar of running Marios stay at the top of the page.
+					window.onscroll = function() {myFunction()};
+					var navbar = document.getElementById("navbar");
+					var sticky = navbar.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset >= sticky) {
+					    navbar.classList.add("sticky")
+					  } else {
+					    navbar.classList.remove("sticky");
+					  }
+					}
+				</script>
+			</div>
+
+			<!--Bunch of line breaks, just to make the page look better-->
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<!--Main page content-->
+			<div class="content">
+				<br>
+				<br>
+				<!--Form, containing all of the inputs sent to our php script for processing-->
+				<form action="quiz1.php" method="POST">
+					<div class="quiz-container">
+						<!-- Each div with the class "quizSlide" represents one of the 6 pages-->
+						<div class="quizSlide fade">
+							<!--First page, gets the user's name-->
+						  	<div class="qznumbertext">1 / 6</div>
+						  	<h2>Welcome to the Super Mario 64 Quiz!</h2>
+							<hr>
+							<p>
+								This quiz is designed to test your general knowledge of this classic title.
+							</p>
+							<br>
+							<label>First Name:</label>
+							<input type="text" name="txtFirst" required="true">
+							<br>
+							<label>Last Name:</label>
+							<input type="text" name="txtLast" required="true">
+							<br>
+						</div>
+
+						<div class="quizSlide fade">
+							<div class="qznumbertext">2 / 6</div>
+							<!--Second page, multiple choice questions-->
+							<h3>Question 1:</h3>
+							<p>Without using cheats, how many stars can be collected in Super Mario 64?</p>
+							A: 70 <input type="radio" name="radQ1" value="A" required="true">
+							<br>
+							B: 120 <input type="radio" name="radQ1" value="B" required="true">
+							<br>
+							C: 175 <input type="radio" name="radQ1" value="C" required="true">
+							<br>
+							D: 95 <input type="radio" name="radQ1" value="D" required="true">
+							<hr>
+
+							<h3>Question 2:</h3>
+							<p>Each main level cointains a mission where Mario must collect all of the red coins. How many red coins are there in each stage?</p>
+							A: 5 <input type="radio" name="radQ2" value="A" required="true">
+							<br>
+							B: 16 <input type="radio" name="radQ2" value="B" required="true">
+							<br>
+							C: 8 <input type="radio" name="radQ2" value="C" required="true">
+							<br>
+							D: 6 <input type="radio" name="radQ2" value="D" required="true">
+							<hr>
+
+							<h3>Question 3:</h3>
+							<p>In the opening cutscene, Mario receives a letter from the Princess, telling him to come to the castle. Why does Mario get invited to the castle?</p>
+							A: The Princess baked a cake <input type="radio" name="radQ3" value="A" required="true">
+							<br>
+							B: To play a prank on Luigi <input type="radio" name="radQ3" value="B" required="true">
+							<br>
+							C: To kill Bowser <input type="radio" name="radQ3" value="C" required="true">
+							<br>
+							D: Just for fun <input type="radio" name="radQ3" value="D" required="true">
+							<hr>
+
+							<h3>Question 4:</h3>
+							<p>After getting his invitation, how does Mario arrive at the castle?</p>
+							A: On his kart <input type="radio" name="radQ4" value="A" required="true">
+							<br>
+							B: Via warp pipe <input type="radio" name="radQ4" value="B" required="true">
+							<br>
+							C: Riding on Yoshi <input type="radio" name="radQ4" value="C" required="true">
+							<br>
+							D: Carried by Toads <input type="radio" name="radQ4" value="D" required="true">
+							<hr>
+
+							<h3>Question 5:</h3>
+							<p>How many times does Mario confront Bowser throughout the game?</p>
+							A: 2 <input type="radio" name="radQ5" value="A" required="true">
+							<br>
+							B: 1 <input type="radio" name="radQ5" value="B" required="true">
+							<br>
+							C: 4 <input type="radio" name="radQ5" value="C" required="true">
+							<br>
+							D: 3 <input type="radio" name="radQ5" value="D" required="true">
+							<hr>
+						</div>
+
+						<div class="quizSlide fade">
+							<!--Third page, short answer questions-->
+						  	<div class="qznumbertext">3 / 6</div>
+
+						  	<h3>Question 6:</h3>
+							<p>Who is this?</p>
+							<br>
+							<img src="images/mario3.gif">
+							<br>
+							<input type="text" name="txtQ6" placeholder="Type your answer..." required="true">
+							<hr>
+
+							<h3>Question 7:</h3>
+							<p>Who is this?</p>
+							<br>
+							<img src="images/bowser.gif">
+							<br>
+							<input type="text" name="txtQ7" placeholder="Type your answer..." required="true">
+							<hr>
+
+							<h3>Question 8:</h3>
+							<p>What is the name of this enemy?</p>
+							<br>
+							<img src="images/jamboree.jpg">
+							<br>
+							<input type="text" name="txtQ8" placeholder="Type your answer..." required="true">
+							<hr>
+
+							<h3>Question 9:</h3>
+							<p>What is the name of this boss, who lives inside the Shifting Sand Land pyramid?</p>
+							<br>
+							<img src="images/eyerok.gif">
+							<br>
+							<input type="text" name="txtQ9" placeholder="Type your answer..." required="true">
+							<hr>
+
+							<h3>Question 10:</h3>
+							<p>This is an aerial view of the room containing the entrance to the Princess's Secret Slide. Through which picture does Mario enter the level? (Left, Middle, Right)</p>
+							<br>
+							<img src="images/pss.png" width="480px">
+							<br>
+							<input type="text" name="txtQ10" placeholder="Type your answer..." required="true">
+							<hr>
+						</div>
+
+						<div class="quizSlide fade">
+							<!--Fourth page, true/false questions, (11, 12, 13) and
+								fill-in-the-blanks (14, 15)-->
+						  	<div class="qznumbertext">4 / 6</div>
+						  	<h3>Question 11:</h3>
+							<p>MIPS the rabbit appears in the castle basement twice.</p>
+							<br>
+							<img src="images/mips.gif" width="250px">
+							<br>
+							True <input type="radio" name="radQ11" value="True" required="true">
+							<br>
+							False <input type="radio" name="radQ11" value="False" required="true">
+							<hr>
+
+							<h3>Question 12:</h3>
+							<p>Super Mario 64 contains a multiplayer mode, with a wide variety of playable characters</p>
+							<br>
+							<img src="images/sm64o.jpg" width="485px">
+							<br>
+							True <input type="radio" name="radQ12" value="True" required="true">
+							<br>
+							False <input type="radio" name="radQ12" value="False" required="true">
+							<hr>
+
+							<h3>Question 13:</h3>
+							<p>Of the three special caps Mario can unlock, the Wing Cap is the first to become available.</p>
+							<br>
+							<img src="images/wingcap.png" width="250px">
+							<br>
+							True <input type="radio" name="radQ13" value="True" required="true">
+							<br>
+							False <input type="radio" name="radQ13" value="False" required="true">
+							<hr>
+
+							<h3>Questions 14 and 15:</h3>
+							<p>Fill in the blanks:</p>
+							<br>
+							<img src="images/koopa.gif" width="250px">
+							<br>
+							<p>Koopa the <input type="text" name="txtQ14" placeholder="Type your answer..." required="true"> is a fast Koopa who will reward Mario with a <input type="text" name="txtQ15" placeholder="Type your answer..." required="true"> after beating him in a race.</p>
+							<hr>
+
+						</div>
+
+						<div class="quizSlide fade">
+							<!--Fifth page, matching questions. Match the enemy to the level
+								Enemies are shown on the left, with a dropdown menu to select an option from.
+								Levels are shown on the right, representing each option in the dropdown menu.-->
+						  	<div class="qznumbertext">5 / 6</div>
+						  	<h3>Questions 16-26:</h3>
+						  	<p>Match the boss/enemy to the level.</p>
+						  	<p>Levels are numbered from 1 to 15.</p>
+
+						  	<!--Row div, making each column div side by side-->
+						  	<div class="row">
+						  		<!--Left column, containing each enemy to be matched up with a level.
+						  			Order is:
+						  			Image of enemy
+						  			Enemy name
+						  			Dropdown selection
+						  			Line
+						  			Repeat-->
+
+						  		<div class="column">
+						  			<img src="images/bombking.gif" height="254px">
+						  			<br>
+						  			<label>#16: King Bob-omb</label>
+						  			<br>
+						  			<br>
+						  			<select name="selBoss1">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>
+						  			<hr>
+
+						  			<img src="images/eel.gif" height="254px">
+						  			<br>
+						  			<label>#17: Eel</label>
+						  			<br>
+						  			<select name="selBoss2">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>
+						  			<hr>
+
+						  			<img src="images/eyerok2.png" height="254px">
+						  			<br>
+						  			<label>#18: Eyerok</label>
+						  			<br>
+						  			<select name="selBoss3">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/whomp.gif" height="254px">
+						  			<br>
+						  			<label>#19: Whomp King</label>
+						  			<br>
+						  			<select name="selBoss4">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/bully.gif" height="254px">
+						  			<br>
+						  			<label>#20: Big Bully</label>
+						  			<br>
+						  			<select name="selBoss5">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+									<img src="images/icebully.jpg" height="254px">
+									<br>
+						  			<label>#21: Chill Bully</label>
+						  			<br>
+						  			<select name="selBoss6">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>					  			
+						  			<hr>
+
+						  			<img src="images/dorrie.png" height="254px">
+						  			<br>
+						  			<label>#22: Dorrie</label>
+						  			<br>
+						  			<select name="selBoss7">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/penguins.gif" height="254px">
+						  			<br>
+						  			<label>#23: Penguins</label>
+						  			<br>
+						  			<select name="selBoss8">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/monkey.gif" height="254px">
+						  			<br>
+						  			<label>#24: Ukiki</label>
+						  			<br>
+						  			<select name="selBoss9">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/boo.png" height="254px">
+						  			<br>
+						  			<label>#25: Big Boo</label>
+						  			<br>
+						  			<select name="selBoss10">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/wiggler.gif" height="254px">
+						  			<br>
+						  			<label>#26: Wiggler</label>
+						  			<br>
+						  			<select name="selBoss11">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>				  			
+						  			<hr>
+						  		</div>
+
+						  		<!--Right column, showing the user the names of the levels they have to choose from
+						  			Order is:
+						  			Image of level
+						  			Level number and name
+						  			Line
+						  			Repeat-->
+						  		<div class="column">
+						  			<img src="images/bob.png" height="192px">
+						  			<br>
+						  			<label> 1 - Bob-omb Battlefield</label>
+						  			<hr>
+
+						  			<img src="images/wf.png" height="192px">
+						  			<br>
+						  			<label>2 - Whomp's Fortress</label>
+						  			<hr>
+
+						  			<img src="images/jrb.png" height="192px">
+						  			<br>
+						  			<label>3 - Jolly Roger Bay</label>
+						  			<hr>
+
+						  			<img src="images/ccm.png" height="192px">
+						  			<br>
+						  			<label>4 - Cool, Cool Mountain</label>
+						  			<hr>
+
+						  			<img src="images/bbh.gif" height="192px">
+						  			<br>
+						  			<label>5 - Big Boo's Haunt</label>
+						  			<hr>
+
+									<img src="images/hmc.png" height="192px">
+						  			<br>
+						  			<label>6 - Hazy Maze Cave</label>
+						  			<hr>
+
+						  			<img src="images/lll.png" height="192px">
+						  			<br>
+						  			<label>7 - Lethal Lava Land</label>
+						  			<hr>
+
+						  			<img src="images/ssl.png" height="192px">
+						  			<br>
+						  			<label>8 - Shifting Sand Land</label>
+						  			<hr>						  			
+
+						  			<img src="images/ddd.png" height="192px">
+						  			<br>
+						  			<label>9 - Dire, Dire Docks</label>
+						  			<hr>
+
+						  			<img src="images/sl.png" height="192px">
+						  			<br>
+						  			<label>10 - Snowman's Land</label>
+						  			<hr>
+
+						  			<img src="images/wdw.png" height="192px">
+						  			<br>
+						  			<label>11 - Wet-Dry World</label>
+						  			<hr>
+
+						  			<img src="images/ttm.png" height="192px">
+						  			<br>
+						  			<label>12 - Tall, Tall Mountain</label>
+						  			<hr>
+
+						  			<img src="images/thi.png" height="192px">
+						  			<br>
+						  			<label>13 - Tiny-Huge Island</label>
+						  			<hr>
+
+						  			<img src="images/ttc.png" height="192px">
+						  			<br>
+						  			<label>14 - Tick-Tock Clock</label>
+						  			<hr>
+
+						  			<img src="images/rr.png" height="192px">
+						  			<br>
+						  			<label>15 - Rainbow Ride</label>
+						  			<hr>
+						  		</div>
+						  	</div>
+						</div>
+
+
+						<div class="quizSlide fade">
+							<!--Sixth page, just has a button to submit the entire form to the php script-->
+						  	<div class="qznumbertext">6 / 6</div>
+						  	<br>
+						  	<p>You're done!</p>
+						  	<p>Click this button to submit your answers!</p>
+						  	<!--Button, type="submit" so that it sends the form to the php script-->
+							<button type="submit" class="qzbutton" width="25px"><span>Finish! </span></button>
+							<p>Note that if nothing happens when you click, you have not answered all of the questions, and need to return and finish the quiz.</p>
+						</div>
+						
+	  					<!-- Next and previous buttons -->
+	  					<div class="arrowWrapper">
+		  					<a id="leftArrow" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		  					<a id="rightArrow" class="next" onclick="plusSlides(1)">&#10095;</a>
+	  					</div>
+					</div>
+				</form>
+
+				<script type="text/javascript">
+					/*This script block is quite similar to the slideshow on the homepage, 
+					becasue that's actually what it's based off of.
+					Instead of changing slide after a few seconds though, this waits until the user has 
+					clicked either the arrows at the side or buttons at the bottom.*/
+					var slideIndex = 1;
+					showSlides(slideIndex);
+
+					// Next/previous controls
+					function plusSlides(n) {
+					  showSlides(slideIndex += n);
+					}
+
+					// Dots controls
+					function currentSlide(n) {
+					  showSlides(slideIndex = n);
+					}
+
+					function showSlides(n) {
+					  var i;
+					  var slides = document.getElementsByClassName("quizSlide");
+					  var dots = document.getElementsByClassName("dot");
+					  if (n > slides.length) {slideIndex = 1} 
+					  if (n < 1) {slideIndex = slides.length}
+					  for (i = 0; i < slides.length; i++) {
+					      slides[i].style.display = "none"; 
+					  }
+					  for (i = 0; i < dots.length; i++) {
+					      dots[i].className = dots[i].className.replace(" active", "");
+					  }
+					  slides[slideIndex-1].style.display = "block"; 
+					  dots[slideIndex-1].className += " active";
+					  window.scrollTo(0, 0);
+					}
+				</script>
+			</div>
+
+			<!-- The dots/circles at the bottom, showing the active page
+			 Clickable to navigate between pages.-->
+			<div style="text-align:center">
+			  	<span class="dot" onclick="currentSlide(1)"></span> 
+			  	<span class="dot" onclick="currentSlide(2)"></span> 
+			  	<span class="dot" onclick="currentSlide(3)"></span> 
+			  	<span class="dot" onclick="currentSlide(4)"></span> 
+			  	<span class="dot" onclick="currentSlide(5)"></span> 
+			  	<span class="dot" onclick="currentSlide(6)"></span> 
+			</div>
+
+			<!--A whole lot of line breaks, trust me they're important, since each page is a different height-->
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+
+			<!--Exact same footer as every other page, with the same navigation buttons-->
+			<div class="footer">
+				<p> 
+					This page was last updated on <b>02/28/18 at 10:44</b>
+				</p>
+				<div class="footerWrapper">
+					<span class="footButton" style="font-size:30px;cursor:pointer;left: 0;" onclick="location.href = 'MarioHome.html';">🏠</span></a>
+					<span class="footButton" style="font-size:30px;cursor:pointer;right: 25px;" onclick="location.href = 'help.html';"><i" class="fa fa-question-circle-o"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+QUIZ OUTPUT PAGE (quiz1.php)
+************************************************************************************************************************
+************************************************************************************************************************
+<!--Mario 64 Quiz in PHP by Owen and Kevin
+	Mr. Krnic
+	March 2nd, 2018
+	Backend code to mark the quiz and all that-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title> 
+			ICS4U Assignment #1 
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+	<body>
+		<div>			
+			<!--Bar with Mario running across the screen-->	
+			<div id="navbar">
+				<div class="scroll-right"> 
+					<span>
+						<img id="runImage" src="images/run/11.gif" height="50px">
+					</span>
+				</div>
+				<script type="text/javascript">
+					//This script block is to make the bar of running Marios stay at the top of the page.
+					window.onscroll = function() {myFunction()};
+					var navbar = document.getElementById("navbar");
+					var sticky = navbar.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset >= sticky) {
+					    navbar.classList.add("sticky")
+					  } else {
+					    navbar.classList.remove("sticky");
+					  }
+					}
+				</script>
+			</div>
+			<br>
+			<!--Main page content
+				Look, php stuff!-->	
+			<div class="content">
+				<!--This PHP code works like this:
+					Get the user's name from the first quiz page
+					Check if there is a 'sessions' folder on the server
+						(Make one if there isn't)
+					Make a unique ID number, this is very important.
+					Check if it's taken already, and if it is make a new one.
+					Make a folder 'sessions/<ID number>'
+					Save each of the user's answers into their own variable.
+						Some answers contain text, so simplify them.
+					Write all of those variables to a file called 'sessioninfo.txt'
+						in their ID's directory.
+					Echo out a message so the user knows everything went alright.
+					More detailed explanations to follow.-->
+
+				<?php 
+					/*Get the user's first and last names*/
+					$first = $_POST["txtFirst"];
+					$last = $_POST["txtLast"];
+
+					/*Check if a 'sessions' directory exists
+					and make one if it does not*/
+					if (!file_exists('sessions')) {
+				    	mkdir('sessions', 0777, true);
+					}	
+
+					/*Generate a random session ID so that the user can view their results later*/
+					$sessionID = rand(0 , 1000000);
+					/*The while loop generates a random ID until it finds one that is avaliable*/
+					while (file_exists("sessions/".$sessionID)==true) {
+						$sessionID = rand(0 , 1000000);
+					}
+					/*Once an avaliable ID is found, create a directory for it*/
+					mkdir("sessions/".$sessionID, 0777, true);
+
+					/*Side note to the ID generating part:
+					Since we just pick a number from 1 to 1000000, 
+					there is a limit to how many unique sessions can be created.
+					Supposedly if a million people took this quiz, we'd run into a problem,
+					because this PHP script would become stuck in that while loop forever, because every possible idea is taken.
+					Why didn't we make it more than a million?
+					Well, how many times are you going to take the quiz, really?
+					Since this problem won't really come to pass for a few centuries, we didn't worry too much about it, but what
+					we would probably do to fix it would be a new block of code, executed when all 1000000 IDs are taken.
+					It would identify the oldest session, and overwrite it.
+					Solution number 2 is to just add a bunch of 0s to the line generating the ID*/
+					
+
+					/*Collect user's answers for multiple choice questions*/
+					$q1 = $_POST["radQ1"];
+					$q2 = $_POST["radQ2"];
+					$q3 = $_POST["radQ3"];
+					$q4 = $_POST["radQ4"];
+					$q5 = $_POST["radQ5"];
+
+					/*Collect user's answers for one-word answer questions*/
+					/*Using string functions, we remove all of the spaces in each answer, so something like "Whomp's Fortress" would become "Whomp'sFortress"*/
+					/*We also convert the entire string to lower case, turning it then into "whomp'sfortress"*/
+					/*This will make marking the quiz much simpler later on.*/
+					
+					$q6 = str_replace(' ', '', strtolower($_POST["txtQ6"]));
+					$q7 = str_replace(' ', '', strtolower($_POST["txtQ7"]));
+					$q8 = str_replace(' ', '', strtolower($_POST["txtQ8"]));
+					$q9 = str_replace(' ', '', strtolower($_POST["txtQ9"]));
+					$q10 = str_replace(' ', '', strtolower($_POST["txtQ10"]));
+
+					/*Collect the user's answers for the true/false questions*/
+					$q11 = $_POST["radQ11"];
+					$q12 = $_POST["radQ12"];
+					$q13 = $_POST["radQ13"];
+					
+					/*Collect the user's answers for the true/false questons*/
+					$q14 = str_replace(' ', '', strtolower($_POST["txtQ14"]));
+					$q15 = str_replace(' ', '', strtolower($_POST["txtQ15"]));
+
+					/*collect the user's answers for the matching questions*/
+					$q16 = $_POST["selBoss1"];
+					$q17 = $_POST["selBoss2"];
+					$q18 = $_POST["selBoss3"];
+					$q19 = $_POST["selBoss4"];
+					$q20 = $_POST["selBoss5"];
+					$q21 = $_POST["selBoss6"];
+					$q22 = $_POST["selBoss7"];
+					$q23 = $_POST["selBoss8"];
+					$q24 = $_POST["selBoss9"];
+					$q25 = $_POST["selBoss10"];
+					$q26 = $_POST["selBoss11"];
+
+
+					/*Save the user's answers and other info.
+					They are written to a text file, separated by commas, sort fo like this:
+					answer1,answer2,answer3,blah,blah,blah,
+					When we mark the quiz, this makes it super easy to create an array from the contents of the file.*/
+					file_put_contents("sessions/".$sessionID."/sessioninfo.txt", $sessionID.",".$first.",".$last.",".$q1.",".$q2.",".$q3.",".$q4.",".$q5.",".$q6.",".$q7.",".$q8.",".$q9.",".$q10.",".$q11.",".$q12.",".$q13.",".$q14.",".$q15.",".$q16.",".$q17.",".$q18.",".$q19.",".$q20.",".$q21.",".$q22.",".$q23.",".$q24.",".$q25.",".$q26.",\n");
+
+					/*Message to tell the user they are all done.*/
+					echo "Success!<br><br>Your ID number is:<br> <h2>$sessionID</h2><br>Remember this number!<br>Enter it on the 'Results' page to see how you did.<br><br>You can check your results at any time with this number.<br><br><a href='results.html'><button  class='qzbutton' width='25px'><span>Results </span></button></a>";	
+				?>	
+			</div>
+
+
+			<!--Yes, this footer is a little bit special. 
+			Slightly different behavior than a normal one, 
+			just becuase this particular page doesn't have much content, 
+			meaning the footer would actually be positioned mid-page, which looks stupid.
+			That's why some other pages have a bunch of <br> tags after the main content.
+			Here, though, it would need like a million, so we just made a special one.
+			It behaves sort of like the running mario bar, hovering fixed at the bottom of the screen.-->
+			<div class="specialFooter">
+				<p> 
+					This page was last updated on <b>02/28/18 at 10:44</b>
+				</p>
+				<div class="footerWrapper">
+					<span class="footButton" style="font-size:30px;cursor:pointer;left: 0;" onclick="location.href = 'MarioHome.html';">🏠</span></a>
+					<span class="footButton" style="font-size:30px;cursor:pointer;right: 25px;" onclick="location.href = 'help.html';"><i" class="fa fa-question-circle-o"></i></span></a>
+				</div>				
+			</div>
+		</div>
+	</body>
+</html>
+
+RESULTS (ID INPUT) PAGE (results.html)
+************************************************************************************************************************
+************************************************************************************************************************
+<!--Mario 64 Quiz in PHP by Owen and Kevin
+	Mr. Krnic
+	March 2nd, 2018
+	This page is pretty simple, the user 
+	enters their ID number in a form, which
+	results.php will use to load their scores-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title> 
+			ICS4U Assignment #1 
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+	<body>
+		<div>
+			
+			<!--Bar with Mario running across the screen-->	
+			<div id="navbar">
+				<div class="scroll-right"> 
+					<span>
+						<img id="runImage" src="images/run/5.gif" height="50px">
+					</span>
+				</div>
+				<script type="text/javascript">
+					//This script block is to make the bar of running Marios stay at the top of the page.
+					window.onscroll = function() {myFunction()};
+					var navbar = document.getElementById("navbar");
+					var sticky = navbar.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset >= sticky) {
+					    navbar.classList.add("sticky")
+					  } else {
+					    navbar.classList.remove("sticky");
+					  }
+					}
+				</script>
+			</div>
+
+			<br>
+
+			<!--Main page content,
+				there isn't much of it-->
+			<div class="content">
+				<h2>Enter your ID number to view your results.</h2>
+				<!--Super simple form, with only one input-->
+				<form action="results.php" method="POST">
+					<!--User inputs the ID they were given by our php script (quiz1.php)...-->
+					<input type="number" name="txtID" placeholder="ID number..." style="font-size: 20px;">
+					<br>
+					<br>
+					<!--...and then they click the submit button and bam
+						they get their results
+						Well, actually it's a bit more complicated, see results.php-->
+					<button type="submit" class="qzbutton" width="25px"><span>Go! </span></button>
+				</form>
+				<br>
+				<br>
+				<p>
+					After completing the quiz, you will recieve a unique ID number. This number allows you to view your results from anywhere at any time.
+				</p>
+			</div>
+
+			<!--Yes, this footer is a little bit special. 
+			Slightly different behavior than a normal one, 
+			just becuase this particular page doesn't have much content, 
+			meaning the footer would actually be positioned mid-page, which looks stupid.
+			That's why some other pages have a bunch of <br> tags after the main content.
+			Here, though, it would need like a million, so we just made a special one.
+			It behaves sort of like the running mario bar, hovering fixed at the bottom of the screen.-->
+			<div class="specialFooter">
+				<p> 
+					This page was last updated on <b>02/28/18 at 10:43</b>
+				</p>
+				<div class="footerWrapper">
+					<span class="footButton" style="font-size:30px;cursor:pointer;left: 0;" onclick="location.href = 'MarioHome.html';">🏠</span></a>
+					<span class="footButton" style="font-size:30px;cursor:pointer;right: 25px;" onclick="location.href = 'help.html';"><i" class="fa fa-question-circle-o"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+RESULTS (MARKS OUTPUT) PAGE (results.php)
+************************************************************************************************************************
+************************************************************************************************************************
+<!--Mario 64 Quiz in PHP by Owen and Kevin
+	Mr. Krnic
+	March 2nd, 2018
+	When the user enters their ID number, they are sent here.
+	This php code loads their results that were saved in a directory 
+	corresponding to their ID number, and checks if they were correct or not.-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title> 
+			ICS4U Assignment #1 
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+	<body>
+		<div id="fadeout">
+			
+			<!--Bar with Mario running across the screen-->	
+			<div id="navbar">
+				<div class="scroll-right"> 
+					<span>
+						<img id="runImage" src="images/run/6.gif" height="50px">
+					</span>
+				</div>
+				<script type="text/javascript">
+					//This script block is to make the bar of running Marios stay at the top of the page.
+					window.onscroll = function() {myFunction()};
+					var navbar = document.getElementById("navbar");
+					var sticky = navbar.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset >= sticky) {
+					    navbar.classList.add("sticky")
+					  } else {
+					    navbar.classList.remove("sticky");
+					  }
+					}
+				</script>
+			</div>
+
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<!--Main page content
+				More PHP code, this time we're gonna load up the seesionfo.txt file.
+				Get the ID number the user gave us in results.html
+					(If the ID doesn't actually exist, we show a message telling the user so)
+				Create an array from the contents of 'sessions/<ID number>/sessioninfo.txt'
+					Remember how the answers are separated by commas?
+					Well, we use that to our advantage while creating this array.
+				Cycle through each element of the array of user answers, and compare it to the array we made of the correct answers.
+				When the answer is correct, we add 1 to the total number of correct answers.
+				If it's wrong, we echo out a message, saying what question was wrong and what the right answer was.
+				Echo out the user's score, we even calculate their percentage.
+				Display a different image of MArio, depending on how well they did.-->
+			<div class="content">
+				<?php 
+					/*Get the ID number the user inputted*/
+					$id = $_POST["txtID"];
+
+					/********************************
+					*****CUSTOM MARKING FUNCTION*****
+					********************************/
+
+					function mark($id){
+						/*Create an array that stores all of the correct answers.
+						Safer than storing them in a text file and loading them in, 
+						because if the user has taken Mr. Krnic's class they'd probably 
+						know to try and look through the files to find the answers*/
+
+						/*...well, at least that's what I would do anyways*/
+						$rightAnswers = array('','','','B','C','A','B','D','mario','bowser','scuttlebug','eyerok','right','True','False','True','quick','star','1','3','8','2','7','10','6','4','12','5','13');
+						
+						//Get the contents of the file
+						$fileText = file_get_contents("sessions/".$id."/sessioninfo.txt");
+						
+						//Explode it into an array, each element is an answer separated by a comma
+						$userAnswers= explode(",", $fileText);
+						
+						//little greeting message for the user
+						echo "<h2>Results for <u>$userAnswers[1] $userAnswers[2]:</u><br>";						
+						echo "Session #$id<br><br>";
+
+						//Set our variable to 0
+						//This keeps track of how many answers the user got correct.
+						$correctAnswersNum = 0;
+
+
+						/*Loop! Cycle through the elements of the parallel arrays
+						Notice the counter starts at 3. This is because the first 3 elements
+						in the array are the ID number, and the user's first and last names.*/
+						for ($i=3; $i < sizeof($rightAnswers); $i++) 
+						{
+							if ($userAnswers[$i]==$rightAnswers[$i]) {
+								//if they got the right answer add 1 to the total
+								$correctAnswersNum++;
+							}
+							else{
+								echo 'You got question '.($i-2).' wrong. Correct answer was: '.$rightAnswers[$i].'<br>';
+							}							
+						}
+
+						//Tell the user how many answers they got right
+						echo "<br> In total, you got $correctAnswersNum answers correct, out of 26 questions.<br>";
+
+						//Calculate their percentage, rounded up to the nearest interger.
+						$percent = ceil(($correctAnswersNum/26)*100);
+						echo "$correctAnswersNum/26 = $percent%";
+
+						/*Show an image to represent how they did*/
+						if($percent == 100){
+							//if they got perfect, show mario showing some swag
+							echo "<br><img src='images/100.gif'><br>Awesome!<br>You're a Mario master!<br>You must have 200 IQ<br>Shoutouts to Simpleflips";
+						}
+						elseif ($percent > 90) {
+							//if they pretty good, show mario giving the peace sign
+							echo "<br><img src='images/peace.gif'><br>Awesome!";
+						}
+						elseif ($percent > 75) {
+							//if they did good show mario with sunglasses, he's not too happy
+							echo "<br><img src='images/sunglasses.gif'><br>You can do better than that!";
+						}
+						elseif ($percent > 60) {
+							//if they did kinda bad show mario looking pretty out of it
+							echo "<br><img src='images/derp.png'><br>You can do better than that!";
+						}
+						elseif ($percent > 50) {
+							//if they did bad show mario, who is speechless at how bad they did
+							echo "<br><img src='images/broken.gif'><br>...<br>The image says it all.<br>Do better!";
+						}
+						elseif($percent == 0){
+							//if they got 0, show mario at mcdonalds
+							echo "<br><img src='images/mcmario.jpg' width=500px><br>Mario got a career change.";
+						}
+						else {
+							//if they did brutal show a crying mario
+							echo "<br><img src='images/cry.gif'><br>Good work, you made Mario cry!";
+						}
+					}
+					
+					/*******************************
+					**********END FUNCTION**********
+					********************************/
+
+
+
+
+					/*******************************
+					********CODE STARTS HERE********
+					********************************/
+
+					/*Check if the ID number the user gave us actually exists*/
+					if (!file_exists('sessions/'.$id)) {
+						/*ID doesn't exist*/
+				    	echo "Invalid ID number";				    	
+					}
+					else{
+						/*ID does exist, we can continue*/
+						/*Call up our custom function, and give em a mark*/
+						mark($id);
+					}
+					/*******************************
+					************END CODE************
+					********************************/
+				 ?>
+			</div>
+
+			<!--The line breaks are back, giving us a nice clean look.-->
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<!--Same old footer, same old navigation buttons.-->
+			<div class="footer">
+				<p> 
+					This page was last updated on <b>02/28/18 at 10:43</b>
+				</p>
+				<div class="footerWrapper">
+					<span class="footButton" style="font-size:30px;cursor:pointer;left: 0;" onclick="location.href = 'MarioHome.html';">🏠</span></a>
+					<span class="footButton" style="font-size:30px;cursor:pointer;right: 25px;" onclick="location.href = 'help.html';"><i" class="fa fa-question-circle-o"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+HELP PAGE (help.html)
+************************************************************************************************************************
+************************************************************************************************************************
+
+<!--Mario 64 Quiz in PHP by Owen and Kevin
+	Mr. Krnic
+	March 2nd, 2018
+	This is the help page.
+	It has some basic instructions to help the user out.
+	Every page has a link to this one-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title> 
+			ICS4U Assignment #1 
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+	<body>
+		<div id="fadeout">
+
+			<!--Bar with Mario running across the screen-->	
+			<div id="navbar">
+				<div class="scroll-right"> 
+					<span>
+						<img id="runImage" src="images/run/10.gif" height="50px">
+					</span>
+				</div>
+				<script type="text/javascript">
+					//This script block is to make the bar of running Marios stay at the top of the page.
+					window.onscroll = function() {myFunction()};
+					var navbar = document.getElementById("navbar");
+					var sticky = navbar.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset >= sticky) {
+					    navbar.classList.add("sticky")
+					  } else {
+					    navbar.classList.remove("sticky");
+					  }
+					}
+				</script>
+			</div>			
+
+			<!--Bunch of line breaks, just to make the page look better-->
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<!--Main page content-->
+			<div class="content">
+				<h2>Having trouble?</h2>
+				<p>Here are some Frequently Asked Questions.</p>
+
+				<!--In the help section, we have accordian-style dropdowns.
+					There is a button with te question, and when clicked a panel expands, containing the answer-->
+
+				<!--FAQ #1-->
+				<button class="accordion">"How do I find out how I did on the quiz?"</button>
+				<div class="panel">
+				  	<p>
+				  		Well, when you finish you get an ID number. Type this number in on the 'Results' page whenever you want to get your scores.
+					</p>
+				</div>
+
+				<!--FAQ #2-->
+				<button class="accordion">"I forgot my ID number, how can I get my scores now?</button>
+				<div class="panel">
+				  	<p>
+				  		....
+				  		<br>
+				  		That's your own fault, really.
+				  		<br>
+				  		When you submit your results and get your ID, it does say "Remember this number!"
+				  		<br>
+				  		Just take the quiz again.
+				  	</p>
+				</div>
+
+				<!--FAQ #3-->
+				<button class="accordion">"I don't know what any of these questions are asking! What is this thing talking about?"</button>
+				<div class="panel">
+				  	<p>
+				  		That's to be expected, if you've never played the game. Don't worry too much if you don't know how to raise a scuttlebug or navigate parallel universes by building up speed for 12 hours.
+				  		<br>
+				  		I suggest you play the game if you actually want to do well on this quiz.
+				  	</p>
+				</div>
+
+				<!--FAQ #4-->
+				<button class="accordion">"I click 'Finish', and nothing happens! What do I do?"</button>
+				<div class="panel">
+				  	<p>
+				  		That means you haven't answered all the questions. Go back and check.
+				  	</p>
+				</div>	
+
+				<!--FAQ #5-->
+				<button class="accordion">"Who made this quiz?"</button>
+				<div class="panel">
+					<p>
+				  		Owen Goodwin and Kevin Cacorovski did.
+				  		<br>
+				  		Beta testing by Victoria England (I'd be killed if I didn't put that in)
+				  		<br>
+				  		It's a pretty good quiz, isn't it?
+				  	</p>
+				</div>	
+
+				<!--FAQ #6-->
+				<button class="accordion">"My name is Mr. Krnic, and I'm marking this quiz. Where can I find the text file with the source code?"</button>
+				<div class="panel">
+					<p>
+				  		<a href="source.txt">Right here.</a>
+				  	</p>
+				</div>					
+
+				<script>
+					//This script block is what allows the panels to expand and retract smoothly.
+			        var acc = document.getElementsByClassName("accordion");
+			        var i;
+
+			        for (i = 0; i < acc.length; i++) {
+			          acc[i].addEventListener("click", function() {
+			            this.classList.toggle("open");
+			            var panel = this.nextElementSibling;
+			            if (panel.style.maxHeight){
+			              panel.style.maxHeight = null;
+			            } else {
+			              panel.style.maxHeight = panel.scrollHeight + "px";
+			            } 
+			          });
+			        }
+		        </script>			
+			</div>
+
+			<!--Bunch of line breaks, just to make the page look better-->
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+
+			<!--Standard footer for all pages, with some navigation buttons as well.-->
+			<div class="footer">
+				<p> 
+					This page was last updated on <b>02/28/18 at 11:43</b>
+				</p>
+				<div class="footerWrapper">
+					<span class="footButton" style="font-size:30px;cursor:pointer;left: 0;" onclick="location.href = 'MarioHome.html';">🏠</span></a>
+					<span class="footButton" style="font-size:30px;cursor:pointer;right: 25px;" onclick="location.href = 'help.html';"><i" class="fa fa-question-circle-o"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+STYLE SHEET (css/style.css)
+************************************************************************************************************************
+************************************************************************************************************************
+
+* {
+  box-sizing: border-box;
+}
+
+/*Import our special Mario font*/
+@font-face{
+	font-family: "mario";
+  src: url("SuperMario256.ttf");
+}
+
+/* Style the header*/
+.header {
+  padding: 10px;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  font-family: "mario";
+  margin-left: 0px;
+  height: 1000px;
+  text-shadow: 2px 2px #000000;
+	
+}
+/* Style the footer */
+.footer {
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Segoe UI";
+  color: white;
+  margin-left: 0px;
+}
+
+/* Alternate footer */
+.specialFooter {
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Segoe UI";
+  color: white;
+  margin-left: 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/*Main content of the page*/
+.content {
+  align-self: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.7);
+  font-family: "mario";
+  text-shadow: 2px 2px #ffffff;
+  color: black;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/*Give columns proper layout*/
+.column {
+	font-size: 20px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+/*Row is what contains the columns*/
+.row {
+  display: -webkit-flex;
+  display: flex;
+  margin-left: 0px;
+}
+
+
+/* Responsive layout - makes the columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+   }
+}
+
+/*Page body - this is for the image of Mario in the background*/
+body
+{
+	margin: 0;
+	font-family: "Segoe UI";
+  background-image: url(../images/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+hr
+{
+	margin-left: 0px;
+  color: #000000;
+	border-color: #000000;
+	border-width: 2px;
+	border-style: single;
+  border-radius: 1px;
+}
+
+i {
+  font-size:30px;
+  color: white;
+  float: right;
+}
+
+form 
+{
+  font-size: 20px;
+  font-style: "Segoe UI";
+}
+
+.formInput{
+  font-size: 20px;
+  color: white;
+  font-style: "Segoe UI";
+  background-color: #570c0c;
+  border-style: none;
+  position: relative;
+  left: 10;
+}
+
+.scroll-right {
+  align-self: center;
+  height: 75px;	
+  overflow: hidden;
+  position: relative;
+  background-image: url(../images/bricks.png);
+  z-index: 9999;
+  color: pink;
+  border: 1px solid white;
+  margin-left: 0px;
+}
+
+.scroll-right span {
+  display: inline;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  /* Starting position */
+  -moz-transform:translateX(100%);
+  -webkit-transform:translateX(100%);	
+  transform:translateX(100%);
+  /* Apply animation to this element */	
+  -moz-animation: scroll-right 15s linear infinite;
+  -webkit-animation: scroll-right 15s linear infinite;
+  animation: scroll-right 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-right {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-right {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-right {
+ 0%   { 
+  -moz-transform: translateX(-100%); /* Browser bug fix */
+  -webkit-transform: translateX(-100%); /* Browser bug fix */
+  transform: translateX(-100%); 		
+ }
+ 100% { 
+  -moz-transform: translateX(100%); /* Browser bug fix */
+  -webkit-transform: translateX(100%); /* Browser bug fix */
+  transform: translateX(100%); 
+ }
+}
+
+.wrapper{
+  text-align: center;
+}
+
+.footerWrapper{
+  width: 100%;
+  position: absolute;
+}
+
+.footButton{
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.footButton:hover{
+  color: black;
+  background-color:lightblue;
+  transition: 0.5s;
+  border-radius: 50px;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 450px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: auto;
+  font-family: "mario";
+  overflow: hidden;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  right: -20px;
+  transition: 0.25s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.qzbutton {
+  border-radius: 4px;
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: auto;
+  font-family: "mario";
+  overflow: hidden;
+}
+
+.qzbutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.qzbutton span:after {
+  content: '\00bb';
+
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  right: -20px;
+  transition: 0.25s;
+}
+
+.qzbutton:hover span {
+  padding-right: 25px;
+}
+
+.qzbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.mySlides {
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+  height: 500px;
+}
+.slideImg {
+  text-align: center;
+  vertical-align: middle;
+  z-index: 0;
+  text-shadow: 2px 2px #000000;
+  height: 500px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 0;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 2px 2px #000000;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  text-shadow: 2px 2px #000000;
+}
+
+/* Number text (1/3 etc) */
+.qznumbertext {
+  color: #000000;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+
+/* Slideshow container, in the quiz form */
+.quiz-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  z-index: 0;
+  vertical-align: middle;
+}
+
+.quizSlide {
+  display: none;
+  padding: 50px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 3px;
+  text-shadow: 0px 0px #000000;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(255,0,0,0.8);
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+#henry {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.accordion {
+  background-color: lightblue; 
+  border-radius: 10px;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.open, .accordion:hover {
+ background-color: #6094fc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.open:after {
+  content: "\2212";
+    
+}
+
+.panel {
+  font-family: "Segoe UI";
+  padding: 0 18px;
+  border-radius: 10px;
+  background-color: #8fc3ff;
+  text-shadow: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+ASSORTED JS FUNCTIONS (js/scripts.js)
+************************************************************************************************************************
+************************************************************************************************************************
+
+function randomRunner() {				
+	var rand = Math.floor(Math.random() * 11)+1;
+	console.log(rand);					
+	document.getElementById("runImage").src = "images/run/"+rand+".gif";
+}
+
+$(document).ready(function() {
+setInterval(function() {
+		var oldrand = 11;
+		var rand = Math.floor(Math.random() * 11)+1;
+		while (rand==oldrand)
+		{
+			rand = Math.floor(Math.random() * 11)+1;
+		}
+		console.log(rand);					
+		document.getElementById("runImage").src = "images/run/"+rand+".gif";
+	}
+	, 15000);
+})
+
+$(document).ready(function(e) {
+setInterval(function() {
+	
+	var width = "+=" + ($(document).width()-100);
+		$("#henry").animate({
+		left: width
+		}, 1000, function() {
+		document.getElementById("henryImg").style.transform = "rotateY(180deg)";
+		});
+	var width = "-=" + ($(document).width()-100);
+		$("#henry").animate({
+		left: width
+		}, 1000, function() {
+		document.getElementById("henryImg").style.transform = "rotateY(0deg)";
+		});
+	})
+});

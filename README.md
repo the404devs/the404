@@ -1,10 +1,20 @@
 # the404
-http://the404.nl/
+https://the404.nl/
 
 The404 is my personal site, where I speak my mind and host all sorts of things I've created over the years.
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+
+### *4.0.1 (06/08/20)*
+----------------------
+- Content now served over HTTPS
+- Fixed up 404 page (the error)
+- Added things left behind during the Github migration
+    - Toad's Terror
+    - Mario Quiz
+    - Unfinished Waluigi Game
+- Removed 404-Editor, I don't know how it snuck in here
 
 ### *4.0.0 (06/07/20)*
 ----------------------

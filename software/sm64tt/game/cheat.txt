@@ -1,0 +1,45 @@
+SM64TT Dev Guide
+This guide is the correct route for a 100% (all diary pages and items) run.
+It is NOT the only way to beat the game, there are a bunch of other paths you can take
+This is for Mr. Krnic, so he can easily see the full extent of the game.
+********************************************************************************************
+Not every story event requires input, some are automatic.
+These are the inputs you will make to beat the game 100%
+********************************************************************************************
+yes
+corner
+ramp
+field
+gate
+right
+right
+no
+ask
+left
+pool
+fast
+flagpole
+no
+run
+kill
+yes
+yes
+path
+triple jump
+wall kicks
+enter
+right
+bird
+platform
+physically
+no
+yes
+moat
+no
+p switch
+yes
+burn OR punch (both work)
+*******************************************************************************************
+Speedrun tip: get the BLJ boots from the scuttlebug jamboree, and chase after the bunny
+when you meet him to skip some of the story and get to Toad early.
+Just like a real BLJ, right?

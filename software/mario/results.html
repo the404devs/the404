@@ -1,0 +1,90 @@
+<!--Mario 64 Quiz in PHP by Owen and Kevin
+	Mr. Krnic
+	March 2nd, 2018
+	This page is pretty simple, the user 
+	enters their ID number in a form, which
+	results.php will use to load their scores-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title> 
+			ICS4U Assignment #1 
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+	<body>
+		<div>
+			
+			<!--Bar with Mario running across the screen-->	
+			<div id="navbar">
+				<div class="scroll-right"> 
+					<span>
+						<img id="runImage" src="images/run/5.gif" height="50px">
+					</span>
+				</div>
+				<script type="text/javascript">
+					//This script block is to make the bar of running Marios stay at the top of the page.
+					window.onscroll = function() {myFunction()};
+					var navbar = document.getElementById("navbar");
+					var sticky = navbar.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset >= sticky) {
+					    navbar.classList.add("sticky")
+					  } else {
+					    navbar.classList.remove("sticky");
+					  }
+					}
+				</script>
+			</div>
+
+			<br>
+
+			<!--Main page content,
+				there isn't much of it-->
+			<div class="content">
+				<h2>Enter your ID number to view your results.</h2>
+				<!--Super simple form, with only one input-->
+				<form action="results.php" method="POST">
+					<!--User inputs the ID they were given by our php script (quiz1.php)...-->
+					<input type="number" name="txtID" placeholder="ID number..." style="font-size: 20px;">
+					<br>
+					<br>
+					<!--...and then they click the submit button and bam
+						they get their results
+						Well, actually it's a bit more complicated, see results.php-->
+					<button type="submit" class="qzbutton" width="25px"><span>Go! </span></button>
+				</form>
+				<br>
+				<br>
+				<p>
+					After completing the quiz, you will recieve a unique ID number. This number allows you to view your results from anywhere at any time.
+				</p>
+			</div>
+
+			<!--Yes, this footer is a little bit special. 
+			Slightly different behavior than a normal one, 
+			just becuase this particular page doesn't have much content, 
+			meaning the footer would actually be positioned mid-page, which looks stupid.
+			That's why some other pages have a bunch of <br> tags after the main content.
+			Here, though, it would need like a million, so we just made a special one.
+			It behaves sort of like the running mario bar, hovering fixed at the bottom of the screen.-->
+			<div class="specialFooter">
+				<p> 
+					This page was last updated on <b>02/28/18 at 10:43</b>
+				</p>
+				<div class="footerWrapper">
+					<span class="footButton" style="font-size:30px;cursor:pointer;left: 0;" onclick="location.href = 'MarioHome.html';">🏠</span></a>
+					<span class="footButton" style="font-size:30px;cursor:pointer;right: 25px;" onclick="location.href = 'help.html';"><i" class="fa fa-question-circle-o"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

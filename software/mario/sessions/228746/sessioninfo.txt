@@ -1,0 +1,1 @@
+228746,Owen,Goodwin,B,C,A,B,D,mario,bowser,scuttlebug,eyerok,right,True,False,True,quick,star,1,3,8,2,7,10,6,3,12,5,13,

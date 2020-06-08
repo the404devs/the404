@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'sm64';
+    src: url('../font/mario-64-textbox-webfont.woff2') format('woff2'),
+         url('../font/mario-64-textbox-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'smrpg';
+    src: url('../font/forgotmybazookaathome-webfont.woff2') format('woff2'),
+         url('../font/forgotmybazookaathome-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

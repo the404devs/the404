@@ -1,0 +1,685 @@
+<!--Mario 64 Quiz in PHP by Owen and Kevin
+	Mr. Krnic
+	March 2nd, 2018
+	This is the actual quiz part the user sees-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title> 
+			ICS4U Assignment #1 
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+	<body>
+		<div id="fadeout">
+			
+			<!--Bar with Mario running across the screen-->	
+			<div id="navbar">
+				<div class="scroll-right"> 
+					<span>
+						<img id="runImage" src="images/run/5.gif" height="50px">
+					</span>
+				</div>
+				<script type="text/javascript">
+					//This script block is to make the bar of running Marios stay at the top of the page.
+					window.onscroll = function() {myFunction()};
+					var navbar = document.getElementById("navbar");
+					var sticky = navbar.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset >= sticky) {
+					    navbar.classList.add("sticky")
+					  } else {
+					    navbar.classList.remove("sticky");
+					  }
+					}
+				</script>
+			</div>
+
+			<!--Bunch of line breaks, just to make the page look better-->
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<!--Main page content-->
+			<div class="content">
+				<br>
+				<br>
+				<!--Form, containing all of the inputs sent to our php script for processing-->
+				<form action="quiz1.php" method="POST">
+					<div class="quiz-container">
+						<!-- Each div with the class "quizSlide" represents one of the 6 pages-->
+						<div class="quizSlide fade">
+							<!--First page, gets the user's name-->
+						  	<div class="qznumbertext">1 / 6</div>
+						  	<h2>Welcome to the Super Mario 64 Quiz!</h2>
+							<hr>
+							<p>
+								This quiz is designed to test your general knowledge of this classic title.
+							</p>
+							<br>
+							<label>First Name:</label>
+							<input type="text" name="txtFirst" required="true">
+							<br>
+							<label>Last Name:</label>
+							<input type="text" name="txtLast" required="true">
+							<br>
+						</div>
+
+						<div class="quizSlide fade">
+							<div class="qznumbertext">2 / 6</div>
+							<!--Second page, multiple choice questions-->
+							<h3>Question 1:</h3>
+							<p>Without using cheats, how many stars can be collected in Super Mario 64?</p>
+							A: 70 <input type="radio" name="radQ1" value="A" required="true">
+							<br>
+							B: 120 <input type="radio" name="radQ1" value="B" required="true">
+							<br>
+							C: 175 <input type="radio" name="radQ1" value="C" required="true">
+							<br>
+							D: 95 <input type="radio" name="radQ1" value="D" required="true">
+							<hr>
+
+							<h3>Question 2:</h3>
+							<p>Each main level cointains a mission where Mario must collect all of the red coins. How many red coins are there in each stage?</p>
+							A: 5 <input type="radio" name="radQ2" value="A" required="true">
+							<br>
+							B: 16 <input type="radio" name="radQ2" value="B" required="true">
+							<br>
+							C: 8 <input type="radio" name="radQ2" value="C" required="true">
+							<br>
+							D: 6 <input type="radio" name="radQ2" value="D" required="true">
+							<hr>
+
+							<h3>Question 3:</h3>
+							<p>In the opening cutscene, Mario receives a letter from the Princess, telling him to come to the castle. Why does Mario get invited to the castle?</p>
+							A: The Princess baked a cake <input type="radio" name="radQ3" value="A" required="true">
+							<br>
+							B: To play a prank on Luigi <input type="radio" name="radQ3" value="B" required="true">
+							<br>
+							C: To kill Bowser <input type="radio" name="radQ3" value="C" required="true">
+							<br>
+							D: Just for fun <input type="radio" name="radQ3" value="D" required="true">
+							<hr>
+
+							<h3>Question 4:</h3>
+							<p>After getting his invitation, how does Mario arrive at the castle?</p>
+							A: On his kart <input type="radio" name="radQ4" value="A" required="true">
+							<br>
+							B: Via warp pipe <input type="radio" name="radQ4" value="B" required="true">
+							<br>
+							C: Riding on Yoshi <input type="radio" name="radQ4" value="C" required="true">
+							<br>
+							D: Carried by Toads <input type="radio" name="radQ4" value="D" required="true">
+							<hr>
+
+							<h3>Question 5:</h3>
+							<p>How many times does Mario confront Bowser throughout the game?</p>
+							A: 2 <input type="radio" name="radQ5" value="A" required="true">
+							<br>
+							B: 1 <input type="radio" name="radQ5" value="B" required="true">
+							<br>
+							C: 4 <input type="radio" name="radQ5" value="C" required="true">
+							<br>
+							D: 3 <input type="radio" name="radQ5" value="D" required="true">
+							<hr>
+						</div>
+
+						<div class="quizSlide fade">
+							<!--Third page, short answer questions-->
+						  	<div class="qznumbertext">3 / 6</div>
+
+						  	<h3>Question 6:</h3>
+							<p>Who is this?</p>
+							<br>
+							<img src="images/mario3.gif">
+							<br>
+							<input type="text" name="txtQ6" placeholder="Type your answer..." required="true">
+							<hr>
+
+							<h3>Question 7:</h3>
+							<p>Who is this?</p>
+							<br>
+							<img src="images/bowser.gif">
+							<br>
+							<input type="text" name="txtQ7" placeholder="Type your answer..." required="true">
+							<hr>
+
+							<h3>Question 8:</h3>
+							<p>What is the name of this enemy?</p>
+							<br>
+							<img src="images/jamboree.jpg">
+							<br>
+							<input type="text" name="txtQ8" placeholder="Type your answer..." required="true">
+							<hr>
+
+							<h3>Question 9:</h3>
+							<p>What is the name of this boss, who lives inside the Shifting Sand Land pyramid?</p>
+							<br>
+							<img src="images/eyerok.gif">
+							<br>
+							<input type="text" name="txtQ9" placeholder="Type your answer..." required="true">
+							<hr>
+
+							<h3>Question 10:</h3>
+							<p>This is an aerial view of the room containing the entrance to the Princess's Secret Slide. Through which picture does Mario enter the level? (Left, Middle, Right)</p>
+							<br>
+							<img src="images/pss.png" width="480px">
+							<br>
+							<input type="text" name="txtQ10" placeholder="Type your answer..." required="true">
+							<hr>
+						</div>
+
+						<div class="quizSlide fade">
+							<!--Fourth page, true/false questions, (11, 12, 13) and
+								fill-in-the-blanks (14, 15)-->
+						  	<div class="qznumbertext">4 / 6</div>
+						  	<h3>Question 11:</h3>
+							<p>MIPS the rabbit appears in the castle basement twice.</p>
+							<br>
+							<img src="images/mips.gif" width="250px">
+							<br>
+							True <input type="radio" name="radQ11" value="True" required="true">
+							<br>
+							False <input type="radio" name="radQ11" value="False" required="true">
+							<hr>
+
+							<h3>Question 12:</h3>
+							<p>Super Mario 64 contains a multiplayer mode, with a wide variety of playable characters</p>
+							<br>
+							<img src="images/sm64o.jpg" width="485px">
+							<br>
+							True <input type="radio" name="radQ12" value="True" required="true">
+							<br>
+							False <input type="radio" name="radQ12" value="False" required="true">
+							<hr>
+
+							<h3>Question 13:</h3>
+							<p>Of the three special caps Mario can unlock, the Wing Cap is the first to become available.</p>
+							<br>
+							<img src="images/wingcap.png" width="250px">
+							<br>
+							True <input type="radio" name="radQ13" value="True" required="true">
+							<br>
+							False <input type="radio" name="radQ13" value="False" required="true">
+							<hr>
+
+							<h3>Questions 14 and 15:</h3>
+							<p>Fill in the blanks:</p>
+							<br>
+							<img src="images/koopa.gif" width="250px">
+							<br>
+							<p>Koopa the <input type="text" name="txtQ14" placeholder="Type your answer..." required="true"> is a fast Koopa who will reward Mario with a <input type="text" name="txtQ15" placeholder="Type your answer..." required="true"> after beating him in a race.</p>
+							<hr>
+
+						</div>
+
+						<div class="quizSlide fade">
+							<!--Fifth page, matching questions. Match the enemy to the level
+								Enemies are shown on the left, with a dropdown menu to select an option from.
+								Levels are shown on the right, representing each option in the dropdown menu.-->
+						  	<div class="qznumbertext">5 / 6</div>
+						  	<h3>Questions 16-26:</h3>
+						  	<p>Match the boss/enemy to the level.</p>
+						  	<p>Levels are numbered from 1 to 15.</p>
+
+						  	<!--Row div, making each column div side by side-->
+						  	<div class="row">
+						  		<!--Left column, containing each enemy to be matched up with a level.
+						  			Order is:
+						  			Image of enemy
+						  			Enemy name
+						  			Dropdown selection
+						  			Line
+						  			Repeat-->
+
+						  		<div class="column">
+						  			<img src="images/bombking.gif" height="254px">
+						  			<br>
+						  			<label>#16: King Bob-omb</label>
+						  			<br>
+						  			<br>
+						  			<select name="selBoss1">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>
+						  			<hr>
+
+						  			<img src="images/eel.gif" height="254px">
+						  			<br>
+						  			<label>#17: Eel</label>
+						  			<br>
+						  			<select name="selBoss2">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>
+						  			<hr>
+
+						  			<img src="images/eyerok2.png" height="254px">
+						  			<br>
+						  			<label>#18: Eyerok</label>
+						  			<br>
+						  			<select name="selBoss3">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/whomp.gif" height="254px">
+						  			<br>
+						  			<label>#19: Whomp King</label>
+						  			<br>
+						  			<select name="selBoss4">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/bully.gif" height="254px">
+						  			<br>
+						  			<label>#20: Big Bully</label>
+						  			<br>
+						  			<select name="selBoss5">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+									<img src="images/icebully.jpg" height="254px">
+									<br>
+						  			<label>#21: Chill Bully</label>
+						  			<br>
+						  			<select name="selBoss6">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>					  			
+						  			<hr>
+
+						  			<img src="images/dorrie.png" height="254px">
+						  			<br>
+						  			<label>#22: Dorrie</label>
+						  			<br>
+						  			<select name="selBoss7">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/penguins.gif" height="254px">
+						  			<br>
+						  			<label>#23: Penguins</label>
+						  			<br>
+						  			<select name="selBoss8">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/monkey.gif" height="254px">
+						  			<br>
+						  			<label>#24: Ukiki</label>
+						  			<br>
+						  			<select name="selBoss9">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/boo.png" height="254px">
+						  			<br>
+						  			<label>#25: Big Boo</label>
+						  			<br>
+						  			<select name="selBoss10">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>						  			
+						  			<hr>
+
+						  			<img src="images/wiggler.gif" height="254px">
+						  			<br>
+						  			<label>#26: Wiggler</label>
+						  			<br>
+						  			<select name="selBoss11">
+						  				<option>1</option>
+						  				<option>2</option>
+						  				<option>3</option>
+						  				<option>4</option>
+						  				<option>5</option>
+						  				<option>6</option>
+						  				<option>7</option>
+						  				<option>8</option>
+						  				<option>9</option>
+						  				<option>10</option>
+						  				<option>11</option>
+						  				<option>12</option>
+						  				<option>13</option>
+						  				<option>14</option>
+						  				<option>15</option>
+						  			</select>				  			
+						  			<hr>
+						  		</div>
+
+						  		<!--Right column, showing the user the names of the levels they have to choose from
+						  			Order is:
+						  			Image of level
+						  			Level number and name
+						  			Line
+						  			Repeat-->
+						  		<div class="column">
+						  			<img src="images/bob.png" height="192px">
+						  			<br>
+						  			<label> 1 - Bob-omb Battlefield</label>
+						  			<hr>
+
+						  			<img src="images/wf.png" height="192px">
+						  			<br>
+						  			<label>2 - Whomp's Fortress</label>
+						  			<hr>
+
+						  			<img src="images/jrb.png" height="192px">
+						  			<br>
+						  			<label>3 - Jolly Roger Bay</label>
+						  			<hr>
+
+						  			<img src="images/ccm.png" height="192px">
+						  			<br>
+						  			<label>4 - Cool, Cool Mountain</label>
+						  			<hr>
+
+						  			<img src="images/bbh.gif" height="192px">
+						  			<br>
+						  			<label>5 - Big Boo's Haunt</label>
+						  			<hr>
+
+									<img src="images/hmc.png" height="192px">
+						  			<br>
+						  			<label>6 - Hazy Maze Cave</label>
+						  			<hr>
+
+						  			<img src="images/lll.png" height="192px">
+						  			<br>
+						  			<label>7 - Lethal Lava Land</label>
+						  			<hr>
+
+						  			<img src="images/ssl.png" height="192px">
+						  			<br>
+						  			<label>8 - Shifting Sand Land</label>
+						  			<hr>						  			
+
+						  			<img src="images/ddd.png" height="192px">
+						  			<br>
+						  			<label>9 - Dire, Dire Docks</label>
+						  			<hr>
+
+						  			<img src="images/sl.png" height="192px">
+						  			<br>
+						  			<label>10 - Snowman's Land</label>
+						  			<hr>
+
+						  			<img src="images/wdw.png" height="192px">
+						  			<br>
+						  			<label>11 - Wet-Dry World</label>
+						  			<hr>
+
+						  			<img src="images/ttm.png" height="192px">
+						  			<br>
+						  			<label>12 - Tall, Tall Mountain</label>
+						  			<hr>
+
+						  			<img src="images/thi.png" height="192px">
+						  			<br>
+						  			<label>13 - Tiny-Huge Island</label>
+						  			<hr>
+
+						  			<img src="images/ttc.png" height="192px">
+						  			<br>
+						  			<label>14 - Tick-Tock Clock</label>
+						  			<hr>
+
+						  			<img src="images/rr.png" height="192px">
+						  			<br>
+						  			<label>15 - Rainbow Ride</label>
+						  			<hr>
+						  		</div>
+						  	</div>
+						</div>
+
+
+						<div class="quizSlide fade">
+							<!--Sixth page, just has a button to submit the entire form to the php script-->
+						  	<div class="qznumbertext">6 / 6</div>
+						  	<br>
+						  	<p>You're done!</p>
+						  	<p>Click this button to submit your answers!</p>
+						  	<!--Button, type="submit" so that it sends the form to the php script-->
+							<button type="submit" class="qzbutton" width="25px"><span>Finish! </span></button>
+							<p>Note that if nothing happens when you click, you have not answered all of the questions, and need to return and finish the quiz.</p>
+						</div>
+						
+	  					<!-- Next and previous buttons -->
+	  					<div class="arrowWrapper">
+		  					<a id="leftArrow" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		  					<a id="rightArrow" class="next" onclick="plusSlides(1)">&#10095;</a>
+	  					</div>
+					</div>
+				</form>
+
+				<script type="text/javascript">
+					/*This script block is quite similar to the slideshow on the homepage, 
+					becasue that's actually what it's based off of.
+					Instead of changing slide after a few seconds though, this waits until the user has 
+					clicked either the arrows at the side or buttons at the bottom.*/
+					var slideIndex = 1;
+					showSlides(slideIndex);
+
+					// Next/previous controls
+					function plusSlides(n) {
+					  showSlides(slideIndex += n);
+					}
+
+					// Dots controls
+					function currentSlide(n) {
+					  showSlides(slideIndex = n);
+					}
+
+					function showSlides(n) {
+					  var i;
+					  var slides = document.getElementsByClassName("quizSlide");
+					  var dots = document.getElementsByClassName("dot");
+					  if (n > slides.length) {slideIndex = 1} 
+					  if (n < 1) {slideIndex = slides.length}
+					  for (i = 0; i < slides.length; i++) {
+					      slides[i].style.display = "none"; 
+					  }
+					  for (i = 0; i < dots.length; i++) {
+					      dots[i].className = dots[i].className.replace(" active", "");
+					  }
+					  slides[slideIndex-1].style.display = "block"; 
+					  dots[slideIndex-1].className += " active";
+					  window.scrollTo(0, 0);
+					}
+				</script>
+			</div>
+
+			<!-- The dots/circles at the bottom, showing the active page
+			 Clickable to navigate between pages.-->
+			<div style="text-align:center">
+			  	<span class="dot" onclick="currentSlide(1)"></span> 
+			  	<span class="dot" onclick="currentSlide(2)"></span> 
+			  	<span class="dot" onclick="currentSlide(3)"></span> 
+			  	<span class="dot" onclick="currentSlide(4)"></span> 
+			  	<span class="dot" onclick="currentSlide(5)"></span> 
+			  	<span class="dot" onclick="currentSlide(6)"></span> 
+			</div>
+
+			<!--A whole lot of line breaks, trust me they're important, since each page is a different height-->
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+
+			<!--Exact same footer as every other page, with the same navigation buttons-->
+			<div class="footer">
+				<p> 
+					This page was last updated on <b>02/28/18 at 10:44</b>
+				</p>
+				<div class="footerWrapper">
+					<span class="footButton" style="font-size:30px;cursor:pointer;left: 0;" onclick="location.href = 'MarioHome.html';">🏠</span></a>
+					<span class="footButton" style="font-size:30px;cursor:pointer;right: 25px;" onclick="location.href = 'help.html';"><i" class="fa fa-question-circle-o"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

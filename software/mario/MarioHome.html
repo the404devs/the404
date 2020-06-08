@@ -1,0 +1,182 @@
+<!--Mario 64 Quiz in PHP by Owen and Kevin
+	Mr. Krnic
+	March 2nd, 2018
+	Homepage for the quiz-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title> 
+			ICS4U Assignment #1 
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<!--Header div, this is the first thing the user sees.-->
+			<div class="header">
+				<h1>
+					Super Mario 64
+				</h1> 
+
+				<h4>
+					<img src="images/coin.gif" height="30px">
+					The Quiz
+					<img src="images/coin.gif" height="30px">
+				</h4>
+			</div>
+
+			<!--Bar with Mario running across the screen-->	
+			<div id="navbar">
+				<div class="scroll-right"> 
+					<span>
+						<img id="runImage" src="images/run/12.gif" height="50px">
+					</span>
+				</div>
+				<script type="text/javascript">
+					//This script block is to make the bar of running Marios stay at the top of the page.
+					window.onscroll = function() {myFunction()};
+					var navbar = document.getElementById("navbar");
+					var sticky = navbar.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset >= sticky) {
+					    navbar.classList.add("sticky")
+					  } else {
+					    navbar.classList.remove("sticky");
+					  }
+					}
+				</script>
+			</div>
+
+			<br>
+
+			<!--Slideshow containing some nice images.-->
+			<div class="slideshow-container">
+
+				<!--Each mySlides div contains a number, such as 1/6,
+					an image, and a caption. 
+					Only one of these divs is shown at a time.-->
+				<div class="mySlides fade">
+				  	<div class="numbertext">1 / 6</div>
+				  	<img class="slideImg" src="images/box.jpg">
+				  	<div class="text">Box art for Super Mario 64</div>
+				</div>
+
+				<div class="mySlides fade">
+				  	<div class="numbertext">2 / 6</div>
+				  	<img class="slideImg" src="images/mariotitle.png">
+				  	<div class="text">Logo</div>
+				</div>
+
+				<div class="mySlides fade">
+				  	<div class="numbertext">3 / 6</div>
+				  	<img class="slideImg" src="images/ending.jpg">
+				  	<div class="text">Ending of Super Mario 64</div>
+				</div>
+
+				<div class="mySlides fade">
+				  	<div class="numbertext">4 / 6</div>
+				  	<img class="slideImg" src="images/mario.gif">
+				  	<div class="text">Mario's Face</div>
+				</div>
+
+				<div class="mySlides fade">
+				  	<div class="numbertext">5 / 6</div>
+				  	<img class="slideImg" src="images/mario2.gif">
+				  	<div class="text">Mario Sleeping</div>
+				</div>
+
+				<div class="mySlides fade">
+				  	<div class="numbertext">6 / 6</div>
+				  	<img class="slideImg" src="images/blj.gif">
+					<div class="text">The Backwards Long Jump, an iconic glitch from the game</div>
+				</div>
+			</div>
+
+			<br>
+
+			<!--Dots below the slideshow, to show which slide is active-->
+			<div style="text-align:center">
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+
+			<script type="text/javascript">
+				//This script block is what cycles through each fo the mySlides divs, to create the slideshow effect.
+				var slideIndex = 0;
+				showSlides();
+
+				function showSlides() {
+				    var i;
+				    var slides = document.getElementsByClassName("mySlides");
+				    var dots = document.getElementsByClassName("dot");
+				    for (i = 0; i < slides.length; i++) {
+				       slides[i].style.display = "none";  
+				    }
+				    slideIndex++;
+				    if (slideIndex > slides.length) {slideIndex = 1}    
+				    for (i = 0; i < dots.length; i++) {
+				        dots[i].className = dots[i].className.replace(" active", "");
+				    }
+				    slides[slideIndex-1].style.display = "block";  
+				    dots[slideIndex-1].className += " active";
+				    setTimeout(showSlides, 5000); // Change image every 5 seconds
+				}
+			</script>
+
+			<!--Main page content-->
+			<div class="content">
+				<p>
+					Super Mario 64 was released in 1996 as the flagship game for Nintendo's newest console, the Nintendo 64. Ever since, the game has been beloved by fans. Mario's first journey into the third dimension brought revolutionary graphics to the world of video games.
+				</p>
+				<br>
+				<p>
+					By hopping through the magical paintings hanging on the walls of Peach's Castle, Mario collects Power Stars in order to defeat Bowser and rescue the Princess. He visits many fascinating worlds, and makes some new friends on his way. Running across the plains, through the desert, diving deep under the seas and from snow and ice to lava and fire and even high above the clouds, Mario is on a quest like no other.
+				</p>
+				<br>
+				<br>
+				<p>
+					This quiz was made for our Unit 1 Assignment in Grade 12 Computer Science. It employs a fanatical blend of HTML, CSS, PHP and JavaScript in order to deliver a wonderful user experience while also delivering some nostalgia for our favourite game.
+				</p>
+				<br>
+				<br>
+				<div class="wrapper">
+					<a href="quiz1.html"><button type="submit" class="button"><span>Take me to the quiz! </span></button></a>
+					<br>
+					<p>Already done the quiz?</p>
+					<a href="results.html"><button type="submit" class="button"><span>View Results! </span></button></a>
+				</div>
+				<br>
+			</div>
+
+			<!--Meme, just a little image moving back and forth. Try clicking it. -->
+			<div id="henry">
+				<img src="images/henry.png" width="100px" height="100px" id="henryImg" onclick="location.href='https://www.youtube.com/watch?v=kpk2tdsPh0A';">
+			</div>
+			
+
+			<!--Standard footer for all pages, with some navigation buttons as well.-->
+			<div class="footer">
+				<p> 					
+					This page was last updated on <b>02/28/18 at 10:44</b>
+				</p>
+
+				<div class="footerWrapper">
+					<span class="footButton" style="font-size:30px;cursor:pointer;left: 0;" onclick="location.href = 'http://www.sdsscomputers.com/OwenGoodwin/UNITS/UNIT1';"><i" class="fa fa-laptop"></i></span></a>
+					<span class="footButton" style="font-size:30px;cursor:pointer;right: 25px;" onclick="location.href = 'help.html';"><i" class="fa fa-question-circle-o"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
