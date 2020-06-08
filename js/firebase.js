@@ -12,25 +12,53 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-
+firebase.firestore().settings({
+    cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
+});
+firebase.firestore().enablePersistence();
 var db = firebase.firestore();
-
-// db.collection("blog").doc("testing").set({
-//     Title: "test",
-//     Year: 404,
-//     Month: 404,
-//     Day: 404,
-//     Content: "404 v4"
-// });
 
 var loadFromFire = async function() {
     const posts = [];
-    await db.collection("blog").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            posts.push({ id: doc.id, ...doc.data() })
-        })
-    });
+    const software = [];
 
+    let blogSnapshot = await db.collection("blog").get({ source: 'cache' });
+    if (blogSnapshot) {
+        console.log("%cUsing cached blog db", "color:green;font-weight:bold;font-style:italic;");
+        console.log(blogSnapshot);
+    } else {
+        blogSnapshot = await db.collection("blog").get({ source: 'server' });
+        console.log("%cNo blog cache, falling back to server", "color:red;font-weight:bold;font-style:italic;");
+    }
+
+    let softSnapshot = await db.collection("software").get({ source: 'cache' });
+    if (softSnapshot) {
+        console.log("%cUsing cached software db", "color:green;font-weight:bold;font-style:italic;");
+        console.log(softSnapshot)
+
+    } else {
+        softSnapshot = await db.collection("software").get({ source: 'server' });
+        console.log("%cNo software cache, falling back to server", "color:red;font-weight:bold;font-style:italic;");
+    }
+
+    console.log("%cQuerying cookie for cache status...", "color:lightblue;font-weight:bold;font-style:italic;")
+    if (document.cookie.includes("cache-time")) {
+        console.log("%cFound cache cookie. Cache is fresh, no need to update.", "color:green;font-weight:bold;font-style:italic;");
+
+    } else {
+        console.log("%cNo cache cookie, cache must be expired.", "color:orange;font-weight:bold;font-style:italic;");
+        let blogSnapshot = await db.collection("blog").get({ source: 'server' });
+        let softSnapshot = await db.collection("software").get({ source: 'server' });
+        console.log("%cGrabbed updated database", "color:yellow;font-weight:bold;font-style:italic;");
+        console.log("%cSet new cookie. Cache good for 1 hour.", "color:lightblue;font-weight:bold;font-style:italic;");
+        var d = new Date();
+        var e = new Date(d.getTime() + 3600000); //expiry in 1 hour
+        document.cookie = "cache-time = " + d.getTime() + "; expires = " + e.toUTCString();
+    }
+
+    blogSnapshot.forEach((doc) => {
+        posts.push({ id: doc.id, ...doc.data() })
+    });
     posts.reverse().forEach(post => {
         var date = ('0' + post.Month).slice(-2) + "/" + ('0' + post.Day).slice(-2) + "/" + post.Year;
         $("#home").append(
@@ -54,14 +82,9 @@ var loadFromFire = async function() {
             ).append($("<br>")).append($("<br>"));
         }
     });
-
-    const software = [];
-    await db.collection("software").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            software.push({ id: doc.id, ...doc.data() })
-        })
-    });
-
+    softSnapshot.forEach((doc) => {
+        software.push({ id: doc.id, ...doc.data() })
+    })
     software.forEach(soft => {
         //check for additional buttons
         var btn2, btn3 = "";
