@@ -276,23 +276,59 @@ var adminLoadFromFire = async function() {
             ).append(btn2).append(btn3).attr("tag", soft.Tags.join().replace(/,/g, ", "))
         );
     });
+
+    $("#new-post").fadeIn();
     showPanes(1);
 }
 
-var updateBlog = function(id) {
+var updateBlog = async function(id) {
     var id2 = "#" + id;
     var title = $(id2).children(".title").val();
     var year = $(id2).children(".year").val();
     var month = $(id2).children(".month").val();
     var day = $(id2).children(".day").val();
     var content = $(id2).children(".post-content").val();
-    console.log(content)
-    db.collection("blog").doc(id).set({
+    var x = await db.collection("blog").doc(id).set({
         Title: title,
         Year: year,
         Month: month,
         Day: day,
         Content: content
+    }).catch(function(error) {
+        alert("Fuck!");
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
+        return;
+    }).then(alert("Success!"));
+}
+
+var newPost = async function() {
+    var title = $("#new-post").children(".title").val();
+    var year = $("#new-post").children(".year").val();
+    var month = $("#new-post").children(".month").val();
+    var day = $("#new-post").children(".day").val();
+    var content = $("#new-post").children(".post-content").val();
+    var id = year.replace(/\D/g, '') + "-" + ('0' + month).slice(-2) + "-" + ('0' + day).slice(-2);
+    var x = await db.collection("blog").doc(id).set({
+        Title: title,
+        Year: year,
+        Month: month,
+        Day: day,
+        Content: content
+    }).catch(function(error) {
+        alert("Fuck!");
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
+        return;
     }).then(alert("Success!"));
 
+    $("#new-post").children(".title").val("");
+    $("#new-post").children(".year").val("");
+    $("#new-post").children(".month").val("");
+    $("#new-post").children(".day").val("");
+    $("#new-post").children(".post-content").val("");
+    $('.post').slice(2).remove();
+    adminLoadFromFire();
 }

@@ -44,7 +44,7 @@
                 <br>
                 <br>
                 <label for="login-pass">Password: </label><br>
-                <input type="password" id="login-pass" name="login-pass">
+                <input type="password" id="login-pass" name="login-pass" onkeypress="function k(e){if (e.keyCode==13)login()} k(event)">
                 <br>
                 <br>
             </form>
@@ -52,7 +52,26 @@
             <br>
             <br>
         </div>
-        <div class="pane" id="home" style="width:100%"></div>
+        <div class="pane" id="home" style="width:100%">
+            <div class="post" id="new-post" style="width: 75%;padding-top:10px;padding-bottom:10px;display:none">
+                <label for="title">Title: </label>
+                <input name="title" class="title">
+                <br>
+                <label for="year">Year: </label>
+                <input name="year" class="year">
+                <br>
+                <label for="month">Month: </label>
+                <input name="month" type="number" class="month">
+                <br>
+                <label for="day">Day: </label>
+                <input name="day" type="number" class="day">
+                <br>
+                <br>
+                <textarea name="content" class="post-content"></textarea>
+                <button class="button" onclick="newPost()"><span>New Post</span></button>
+                <br>
+            </div>
+        </div>
         <div class="pane" id="soft">soft</div>
     </div>
 
