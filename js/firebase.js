@@ -188,7 +188,6 @@ var adminLoadFromFire = async function() {
     let softSnapshot = await db.collection("software").get({ source: 'server' });
     console.log("%cGrabbed entries from server", "color:green;font-weight:bold;font-style:italic;");
 
-
     if (document.cookie.includes("state=logged")) {
         console.log("%cUser is logged in.", "color:green;font-weight:bold;font-style:italic;");
     } else {
@@ -315,12 +314,11 @@ var adminLoadFromFire = async function() {
                 "style", "width: 75%;padding-top:10px;padding-bottom:10px"
             )
         );
-
     });
 
     $("#new-post").fadeIn();
     $("#new-soft").fadeIn();
-    showPanes(2);
+    showPanes(1);
 }
 
 var updateBlog = async function(id) {
