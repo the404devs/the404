@@ -11,11 +11,13 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+// firebase.analytics();
 firebase.firestore().settings({
     cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
 });
-firebase.firestore().enablePersistence();
+firebase.firestore().enablePersistence({
+    synchronizeTabs: true
+});
 var db = firebase.firestore();
 
 var loadFromFire = async function() {
