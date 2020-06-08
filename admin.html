@@ -19,7 +19,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
 </head>
 
-<body>
+<body onload="login()">
     <div class="header">
         <h1 id="header-text" onclick="location.href = 'https://the404.nl/'" style="cursor: pointer;">THE404.NL</h1>
         <div class="tab-wrapper" id="edit-tabs" style="margin-top: 0px; display: none;">
@@ -39,11 +39,11 @@
             <h3 class="post-head">The404 admin zone</h3>
             <br>
             <form id="login-form">
-                <label for="login-email">Email: </label><br>
+                <label for="login-email">Email: </label>
                 <input type="email" id="login-email" name="login-email">
                 <br>
                 <br>
-                <label for="login-pass">Password: </label><br>
+                <label for="login-pass">Password: </label>
                 <input type="password" id="login-pass" name="login-pass" onkeypress="function k(e){if (e.keyCode==13)login()} k(event)">
                 <br>
                 <br>
@@ -52,6 +52,9 @@
             <br>
             <br>
         </div>
+        <button id="sign-out" class="button" onclick="logout()" style="display: none;"><span>Sign Out</span></button>
+        <br>
+        <br>
         <div class="pane" id="home" style="width:100%">
             <div class="post" id="new-post" style="width: 75%;padding-top:10px;padding-bottom:10px;display:none">
                 <label for="title">Title: </label>
@@ -72,11 +75,68 @@
                 <br>
             </div>
         </div>
-        <div class="pane" id="soft">soft</div>
+        <div class="pane" id="soft" style="width:100%">
+            <div class="post" id="new-soft" style="width: 75%;padding-top:10px;padding-bottom:10px;display:none">
+                <label for="id">ID: </label>
+                <input name="id" class="id">
+                <br>
+                <label for="name">Name: </label>
+                <input name="name" class="name">
+                <br>
+                <label for="version">Version: </label>
+                <input name="version" class="version">
+                <br>
+                <label for="release">Release: </label>
+                <input name="release" class="release">
+                <br>
+                <label for="current">Current: </label>
+                <input name="current" class="current">
+                <br>
+                <label for="language">Lang: </label>
+                <input name="language" class="language">
+                <br>
+                <label for="tags">Tags: </label>
+                <input name="tags" class="tags">
+                <br>
+                <label for="image">Image: </label>
+                <input name="image" class="image">
+                <br>
+                <label for="btn1t">Btn1 Text: </label>
+                <input name="btn1t" class="btn1t">
+                <br>
+                <label for="btn1l">Btn1 Link: </label>
+                <input name="btn1l" class="btn1l">
+                <br>
+                <label for="btn2t">Btn2 Text: </label>
+                <input name="btn2t" class="btn2t">
+                <br>
+                <label for="btn2l">Btn2 Link: </label>
+                <input name="btn2l" class="btn2l">
+                <br>
+                <label for="btn3t">Btn3 Text: </label>
+                <input name="btn3t" class="btn3t">
+                <br>
+                <label for="btn3l">Btn3 Link: </label>
+                <input name="btn3l" class="btn3l">
+                <br>
+                <br>
+                <br>
+                <textarea name="description" class="description"></textarea>
+                <button class="button" onclick="newSoft()">
+                    <span>New Software</span>
+                </button>
+                <br>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript" src="js/firebase.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script>
+        window.onbeforeunload = function() {
+            firebase.auth().signOut();
+        }
+    </script>
 </body>
 
 </html>

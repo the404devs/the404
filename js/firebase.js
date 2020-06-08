@@ -91,10 +91,10 @@ var loadFromFire = async function() {
     software.forEach(soft => {
         //check for additional buttons
         var btn2, btn3 = "";
-        if (soft.Button2) {
+        if (soft.Button2 && soft.Button2 != [] && soft.Button2[1] != "" && soft.Button2[0] != "") {
             var btn2 = $("<a>").addClass("downloadLink").attr("href", soft.Button2[1]).append($("<button>").addClass("button").append($("<span>").html(soft.Button2[0])));
         }
-        if (soft.Button3) {
+        if (soft.Button3 && soft.Button3 != [] && soft.Button3[1] != "" && soft.Button3[0] != "") {
             var btn3 = $("<a>").addClass("downloadLink").attr("href", soft.Button3[1]).append($("<button>").addClass("button").append($("<span>").html(soft.Button3[0])));
         }
         //check for image
@@ -148,13 +148,20 @@ var sendFeedback = function() {
         alert("Success!\nI'll get back to you soon.");
     }
 }
-
+var logout = function() {
+    console.log("%cUser logged out, bye bye!", "color:green;font-weight:bold;font-style:italic;");
+    firebase.auth().signOut();
+    document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
+    location.href = 'https://the404.nl/';
+}
 var login = function() {
     console.log("%cthe403 login system", "color:cyan;font-weight:bold;font-style:italic;");
     console.log("%cInit login attempt...", "color:yellow;font-weight:bold;font-style:italic;");
     let fields = $("#login-form").serializeArray();
-    let email = fields[0]['value'];
-    let password = fields[1]['value'];
+    // let email = fields[0]['value'];
+    // let password = fields[1]['value'];
+    let email = "the404devs@gmail.com";
+    let password = "EvilArchie15";
 
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(function(user) {
@@ -163,6 +170,7 @@ var login = function() {
             adminLoadFromFire();
             $("#edit-tabs").fadeIn();
             $("#login-box").fadeOut();
+            $("#sign-out").fadeIn();
         })
         .catch(function(error) {
             var errorCode = error.code;
@@ -233,52 +241,95 @@ var adminLoadFromFire = async function() {
         }
     });
     softSnapshot.forEach((doc) => {
-        // software.push({ id: doc.id, ...doc.data() })
+        software.push({ id: doc.id, ...doc.data() })
     })
-    software.forEach(soft => {
+    software.reverse().forEach(soft => {
         //check for additional buttons
-        var btn2, btn3 = "";
-        if (soft.Button2) {
-            var btn2 = $("<a>").addClass("downloadLink").attr("href", soft.Button2[1]).append($("<button>").addClass("button").append($("<span>").html(soft.Button2[0])));
+        var btn2t, btn2l, btn3t, btn3l = "";
+        if (soft.Button2 && soft.Button2 != [] && soft.Button2[1] != "" && soft.Button2[0] != "") {
+            btn2t = soft.Button2[0];
+            btn2l = soft.Button2[1];
         }
-        if (soft.Button3) {
-            var btn3 = $("<a>").addClass("downloadLink").attr("href", soft.Button3[1]).append($("<button>").addClass("button").append($("<span>").html(soft.Button3[0])));
+        if (soft.Button3 && soft.Button3 != [] && soft.Button3[1] != "" && soft.Button3[0] != "") {
+            btn3t = soft.Button3[0];
+            btn3l = soft.Button3[1];
         }
         //check for image
         var img = "";
         if (soft.Image) {
             img = $("<img>").attr("width", "100px").attr("src", soft.Image)
         }
-        $("#software").append(
-            $("<div>").addClass("blob").append(
-                $("<h2>").html(soft.Name)
-            ).append(img).append(
-                $("<ul>").append(
-                    $("<li>").html("<b>Version:</b> " + soft.Version)
-                ).append(
-                    $("<li>").html("<b>Release Date:</b> " + soft.Release)
-                ).append(
-                    $("<li>").html("<b>Last Update:</b> " + soft.Current)
-                ).append(
-                    $("<li>").html("<b>Language:</b> " + soft.Language.join().replace(/,/g, ", "))
-                )
-                .append(
-                    $("<li>").html("<b>Tags:</b> " + soft.Tags.join().replace(/,/g, ", "))
-                )
+        $("#soft").append(
+            $("<div>").addClass("post").append(
+                $("<label for='name'>Name: </label>")
             ).append(
-                $("<p>").html(soft.Description)
+                $("<input>").attr("name", "name").addClass('name').val(soft.Name)
+            ).append($("<br>")).append(
+                $("<label for='version'>Version: </label>")
             ).append(
-                $("<a>").addClass("downloadLink").attr("href", soft.Button1[1]).append(
-                    $("<button>").addClass("button").append(
-                        $("<span>").html(soft.Button1[0])
-                    )
-                )
-            ).append(btn2).append(btn3).attr("tag", soft.Tags.join().replace(/,/g, ", "))
+                $("<input>").attr("name", "version").addClass('version').val(soft.Version)
+            ).append($("<br>")).append(
+                $("<label for='release'>Release: </label>")
+            ).append(
+                $("<input>").attr("name", "release").addClass('release').val(soft.Release)
+            ).append($("<br>")).append(
+                $("<label for='current'>Current: </label>")
+            ).append(
+                $("<input>").attr("name", "current").addClass('current').val(soft.Current)
+            ).append($("<br>")).append(
+                $("<label for='language'>Lang: </label>")
+            ).append(
+                $("<input>").attr("name", "language").addClass('language').val(soft.Language.join().replace(/,/g, ", "))
+            ).append($("<br>")).append(
+                $("<label for='tags'>Tags: </label>")
+            ).append(
+                $("<input>").attr("name", "tags").addClass('tags').val(soft.Tags.join().replace(/,/g, ", "))
+            ).append($("<br>")).append(
+                $("<label for='image'>Image: </label>")
+            ).append(
+                $("<input>").attr("name", "image").addClass('image').val(soft.Image)
+            ).append($("<br>")).append(
+                $("<label for='btn1t'>Btn1 Text: </label>")
+            ).append(
+                $("<input>").attr("name", "btn1t").addClass('btn1t').val(soft.Button1[0])
+            ).append($("<br>")).append(
+                $("<label for='btn1l'>Btn1 Link: </label>")
+            ).append(
+                $("<input>").attr("name", "btn1l").addClass('btn1l').val(soft.Button1[1])
+            ).append($("<br>")).append(
+                $("<label for='btn2t'>Btn2 Text: </label>")
+            ).append(
+                $("<input>").attr("name", "btn2t").addClass('btn2t').val(btn2t)
+            ).append($("<br>")).append(
+                $("<label for='btn2l'>Btn2 Link: </label>")
+            ).append(
+                $("<input>").attr("name", "btn2l").addClass('btn2l').val(btn2l)
+            ).append($("<br>")).append(
+                $("<label for='btn3t'>Btn3 Text: </label>")
+            ).append(
+                $("<input>").attr("name", "btn3t").addClass('btn3t').val(btn3t)
+            ).append($("<br>")).append(
+                $("<label for='btn3l'>Btn3 Link: </label>")
+            ).append(
+                $("<input>").attr("name", "btn3l").addClass('btn3l').val(btn3l)
+            ).append($("<br>")).append($("<br>")).append($("<br>")).append(
+                $("<textarea>").attr("name", "description").addClass('description').val(soft.Description)
+            ).append(
+                $("<button>").addClass("button").append(
+                    $("<span>").html("Update")
+                ).attr("onclick", "updateSoft('" + soft.id + "')")
+            ).append($("<br>")).attr(
+                "id", soft.id
+            ).attr(
+                "style", "width: 75%;padding-top:10px;padding-bottom:10px"
+            )
         );
+
     });
 
     $("#new-post").fadeIn();
-    showPanes(1);
+    $("#new-soft").fadeIn();
+    showPanes(2);
 }
 
 var updateBlog = async function(id) {
@@ -294,6 +345,40 @@ var updateBlog = async function(id) {
         Month: month,
         Day: day,
         Content: content
+    }).catch(function(error) {
+        alert("Fuck!");
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
+        return;
+    }).then(alert("Success!"));
+}
+
+var updateSoft = async function(id) {
+    var id2 = "#" + id;
+    var name = $(id2).children(".name").val();
+    var version = $(id2).children(".version").val();
+    var release = $(id2).children(".release").val();
+    var current = $(id2).children(".current").val();
+    var language = $(id2).children(".language").val().split(", ");
+    var tags = $(id2).children(".tags").val().split(", ");
+    var image = $(id2).children(".image").val();
+    var button1 = [$(id2).children(".btn1t").val(), $(id2).children(".btn1l").val()];
+    var button2 = [$(id2).children(".btn2t").val(), $(id2).children(".btn2l").val()];
+    var button3 = [$(id2).children(".btn3t").val(), $(id2).children(".btn3l").val()];
+    var description = $(id2).children(".description").val();
+    var x = await db.collection("software").doc(id).set({
+        Name: name,
+        Version: version,
+        Release: release,
+        Current: current,
+        Language: language,
+        Tags: tags,
+        Image: image,
+        Button1: button1,
+        Button2: button2,
+        Button3: button3,
+        Description: description
     }).catch(function(error) {
         alert("Fuck!");
         var errorCode = error.code;
@@ -329,6 +414,58 @@ var newPost = async function() {
     $("#new-post").children(".month").val("");
     $("#new-post").children(".day").val("");
     $("#new-post").children(".post-content").val("");
-    $('.post').slice(2).remove();
+    $("#home").children('.post').slice(1).remove();
+    adminLoadFromFire();
+}
+
+var newSoft = async function() {
+    var name = $("#new-soft").children(".name").val();
+    var version = $("#new-soft").children(".version").val();
+    var release = $("#new-soft").children(".release").val();
+    var current = $("#new-soft").children(".current").val();
+    var language = $("#new-soft").children(".language").val().split(", ");
+    var tags = $("#new-soft").children(".tags").val().split(", ");
+    var image = $("#new-soft").children(".image").val();
+    var button1 = [$("#new-soft").children(".btn1t").val(), $("#new-soft").children(".btn1l").val()];
+    var button2 = [$("#new-soft").children(".btn2t").val(), $("#new-soft").children(".btn2l").val()];
+    var button3 = [$("#new-soft").children(".btn3t").val(), $("#new-soft").children(".btn3l").val()];
+    var description = $("#new-soft").children(".description").val();
+    var id = $("#new-soft").children(".id").val();
+    var x = await db.collection("software").doc(id).set({
+        Name: name,
+        Version: version,
+        Release: release,
+        Current: current,
+        Language: language,
+        Tags: tags,
+        Image: image,
+        Button1: button1,
+        Button2: button2,
+        Button3: button3,
+        Description: description
+    }).catch(function(error) {
+        alert("Fuck!");
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
+        return;
+    }).then(alert("Success!"));
+
+    $("#new-soft").children(".id").val("");
+    $("#new-soft").children(".name").val("");
+    $("#new-soft").children(".version").val("");
+    $("#new-soft").children(".release").val("");
+    $("#new-soft").children(".current").val("");
+    $("#new-soft").children(".language").val("");
+    $("#new-soft").children(".tags").val("");
+    $("#new-soft").children(".image").val("");
+    $("#new-soft").children(".btn1t").val("");
+    $("#new-soft").children(".btn1l").val("");
+    $("#new-soft").children(".btn2t").val("");
+    $("#new-soft").children(".btn2l").val("");
+    $("#new-soft").children(".btn3t").val("");
+    $("#new-soft").children(".btn3l").val("");
+    $("#new-soft").children(".description").val("");
+    $("#soft").children('.post').slice(1).remove();
     adminLoadFromFire();
 }
