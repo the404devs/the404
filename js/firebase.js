@@ -47,13 +47,14 @@ var loadFromFire = async function() {
 
     } else {
         console.log("%cNo cache cookie, cache must be expired.", "color:orange;font-weight:bold;font-style:italic;");
-        let blogSnapshot = await db.collection("blog").get({ source: 'server' });
-        let softSnapshot = await db.collection("software").get({ source: 'server' });
+        // let blogSnapshot = await db.collection("blog").get({ source: 'server' });
+        // let softSnapshot = await db.collection("software").get({ source: 'server' });
         console.log("%cGrabbed updated database", "color:yellow;font-weight:bold;font-style:italic;");
         console.log("%cSet new cookie. Cache good for 1 hour.", "color:lightblue;font-weight:bold;font-style:italic;");
         var d = new Date();
         var e = new Date(d.getTime() + 3600000); //expiry in 1 hour
         document.cookie = "cache-time = " + d.getTime() + "; expires = " + e.toUTCString();
+        console.log("%cReloading!", "color:lightblue;font-weight:bold;font-style:italic;");
         loadFromFire();
         return;
     }
