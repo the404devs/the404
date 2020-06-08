@@ -230,15 +230,6 @@ var adminLoadFromFire = async function() {
                 "style", "width: 75%;padding-top:10px;padding-bottom:10px"
             )
         );
-        if (post.Title) {
-            $("#blog-nav").append(
-                $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(post.Title)
-            ).append($("<br>")).append($("<br>"));
-        } else {
-            $("#blog-nav").append(
-                $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(date)
-            ).append($("<br>")).append($("<br>"));
-        }
     });
     softSnapshot.forEach((doc) => {
         software.push({ id: doc.id, ...doc.data() })
