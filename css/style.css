@@ -85,7 +85,7 @@ body {
     -webkit-text-stroke-color: var(--accent);
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke: var(--accent) 2px;
-    paint-order: stroke fill;
+    paint-order: fill stroke;
     width: min-content;
 }
 
