@@ -87,6 +87,7 @@ body {
     -webkit-text-stroke: var(--accent) 2px;
     paint-order: fill stroke;
     width: min-content;
+    cursor: pointer;
 }
 
 #header-text:before {
