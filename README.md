@@ -15,6 +15,14 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
     - Mario Quiz
     - Unfinished Waluigi Game
 - Removed 404-Editor, I don't know how it snuck in here
+- Added super-secret, super-secure admin page
+    - Accessed via version number on index
+    - Requires logging into the DB
+    - Allows me to edit and create blog posts and software entries.
+    - Relatively Zeeshan-proof
+- Added simple image gallery for logo renders
+- Added link to this repo
+- Slight changes to the 'About' pane.
 
 ### *4.0.0 (06/07/20)*
 ----------------------
