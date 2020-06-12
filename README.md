@@ -5,6 +5,15 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.0.2 (06/12/20)*
+----------------------
+- Added filter to Software pane, as promised.
+    - Specifing a tag (eg: "Games") shows only entries with that tag.
+    - Works the same with languages (eg: "C#").
+    - If both a tag and language are selected, only entries with that tag and language combo are displayed.
+        - eg: all "Games" written in "C#"
+- Added the 404 Museum, a showcase of the404's history.
+- Slapped a tab on each non-index page that takes you back to the homepage, if clicking the logo wasn't obvious enough.
 
 ### *4.0.1 (06/08/20)*
 ----------------------

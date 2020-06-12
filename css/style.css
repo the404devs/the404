@@ -131,14 +131,16 @@ body {
     z-index: 1;
 }
 
-#nav-tab-wrapper {
+#nav-tab-wrapper,
+#sort-tab-wrapper {
     top: 132px;
     transition: 0.2s all;
     display: none;
 }
 
 @media (max-width:850px) {
-    #nav-tab-wrapper {
+    #nav-tab-wrapper,
+    #sort-tab-wrapper {
         display: -webkit-box;
     }
 }
@@ -186,14 +188,31 @@ body {
     top: -19px;
 }
 
-#nav-tab {
+#nav-tab,
+#sort-tab {
     background: linear-gradient(135deg, transparent 21.5px, var(--border) 21.5px, var(--border) 22.5px, var(--background) 22.5px);
     font-size: 19px;
     padding-left: 40px;
 }
 
-#nav-tab:hover {
+#home-tab i {
+    font-size: 22px
+}
+
+#home-tab {
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 26px
+}
+
+#nav-tab:hover,
+#sort-tab:hover {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0) 21.5px, var(--foreground) 21.5px, var(--foreground) 22.5px, #59c173 22.5px, #a17fe0, #5d26c1)!important;
+    padding-right: 60px;
+}
+
+#home-tab:hover {
+    padding-right: 50px;
 }
 
 #tab1:hover {
@@ -206,10 +225,6 @@ body {
 
 #tab3:hover {
     padding-right: 80px
-}
-
-#nav-tab:hover {
-    padding-right: 60px;
 }
 
 .tab:hover {
@@ -346,22 +361,6 @@ body {
     font-size: 15px;
 }
 
-@media (max-width: 850px) {
-    .nav {
-        right: -230px;
-        backdrop-filter: blur(5px);
-        width: 200px;
-        transition: 0.2s all;
-    }
-    .post {
-        width: inherit;
-    }
-    #close,
-    #down {
-        display: -webkit-box
-    }
-}
-
 .nav .link {
     cursor: pointer;
     font-family: "Raleway";
@@ -429,6 +428,7 @@ hr {
     border: 1px solid var(--border);
     padding: 10px;
     margin-bottom: 10px;
+    width: 75%;
 }
 
 .blob h2 {
@@ -654,13 +654,38 @@ ul {
     margin-top: 5px
 }
 
+.museum .gallery-slide {
+    height: auto;
+}
+
 .gallery-slide img {
     max-width: 100%;
     max-height: 100px;
 }
 
+.museum .gallery-slide img {
+    max-height: 400px;
+    border: 1px solid var(--border);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+}
+
+.gallery-slide .lore-img {
+    max-height: 100%;
+}
+
 .gallery-slide h4 {
     margin-top: 0
+}
+
+.museum .gallery-slide h4 {
+    color: var(--link);
+    margin: 5px;
+}
+
+.gallery-slide p {
+    width: 60%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 @keyframes fade {
@@ -676,7 +701,7 @@ ul {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 45%;
     width: auto;
     height: auto;
     margin-top: -22px;
@@ -690,15 +715,30 @@ ul {
     border-radius: 50%;
     font-family: "Roboto";
     text-shadow: none;
+    background-color: var(--background-transparent);
+    z-index: 1;
 }
 
-.prev:hover,
-.next:hover {
-    color: var(--text-dark)
+.museum .prev,
+.museum .next {
+    top: 75%;
+}
+
+.prev:hover span,
+.next:hover span {
+    padding-right: initial;
+}
+
+.prev span:after,
+.next span:after {
+    content: '';
+    position: initial;
+    top: initial;
+    right: initial;
 }
 
 .next {
-    right: 25px;
+    right: 6.1%;
     padding-left: 20px;
     padding-right: 18px;
 }
@@ -720,4 +760,21 @@ ul {
     border-width: 8.5px;
     width: 0px;
     height: 0px;
+}
+
+@media (max-width: 850px) {
+    .nav {
+        right: -230px;
+        backdrop-filter: blur(5px);
+        width: 200px;
+        transition: 0.2s all;
+    }
+    .post,
+    .blob {
+        width: inherit;
+    }
+    #close,
+    #down {
+        display: -webkit-box
+    }
 }

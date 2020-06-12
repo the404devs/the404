@@ -5,7 +5,6 @@
     <title>the404.nl</title>
     <meta name="theme-color" content="#800080">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -90,7 +89,7 @@
                     <h3>Send feedback here!</h3>
                     <input id="feed-email" type="email" name="return-address" placeholder="Your e-mail address">
                     <br>
-                    <textarea id="feed-body" name="emailContent" rows="14" cols="40" placeholder="Type your thoughts here..."></textarea>
+                    <textarea id="feed-body" name="emailContent" rows="12" cols="40" placeholder="Type your thoughts here..."></textarea>
                     <br>
                     <br>
                     <button class="button" onclick="sendFeedback()"><span>Send!</span></button>
@@ -99,6 +98,11 @@
                     <h4 style="margin-bottom:5px">Old-school development page:</h4>
                     <button class="button" id="logo" onclick="location.href='development/index.html'">
 						<i class="fas fa-code" style="font-size: 20px; width: auto; padding-bottom: 3px; padding-right: 5px"></i><span>Memory lane</span>
+                    </button>
+                    <br>
+                    <h4 style="margin-bottom:5px">The404 Museum: A historical record</h4>
+                    <button class="button" id="logo" onclick="location.href='/museum.html'">
+						<i class="fas fa-landmark" style="font-size: 20px; width: auto; padding-bottom: 3px; padding-right: 5px"></i><span>Take a tour</span>
 					</button>
                 </div>
                 <div class="column">
@@ -148,8 +152,8 @@
                 </div>
                 <div class="column" style="text-align: center;">
                     <h3 class="post-head" style="margin-top: 0;">the404.nl</h3>
-                    <h5 class="creeper" onclick="location.href='admin.html'" style="cursor: pointer;">v4.0.1</h5>
-                    <h5 class="creeper">06/08/20 20:39</h5>
+                    <h5 class="creeper" onclick="location.href='/admin.html'" style="cursor: pointer;">v4.0.2</h5>
+                    <h5 class="creeper">06/12/20 18:01</h5>
                     <h5 class="creeper" id="404time" style="font-weight:normal"></h5>
                 </div>
             </div>
@@ -169,7 +173,21 @@
                 }
             </script>
         </div>
-        <div id="software" class="pane"></div>
+        <div id="software" class="pane">
+            <div class="nav" id="soft-nav">
+                <span class="button" id="down" onclick="sortScroll()" title="Scroll to Bottom">⇩</span>
+                <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
+                <div id="soft-tag-zone">
+                    <h2 style="font-size:16px;">Tags</h2>
+                </div>
+                <div id="soft-lang-zone">
+                    <h2 style="font-size:16px;">Languages</h2>
+                </div>
+            </div>
+            <div class="tab-wrapper" id="sort-tab-wrapper">
+                <span class="tab" id="sort-tab" onclick="showSort()" title="Software Menu">☰</span>
+            </div>
+        </div>
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/firebase.js"></script>
         <script type="text/javascript" src="js/mc.js"></script>

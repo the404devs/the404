@@ -23,6 +23,7 @@ var db = firebase.firestore();
 var loadFromFire = async function() {
     const posts = [];
     const software = [];
+    const tags = [];
 
     let blogSnapshot = await db.collection("blog").get({ source: 'cache' });
     if (blogSnapshot) {
@@ -126,9 +127,77 @@ var loadFromFire = async function() {
                         $("<span>").html(soft.Button1[0])
                     )
                 )
-            ).append(btn2).append(btn3).attr("tag", soft.Tags.join().replace(/,/g, ", "))
+            ).append(
+                btn2
+            ).append(
+                btn3
+            ).attr(
+                "tag", soft.Tags.join().replace(/,/g, ", ")
+            ).attr(
+                "lang", soft.Language.join().replace(/,/g, ", ")
+            )
         );
+
+        soft.Tags.forEach(tag => {
+            if (!tags.includes(tag)) {
+                tags.push(tag);
+                $("#soft-tag-zone").append(
+                    $("<input>").attr(
+                        "type", "checkbox"
+                    ).attr(
+                        "onclick", "sortTags()"
+                    ).attr(
+                        "name", tag
+                    ).attr(
+                        "style", "width:auto"
+                    ).attr(
+                        "id", tag
+                    )
+                ).append(
+                    $("<label>").attr(
+                        "for", tag
+                    ).attr(
+                        "onclick", "sortTags()"
+                    ).html(tag).addClass("link")
+                ).append(
+                    $("<br>")
+                ).append(
+                    $("<br>")
+                );
+            }
+        });
+
+        soft.Language.forEach(tag => {
+            if (!tags.includes(tag)) {
+                tags.push(tag);
+                $("#soft-lang-zone").append(
+                    $("<input>").attr(
+                        "type", "checkbox"
+                    ).attr(
+                        "onclick", "sortTags()"
+                    ).attr(
+                        "name", tag
+                    ).attr(
+                        "style", "width:auto"
+                    ).attr(
+                        "id", tag
+                    )
+                ).append(
+                    $("<label>").attr(
+                        "for", tag
+                    ).attr(
+                        "onclick", "sortTags()"
+                    ).html(tag).addClass("link")
+                ).append(
+                    $("<br>")
+                ).append(
+                    $("<br>")
+                );
+            }
+        });
+
     });
+
     showPanes(1);
 }
 
@@ -148,6 +217,7 @@ var sendFeedback = function() {
         alert("Success!\nI'll get back to you soon.");
     }
 }
+
 var logout = function() {
     console.log("%cUser logged out, bye bye!", "color:green;font-weight:bold;font-style:italic;");
     firebase.auth().signOut();
@@ -155,8 +225,9 @@ var logout = function() {
     document.cookie = document.cookie.replace("cache-time", "cache-time-old");
     location.href = 'https://the404.nl/';
 }
+
 var login = function() {
-    console.log("%cthe403 login system", "color:cyan;font-weight:bold;font-style:italic;");
+    console.log("%cthe403 login system (hi zee)", "color:cyan;font-weight:bold;font-style:italic;");
     console.log("%cInit login attempt...", "color:yellow;font-weight:bold;font-style:italic;");
     let fields = $("#login-form").serializeArray();
     let email = fields[0]['value'];
@@ -167,6 +238,7 @@ var login = function() {
             document.cookie = "state=logged;";
             console.log("%cLogin successful, redirecting...", "color:green;font-weight:bold;font-style:italic;");
             adminLoadFromFire();
+            $("#home-tabs").fadeOut();
             $("#edit-tabs").fadeIn();
             $("#login-box").fadeOut();
             $("#sign-out").fadeIn();
@@ -457,4 +529,39 @@ var newSoft = async function() {
     $("#new-soft").children(".description").val("");
     $("#soft").children('.post').slice(1).remove();
     adminLoadFromFire();
+}
+
+var sortTags = function() {
+    var matchTag = "";
+    var matchLang = "";
+    var t = 0;
+    var l = 0;
+    $("#soft-tag-zone").children("input").each(function() {
+        if ($(this).is(":checked")) {
+            matchTag += $(this).attr("id").replace(/ /g, "_");
+            t++;
+        }
+    });
+    $("#soft-lang-zone").children("input").each(function() {
+        if ($(this).is(":checked")) {
+            matchLang += $(this).attr("id").replace(/ /g, "_");
+            l++;
+        }
+    })
+
+    $(".blob").each(function() {
+        $(this).css("display", "none")
+        var tags = $(this).attr("tag").replace(/ /g, "_").split(",_");
+        tags.forEach(tag => {
+            if (matchTag.includes(tag) || t == 0) {
+                var langs = $(this).attr("lang").replace(/ /g, "_").split(",_");
+                langs.forEach(lang => {
+                    if (matchLang.includes(lang) || l == 0) {
+                        $(this).css("display", "block")
+                    }
+                })
+            }
+        })
+        showPanes(3)
+    });
 }

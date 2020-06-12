@@ -42,6 +42,7 @@ window.onresize = function() {
         }
     }
     showNav();
+    showSort();
 }
 
 var scrollToElem = function(id) {
@@ -66,8 +67,22 @@ var hideNav = function() {
     $('#nav-tab-wrapper').css('right', '0px');
 }
 
+var showSort = function() {
+    $('#soft-nav').css('right', '2.5%');
+    $('#sort-tab-wrapper').css('right', '-250px');
+}
+
+var hideSort = function() {
+    $('#soft-nav').css('right', '-230px');
+    $('#sort-tab-wrapper').css('right', '0px');
+}
+
 var navScroll = function() {
     document.getElementById("blog-nav").scrollBy({ top: document.getElementById("blog-nav").scrollHeight, behavior: "smooth" });
+}
+
+var sortScroll = function() {
+    document.getElementById("soft-nav").scrollBy({ top: document.getElementById("soft-nav").scrollHeight, behavior: "smooth" });
 }
 
 var load = function() {

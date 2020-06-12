@@ -5,7 +5,6 @@
     <title>the404.nl</title>
     <meta name="theme-color" content="#800080">
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -18,10 +17,13 @@
 <body>
     <div class="header">
         <h1 id="header-text" onclick="location.href = 'https://the404.nl/'">THE404.NL</h1>
+        <div class="tab-wrapper">
+            <span class="tab" id="home-tab" onclick="location.href = 'https://the404.nl/'"><i class="fas fa-home"></i></span>
+        </div>
     </div>
-    <div class="content">
+    <div class="content" style="width: -webkit-fill-available">
         <br>
-        <div class="post" style="position: absolute; left: 3%; right: 3%; z-index:-2">
+        <div class="post" style="width: -webkit-fill-available">
             <h3 class="post-head">Here are some high-quality logo renders I did.</h3>
             <div class="gallery">
                 <!--This has not been copied from old high school projects, I swear-->
@@ -51,10 +53,8 @@
                 </div>
 
                 <!-- Next and previous buttons -->
-                <div class="arrowWrapper">
-                    <a id="leftArrow" class="prev button" onclick="plusSlides(-1)">❮</a>
-                    <a id="rightArrow" class="next button" onclick="plusSlides(1)">❯</a>
-                </div>
+                <button id="leftArrow" class="prev button" onclick="plusSlides(-1)">❮</button>
+                <button id="rightArrow" class="next button" onclick="plusSlides(1)">❯</button>
                 <!-- Dots at the bottom -->
                 <div style="text-align:center">
                     <span class="dot active" onclick="currentSlide(1)"></span>
@@ -69,9 +69,6 @@
             <a class="downloadLink" href="logo.stl"><button class="button"><span>Download</span></button></a>
             <p>It's in .stl format, so it'll be easy to modify before printing.</p>
         </div>
-    </div>
-    <div>
-        <!-- This is a debug div. Pay it no mind. -->
     </div>
     <script type="text/javascript" src="../../js/gallery.js"></script>
 
