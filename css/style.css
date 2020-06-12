@@ -328,7 +328,8 @@ body {
 }
 
 #close,
-#down {
+#down,
+#clear {
     position: fixed;
     border: 1px solid var(--border);
     text-align: center;
@@ -350,7 +351,8 @@ body {
 }
 
 #close:hover,
-#down:hover {
+#down:hover,
+#clear:hover {
     color: var(--text-dark);
 }
 

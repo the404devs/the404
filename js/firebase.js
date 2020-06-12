@@ -547,7 +547,7 @@ var sortTags = function() {
             matchLang += $(this).attr("id").replace(/ /g, "_");
             l++;
         }
-    })
+    });
 
     $(".blob").each(function() {
         $(this).css("display", "none")
@@ -564,4 +564,14 @@ var sortTags = function() {
         })
         showPanes(3)
     });
+}
+
+var clearTags = function() {
+    $("#soft-tag-zone").children("input").each(function() {
+        $(this).prop("checked", false);
+    });
+    $("#soft-lang-zone").children("input").each(function() {
+        $(this).prop("checked", false);
+    });
+    sortTags();
 }
