@@ -780,3 +780,22 @@ ul {
         display: -webkit-box
     }
 }
+
+input[type="checkbox"] {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked+label .checkmark {
+    background-image: url("../img/CHECKED.png");
+}
+
+.checkmark {
+    position: absolute;
+    /* top: 0; */
+    left: -22px;
+    height: 16px;
+    width: 16px;
+    background-image: url("../img/UNCHECKED.png");
+    background-size: 16px 16px;
+    transition: 0.1s background-image;
+}

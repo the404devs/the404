@@ -158,7 +158,13 @@ var loadFromFire = async function() {
                         "for", tag
                     ).attr(
                         "onclick", "sortTags()"
-                    ).html(tag).addClass("link")
+                    ).html(
+                        tag
+                    ).addClass(
+                        "link"
+                    ).append(
+                        $("<span>").addClass("checkmark")
+                    )
                 ).append(
                     $("<br>")
                 ).append(
@@ -187,7 +193,11 @@ var loadFromFire = async function() {
                         "for", tag
                     ).attr(
                         "onclick", "sortTags()"
-                    ).html(tag).addClass("link")
+                    ).html(
+                        tag
+                    ).addClass(
+                        "link"
+                    ).append($("<span>").addClass("checkmark"))
                 ).append(
                     $("<br>")
                 ).append(

@@ -14,6 +14,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
         - eg: all "Games" written in "C#"
 - Added the 404 Museum, a showcase of the404's history.
 - Slapped a tab on each non-index page that takes you back to the homepage, if clicking the logo wasn't obvious enough.
+- Created custom checkbox images for use in the Software filter menu
 
 ### *4.0.1 (06/08/20)*
 ----------------------
