@@ -534,6 +534,13 @@ hr {
     color: var(--text-dark);
 }
 
+.button i {
+    font-size: 20px;
+    width: auto;
+    padding-bottom: 3px;
+    padding-right: 5px;
+}
+
 .row {
     display: -webkit-flex;
     display: flex;
@@ -584,6 +591,13 @@ i {
     height: 62px;
     padding: 10px;
     margin-top: -1px;
+}
+
+.big-button i {
+    font-size: 40px;
+    width: 50px;
+    padding-right: 0;
+    padding-bottom: 2px;
 }
 
 .big-button label {
@@ -798,4 +812,11 @@ input[type="checkbox"]:checked+label .checkmark {
     background-image: url("../img/UNCHECKED.png");
     background-size: 16px 16px;
     transition: 0.1s background-image;
+}
+
+.nav h2 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 6px;
+    margin-left: -4px;
 }

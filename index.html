@@ -78,11 +78,11 @@
                     <br>
                     <h4 style="margin-bottom:5px">The404 is now on GitHub!</h4>
                     <button class="button" id="github2" onclick="location.href='https://github.com/the404devs/the404'">
-						<span><i class="fab fa-github" style="font-size: 20px; width: auto; padding-bottom: 3px;"></i> View Repo</span>
+						<span><i class="fab fa-github"></i> View Repo</span>
                     </button>
                     <h4 style="margin-bottom:5px">404 logo renders!</h4>
                     <button class="button" id="logo" onclick="location.href='img/logo/index.html'">
-						<i class="fas fa-images" style="font-size: 20px; width: auto; padding-bottom: 3px; padding-right: 5px"></i><span>Take a look</span>
+						<i class="fas fa-images"></i><span>Take a look</span>
 					</button>
                 </div>
                 <div class="column">
@@ -97,46 +97,46 @@
                     <br>
                     <h4 style="margin-bottom:5px">Old-school development page:</h4>
                     <button class="button" id="logo" onclick="location.href='development/index.html'">
-						<i class="fas fa-code" style="font-size: 20px; width: auto; padding-bottom: 3px; padding-right: 5px"></i><span>Memory lane</span>
+						<i class="fas fa-code"></i><span>Memory lane</span>
                     </button>
                     <br>
                     <h4 style="margin-bottom:5px">The404 Museum: A historical record</h4>
                     <button class="button" id="logo" onclick="location.href='/museum.html'">
-						<i class="fas fa-landmark" style="font-size: 20px; width: auto; padding-bottom: 3px; padding-right: 5px"></i><span>Take a tour</span>
+						<i class="fas fa-landmark"></i><span>Take a tour</span>
 					</button>
                 </div>
                 <div class="column">
                     <h3>The404 Archives!</h3>
                     <button class="big-button button archive" onclick="location.href='old/index.html'">
-							<i class="fas fa-archive"></i> The404 v1 <label>(01/18/18 - 08/27/18)</label>
+						<i class="fas fa-archive"></i> The404 v1 <label>(01/18/18 - 08/27/18)</label>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='old2/index.html'">
-							<i class="fas fa-archive"></i> The404 v2 <label>(08/27/18 - 03/10/19)</label>
+						<i class="fas fa-archive"></i> The404 v2 <label>(08/27/18 - 03/10/19)</label>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='old3/index.html'">
-							<i class="fas fa-archive"></i> The404 v3 <label>(03/10/19 - 06/07/20)</label>
+						<i class="fas fa-archive"></i> The404 v3 <label>(03/10/19 - 06/07/20)</label>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='https://the404devs.github.io/grade11_site/'">
-							<i class="fas fa-archive"></i> ICS 11 <label>(2017)</label>
+						<i class="fas fa-archive"></i> ICS 11 <label>(2017)</label>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='https://the404devs.github.io/grade12_site/'">
-							<i class="fas fa-archive"></i> ICS 12 <label>(2018)</label>
+						<i class="fas fa-archive"></i> ICS 12 <label>(2018)</label>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='https://the404devs.github.io/stuco/indexNEW.html'">
-							<i class="fas fa-archive"></i> Stuco <label>(2018)</label>
+						<i class="fas fa-archive"></i> Stuco <label>(2018)</label>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='cps530'">
-							<i class="fas fa-archive"></i> CPS530 <label>(2019)</label>
+						<i class="fas fa-archive"></i> CPS530 <label>(2019)</label>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='birthday/index.html'">
-							<i class="fas fa-archive"></i> Birthday Retro Style <label>(2020)</label>
+						<i class="fas fa-archive"></i> Birthday Retro Style <label>(2020)</label>
 					</button>
                     <br>
                     <br>
@@ -162,7 +162,6 @@
                 var e = new Date(2018, 0, 18, 18, 45);
                 var d = new Date();
                 var dif = (d.getTime() - e.getTime()) / 1000;
-
                 document.getElementById("404time").innerHTML = dif;
                 var time = setInterval(timer, 1000);
 
@@ -177,12 +176,11 @@
             <div class="nav" id="soft-nav">
                 <span class="button" id="down" onclick="sortScroll()" title="Scroll to Bottom">⇩</span>
                 <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
-
                 <div id="soft-tag-zone">
-                    <h2 style="font-size:16px; margin-top: 0; margin-bottom: 6px;">Tags</h2>
+                    <h2>Tags</h2>
                 </div>
                 <div id="soft-lang-zone">
-                    <h2 style="font-size:16px; margin-top: 0; margin-bottom: 6px;">Languages</h2>
+                    <h2>Languages</h2>
                 </div>
                 <button class="button" onclick="clearTags()" style="font-size:18px;height:25px"><span>Clear Tags</span></button>
                 <br><br>
@@ -191,8 +189,9 @@
                 <span class="tab" id="sort-tab" onclick="showSort()" title="Software Menu">☰</span>
             </div>
         </div>
-        <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/firebase.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/time.js"></script>
         <script type="text/javascript" src="js/mc.js"></script>
     </div>
 </body>

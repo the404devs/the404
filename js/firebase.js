@@ -205,9 +205,7 @@ var loadFromFire = async function() {
                 );
             }
         });
-
     });
-
     showPanes(1);
 }
 
