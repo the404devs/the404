@@ -263,9 +263,12 @@ var login = function() {
 var adminLoadFromFire = async function() {
     const posts = [];
     const software = [];
+    const feedback = [];
+
 
     let blogSnapshot = await db.collection("blog").get({ source: 'server' });
     let softSnapshot = await db.collection("software").get({ source: 'server' });
+    let feedSnapshot = await db.collection("feedback").get({ source: 'server' });
     console.log("%cGrabbed entries from server", "color:green;font-weight:bold;font-style:italic;");
 
     if (document.cookie.includes("state=logged")) {
@@ -395,6 +398,20 @@ var adminLoadFromFire = async function() {
             )
         );
     });
+    feedSnapshot.forEach((doc) => {
+        feedback.push({ id: doc.id, ...doc.data() })
+    })
+    feedback.reverse().forEach(feed => {
+        $("#feed").append(
+            $("<div>").addClass("post").append(
+                $("<h3>").addClass("post-head").html(feed.Email).attr(
+                    "onclick", "window.open('mailto:" + feed.Email + "')"
+                )
+            ).append(
+                $("<p>").addClass("post-body").html(feed.Feedback)
+            )
+        )
+    })
 
     $("#new-post").fadeIn();
     $("#new-soft").fadeIn();

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>the404.nl</title>
+    <title>Admin - the404</title>
     <meta name="theme-color" content="#800080">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -24,10 +24,9 @@
         <div class="tab-wrapper" id="edit-tabs" style="margin-top: 0px; display: none;">
             <span class="tab" id="tab1" onclick="showPanes(1)">Main</span>
             <br>
-            <!-- <span class="tab" id="tab2" onclick="showPanes(2)">About</span> -->
+            <span class="tab" id="tab2" onclick="showPanes(2)">About</span>
             <br>
-
-            <span class="tab" id="tab3" onclick="showPanes(2)">Software</span>
+            <span class="tab" id="tab3" onclick="showPanes(3)">Software</span>
             <br>
         </div>
         <div class="tab-wrapper" id="home-tabs">
@@ -77,6 +76,7 @@
                 <br>
             </div>
         </div>
+        <div class="pane" id="feed" style="width: 100%;"></div>
         <div class="pane" id="soft" style="width:100%">
             <div class="post" id="new-soft" style="width: 75%;padding-top:10px;padding-bottom:10px;display:none">
                 <label for="id">ID: </label>

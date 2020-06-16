@@ -3,7 +3,7 @@
 :root {
     --foreground: #ffffff;
     --background: #151824;
-    --background-transparent: rgba(21, 24, 36, 0.7);
+    --background-transparent: rgba(21, 24, 36, 0.5);
     --accent: #b20acb;
     --highlight: #800080;
     --highlight-transparent: rgba(128, 0, 128, 0.8);
@@ -18,28 +18,27 @@
 
 @font-face {
     font-family: "Camaraderie";
-    src: url("Camaraderie.otf");
+    src: url("font/Camaraderie.otf");
 }
 
 @font-face {
     font-family: "Roboto";
-    /*src: url("FOT-ChiaroStd-B.otf");*/
-    src: url("Roboto-Light.ttf");
+    src: url("font/Roboto-Light.ttf");
 }
 
 @font-face {
     font-family: "Inconsolata";
-    src: url("Inconsolata-Regular.ttf");
+    src: url("font/Inconsolata-Regular.ttf");
 }
 
 @font-face {
     font-family: "Raleway";
-    src: url("Raleway-Regular.ttf");
+    src: url("font/Raleway-Regular.ttf");
 }
 
 @font-face {
-    font-family: "Overpass";
-    src: url("Overpass-Bold.ttf");
+    font-family: "Gilroy";
+    src: url("font/Gilroy-ExtraBold.otf");
 }
 
 b {
@@ -52,7 +51,7 @@ body {
     /* background: linear-gradient(90deg, rgba(87, 12, 14, 1) 0%, rgba(128, 0, 128, 1) 50%, rgba(255, 80, 0, 1) 100%); */
     /* background: linear-gradient(45deg, rgba(196, 72, 0, 1) 0%, rgba(75, 2, 72, 1) 26%, rgba(44, 0, 62, 1) 50%, rgba(75, 2, 72, 1) 73%, rgba(196, 72, 0, 1) 100%); */
     background: var(--background-gradient);
-    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
+    text-shadow: 1px 1px 5px black, -1px 2px 5px black;
     font-family: "Roboto";
     margin: 0;
     overflow-x: hidden;
@@ -251,7 +250,7 @@ body {
 }
 
 .post-head {
-    font-family: Overpass;
+    font-family: Gilroy;
     font-size: 1.3em;
     text-decoration: underline;
     padding-bottom: 0;
@@ -328,8 +327,7 @@ body {
 }
 
 #close,
-#down,
-#clear {
+#down {
     position: fixed;
     border: 1px solid var(--border);
     text-align: center;
@@ -340,7 +338,7 @@ body {
     height: 16px!important;
     transition: 0.25s all;
     font-family: "Inconsolata";
-    background-color: var(--background);
+    background-color: var(--background-transparent);
     margin-top: -19px;
     margin-left: 193px;
     font-size: 16px;
@@ -351,8 +349,7 @@ body {
 }
 
 #close:hover,
-#down:hover,
-#clear:hover {
+#down:hover {
     color: var(--text-dark);
 }
 
@@ -391,7 +388,7 @@ body {
     border-bottom: 2px solid;
     -webkit-transition: all 0.1s;
     transition: all 0.1s;
-    box-shadow: black 0px 2px 3px;
+    box-shadow: black 0px 2px 5px;
 }
 
 .link:hover:before {
@@ -435,7 +432,7 @@ hr {
 
 .blob h2 {
     font-size: 1.75em;
-    font-family: Overpass;
+    font-family: Gilroy;
     color: var(--important);
     margin-left: 10px;
     margin-top: 15px;
@@ -586,7 +583,7 @@ i {
 .big-button {
     display: inline-block;
     text-align: left;
-    font-size: 20px;
+    font-size: 19px;
     width: 310px;
     height: 62px;
     padding: 10px;
@@ -735,6 +732,7 @@ ul {
     text-shadow: none;
     background-color: var(--background-transparent);
     z-index: 1;
+    backdrop-filter: blur(5px);
 }
 
 .museum .prev,

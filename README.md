@@ -5,6 +5,16 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.0.3 (06/16/20)*
+----------------------
+- Added feedback viewer to admin page.
+- Added link to 404 repo on museum page.
+- Tweaked css background-transparent colour to be more transparent.
+- Gave pages unique titles.
+- Adjusted text shadows.
+- Moved fonts to separate directory.
+- Replaced Overpass font with Gilroy.
+
 ### *4.0.2 (06/12/20)*
 ----------------------
 - Added filter to Software pane, as promised.
