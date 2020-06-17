@@ -12,6 +12,7 @@ var showPanes = function(n) {
             var id = "#" + panes[i].id;
             $(id).css("opacity", "0");
             $(id).css("height", "0");
+            $(id).css("z-index", "-1");
         }
     }
     for (i = 0; i < tabs.length; i++) {
@@ -24,11 +25,28 @@ var showPanes = function(n) {
     $(id).css("height", "auto");
     var h = $(id).height();
     $(id).css("height", h);
-
     $(id).css("opacity", "1");
+    $(id).css("z-index", "auto");
 
     //give the corresponding tab the "active" class
     tabs[n - 1].className += " active";
+}
+
+var determinePane = function() {
+    var tabs = $("#edit-tabs").children(".tab");
+    var x = 0;
+    tabs.each(function() {
+        if ($(this).hasClass("active")) {
+            console.log($(this))
+            $(this).click();
+            return;
+        } else {
+            x++;
+        }
+    });
+    if (x == tabs.length) {
+        showPanes(1);
+    }
 }
 
 window.onresize = function() {
@@ -38,7 +56,11 @@ window.onresize = function() {
         if ($(tabs[i]).hasClass("active")) { //Find active tab
             var y = window.pageYOffset; //store page scroll pos
             showPanes(i + 1); //Show corresponding pane to recaulculate window height
-            window.scrollTo(0, y); //restore old scroll position
+            window.scrollTo({
+                top: y,
+                left: 0,
+                behavior: "smooth"
+            }); //restore old scroll position
         }
     }
     showNav();
@@ -54,6 +76,7 @@ var scrollToElem = function(id) {
     });
     if (window.innerWidth < 850) {
         hideNav();
+        hideSort();
     }
 }
 

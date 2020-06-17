@@ -216,9 +216,11 @@ var sendFeedback = function() {
         alert("Please fill in all fields before submitting!");
         return;
     } else {
+        var d = new Date();
         db.collection("feedback").add({
             Email: email,
-            Feedback: feedback
+            Feedback: feedback,
+            Date: d.toDateString()
         });
         $("#feed-email").val("");
         $("#feed-body").val("");
@@ -250,6 +252,7 @@ var login = function() {
             $("#edit-tabs").fadeIn();
             $("#login-box").fadeOut();
             $("#sign-out").fadeIn();
+            $("#refresh").fadeIn();
         })
         .catch(function(error) {
             alert("Bad password.")
@@ -264,7 +267,6 @@ var adminLoadFromFire = async function() {
     const posts = [];
     const software = [];
     const feedback = [];
-
 
     let blogSnapshot = await db.collection("blog").get({ source: 'server' });
     let softSnapshot = await db.collection("software").get({ source: 'server' });
@@ -404,18 +406,26 @@ var adminLoadFromFire = async function() {
     feedback.reverse().forEach(feed => {
         $("#feed").append(
             $("<div>").addClass("post").append(
-                $("<h3>").addClass("post-head").html(feed.Email).attr(
+                $("<h3>").addClass("post-head link").html(feed.Email).attr(
                     "onclick", "window.open('mailto:" + feed.Email + "')"
+                ).attr(
+                    "style", "cursor: pointer; width: min-content"
+                ).attr(
+                    "title", "Send reply"
                 )
             ).append(
+                $("<h4>").addClass("post-date").html(feed.Date)
+            ).append(
                 $("<p>").addClass("post-body").html(feed.Feedback)
+            ).attr(
+                "style", "width: 75%;padding-top:10px;padding-bottom:10px"
             )
         )
     })
 
     $("#new-post").fadeIn();
     $("#new-soft").fadeIn();
-    showPanes(1);
+    determinePane();
 }
 
 var updateBlog = async function(id) {
@@ -494,14 +504,7 @@ var newPost = async function() {
         console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
         return;
     }).then(alert("Success!"));
-
-    $("#new-post").children(".title").val("");
-    $("#new-post").children(".year").val("");
-    $("#new-post").children(".month").val("");
-    $("#new-post").children(".day").val("");
-    $("#new-post").children(".post-content").val("");
-    $("#home").children('.post').slice(1).remove();
-    adminLoadFromFire();
+    refresh();
 }
 
 var newSoft = async function() {
@@ -536,24 +539,7 @@ var newSoft = async function() {
         console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
         return;
     }).then(alert("Success!"));
-
-    $("#new-soft").children(".id").val("");
-    $("#new-soft").children(".name").val("");
-    $("#new-soft").children(".version").val("");
-    $("#new-soft").children(".release").val("");
-    $("#new-soft").children(".current").val("");
-    $("#new-soft").children(".language").val("");
-    $("#new-soft").children(".tags").val("");
-    $("#new-soft").children(".image").val("");
-    $("#new-soft").children(".btn1t").val("");
-    $("#new-soft").children(".btn1l").val("");
-    $("#new-soft").children(".btn2t").val("");
-    $("#new-soft").children(".btn2l").val("");
-    $("#new-soft").children(".btn3t").val("");
-    $("#new-soft").children(".btn3l").val("");
-    $("#new-soft").children(".description").val("");
-    $("#soft").children('.post').slice(1).remove();
-    adminLoadFromFire();
+    refresh();
 }
 
 var sortTags = function() {
@@ -599,4 +585,32 @@ var clearTags = function() {
         $(this).prop("checked", false);
     });
     sortTags();
+}
+
+var refresh = function() {
+    $("#new-soft").children(".id").val("");
+    $("#new-soft").children(".name").val("");
+    $("#new-soft").children(".version").val("");
+    $("#new-soft").children(".release").val("");
+    $("#new-soft").children(".current").val("");
+    $("#new-soft").children(".language").val("");
+    $("#new-soft").children(".tags").val("");
+    $("#new-soft").children(".image").val("");
+    $("#new-soft").children(".btn1t").val("");
+    $("#new-soft").children(".btn1l").val("");
+    $("#new-soft").children(".btn2t").val("");
+    $("#new-soft").children(".btn2l").val("");
+    $("#new-soft").children(".btn3t").val("");
+    $("#new-soft").children(".btn3l").val("");
+    $("#new-soft").children(".description").val("");
+    $("#new-post").children(".title").val("");
+    $("#new-post").children(".year").val("");
+    $("#new-post").children(".month").val("");
+    $("#new-post").children(".day").val("");
+    $("#new-post").children(".post-content").val("");
+    $("#home").children('.post').slice(1).remove();
+    $("#feed").children('.post').remove();
+    $("#soft").children('.post').slice(1).remove();
+
+    adminLoadFromFire();
 }

@@ -41,6 +41,11 @@
     src: url("font/Gilroy-ExtraBold.otf");
 }
 
+@font-face {
+    font-family: "Gilroy Light";
+    src: url("font/Gilroy-Light.otf");
+}
+
 b {
     color: var(--bold);
 }
@@ -252,7 +257,7 @@ body {
 .post-head {
     font-family: Gilroy;
     font-size: 1.3em;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     padding-bottom: 0;
     margin-bottom: 0;
     color: var(--important);
@@ -262,7 +267,7 @@ body {
     font-family: Raleway;
     margin-top: 0;
     padding-top: 0;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: var(--important);
     font-weight: normal;
 }
@@ -437,7 +442,6 @@ hr {
     margin-left: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
-    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
 }
 
 .blob img {
@@ -569,7 +573,6 @@ hr {
     padding: 10px;
     text-align: center;
     font-family: Roboto;
-    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
 }
 
 i {
@@ -606,6 +609,17 @@ i {
     color: var(--text-dark);
 }
 
+.head-button {
+    width: 105px;
+    font-size: 16px;
+}
+
+.head-button-wrapper {
+    position: fixed;
+    top: 10px;
+    left: 57%;
+}
+
 input,
 textarea {
     background-color: transparent;
@@ -619,28 +633,31 @@ textarea {
     transition: 0.25s all;
 }
 
+textarea {
+    height: 199px;
+}
+
 input {
     font-size: 16px;
 }
 
 input:hover,
 textarea:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-h3 {
-    font-family: "Raleway";
-    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
-}
-
+h3,
 h4 {
     font-family: "Raleway";
-    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
 }
 
 .creeper {
     /*aw man*/
     margin: 2px;
+}
+
+h4.creeper {
+    font-family: "Gilroy Light";
 }
 
 .body-image {

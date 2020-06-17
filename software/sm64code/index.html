@@ -6,17 +6,20 @@
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/remove-branding.js"></script>
+    <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="header">
-        <h1 id="header-text">THE404.NL</h1>
+        <h1 id="header-text" onclick="location.href = 'https://the404.nl/'">THE404.NL</h1>
+        <div class="tab-wrapper">
+            <span class="tab" id="home-tab" onclick="location.href = 'https://the404.nl/'"><i class="fas fa-home"></i></span>
+        </div>
     </div>
     <div class="content">
-        <div class="main">
-            <h2>This project has moved!</h2>
-            <p>Read the latest blog post at <a href="http://www.the404.nl/" class="link">the404.nl</a> for more info.</p>
+        <div class="post" style="margin-top: 10px; width: -webkit-fill-available;">
+            <h2 style="font-family: 'Gilroy Bold';">This project has moved!</h2>
+            <p>Read the June 2020 blog post at <a href="https://www.the404.nl/" class="link">the404.nl</a> for more info.</p>
             <p>You'll find the SM64 Code Generator over on my Github page now, <a href="https://the404devs.github.io/sm64code" class="link">click here.</a> Source code can be found <a href="https://www.github.com/the404devs/sm64code" class="link">here.</a>
         </div>
     </div>

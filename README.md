@@ -5,6 +5,21 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.0.4 (06/17/20)*
+----------------------
+- #### This version number will only happen once, enjoy it while it lasts!
+- Fixed bug where nav menus from inactive panes would interfere with interacting with active pane
+    - Inactive panes are now set to z-index -1
+- Plenty of admin page polish, not that you'll ever see it
+    - Moved "Sign out" button to header, alongside new "Refresh" button that, well, refreshes the page with the up-to-date db contents.
+    - Styling changes to email feedback viewer.
+- Feedback submitted through the site now has a date appended to it, for my own convenience.
+- Adjusted 404 (the error) page to include a home button at the top, as well as fixed up the styling to be more consistent with the main site.
+- Background of text inputs are now ever so slightly darker than before on hover.
+- Styling tweaks for the About pane.
+- Removed underline from post-head and post-date. Might revert later.
+
+
 ### *4.0.3 (06/16/20)*
 ----------------------
 - Added feedback viewer to admin page.

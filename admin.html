@@ -29,6 +29,11 @@
             <span class="tab" id="tab3" onclick="showPanes(3)">Software</span>
             <br>
         </div>
+        <div class="head-button-wrapper">
+            <button id="sign-out" class="button head-button" onclick="logout()" style="display: none;"><span>Sign Out</span></button>
+            <br>
+            <button id="refresh" class="button head-button" onclick="refresh()" style="display: none;"><span>Refresh</span></button>
+        </div>
         <div class="tab-wrapper" id="home-tabs">
             <span class="tab" id="home-tab" onclick="location.href = 'https://the404.nl/'"><i class="fas fa-home"></i></span>
         </div>
@@ -37,7 +42,7 @@
     <div class="content">
         <br>
         <div id="login-box" class="post" style="position: absolute; width: auto;">
-            <h3 class="post-head">The404 admin zone</h3>
+            <h3 class="post-head">The404 Admin Zone</h3>
             <br>
             <form id="login-form">
                 <label for="login-email">Email: </label>
@@ -53,9 +58,6 @@
             <br>
             <br>
         </div>
-        <button id="sign-out" class="button" onclick="logout()" style="display: none;"><span>Sign Out</span></button>
-        <br>
-        <br>
         <div class="pane" id="home" style="width:100%">
             <div class="post" id="new-post" style="width: 75%;padding-top:10px;padding-bottom:10px;display:none">
                 <label for="title">Title: </label>
