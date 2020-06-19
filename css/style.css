@@ -771,6 +771,13 @@ ul {
     right: initial;
 }
 
+.prev:hover:before,
+.next:hover:before {
+    border-radius: 50%;
+    width: calc(100% + 1px);
+    height: calc(100% + 1px);
+}
+
 .next {
     right: 6.1%;
     padding-left: 20px;

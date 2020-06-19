@@ -16,6 +16,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 - Grammar tweaks on Museum page, and general spelling fixes throughout the site.
 - Added v4.0.4 commemoration to Museum.
 - Dots in image galleries are now dynamically generated, so I don't have to keep copy-pasting them.
+- Adjusted hover animation for circular image gallery arrow buttons.
 
 ### *4.0.4 (06/17/20)*
 ----------------------
