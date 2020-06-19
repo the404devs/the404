@@ -3,7 +3,7 @@ var showPanes = function(n) {
     var panes = document.getElementsByClassName("pane");
     var tabs = document.getElementsByClassName("tab");
 
-    if (n > panes.length) { n = 1; } //dont fuck up
+    if (n > panes.length) { n = 1; } //don't fuck up
     if (n < 1) { n = panes.length; }
 
     for (i = 0; i < panes.length; i++) {
@@ -13,6 +13,7 @@ var showPanes = function(n) {
             $(id).css("opacity", "0");
             $(id).css("height", "0");
             $(id).css("z-index", "-1");
+            $(id).css("display", "none");
         }
     }
     for (i = 0; i < tabs.length; i++) {
@@ -22,11 +23,13 @@ var showPanes = function(n) {
 
     //fade in the correct pane
     var id = "#" + panes[n - 1].id;
+    $(id).css("display", "block");
     $(id).css("height", "auto");
     var h = $(id).height();
     $(id).css("height", h);
     $(id).css("opacity", "1");
     $(id).css("z-index", "auto");
+
 
     //give the corresponding tab the "active" class
     tabs[n - 1].className += " active";
@@ -55,7 +58,7 @@ window.onresize = function() {
     for (i = 0; i < tabs.length; i++) {
         if ($(tabs[i]).hasClass("active")) { //Find active tab
             var y = window.pageYOffset; //store page scroll pos
-            showPanes(i + 1); //Show corresponding pane to recaulculate window height
+            showPanes(i + 1); //Show corresponding pane to recalculate window height
             window.scrollTo({
                 top: y,
                 left: 0,

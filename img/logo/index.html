@@ -25,7 +25,7 @@
         <br>
         <div class="post" style="width: -webkit-fill-available">
             <h3 class="post-head">Here are some high-quality logo renders I did.</h3>
-            <div class="gallery">
+            <div class="gallery" id="logo">
                 <!--This has not been copied from old high school projects, I swear-->
                 <div class="gallery-slide" style="display: block;">
                     <img src="404.png">
@@ -56,12 +56,16 @@
                 <button id="leftArrow" class="prev button" onclick="plusSlides(-1)">❮</button>
                 <button id="rightArrow" class="next button" onclick="plusSlides(1)">❯</button>
                 <!-- Dots at the bottom -->
-                <div class="dots">
-                    <span class="dot active" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
+                <div id="dots">
+                    <script>
+                        for (let i = 1; i < $("#logo").children(".gallery-slide").length + 1; i++) {
+                            $("#dots").append(
+                                $("<span>").addClass("dot").attr(
+                                    "onclick", "currentSlide(" + i + ")"
+                                )
+                            )
+                        }
+                    </script>
                 </div>
             </div>
             <br>

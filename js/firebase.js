@@ -217,10 +217,11 @@ var sendFeedback = function() {
         return;
     } else {
         var d = new Date();
-        db.collection("feedback").add({
+        var month = d.getMonth() + 1;
+        var dateStr = d.getFullYear() + "-" + ('0' + month).slice(-2) + "-" + d.getDate()
+        db.collection("feedback").doc(dateStr).set({
             Email: email,
-            Feedback: feedback,
-            Date: d.toDateString()
+            Feedback: feedback
         });
         $("#feed-email").val("");
         $("#feed-body").val("");
@@ -414,7 +415,7 @@ var adminLoadFromFire = async function() {
                     "title", "Send reply"
                 )
             ).append(
-                $("<h4>").addClass("post-date").html(feed.Date)
+                $("<h4>").addClass("post-date").html(feed.id)
             ).append(
                 $("<p>").addClass("post-body").html(feed.Feedback)
             ).attr(

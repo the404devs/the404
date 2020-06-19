@@ -777,7 +777,7 @@ ul {
     padding-right: 18px;
 }
 
-.dots {
+#dots {
     text-align: center;
     cursor: default;
 }

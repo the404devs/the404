@@ -26,7 +26,7 @@
         <div class="post" style="width: -webkit-fill-available">
             <h3 class="post-head">The 404 Lore-o-Lore</h3>
             <p>A conversation I had with my friend Jatin spiralled into a discussion of the history of the name "the404." The conclusion was something I didn't expect. (May 16, 2020)</p>
-            <div class="gallery">
+            <div class="gallery" id="lore">
                 <!--This has not been copied from old high school projects, I swear-->
                 <div class="gallery-slide" style="display: block; height: initial;">
                     <img src="lore1.png" class="lore-img">
@@ -64,17 +64,16 @@
                 <button id="leftArrow" class="prev button" onclick="plusSlides(-1)" style="top:75%">❮</button>
                 <button id="rightArrow" class="next button" onclick="plusSlides(1)" style="top:75%">❯</button>
                 <!-- Dots at the bottom -->
-                <div class="dots">
-                    <span class="dot active" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
-                    <span class="dot" onclick="currentSlide(6)"></span>
-                    <span class="dot" onclick="currentSlide(7)"></span>
-                    <span class="dot" onclick="currentSlide(8)"></span>
-                    <span class="dot" onclick="currentSlide(9)"></span>
-                    <span class="dot" onclick="currentSlide(10)"></span>
+                <div id="dots">
+                    <script>
+                        for (let i = 1; i < $("#lore").children(".gallery-slide").length + 1; i++) {
+                            $("#dots").append(
+                                $("<span>").addClass("dot").attr(
+                                    "onclick", "currentSlide(" + i + ")"
+                                )
+                            )
+                        }
+                    </script>
                 </div>
             </div>
             <br>

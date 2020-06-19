@@ -5,6 +5,18 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.0.5 (06/19/20)*
+----------------------
+- Sadly, all good things must come to an end, even v4.0.4.
+- Inactive panes are now set to `display: none`, primarily for CTRL+F reasons.
+    - The content of inactive panes no longer interferes with CTRL+F searches.
+    - This will probably prove to be convenient for other reasons as well.
+    - I was worried this would interfere with the animations and scroll-position-saving, but it just works.
+- Feedback on Admin page is now sorted by date, for my sanity.
+- Grammar tweaks on Museum page, and general spelling fixes throughout the site.
+- Added v4.0.4 commemoration to Museum.
+- Dots in image galleries are now dynamically generated, so I don't have to keep copy-pasting them.
+
 ### *4.0.4 (06/17/20)*
 ----------------------
 - #### This version number will only happen once, enjoy it while it lasts!
@@ -33,7 +45,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 ### *4.0.2 (06/12/20)*
 ----------------------
 - Added filter to Software pane, as promised.
-    - Specifing a tag (eg: "Games") shows only entries with that tag.
+    - Specifying a tag (eg: "Games") shows only entries with that tag.
     - Works the same with languages (eg: "C#").
     - If both a tag and language are selected, only entries with that tag and language combo are displayed.
         - eg: all "Games" written in "C#"
