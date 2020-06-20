@@ -18,7 +18,8 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 - Dots in image galleries are now dynamically generated, so I don't have to keep copy-pasting them.
 - Adjusted hover animation for circular image gallery arrow buttons.
 - Changed input placeholder text colour to be more readable.
-- CSS tweaks to 404 (the error) page
+- CSS tweaks to 404 (the error) page.
+- Removed SM64TT site, since that has now been properly preserved at https://the404devs.github.io/sm64tt/
 
 ### *4.0.4 (06/17/20)*
 ----------------------
