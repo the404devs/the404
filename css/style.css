@@ -455,7 +455,11 @@ hr {
     margin: 5px 0 5px 0;
 }
 
-.blob a,
+.blob a {
+    padding-left: 7px;
+    padding-right: 0;
+}
+
 .blob p {
     padding-left: 20px;
     padding-right: 20px;
