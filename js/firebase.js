@@ -219,9 +219,10 @@ var sendFeedback = function() {
         var d = new Date();
         var month = d.getMonth() + 1;
         var dateStr = d.getFullYear() + "-" + ('0' + month).slice(-2) + "-" + d.getDate()
-        db.collection("feedback").doc(dateStr).set({
+        db.collection("feedback").add({
             Email: email,
-            Feedback: feedback
+            Feedback: feedback,
+            Date: dateStr
         });
         $("#feed-email").val("");
         $("#feed-body").val("");
@@ -415,7 +416,7 @@ var adminLoadFromFire = async function() {
                     "title", "Send reply"
                 )
             ).append(
-                $("<h4>").addClass("post-date").html(feed.id)
+                $("<h4>").addClass("post-date").html(feed.Date)
             ).append(
                 $("<p>").addClass("post-body").html(feed.Feedback)
             ).attr(

@@ -13,6 +13,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
     - This will probably prove to be convenient for other reasons as well.
     - I was worried this would interfere with the animations and scroll-position-saving, but it just works.
 - Feedback on Admin page is now sorted by date, for my sanity.
+    - Fixed bug where feedback submitted on the same day overwrites older feedback from that day.
 - Grammar tweaks on Museum page, and general spelling fixes throughout the site.
 - Added v4.0.4 commemoration to Museum.
 - Dots in image galleries are now dynamically generated, so I don't have to keep copy-pasting them.
