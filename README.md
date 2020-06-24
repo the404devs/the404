@@ -22,6 +22,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 - CSS tweaks to 404 (the error) page.
 - Removed SM64TT site, since that has now been properly preserved at https://the404devs.github.io/sm64tt/
 - Adjusted CSS to accommodate software entires with 3 buttons.
+- Fixed CSS, so that webpage content fills the whole screen width on screens larger than the one I'm currently using.
 
 ### *4.0.4 (06/17/20)*
 ----------------------
