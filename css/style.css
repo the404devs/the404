@@ -828,7 +828,7 @@ ul {
     }
     .post,
     .blob {
-        width: inherit;
+        width: inherit!important;
     }
     #close,
     #down {
