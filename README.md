@@ -23,6 +23,8 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 - Removed SM64TT site, since that has now been properly preserved at https://the404devs.github.io/sm64tt/
 - Adjusted CSS to accommodate software entires with 3 buttons.
 - Fixed CSS, so that webpage content fills the whole screen width on screens larger than the one I'm currently using.
+- Updating blog posts and such from the Admin page now invalidates the cache, so changes will be reflected on the main site immediately.
+- Minecraft server now runs 1.16.1, text changed accordingly.
 
 ### *4.0.4 (06/17/20)*
 ----------------------

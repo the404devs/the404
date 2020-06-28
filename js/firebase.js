@@ -229,12 +229,15 @@ var sendFeedback = function() {
         alert("Success!\nI'll get back to you soon.");
     }
 }
+var resetCookie = function() {
+    document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
+    document.cookie = document.cookie.replace("cache-time", "cache-time-old");
+}
 
 var logout = function() {
     console.log("%cUser logged out, bye bye!", "color:green;font-weight:bold;font-style:italic;");
     firebase.auth().signOut();
-    document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
-    document.cookie = document.cookie.replace("cache-time", "cache-time-old");
+    resetCookie();
     location.href = 'https://the404.nl/';
 }
 
@@ -450,6 +453,7 @@ var updateBlog = async function(id) {
         console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
         return;
     }).then(alert("Success!"));
+    resetCookie();
 }
 
 var updateSoft = async function(id) {
@@ -484,6 +488,7 @@ var updateSoft = async function(id) {
         console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
         return;
     }).then(alert("Success!"));
+    resetCookie();
 }
 
 var newPost = async function() {
@@ -507,6 +512,7 @@ var newPost = async function() {
         return;
     }).then(alert("Success!"));
     refresh();
+    resetCookie();
 }
 
 var newSoft = async function() {
@@ -542,6 +548,7 @@ var newSoft = async function() {
         return;
     }).then(alert("Success!"));
     refresh();
+    resetCookie();
 }
 
 var sortTags = function() {
