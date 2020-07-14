@@ -103,14 +103,6 @@ var hideSort = function() {
     $('#sort-tab-wrapper').css('right', '0px');
 }
 
-var navScroll = function() {
-    document.getElementById("blog-nav").scrollBy({ top: document.getElementById("blog-nav").scrollHeight, behavior: "smooth" });
-}
-
-var sortScroll = function() {
-    document.getElementById("soft-nav").scrollBy({ top: document.getElementById("soft-nav").scrollHeight, behavior: "smooth" });
-}
-
 var load = function() {
     console.log("%c" + art, "color:#b20acb; font-weight: bold; font-size:12px");
     loadFromFire();

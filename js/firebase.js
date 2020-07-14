@@ -21,9 +21,9 @@ firebase.firestore().enablePersistence({
 var db = firebase.firestore();
 
 var loadFromFire = async function() {
-    const posts = [];
-    const software = [];
-    const tags = [];
+    var posts = [];
+    var software = [];
+    var tags = [];
 
     let blogSnapshot = await db.collection("blog").get({ source: 'cache' });
     if (blogSnapshot) {
@@ -89,6 +89,7 @@ var loadFromFire = async function() {
     softSnapshot.forEach((doc) => {
         software.push({ id: doc.id, ...doc.data() })
     })
+
     software.forEach(soft => {
         //check for additional buttons
         var btn2, btn3 = "";
@@ -230,8 +231,8 @@ var sendFeedback = function() {
     }
 }
 var resetCookie = function() {
-    document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
-    document.cookie = document.cookie.replace("cache-time", "cache-time-old");
+    document.cookie = document.cookie.replace("cache-time", "garbage");
+    // document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
 }
 
 var logout = function() {
@@ -622,4 +623,32 @@ var refresh = function() {
     $("#soft").children('.post').slice(1).remove();
 
     adminLoadFromFire();
+}
+
+var softDateFlip = function() {
+    var parent = $("#software");
+    var children = parent.children(".blob");
+    parent.append(children.get().reverse());
+    if ($("#softFlipper").html() == "↑") {
+        $("#softFlipper").attr("title", "Sorting Descending").html("↓");
+    } else {
+        $("#softFlipper").attr("title", "Sorting Ascending").html("↑");
+    }
+}
+
+var blogDateFlip = function() {
+    var parent = $("#home");
+    var children = parent.children(".post");
+    parent.append(children.get().reverse());
+
+    var parent2 = $("#blog-nav");
+    parent2.children().slice(-2).remove()
+    var children2 = parent2.children().slice(2);
+    parent2.append(children2.get().reverse()).append($("<br>")).append($("<br>"));
+
+    if ($("#blogFlipper").html() == "↑") {
+        $("#blogFlipper").attr("title", "Sorting Descending").html("↓");
+    } else {
+        $("#blogFlipper").attr("title", "Sorting Ascending").html("↑");
+    }
 }

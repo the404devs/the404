@@ -332,12 +332,13 @@ body {
 }
 
 #close,
-#down {
+#softFlipper,
+#blogFlipper {
     position: fixed;
     border: 1px solid var(--border);
     text-align: center;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 4px!important;
+    padding-right: 4px!important;
     cursor: pointer;
     /* width: 24px!important; */
     height: 16px!important;
@@ -346,23 +347,26 @@ body {
     background-color: var(--background-transparent);
     margin-top: -19px;
     margin-left: 193px;
-    font-size: 16px;
+    font-size: 16px!important;
     display: none;
     text-shadow: none;
     z-index: 1;
-    width: unset;
+    width: unset!important;
 }
 
 #close:hover,
-#down:hover {
+#softFlipper:hover,
+#blogFlipper:hover {
     color: var(--text-dark);
 }
 
-#down {
-    padding-left: 4px;
-    padding-right: 4px;
-    margin-left: -11px;
-    font-size: 15px;
+#softFlipper,
+#blogFlipper {
+    padding-left: 4px!important;
+    padding-right: 4px!important;
+    margin-left: -11px!important;
+    font-size: 15px!important;
+    display: -webkit-box;
 }
 
 .nav .link {
@@ -486,7 +490,7 @@ hr {
     cursor: pointer;
     font-family: "Raleway";
     overflow: hidden;
-    height: 31px;
+    height: 30px;
     position: sticky;
 }
 
@@ -830,8 +834,7 @@ ul {
     .blob {
         width: auto;
     }
-    #close,
-    #down {
+    #close {
         display: -webkit-box
     }
 }
