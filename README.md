@@ -10,7 +10,6 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 - Buttons are now 30px tall, instead of 31px. The text was slightly off-centre, which was destroying my soul.
 - Both Blog and Software panes can be switched between ascending and descending date sort, whereas it used to be ascending (oldest first) on Software, and descending (newest first) on Blog.
 
-
 ### *4.0.5 (06/19/20)*
 ----------------------
 - Sadly, all good things must come to an end, even v4.0.4.
