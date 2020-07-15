@@ -40,7 +40,6 @@ var determinePane = function() {
     var x = 0;
     tabs.each(function() {
         if ($(this).hasClass("active")) {
-            console.log($(this))
             $(this).click();
             return;
         } else {
