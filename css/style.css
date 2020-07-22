@@ -352,6 +352,7 @@ body {
     text-shadow: none;
     z-index: 1;
     width: unset!important;
+    backdrop-filter: blur(5px);
 }
 
 #close:hover,
