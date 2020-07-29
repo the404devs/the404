@@ -5,6 +5,15 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.0.7 (07/29/20)*
+----------------------
+- Nav tabs won't show up until page content is retrieved from Firebase.
+    - This stops the user from getting sent back to the home tab once stuff actually loads.
+- Removed some unnecessary debug output.
+- Fixed text alignment in tabs.
+- Buttons are 31px tall again. I guess it was just a bug in Chrome's renderer.
+- Better-looking error messages when logging into the admin zone.
+
 ### *4.0.6 (07/14/20)*
 ----------------------
 - Buttons are now 30px tall, instead of 31px. The text was slightly off-centre, which was destroying my soul.

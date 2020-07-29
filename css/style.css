@@ -135,6 +135,10 @@ body {
     z-index: 1;
 }
 
+#main-tab-wrapper {
+    display: none;
+}
+
 #nav-tab-wrapper,
 #sort-tab-wrapper {
     top: 132px;
@@ -159,8 +163,8 @@ body {
     height: 75px;
     padding-right: 30px;
     padding-left: 51px;
-    padding-bottom: 3.5px;
-    padding-top: 4.5px;
+    padding-bottom: 4.5px;
+    padding-top: 3.5px;
     overflow: hidden;
     text-align: right;
     margin-right: -16px;
@@ -200,7 +204,7 @@ body {
 }
 
 #home-tab i {
-    font-size: 22px
+    font-size: 21px
 }
 
 #home-tab {
@@ -864,4 +868,14 @@ input[type="checkbox"]:checked+label .checkmark {
     margin-top: 0;
     margin-bottom: 6px;
     margin-left: -4px;
+}
+
+#errmsg {
+    transition: 0.1s opacity;
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    opacity: 0;
+    height: 10px;
+    margin-top: 10px;
 }

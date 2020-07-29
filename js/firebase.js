@@ -28,7 +28,7 @@ var loadFromFire = async function() {
     let blogSnapshot = await db.collection("blog").get({ source: 'cache' });
     if (blogSnapshot) {
         console.log("%cUsing cached blog db", "color:green;font-weight:bold;font-style:italic;");
-        console.log(blogSnapshot);
+        // console.log(blogSnapshot);
     } else {
         blogSnapshot = await db.collection("blog").get({ source: 'server' });
         console.log("%cNo blog cache, falling back to server", "color:red;font-weight:bold;font-style:italic;");
@@ -37,7 +37,7 @@ var loadFromFire = async function() {
     let softSnapshot = await db.collection("software").get({ source: 'cache' });
     if (softSnapshot) {
         console.log("%cUsing cached software db", "color:green;font-weight:bold;font-style:italic;");
-        console.log(softSnapshot);
+        // console.log(softSnapshot);
     } else {
         softSnapshot = await db.collection("software").get({ source: 'server' });
         console.log("%cNo software cache, falling back to server", "color:red;font-weight:bold;font-style:italic;");
@@ -207,6 +207,7 @@ var loadFromFire = async function() {
             }
         });
     });
+    $("#main-tab-wrapper").fadeIn();
     showPanes(1);
 }
 
@@ -261,10 +262,12 @@ var login = function() {
             $("#refresh").fadeIn();
         })
         .catch(function(error) {
-            alert("Bad password.")
+            // alert("Bad password.")
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
+            $("#errmsg").html(error.message).css("opacity", "1");
+            setTimeout(() => { $("#errmsg").css("opacity", "0"); }, 2000);
             //TODO add error handler
         });
 }
