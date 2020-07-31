@@ -553,7 +553,7 @@ hr {
 .button i {
     font-size: 20px;
     width: auto;
-    padding-bottom: 3px;
+    /* padding-bottom: 3px; */
     padding-right: 5px;
 }
 
