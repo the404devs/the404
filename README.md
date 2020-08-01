@@ -13,6 +13,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 - Fixed text alignment in tabs.
 - Buttons are 31px tall again. I guess it was just a bug in Chrome's renderer.
 - Better-looking error messages when logging into the admin zone.
+- All projects have an *xxxx.the404.nl* subdomain, some links have been changed accordingly.
 
 ### *4.0.6 (07/14/20)*
 ----------------------
