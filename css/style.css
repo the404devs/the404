@@ -192,7 +192,7 @@ body {
 
 #tab3 {
     padding-right: 50px;
-    padding-left: 54px;
+    padding-left: 62px;
     top: -19px;
 }
 
@@ -669,6 +669,13 @@ textarea::placeholder {
 h3,
 h4 {
     font-family: "Raleway";
+}
+
+#time {
+    font-weight: normal;
+    padding-bottom: 5px;
+    font-family: "Gilroy Light";
+    font-size: 16px
 }
 
 .creeper {

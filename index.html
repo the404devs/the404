@@ -25,14 +25,13 @@
             <br>
             <span class="tab" id="tab2" onclick="showPanes(2)">About</span>
             <br>
-            <span class="tab" id="tab3" onclick="showPanes(3)">Software</span>
+            <span class="tab" id="tab3" onclick="showPanes(3)">Projects</span>
             <br>
         </div>
     </div>
 
     <div class="content">
-        <div class="important-top-thing">
-        </div>
+        <div class="important-top-thing"></div>
         <div id="home" class="pane">
             <div class="nav" id="blog-nav">
                 <span class="button flipper" id="blogFlipper" onclick="blogDateFlip()" title="Sorting Ascending">↑</span>
@@ -72,9 +71,9 @@
 						<i class="fab fa-reddit"></i> u/the404devs
 					</button>
                     <br>
-                    <h4 style="margin-bottom:5px">The404 is now on GitHub!</h4>
-                    <button class="button" id="github2" onclick="location.href='https://github.com/the404devs/the404'">
-						<span><i class="fab fa-github"></i> View Repo</span>
+                    <h4 style="margin-bottom:5px">List of all Git Repositories</h4>
+                    <button class="button" id="github2" onclick="location.href='dev.html'">
+						<span><i class="fab fa-github"></i> Repo List</span>
                     </button>
                     <h4 style="margin-bottom:5px">404 logo renders!</h4>
                     <button class="button" id="logo" onclick="location.href='img/logo/index.html'">
@@ -152,11 +151,20 @@
                 <div class="column" style="text-align: center;">
                     <h3 class="creeper post-head">the404.nl</h3>
                     <br>
-                    <h4 class="creeper" onclick="location.href='admin.html'" style="cursor: pointer;">v4.0.7</h4>
+                    <h4 class="creeper" onclick="location.href='admin.html'" style="cursor: pointer;">v4.0.8</h4>
                     <br>
-                    <h4 class="creeper">07/29/20 11:14</h4>
+                    <h4 class="creeper">08/02/20 12:38</h4>
                     <br>
-                    <h5 class="creeper" id="404time" style="font-weight:normal"></h5>
+                    <h5 class="creeper" id="time"></h5>
+                    <br>
+                    <button class="button" id="changelog" onclick="location.href='README.md'">
+						<i class="fas fa-history"></i><span>Changelog</span>
+                    </button>
+                    <br>
+                    <br>
+                    <button class="button" id="github3" onclick="location.href='https://github.com/the404devs/the404'">
+						<span><i class="fab fa-github"></i> View Repo</span>
+                    </button>
                 </div>
             </div>
             <br>
@@ -164,13 +172,13 @@
                 var e = new Date(2018, 0, 18, 18, 45);
                 var d = new Date();
                 var dif = (d.getTime() - e.getTime()) / 1000;
-                document.getElementById("404time").innerHTML = dif;
+                document.getElementById("time").innerHTML = dif;
                 var time = setInterval(timer, 1000);
 
                 function timer() {
                     d = new Date();
                     dif = Math.round((d.getTime() - e.getTime()) / 1000);
-                    document.getElementById("404time").innerHTML = dif;
+                    document.getElementById("time").innerHTML = dif;
                 }
             </script>
         </div>

@@ -5,6 +5,15 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.0.8 (08/02/20)*
+----------------------
+- Added changelog button on About pane.
+- Renamed "Software" pane to "Projects".
+    - Still referred to as "Software" internally.
+- Added `dev.html`, which lists all repos on my GitHub account.
+    - Added link in About pane.
+    - Relocated 404 repo button to version info section.
+
 ### *4.0.7 (07/29/20)*
 ----------------------
 - Nav tabs won't show up until page content is retrieved from Firebase.
@@ -120,74 +129,93 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 ### *Legacy Changelog (pre-Github)*
 -----------------------------------
 *Some versions may be missing, I didn't keep detailed changelogs for the site back then.*
+
 #### *3.7.1 (06/01/20)*
 -----------------------
 - Added lore.
 - Added logo renders.
 - Migrated all projects to Github, links changed accordingly.
+
 #### *3.7.0 (05/07/20)*
 -----------------------
-- New green/purple colour scheme
+- New green/purple colour scheme.
+
 #### *3.6.0 (02/14/20)*
 -----------------------
 - New sunset-like colour scheme.
+
 #### *3.5.1 (01/10/20)*
 -----------------------
 - Added retro-style birthday page.
+
 #### *3.5.0 (12/07/19)*
 -----------------------
 - Overhauled site to make it more colourful.
 - Added index page for CPS530 stuff.
+
 #### *3.4.1 (09/08/19)*
 -----------------------
 - Software entries given the JSON treatment as well.
+
 #### *3.4.0 (09/07/19)*
 -----------------------
 - Removed hardcoded blog posts from index.
 - Blog posts are stored as JSON files, and page content is dynamically generated via some PHP code.
+
 #### *3.3.0 (08/04/19)*
 -----------------------
 - Added status thing for Minecraft server (mc.the404.nl)
 - Cleaned up the site, added some purple and some new fonts.
+
 #### *3.2.0 (06/06/19)*
 -----------------------
 - New blue/red colourscheme.
+
 #### *3.1.0 (04/04/19)*
 -----------------------
 - New font, and new colours.
+
 #### *3.0.0 (03/10/19)*
 -----------------------
 - Site completely rewritten.
 - Added navigation tabs in top-right.
+
 #### *2.2.0 (01/31/19)*
 -----------------------
 - Added social media buttons to Contact tab.
 - Removed old Main tab, added first blog post.
+
 #### *2.1.0 (09/16/18)*
 -----------------------
 - Added link to Waluigi's Quest for Smash to main tab.
 - Updated Contact tab.
+
 #### *2.0.0 (08/27/18)*
 -----------------------
 - Rewritten and redesigned site.
 - Introducing: purple!
 - All content is within index.html, and different tabs divide up the content.
+
 #### *1.2.0 (06/28/18)*
 -----------------------
 - Updated index.
 - Added links to CS projects on index.
 - Changed header font to Camaraderie.
 - Changed accent colour to purple.
+
 #### *1.1.1 (03/16/18)*
 -----------------------
 - Added more things to Software page, split into categories.
+
 #### *1.1.0 (02/16/18)*
 -----------------------
 - Added fun things to main page.
+
 #### *1.0.0 (01/26/18)*
 -----------------------
 - Added proper main page, as well as Software and Development pages.
 - New navigation menu.
+
 #### *0.0.1 (01/18/18)*
 -----------------------
 - Initial version.
