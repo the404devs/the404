@@ -141,7 +141,7 @@ body {
 
 #nav-tab-wrapper,
 #sort-tab-wrapper {
-    top: 132px;
+    top: 131px;
     transition: 0.2s all;
     display: none;
 }
