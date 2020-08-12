@@ -15,6 +15,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
     - Relocated 404 repo button to version info section.
 - Removed Mario 64 quiz. That's now found at https://sm64quiz.the404.nl
 - Added joke the403 site from last February.
+- MC server now runs 1.16.2, text changed accordingly.
 
 ### *4.0.7 (07/29/20)*
 ----------------------
