@@ -215,7 +215,7 @@ body {
 
 #nav-tab:hover,
 #sort-tab:hover {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 21.5px, var(--foreground) 21.5px, var(--foreground) 22.5px, #59c173 22.5px, #a17fe0, #5d26c1)!important;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 21.5px, var(--foreground) 21.5px, var(--foreground) 22.5px, #59c173 22.5px, #a17fe0, #5d26c1) !important;
     padding-right: 60px;
 }
 
@@ -236,7 +236,7 @@ body {
 }
 
 .tab:hover {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 20.75px, var(--foreground) 20.75px, var(--foreground) 21.75px, #59c173 21.75px, #a17fe0, #5d26c1)!important;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 20.75px, var(--foreground) 20.75px, var(--foreground) 21.75px, #59c173 21.75px, #a17fe0, #5d26c1) !important;
     color: var(--text-dark);
     text-shadow: none;
 }
@@ -331,8 +331,8 @@ body {
 
 .nav::-webkit-scrollbar {
     width: 0px;
-    visibility: hidden!important;
-    display: none!important;
+    visibility: hidden !important;
+    display: none !important;
 }
 
 #close,
@@ -341,21 +341,21 @@ body {
     position: fixed;
     border: 1px solid var(--border);
     text-align: center;
-    padding-left: 4px!important;
-    padding-right: 4px!important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
     cursor: pointer;
     /* width: 24px!important; */
-    height: 16px!important;
+    height: 16px !important;
     transition: 0.25s all;
     font-family: "Inconsolata";
     background-color: var(--background-transparent);
     margin-top: -19px;
     margin-left: 193px;
-    font-size: 16px!important;
+    font-size: 16px !important;
     display: none;
     text-shadow: none;
     z-index: 1;
-    width: unset!important;
+    width: unset !important;
     backdrop-filter: blur(5px);
 }
 
@@ -367,10 +367,10 @@ body {
 
 #softFlipper,
 #blogFlipper {
-    padding-left: 4px!important;
-    padding-right: 4px!important;
-    margin-left: -11px!important;
-    font-size: 15px!important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    margin-left: -11px !important;
+    font-size: 15px !important;
     display: -webkit-box;
 }
 
