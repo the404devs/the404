@@ -5,6 +5,12 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.1.0 (09/01/20)*
+----------------------
+- Fixed issues [#3](/../../issues/3) and [#4](/../../issues/4)
+    - Admin page login box is now the same width no matter what screen size.
+    - 
+
 ### *4.0.8 (08/02/20)*
 ----------------------
 - Added changelog button on About pane.
