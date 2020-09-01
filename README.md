@@ -7,9 +7,9 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 
 ### *4.1.0 (09/01/20)*
 ----------------------
-- Fixed issues [#3](/../../issues/3) and [#4](/../../issues/4)
+- Fixed issue [#4](/../../issues/4)
     - Admin page login box is now the same width no matter what screen size.
-    - 
+- Moved old error pages to v3 archive.
 
 ### *4.0.8 (08/02/20)*
 ----------------------
