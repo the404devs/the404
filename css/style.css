@@ -849,12 +849,12 @@ ul {
     #close {
         display: -webkit-box
     }
-    .header {
+    /* .header {
         width: 68%;
         left: 16%;
         top: 26px;
         transform: scale(1.5);
-    }
+    } */
 }
 
 input[type="checkbox"] {
