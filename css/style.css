@@ -95,7 +95,7 @@ body {
 }
 
 #header-text:before {
-    content: "Owen Goodwin";
+    content: "Owen Bowden";
     font-family: "Raleway";
     color: var(--foreground);
     text-shadow: 1px 2px 3px black, -1px 2px 3px black;
@@ -104,7 +104,7 @@ body {
     text-align: right;
     font-weight: normal;
     top: 76px;
-    left: calc(2.5% + 102px);
+    left: calc(2.5% + 105px);
     -webkit-text-stroke: 0;
 }
 
