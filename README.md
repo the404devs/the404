@@ -8,7 +8,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 ### *4.1.1 (10/31/20)*
 ----------------------
 - Change my name to "Bowden" (actual legal change coming later)
-- 
+- MC Server 1.16.4 text changed.
 
 ### *4.1.0 (09/01/20)*
 ----------------------
