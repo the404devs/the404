@@ -233,7 +233,7 @@ var sendFeedback = function() {
 }
 var resetCookie = function() {
     document.cookie = document.cookie.replace("cache-time", "garbage");
-    // document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
+    document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
 }
 
 var logout = function() {
