@@ -6,5 +6,5 @@ $.getJSON(url, function(r) {
         return false;
     }
 
-    $('#rest').html("<b>Status: </b>Online<br><b>Players:</b> " + r.players.online + "/" + r.players.max + "<br><b>Version:</b> " + r.version + "<br><button class='button' onclick=\"location.href='http://mc.the404.nl:8123'\" style=\" margin-top:5px\"><i class='far fa-map' style='font-size:18px; width: 25px; margin-right: 3px; padding-bottom: 4px;'></i><span>Server Map</span></button>");
+    $('#rest').html("<b>Status: </b>Online<br><b>Players:</b> " + r.players.online + "/" + r.players.max + "<br><b>Version:</b> " + r.version + "<br><button class='button' onclick=\"location.href='http://mc.the404.nl'\" style=\" margin-top:5px\"><i class='far fa-map' style='font-size:18px; width: 25px; margin-right: 3px; padding-bottom: 4px;'></i><span>Server Map</span></button>");
 });
