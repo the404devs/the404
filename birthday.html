@@ -2,15 +2,11 @@
 <html>
 
 <head>
-    <title>the404</title>
-    <meta name="theme-color" content="#800080">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
+    <title>404 - Goodwin's Site</title>
+    <!-- <meta name="theme-color" content="#800080"> -->
+    <link rel="stylesheet" type="text/css" href="css/birthday.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="img/faviconold.ico">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
@@ -19,29 +15,48 @@
 
 <body onload="load()">
     <div class="header">
-        <h1 id="header-text" onclick="showPanes(1)">THE404.NL</h1>
-        <div class="tab-wrapper" id="main-tab-wrapper" style="margin-top: 0px;">
-            <span class="tab" id="tab1" onclick="showPanes(1)">Main</span>
-            <br>
-            <span class="tab" id="tab2" onclick="showPanes(2)">About</span>
-            <br>
-            <span class="tab" id="tab3" onclick="showPanes(3)">Projects</span>
-            <br>
-        </div>
+        <h1 id="header-text">Welcome to 404!</h1>
+        <!-- <div id="tab-wrapper" style="margin-top: 0px;">
+				<span class="tab" id="tab1" onclick="showPanes(1)">Main</span>
+				<br>
+				<span class="tab" id="tab2" onclick="showPanes(2)">About</span>
+				<br>
+				<span class="tab" id="tab3" onclick="showPanes(3)">Software</span>
+				<br>
+			</div> -->
     </div>
-
+    <br>
+    <br>
     <div class="content">
-        <div class="important-top-thing"></div>
+        <hr>
+        <div class="header2">
+            <h2>This is Owen's 3-year-old site! STILL under maintenance, in case you're wondering.</h2>
+        </div>
+        <hr>
+        <br>
+
         <div id="home" class="pane">
-            <div class="nav" id="blog-nav">
-                <span class="button flipper" id="blogFlipper" onclick="blogDateFlip()" title="Sorting Ascending">↑</span>
-                <span class="button" id="close" onclick="hideNav()" title="Close Menu">×</span>
-            </div>
-            <div class="tab-wrapper" id="nav-tab-wrapper">
-                <span class="tab" id="nav-tab" onclick="showNav()" title="Blog Menu">☰</span>
-            </div>
+            <br>
+            <a class="tab" href="#" onclick="showPanes(1)">Home</a>
+            <br>
+            <a class="tab" href="#" onclick="showPanes(3)">Software Downloads</a>
+            <br>
+            <a class="tab" href="#" onclick="showPanes(2)">About</a>
+            <br>
+            <br> Your browser shouldn't be saying this site is malicious.... I sorted that problem out years ago, so don't worry, it's perfectly safe now!
+            <br>
+            <img src="img/spook.gif">
+            <hr class='inner-line'>
         </div>
         <div id="about" class="pane">
+            <br>
+            <a href="#" onclick="showPanes(1)">Home</a>
+            <br>
+            <a href="#" onclick="showPanes(3)">Software Downloads</a>
+            <br>
+            <a href="#" onclick="showPanes(2)">About</a>
+            <br>
+            <br>
             <div class="row">
                 <p>
                     Welcome! I started the404 on January 18th, 2018. This site has become my own little corner of the internet, and hosts a variety of different projects I have worked on over the years.
@@ -151,7 +166,7 @@
                 <div class="column" style="text-align: center;">
                     <h3 class="creeper post-head">the404.nl</h3>
                     <br>
-                    <h4 class="creeper" onclick="location.href='admin.html'" id="version">v4.1.2</h4>
+                    <h4 class="creeper" onclick="location.href='admin.html'" style="cursor: pointer;">v4.1.2</h4>
                     <br>
                     <h4 class="creeper">01/01/21 11:32</h4>
                     <br>
@@ -161,9 +176,13 @@
 						<i class="fas fa-history"></i><span>Changelog</span>
                     </button>
                     <br>
-                    <br>
                     <button class="button" id="github3" onclick="location.href='https://github.com/the404devs/the404'">
 						<span><i class="fab fa-github"></i> View Repo</span>
+                    </button>
+                    <br>
+                    <br>
+                    <button class="button" onclick="location.href='https://the404.nl/index.html'">
+						<span><i class="fas fa-home"></i> Normal Site</span>
                     </button>
                 </div>
             </div>
@@ -183,27 +202,23 @@
             </script>
         </div>
         <div id="software" class="pane">
-            <div class="nav" id="soft-nav">
-                <span class="button flipper" id="softFlipper" onclick="softDateFlip()" title="Sorting Descending">↓</span>
-                <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
-                <div id="soft-tag-zone">
-                    <h2>Tags</h2>
-                </div>
-                <div id="soft-lang-zone">
-                    <h2>Languages</h2>
-                </div>
-                <button class="button" onclick="clearTags()" style="font-size:18px;height:25px"><span>Clear Tags</span></button>
-                <br><br>
-            </div>
-            <div class="tab-wrapper" id="sort-tab-wrapper">
-                <span class="tab" id="sort-tab" onclick="showSort()" title="Software Menu">☰</span>
-            </div>
+            <br>
+            <a href="#" onclick="showPanes(1)">Home</a>
+            <br>
+            <a href="#" onclick="showPanes(3)">Software Downloads</a>
+            <br>
+            <a href="#" onclick="showPanes(2)">About</a>
+            <br>
+            <br>
+
         </div>
-        <script type="text/javascript" src="js/firebase.js"></script>
-        <script type="text/javascript" src="js/birthday.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-        <script type="text/javascript" src="js/mc.js"></script>
     </div>
+    <div>
+        <!-- This is a debug div. Pay it no mind. -->
+    </div>
+    <script type="text/javascript" src="js/firebase.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/mc.js"></script>
 </body>
 
 </html>

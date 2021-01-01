@@ -892,3 +892,11 @@ input[type="checkbox"]:checked+label .checkmark {
     height: 10px;
     margin-top: 10px;
 }
+
+#version {
+    cursor: pointer;
+}
+
+.inner-line {
+    display: none;
+}

@@ -75,7 +75,7 @@ var loadFromFire = async function() {
             ).attr(
                 "id", post.id
             )
-        );
+        ).append($("<hr>").addClass("inner-line"));
         if (post.Title) {
             $("#blog-nav").append(
                 $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(post.Title)
