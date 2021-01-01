@@ -8,6 +8,13 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 ### *4.1.2 (01/01/21)*
 ----------------------
 - Revamp Birthday page in prep for upcoming birthday.
+    - Now uses the Firebase DB like the index page, meaning it's now low maintenance.
+    - Easter egg automatically activates between Jan. 17th and 19th of each year.
+    - Removed `/birthday` directory, since it was pretty redundant.
+- Reorganize the archives
+    - `/old` is now `/archive/v1`
+    - `/old2` is now `/archive/v2`
+    - `/old3` is now `/archive/v3`
 
 ### *4.1.1 (10/31/20)*
 ----------------------

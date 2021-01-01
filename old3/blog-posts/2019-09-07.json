@@ -1,9 +1,0 @@
-[
-	{
-		"Title": "September 2019 Update",
-		"Year": "2019",
-		"Month": "09",
-		"Day": "07",
-		"Content": "Big backend changes have come to The404! <br><br> Yeah, I know nothing looks different, but trust me, its called \"backend\" for a reason. These blog posts are now saved as individual JSON files, which are then processed by a bit of shoddy PHP that spits out some nicely formatted HTML. This is a much nicer way of doing it, rather than manually adding them to the <b>index.html</b>. This has shrunk the index file by over 100 lines, and I plan on doing something similar for the <b>Software</b> tab, which should remove about 200 more. That's a <b>tomorrow</b> problem, though. (09/08/19: That problem has now been dealt with.)<br><br>I've begun my second year of CS here at Ryerson, and I've even taking a <b>Web Development Systems</b> course, just so I can make this site even better than it already is. Take that, <a class='link' href='http://the403.tk'>Z</a>. Other courses are pretty standard, I'll be learning C/C++, which is something I actually meant to do over the summer but was too lazy to start. I'll also be learning about Linux, but as someone who's been using Fedora for nearly a year now, I think I'll be ok. <br><br> The rest of my classes are either pretty lame (Data Structures), pretty scary (Linear Algebra), or pretty bullshit (Communication in the Computer Industry - like what the fuck). Wish me luck.<br><br>At the moment, my workload is pretty light, but as it's only been a week, I doubt that will last. 404 will remain my top priority in my spare time, regardless of how much time that actually is. Maybe I'll even finish <a class='link' href='zootr'>ZOOTR</a>, who knows?<br><br>Happy September, everyone!"
-	}
-]
