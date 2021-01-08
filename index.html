@@ -151,9 +151,9 @@
                 <div class="column" style="text-align: center;">
                     <h3 class="creeper post-head">the404.nl</h3>
                     <br>
-                    <h4 class="creeper" onclick="location.href='admin.html'" id="version">v4.1.2</h4>
+                    <h4 class="creeper" onclick="location.href='admin.html'" id="version">v4.1.3</h4>
                     <br>
-                    <h4 class="creeper">01/01/21 11:32</h4>
+                    <h4 class="creeper">01/08/21 12:18</h4>
                     <br>
                     <h5 class="creeper" id="time"></h5>
                     <br>
@@ -184,15 +184,17 @@
         </div>
         <div id="software" class="pane">
             <div class="nav" id="soft-nav">
-                <span class="button flipper" id="softFlipper" onclick="softDateFlip()" title="Sorting Descending">↓</span>
+                <span class="button flipper" id="softFlipper" onclick="softDateFlip()" title="Sorting Ascending">↑</span>
                 <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
-                <div id="soft-tag-zone">
-                    <h2>Tags</h2>
+                <div id="soft-id-zone">
+                </div>
+                <div id="soft-tag-zone" style="border-top:1px solid var(--border); padding-top: 10px;">
+                    <h2>Sort by Tag:</h2>
                 </div>
                 <div id="soft-lang-zone">
-                    <h2>Languages</h2>
+                    <h2>Sort by Language:</h2>
                 </div>
-                <button class="button" onclick="clearTags()" style="font-size:18px;height:25px"><span>Clear Tags</span></button>
+                <button class="button" onclick="clearTags()" style="font-size:18px;height:25px; width: -webkit-fill-available;"><span>Clear Tags</span></button>
                 <br><br>
             </div>
             <div class="tab-wrapper" id="sort-tab-wrapper">

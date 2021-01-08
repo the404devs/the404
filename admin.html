@@ -59,7 +59,14 @@
             <h4 class="post-date" id="errmsg">you fucked up</h4>
         </div>
         <div class="pane" id="home" style="width:100%">
-            <div class="post" id="new-post" style="width: 75%;padding-top:10px;padding-bottom:10px;display:none">
+            <div class="nav" id="blog-nav">
+                <span class="button flipper" id="blogFlipper" onclick="blogDateFlip()" title="Sorting Ascending">↑</span>
+                <span class="button" id="close" onclick="hideNav()" title="Close Menu">×</span>
+            </div>
+            <div class="tab-wrapper" id="nav-tab-wrapper">
+                <span class="tab" id="nav-tab" onclick="showNav()" title="Blog Menu">☰</span>
+            </div>
+            <div class="post" id="new-post" style="width: 70%;padding-top:10px;padding-bottom:10px;display:none">
                 <label for="title">Title: </label>
                 <input name="title" class="title">
                 <br>
@@ -80,7 +87,14 @@
         </div>
         <div class="pane" id="feed" style="width: 100%;"></div>
         <div class="pane" id="soft" style="width:100%">
-            <div class="post" id="new-soft" style="width: 75%;padding-top:10px;padding-bottom:10px;display:none">
+            <div class="nav" id="soft-nav">
+                <span class="button flipper" id="softFlipper" onclick="softDateFlip()" title="Sorting Descending">↓</span>
+                <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
+            </div>
+            <div class="tab-wrapper" id="sort-tab-wrapper">
+                <span class="tab" id="sort-tab" onclick="showSort()" title="Software Menu">☰</span>
+            </div>
+            <div class="post" id="new-soft" style="width: 70%;padding-top:10px;padding-bottom:10px;display:none">
                 <label for="id">ID: </label>
                 <input name="id" class="id">
                 <br>

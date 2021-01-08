@@ -74,6 +74,8 @@ var loadFromFire = async function() {
                 $("<p>").addClass("post-body").html(post.Content)
             ).attr(
                 "id", post.id
+            ).append(
+                $("<p>").addClass("id-label").html(post.id)
             )
         ).append($("<hr>").addClass("inner-line"));
         if (post.Title) {
@@ -90,7 +92,7 @@ var loadFromFire = async function() {
         software.push({ id: doc.id, ...doc.data() })
     })
 
-    software.forEach(soft => {
+    software.reverse().forEach(soft => {
         //check for additional buttons
         var btn2, btn3 = "";
         if (soft.Button2 && soft.Button2 != [] && soft.Button2[1] != "" && soft.Button2[0] != "") {
@@ -132,11 +134,31 @@ var loadFromFire = async function() {
                 btn2
             ).append(
                 btn3
+            ).append(
+                $("<p>").addClass("id-label").html(soft.id)
+            ).attr(
+                "id", soft.id
             ).attr(
                 "tag", soft.Tags.join().replace(/,/g, ", ")
             ).attr(
                 "lang", soft.Language.join().replace(/,/g, ", ")
             )
+        );
+
+        $("#soft-id-zone").append(
+            $("<a>").addClass("link").attr(
+                "title", soft.id
+            ).attr(
+                "onclick", "scrollToElem('" + soft.id + "')"
+            ).attr(
+                "tag", soft.Tags.join().replace(/,/g, ", ")
+            ).attr(
+                "lang", soft.Language.join().replace(/,/g, ", ")
+            ).html(soft.Name)
+        ).append(
+            $("<br>")
+        ).append(
+            $("<br>")
         );
 
         soft.Tags.forEach(tag => {
@@ -231,6 +253,7 @@ var sendFeedback = function() {
         alert("Success!\nI'll get back to you soon.");
     }
 }
+
 var resetCookie = function() {
     document.cookie = document.cookie.replace("cache-time", "garbage");
     document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
@@ -296,6 +319,14 @@ var adminLoadFromFire = async function() {
         var date = ('0' + post.Month).slice(-2) + "/" + ('0' + post.Day).slice(-2) + "/" + post.Year;
         $("#home").append(
             $("<div>").addClass("post").append(
+                $("<p>").addClass("id-label").html(post.id).css(
+                    "font-size", "18px"
+                ).css(
+                    "margin-top", "0"
+                ).css(
+                    "margin-bottom", "5px"
+                )
+            ).append(
                 $("<label for='title'>Title: </label>")
             ).append(
                 $("<input>").attr("name", "title").addClass('title').val(post.Title)
@@ -320,9 +351,18 @@ var adminLoadFromFire = async function() {
             ).append($("<br>")).attr(
                 "id", post.id
             ).attr(
-                "style", "width: 75%;padding-top:10px;padding-bottom:10px"
+                "style", "width: 70%;padding-top:10px;padding-bottom:10px"
             )
         );
+        if (post.Title) {
+            $("#blog-nav").append(
+                $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(post.Title)
+            ).append($("<br>")).append($("<br>"));
+        } else {
+            $("#blog-nav").append(
+                $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(date)
+            ).append($("<br>")).append($("<br>"));
+        }
     });
     softSnapshot.forEach((doc) => {
         software.push({ id: doc.id, ...doc.data() })
@@ -345,6 +385,14 @@ var adminLoadFromFire = async function() {
         }
         $("#soft").append(
             $("<div>").addClass("post").append(
+                $("<p>").addClass("id-label").html(soft.id).css(
+                    "font-size", "18px"
+                ).css(
+                    "margin-top", "0"
+                ).css(
+                    "margin-bottom", "5px"
+                )
+            ).append(
                 $("<label for='name'>Name: </label>")
             ).append(
                 $("<input>").attr("name", "name").addClass('name').val(soft.Name)
@@ -405,9 +453,12 @@ var adminLoadFromFire = async function() {
             ).append($("<br>")).attr(
                 "id", soft.id
             ).attr(
-                "style", "width: 75%;padding-top:10px;padding-bottom:10px"
+                "style", "width: 70%;padding-top:10px;padding-bottom:10px"
             )
         );
+        $("#soft-nav").append(
+            $("<a>").addClass("link").attr("title", soft.id).attr("onclick", "scrollToElem('" + soft.id + "')").html(soft.Name)
+        ).append($("<br>")).append($("<br>"));
     });
     feedSnapshot.forEach((doc) => {
         feedback.push({ id: doc.id, ...doc.data() })
@@ -427,7 +478,7 @@ var adminLoadFromFire = async function() {
             ).append(
                 $("<p>").addClass("post-body").html(feed.Feedback)
             ).attr(
-                "style", "width: 75%;padding-top:10px;padding-bottom:10px"
+                "style", "width: 70%;padding-top:10px;padding-bottom:10px"
             )
         )
     })
@@ -586,8 +637,28 @@ var sortTags = function() {
                 })
             }
         })
-        showPanes(3)
     });
+
+    $("#soft-id-zone").children().each(function() { $(this).css("display", "none") });
+
+    $("#soft-id-zone").children().each(function() {
+        if ($(this).attr("tag")) {
+            var tags = $(this).attr("tag").replace(/ /g, "_").split(",_");
+            tags.forEach(tag => {
+                if (matchTag.includes(tag) || t == 0) {
+                    var langs = $(this).attr("lang").replace(/ /g, "_").split(",_");
+                    langs.forEach(lang => {
+                        if (matchLang.includes(lang) || l == 0) {
+                            $(this).css("display", "inline")
+                            $(this).next("br").css("display", "inline");
+                            $(this).next("br").next("br").css("display", "inline");
+                        }
+                    })
+                }
+            })
+        }
+    });
+    showPanes(3);
 }
 
 var clearTags = function() {
@@ -632,11 +703,19 @@ var softDateFlip = function() {
     var parent = $("#software");
     var children = parent.children(".blob");
     parent.append(children.get().reverse());
+
+    var parent2 = $("#soft-id-zone");
+    parent2.children().slice(-2).remove()
+    var children2 = parent2.children();
+    parent2.append(children2.get().reverse()).append($("<br>")).append($("<br>"));
+
     if ($("#softFlipper").html() == "↑") {
         $("#softFlipper").attr("title", "Sorting Descending").html("↓");
     } else {
         $("#softFlipper").attr("title", "Sorting Ascending").html("↑");
     }
+
+    sortTags();
 }
 
 var blogDateFlip = function() {

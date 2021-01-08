@@ -5,6 +5,18 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.1.3 (01/08/21)*
+----------------------
+- Lots of changes to the Projects tab.
+    - Added an ID-based nav menu, similar to the Blog tab.
+    - Tag and Language sorting is still there, those now affect the ID menu too.
+    - Projects tab now sorts ascending (newest-first) by default. You can switch to descending by hitting the ↑/↓ button in the nav menu.
+- Implemented an ID-based nav menu on the Projects tab of the admin page (no tag/language sorting, didn't need it).
+- Changed the window width at which the nav menus auto-hide themselves.
+    - Was 850px, now 1000px.
+- Also reduced width of blobs on the admin page.
+- Post/Project ids are also shown in small text at the bottom of each blob (or in large text at the top when on the admin page). 
+
 ### *4.1.2 (01/01/21)*
 ----------------------
 - Revamp Birthday page in prep for upcoming birthday.

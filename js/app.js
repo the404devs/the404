@@ -76,7 +76,7 @@ var scrollToElem = function(id) {
         top: offset,
         behavior: "smooth"
     });
-    if (window.innerWidth < 850) {
+    if (window.innerWidth < 1000) {
         hideNav();
         hideSort();
     }
