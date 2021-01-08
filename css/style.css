@@ -131,7 +131,7 @@ body {
     top: 0px;
     right: 0px;
     font-family: "Raleway";
-    display: -webkit-box;
+    display: block;
     z-index: 1;
 }
 
@@ -244,7 +244,7 @@ body {
     margin-left: 2.5%;
     margin-right: 2.5%;
     margin-top: 110px;
-    /* padding-top: 25px; */
+    padding-top: 15px;
     /* padding-bottom: 25px; */
     font-size: 18px;
     overflow: hidden;
@@ -413,16 +413,6 @@ hr {
     border: none;
     height: 1px;
     border-top: 1px solid var(--border);
-}
-
-.important-top-thing {
-    padding-top: 5px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-.important-top-thing .button span:after {
-    top: -2px;
 }
 
 .pane {
@@ -760,10 +750,10 @@ ul {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 45%;
+    top: 250px;
     width: auto;
     height: auto;
-    margin-top: -22px;
+    /* margin-top: -190px; */
     padding-top: 15px;
     padding-bottom: 17px;
     padding-left: 17px;
@@ -781,7 +771,7 @@ ul {
 
 .museum .prev,
 .museum .next {
-    top: 75%;
+    top: 465px;
 }
 
 .prev:hover span,
