@@ -16,6 +16,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
     - Was 850px, now 1000px.
 - Also reduced width of blobs on the admin page.
 - Post/Project ids are also shown in small text at the bottom of each blob (or in large text at the top when on the admin page). 
+- Some little styling tweaks to make sure each page looks the same.
 
 ### *4.1.2 (01/01/21)*
 ----------------------
