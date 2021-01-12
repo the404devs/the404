@@ -14,6 +14,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
         - 🦀🦀 `software` directory is gone 🦀🦀
     - Removed old JS files `js/remove-branding.js` and `js/html2canvas.min.js`, since they're unused.
     - Fixed up my old graph assignment page at `development/mario.html`, so now the links on that page work again.
+- Renewed domain for another year, expires 02/12/22.
 
 ### *4.1.3 (01/08/21)*
 ----------------------
