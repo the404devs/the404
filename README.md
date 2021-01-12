@@ -5,6 +5,16 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.1.4 (01/12/21)*
+----------------------
+- Did some housekeeping, cleaned things up a bit.
+    - Moved `museum.html` to the `archive/index.html` dir, the museum images are now in there too. 
+    - Chucked `lore-o-lore` and `the403` in there too.
+    - Moved `software/waluigi` to `development/waluigi`, and removed the temporary redirect page at `software/sm64code`
+        - 🦀🦀 `software` directory is gone 🦀🦀
+    - Removed old JS files `js/remove-branding.js` and `js/html2canvas.min.js`, since they're unused.
+    - Fixed up my old graph assignment page at `development/mario.html`, so now the links on that page work again.
+
 ### *4.1.3 (01/08/21)*
 ----------------------
 - Lots of changes to the Projects tab.
