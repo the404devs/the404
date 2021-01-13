@@ -105,8 +105,20 @@ var hideSort = function() {
 var load = function() {
     console.log("%c" + art, "color:#b20acb; font-weight: bold; font-size:12px");
     loadFromFire();
-    //showPanes() is now called within loadFromFire()
+
+    var e = new Date(2018, 0, 18, 18, 45);
+    var d = new Date();
+    var dif = (d.getTime() - e.getTime()) / 1000;
+    document.getElementById("time").innerHTML = dif;
+    var time = setInterval(timer, 1000);
+
+    function timer() {
+        d = new Date();
+        dif = Math.round((d.getTime() - e.getTime()) / 1000);
+        document.getElementById("time").innerHTML = dif;
+    }
 }
+
 
 
 var art1 = " _________________    _______________    _________________    _______________";
