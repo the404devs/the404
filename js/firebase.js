@@ -290,7 +290,10 @@ var login = function() {
             var errorMessage = error.message;
             console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
             $("#errmsg").html(error.message).css("opacity", "1");
+            $("#errmsg").html(error.message).css("height", "50px");
             setTimeout(() => { $("#errmsg").css("opacity", "0"); }, 2000);
+            setTimeout(() => { $("#errmsg").css("height", "0"); }, 2000);
+            setTimeout(() => { $("#errmsg").html(""); }, 2000);
             //TODO add error handler
         });
 }

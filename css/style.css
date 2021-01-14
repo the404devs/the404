@@ -141,7 +141,7 @@ body {
 
 #nav-tab-wrapper,
 #sort-tab-wrapper {
-    top: 131px;
+    top: 132px;
     transition: 0.2s all;
     display: none;
 }
@@ -194,6 +194,8 @@ body {
     background: linear-gradient(135deg, transparent 21.5px, var(--border) 21.5px, var(--border) 22.5px, var(--background) 22.5px);
     font-size: 19px;
     padding-left: 40px;
+    padding-top: 4.5px;
+    padding-bottom: 3.5px;
 }
 
 #home-tab i {
@@ -455,22 +457,13 @@ hr {
 }
 
 .blob a {
-    padding-left: 20px;
-    padding-right: 0;
+    margin-left: 20px;
+    margin-right: 0;
 }
 
 .blob p {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.blob .downloadlink {
-    padding: 0;
-}
-
-.blob .downloadlink .button {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .button {
@@ -880,13 +873,16 @@ input[type="checkbox"]:checked+label .checkmark {
 }
 
 #errmsg {
-    transition: 0.1s opacity;
+    transition: 0.1s all;
     color: red;
     font-weight: bold;
     font-size: 16px;
     opacity: 0;
-    height: 10px;
-    margin-top: 10px;
+    height: 0;
+    display: table-cell;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    vertical-align: middle;
 }
 
 #version {
