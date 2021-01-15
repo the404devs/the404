@@ -286,7 +286,6 @@ body {
 
 .post label {
     display: inline-block;
-    float: left;
     clear: left;
     width: 80px;
     margin-right: 20px;
@@ -295,7 +294,6 @@ body {
 
 .post input {
     display: inline-block;
-    float: left;
     max-width: 300px;
 }
 
