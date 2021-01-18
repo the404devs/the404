@@ -57,7 +57,7 @@
             <br>
             <h4 class="post-date" id="errmsg"></h4>
         </div>
-        <div class="pane" id="home" style="width:100%">
+        <div class="pane" id="home">
             <div class="nav" id="blog-nav">
                 <span class="button flipper" id="blogFlipper" onclick="blogDateFlip()" title="Sorting Ascending">↑</span>
                 <span class="button" id="close" onclick="hideNav()" title="Close Menu">×</span>
@@ -84,8 +84,30 @@
                 <br>
             </div>
         </div>
-        <div class="pane" id="feed" style="width: 100%;"></div>
-        <div class="pane" id="soft" style="width:100%">
+        <div class="pane" id="about">
+            <div class="row">
+                <div class="column" id="museum">
+                    <div class="post" id="new-museum" style="width: 70%;padding-top:10px;padding-bottom:10px; display: none;">
+                        <label for="id">ID: </label>
+                        <input name="id" class="id">
+                        <br>
+                        <label for="date">Date: </label>
+                        <input name="date" class="date">
+                        <br>
+                        <label for="path">Path: </label>
+                        <input name="path" class="path">
+                        <br>
+                        <textarea name="description" class="description"></textarea>
+                        <button class="button" onclick="newMuseum()">
+                            <span>New Exhibit</span>
+                        </button>
+                        <br>
+                    </div>
+                </div>
+                <div class="column" id="feed"></div>
+            </div>
+        </div>
+        <div class="pane" id="soft">
             <div class="nav" id="soft-nav">
                 <span class="button flipper" id="softFlipper" onclick="softDateFlip()" title="Sorting Descending">↓</span>
                 <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>

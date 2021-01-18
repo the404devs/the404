@@ -282,6 +282,7 @@ body {
     /* backdrop-filter: blur(10px); */
     width: 75%;
     transition: 0.2s width;
+    text-align: left;
 }
 
 .post label {
@@ -889,4 +890,8 @@ input[type="checkbox"]:checked+label .checkmark {
 
 .inner-line {
     display: none;
+}
+
+#museum .post textarea {
+    height: 150px;
 }

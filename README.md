@@ -5,6 +5,15 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.1.5 (01/18/21)*
+----------------------
+- the404's 3rd birthday!
+- Lots of changes to `admin.html` and `archive/index.html`, because the museum entries are now stored in Firebase like everything else!
+    - Split the About pane of the admin page into 2 columns, one containing the existing feedback stuff.
+    - The other holds the museum stuff, and is very similar to the other 2 panes.
+    - Some style tweaks to go along with this stuff.
+    - The museum page now loads from Firebase, that code can be found in `js/gallery.js`
+
 ### *4.1.4 (01/12/21)*
 ----------------------
 - Did some housekeeping, cleaned things up a bit.

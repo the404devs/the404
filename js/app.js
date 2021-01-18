@@ -36,7 +36,7 @@ var showPanes = function(n) {
 }
 
 var determinePane = function() {
-    var tabs = $("#edit-tabs").children(".tab");
+    var tabs = $("#edit-tabs").children("span");
     var x = 0;
     tabs.each(function() {
         if ($(this).hasClass("active")) {

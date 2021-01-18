@@ -256,10 +256,10 @@ var sendFeedback = function() {
 
 var resetCookie = function() {
     document.cookie = document.cookie.replace("cache-time", "garbage");
-    document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
 }
 
 var logout = function() {
+    document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
     console.log("%cUser logged out, bye bye!", "color:green;font-weight:bold;font-style:italic;");
     firebase.auth().signOut();
     resetCookie();
@@ -302,10 +302,12 @@ var adminLoadFromFire = async function() {
     const posts = [];
     const software = [];
     const feedback = [];
+    const museum = [];
 
     let blogSnapshot = await db.collection("blog").get({ source: 'server' });
     let softSnapshot = await db.collection("software").get({ source: 'server' });
     let feedSnapshot = await db.collection("feedback").get({ source: 'server' });
+    let museumSnapshot = await db.collection("museum").get({ source: 'server' });
     console.log("%cGrabbed entries from server", "color:green;font-weight:bold;font-style:italic;");
 
     if (document.cookie.includes("state=logged")) {
@@ -486,8 +488,44 @@ var adminLoadFromFire = async function() {
         )
     })
 
+    museumSnapshot.forEach((doc) => {
+        museum.push({ id: doc.id, ...doc.data() })
+    })
+    museum.reverse().forEach(exhibit => {
+        $("#museum").append(
+            $("<div>").addClass("post").append(
+                $("<p>").addClass("id-label").html(exhibit.id).css(
+                    "font-size", "18px"
+                ).css(
+                    "margin-top", "0"
+                ).css(
+                    "margin-bottom", "5px"
+                )
+            ).append(
+                $("<label for='date'>Date: </label>")
+            ).append(
+                $("<input>").attr("name", "date").addClass('date').val(exhibit.date)
+            ).append($("<br>")).append(
+                $("<label for='path'>Path: </label>")
+            ).append(
+                $("<input>").attr("name", "path").addClass('path').val(exhibit.path)
+            ).append($("<br>")).append(
+                $("<textarea>").attr("name", "description").addClass('description').val(exhibit.text)
+            ).append(
+                $("<button>").addClass("button").append(
+                    $("<span>").html("Update")
+                ).attr("onclick", "updateMuseum('" + exhibit.id + "')")
+            ).append($("<br>")).attr(
+                "id", exhibit.id
+            ).attr(
+                "style", "width: 70%;padding-top:10px;padding-bottom:10px"
+            )
+        )
+    })
+
     $("#new-post").fadeIn();
     $("#new-soft").fadeIn();
+    $("#new-museum").fadeIn();
     determinePane();
 }
 
@@ -549,6 +587,25 @@ var updateSoft = async function(id) {
     resetCookie();
 }
 
+var updateMuseum = async function(id) {
+    var id2 = "#" + id;
+    var date = $(id2).children(".date").val();
+    var path = $(id2).children(".path").val();
+    var content = $(id2).children(".description").val();
+    var x = await db.collection("museum").doc(id).set({
+        date: date,
+        path: path,
+        text: content
+    }).catch(function(error) {
+        alert("Fuck!");
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
+        return;
+    }).then(alert("Success!"));
+    resetCookie();
+}
+
 var newPost = async function() {
     var title = $("#new-post").children(".title").val();
     var year = $("#new-post").children(".year").val();
@@ -598,6 +655,26 @@ var newSoft = async function() {
         Button2: button2,
         Button3: button3,
         Description: description
+    }).catch(function(error) {
+        alert("Fuck!");
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
+        return;
+    }).then(alert("Success!"));
+    refresh();
+    resetCookie();
+}
+
+var newMuseum = async function(id) {
+    var id = $("#new-museum").children(".id").val();
+    var date = $("#new-museum").children(".date").val();
+    var path = $("#new-museum").children(".path").val();
+    var content = $("#new-museum").children(".description").val();
+    var x = await db.collection("museum").doc(id).set({
+        date: date,
+        path: path,
+        text: content
     }).catch(function(error) {
         alert("Fuck!");
         var errorCode = error.code;
@@ -695,9 +772,18 @@ var refresh = function() {
     $("#new-post").children(".month").val("");
     $("#new-post").children(".day").val("");
     $("#new-post").children(".post-content").val("");
+    $("#new-museum").children(".id").val("");
+    $("#new-museum").children(".date").val("");
+    $("#new-museum").children(".path").val("");
+    $("#new-museum").children(".description").val("");
     $("#home").children('.post').slice(1).remove();
     $("#feed").children('.post').remove();
+    $("#museum").children('.post').slice(1).remove();
     $("#soft").children('.post').slice(1).remove();
+    $("#blog-nav").children('a').remove();
+    $("#blog-nav").children('br').remove();
+    $("#soft-nav").children('a').remove();
+    $("#soft-nav").children('br').remove();
 
     adminLoadFromFire();
 }
