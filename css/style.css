@@ -454,7 +454,7 @@ hr {
     margin: 5px 0 5px 0;
 }
 
-.blob a {
+.blob .downloadLink {
     margin-left: 20px;
     margin-right: 0;
 }
