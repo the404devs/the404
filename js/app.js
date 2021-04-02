@@ -103,9 +103,6 @@ var hideSort = function() {
 }
 
 var load = function() {
-    location.href = "https://the403.ml/"
-    
-    
     console.log("%c" + art, "color:#b20acb; font-weight: bold; font-size:12px");
     loadFromFire();
 
