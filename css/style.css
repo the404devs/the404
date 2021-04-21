@@ -511,7 +511,7 @@ hr {
     bottom: 0;
     right: 0;
     width: 0%;
-    height: 0%;
+/*     height: 0%; */
     background-color: transparent;
     transition: all 0.1s ease-out;
     z-index: -1;
