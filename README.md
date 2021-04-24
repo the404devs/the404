@@ -199,7 +199,7 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
 -------------------------
 - New green/purple colour scheme.
 
-#### *3.6.0 (02/14/20)*
+#### *3.6.0 (02/14/2020)*
 -----------------------
 - New sunset-like colour scheme.
 
