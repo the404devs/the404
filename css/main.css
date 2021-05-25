@@ -1,0 +1,129 @@
+.post-head {
+    font-family: Gilroy;
+    font-size: 1.3em;
+    /* text-decoration: underline; */
+    padding-bottom: 0;
+    margin-bottom: 0;
+    color: var(--important);
+}
+
+.post-date {
+    font-family: Raleway;
+    margin-top: 0;
+    padding-top: 0;
+    /* text-decoration: underline; */
+    color: var(--important);
+    font-weight: normal;
+}
+
+.post {
+    font-family: "Roboto";
+    border: 1px solid var(--border);
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 10px;
+    /* margin-top: -1px; */
+    background-color: var(--background-transparent);
+    /* backdrop-filter: blur(10px); */
+    width: 75%;
+    transition: 0.2s width;
+    text-align: left;
+}
+
+.post label {
+    display: inline-block;
+    clear: left;
+    width: 80px;
+    margin-right: 20px;
+    text-align: right;
+}
+
+.post input {
+    display: inline-block;
+    max-width: 300px;
+}
+
+.post textarea {
+    width: 100%;
+    height: 300px;
+}
+
+.id-label {
+    font-size: 12px;
+    font-family: "Inconsolata";
+}
+
+.blob {
+    background-color: var(--background-transparent);
+    border: 1px solid var(--border);
+    padding: 10px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    width: 75%;
+}
+
+.blob h2 {
+    font-size: 1.75em;
+    font-family: Gilroy;
+    color: var(--important);
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.blob img {
+    float: left;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+.blob button {
+    margin: 5px 0 5px 0;
+}
+
+.blob .downloadLink {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.blob p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#time {
+    font-weight: normal;
+    padding-bottom: 5px;
+    font-family: "Gilroy Light";
+    font-size: 16px
+}
+
+.foot-text {
+    /*aw man*/
+    margin: 2px;
+    display: inline-block;
+}
+
+h4.foot-text {
+    font-family: "Gilroy Light";
+}
+
+#version {
+    cursor: pointer;
+}
+
+.inner-line {
+    display: none;
+}
+
+.body-image {
+    width: 370px;
+    border: 1px solid var(--border);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+}
+
+ul {
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}

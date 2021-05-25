@@ -1,0 +1,125 @@
+.tab-wrapper {
+    text-align: right;
+    color: var(--foreground);
+    text-shadow: none;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    font-family: "Raleway";
+    display: block;
+    z-index: 1;
+}
+
+#main-tab-wrapper {
+    display: none;
+}
+
+#nav-tab-wrapper,
+#sort-tab-wrapper {
+    top: 132px;
+    transition: 0.2s all;
+    /* display: none; */
+}
+
+.tab {
+    border-bottom: solid var(--border) 1px;
+    background: linear-gradient(135deg, transparent 20.75px, var(--border) 20.75px, var(--border) 21.75px, transparent 21.75px);
+    text-align: left;
+    font-size: 18px;
+    transition: 0.1s padding ease-in;
+    cursor: pointer;
+    height: 75px;
+    padding-right: 30px;
+    padding-left: 51px;
+    padding-bottom: 4.5px;
+    padding-top: 3.5px;
+    overflow: hidden;
+    text-align: right;
+    margin-right: -16px;
+    position: relative;
+    z-index: 2;
+    top: -3px;
+    text-shadow: 1px 2px 2px var(--background-transparent), -1px 2px 2px var(--background-transparent);
+}
+
+.tab:before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 1px !important;
+    top: 0;
+    left: 30px;
+    border-top: 1px solid var(--border);
+}
+
+#tab2 {
+    padding-right: 40px;
+    padding-left: 60px;
+    top: -11px;
+}
+
+#tab3 {
+    padding-right: 50px;
+    padding-left: 62px;
+    top: -19px;
+}
+
+#nav-tab,
+#sort-tab {
+    background: linear-gradient(135deg, transparent 21.5px, var(--border) 21.5px, var(--border) 22.5px, var(--background) 22.5px);
+    font-size: 19px;
+    padding-left: 40px;
+    padding-top: 4.5px;
+    padding-bottom: 3.5px;
+}
+
+#home-tab i {
+    font-size: 21px
+}
+
+#home-tab {
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 26px
+}
+
+#nav-tab:hover,
+#sort-tab:hover {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 21.5px, var(--foreground) 21.5px, var(--foreground) 22.5px, #59c173 22.5px, #a17fe0, #5d26c1) !important;
+    padding-right: 60px;
+}
+
+#home-tab:hover {
+    padding-right: 50px;
+}
+
+#tab1:hover {
+    padding-right: 60px;
+}
+
+#tab2:hover {
+    padding-right: 70px;
+}
+
+#tab3:hover {
+    padding-right: 80px
+}
+
+.tab:hover {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 20.75px, var(--foreground) 20.75px, var(--foreground) 21.75px, #59c173 21.75px, #a17fe0, #5d26c1) !important;
+    color: var(--text-dark);
+    text-shadow: none;
+}
+
+.tab.active {
+    font-weight: bold;
+}
+
+.pane {
+    transition: 0.25s all;
+    position: absolute;
+    margin-right: 2.5%;
+    opacity: 0;
+    overflow: hidden;
+    width: 95%;
+}

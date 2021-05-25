@@ -1,3 +1,7 @@
+const VERSION = "4.1.6";
+const DATE = "05/25/2021";
+const TIME = "14:30";
+
 var showPanes = function(n) {
     var i;
     var panes = document.getElementsByClassName("pane");
@@ -29,7 +33,6 @@ var showPanes = function(n) {
     $(id).css("height", h);
     $(id).css("opacity", "1");
     $(id).css("z-index", "auto");
-
 
     //give the corresponding tab the "active" class
     tabs[n - 1].className += " active";
@@ -102,8 +105,14 @@ var hideSort = function() {
     $('#sort-tab-wrapper').css('right', '0px');
 }
 
+var getVersionInfo = function() {
+    $("#version").text("v" + VERSION);
+    $("#date").text(DATE + " " + TIME);
+}
+
 var load = function() {
     console.log("%c" + art, "color:#b20acb; font-weight: bold; font-size:12px");
+    getVersionInfo();
     loadFromFire();
 
     var e = new Date(2018, 0, 18, 18, 45);

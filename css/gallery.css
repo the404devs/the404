@@ -1,0 +1,141 @@
+.gallery {
+    width: 100%;
+}
+
+.gallery-slide {
+    text-align: center;
+    display: none;
+    animation: fade 1.5s;
+    height: 150px;
+    margin-top: 5px
+}
+
+.museum .gallery-slide {
+    height: auto;
+}
+
+.gallery-slide img {
+    max-width: 100%;
+    max-height: 100px;
+}
+
+.museum .gallery-slide img {
+    max-height: 400px;
+    border: 1px solid var(--border);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+}
+
+.gallery-slide .lore-img {
+    max-height: 100%;
+    border: 1px solid var(--border);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+}
+
+.gallery-slide h4 {
+    margin-top: 0
+}
+
+.museum .gallery-slide h4 {
+    color: var(--link);
+    margin: 5px;
+}
+
+.gallery-slide p {
+    width: 60%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 250px;
+    width: auto;
+    height: auto;
+    /* margin-top: -190px; */
+    padding-top: 15px;
+    padding-bottom: 17px;
+    padding-left: 17px;
+    padding-right: 21px;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1.25px solid var(--border);
+    border-radius: 50%;
+    font-family: "Roboto";
+    text-shadow: none;
+    background-color: var(--background-transparent);
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+.museum .prev,
+.museum .next {
+    top: 465px;
+}
+
+.prev:hover span,
+.next:hover span {
+    padding-right: initial;
+}
+
+.prev span:after,
+.next span:after {
+    content: '';
+    position: initial;
+    top: initial;
+    right: initial;
+}
+
+.prev:hover:before,
+.next:hover:before {
+    border-radius: 50%;
+    width: calc(100% + 1px);
+    height: calc(100% + 1px);
+}
+
+.next {
+    right: 6.1%;
+    padding-left: 20px;
+    padding-right: 18px;
+}
+
+#dots {
+    text-align: center;
+    cursor: default;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    transition: 0.2s all;
+    cursor: pointer;
+}
+
+.dot:hover,
+.dot.active {
+    background-color: var(--border);
+    border-width: 8.5px;
+    width: 0px;
+    height: 0px;
+}
+
+@media (max-width: 1000px) {
+    #nav-tab-wrapper,
+    #sort-tab-wrapper {
+        display: -webkit-box;
+    }
+}
