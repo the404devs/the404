@@ -255,15 +255,16 @@ var sendFeedback = function() {
 }
 
 var resetCookie = function() {
-    document.cookie = document.cookie.replace("cache-time", "garbage");
+    var d = new Date();
+    document.cookie = "cache-time = " + d.getTime() + "; expires = " + d.toUTCString();
 }
 
 var logout = function() {
-    document.cookie = document.cookie.replace("state=logged", "state=logged; expires=Thu, 01 Jan 1970 00:00:01 GMT;");
+    document.cookie = "state=unlogged"
     console.log("%cUser logged out, bye bye!", "color:green;font-weight:bold;font-style:italic;");
     firebase.auth().signOut();
     resetCookie();
-    location.href = 'https://the404.nl/';
+    // location.href = 'https://the404.nl/';
 }
 
 var login = function() {
