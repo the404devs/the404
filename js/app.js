@@ -126,6 +126,10 @@ var load = function() {
         dif = Math.round((d.getTime() - e.getTime()) / 1000);
         document.getElementById("time").innerHTML = dif;
     }
+    if (window.innerWidth >= 1000) {
+        $('#nav-tab-wrapper').css('right', '-250px');
+        $('#sort-tab-wrapper').css('right', '-250px');
+    }
 }
 
 
