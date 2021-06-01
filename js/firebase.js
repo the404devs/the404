@@ -264,7 +264,7 @@ var logout = function() {
     console.log("%cUser logged out, bye bye!", "color:green;font-weight:bold;font-style:italic;");
     firebase.auth().signOut();
     resetCookie();
-    location.href = 'https://the404.nl/';
+    location.href = '../';
 }
 
 var login = function() {

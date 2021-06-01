@@ -126,12 +126,15 @@ var load = function() {
         dif = Math.round((d.getTime() - e.getTime()) / 1000);
         document.getElementById("time").innerHTML = dif;
     }
+    widthCheck();
+}
+
+var widthCheck = function() {
     if (window.innerWidth >= 1000) {
         $('#nav-tab-wrapper').css('right', '-250px');
         $('#sort-tab-wrapper').css('right', '-250px');
     }
 }
-
 
 
 var art1 = " _________________    _______________    _________________    _______________";
