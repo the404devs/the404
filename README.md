@@ -5,6 +5,17 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.1.7 (10/23/2021)*
+------------------------
+- Lots of CSS fixes and changes.
+    - Firefox doesn't support `backdrop-filter` out of the box, so elements meant to use that property are now opaque on Firefox.
+    - Use `-moz-available` in places where `-webkit-fill-available` is used, to get the same behavior on Firefox.
+    - Adjusted the green-purple background gradient to be a bit smoother.
+    - Removed `display: table;` from `.content`, not sure why it was there anyways.
+    - `.prev` and `.next` arrow buttons used on image galleries now have a fixed size of 55px x 55px.
+    - Removed a few inline styles, more to come.
+- Tiny bit of housekeeping here and there. 
+
 ### *4.1.6 (05/25/2021)*
 ------------------------
 - Major CSS rewrite, creating separate stylesheets for different things.

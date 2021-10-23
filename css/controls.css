@@ -1,3 +1,5 @@
+/* controls.css contains styling rules for buttons, inputs, etc. */
+
 .button {
     border: 1px solid var(--border);
     background-color: transparent;

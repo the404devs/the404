@@ -1,6 +1,6 @@
-const VERSION = "4.1.6";
-const DATE = "05/25/2021";
-const TIME = "14:30";
+const VERSION = "4.1.7";
+const DATE = "10/23/2021";
+const TIME = "11:21";
 
 var showPanes = function(n) {
     var i;
@@ -136,12 +136,22 @@ var widthCheck = function() {
     }
 }
 
+var firefoxCheck = function() {
+    if (navigator.userAgent.indexOf("Firefox") > -1) {
+        console.log("%cFirefox detected, making things that use backdrop-filter opague.", "color:red; font-weight: bold;");
+        $(".header").css("background-color", "var(--background)");
+        $(".nav").css("background-color", "var(--background)");
+        $(".prev").css("background-color", "var(--background)");
+        $(".next").css("background-color", "var(--background)");
+    }
+}
+
 
 var art1 = " _________________    _______________    _________________    _______________";
 var art2 = " \\_______________/ /| \\_____________/ /| \\_______________/ /| \\_____________/ /| ";
 var art3 = "   ________ ____  / |  _______ ____  / |   ______   ____  / |      ______    / | 01/";
 var art4 = "   |__  __| |  | |  | /   ___/ |  | |  |  /      \\  |  | |  |     /      \\  |  |  /18/";
-var art5 = "     |  |   |  | |  | |  |     |  | |  | /   __   \\ |  | |  |    /   __   \\ |  |    /18";
+var art5 = "     |  |   |  | |  | |  |     |  | |  | /   __   \\ |  | |  |    /   __   \\ |  |    /2018";
 var art6 = "     |  |   |  | |  | |  |__   |  |_|  | |  /  \\  | |  |_|  |    |  |  |  | |  |";
 var art7 = "    _|  |   |  |_|  | |  __/   |  __   | |  |  |  | |  __   |    |  |  |  | |  |     ";
 var art8 = "    \\   |   |  |\\   | |  |     | /  \\  | |  |  |  | | /  \\  |    |  |  |  | |  |     /|";
@@ -153,3 +163,5 @@ var art13 = "       /__/   /____________________________________________________
 var art14 = "                                                                              Owen Bowden";
 
 var art = "" + art1 + "\n" + art2 + "\n" + art3 + "\n" + art4 + "\n" + art5 + "\n" + art6 + "\n" + art7 + "\n" + art8 + "\n" + art9 + "\n" + art10 + "\n" + art11 + "\n" + art12 + "\n" + art13 + "\n" + art14;
+
+// firefoxCheck();

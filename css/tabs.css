@@ -123,3 +123,10 @@
     overflow: hidden;
     width: 95%;
 }
+
+@media (max-width: 1000px) {
+    #nav-tab-wrapper,
+    #sort-tab-wrapper {
+        display: -webkit-box;
+    }
+}

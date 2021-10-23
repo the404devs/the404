@@ -1,3 +1,5 @@
+/* admin.css contains rules exclusive to admin.html */
+
 #errmsg {
     transition: 0.1s all;
     color: red;

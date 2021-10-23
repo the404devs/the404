@@ -1,3 +1,5 @@
+/* common.css contains style rules that are used across multiple pages, such as colours. */
+
 :root {
     --foreground: #ffffff;
     --background: #151824;
@@ -10,7 +12,7 @@
     --important: #b20acb;
     --bold: #b20acb;
     --link: #0acbb2;
-    --background-gradient: linear-gradient(to right, #59c173, #a17fe0, #5d26c1);
+    --background-gradient: linear-gradient(90deg, rgba(89, 193, 115, 1) 0%, rgba(161, 127, 224, 1) 62%, rgba(110, 76, 172, 1) 100%);
     --text-dark: #151824;
 }
 
@@ -124,7 +126,7 @@ body {
     padding-top: 15px;
     font-size: 18px;
     overflow: hidden;
-    display: table;
+    /* display: table; */
 }
 
 .link {
@@ -215,7 +217,7 @@ h4 {
         width: auto!important;
     }
     #close {
-        display: -webkit-box
+        display: -webkit-box;
     }
     /* .header {
         width: 68%;

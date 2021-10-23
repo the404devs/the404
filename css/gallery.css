@@ -1,3 +1,5 @@
+/* gallery.css contains styling rules for image galleries, such as the one in museum.html */
+
 .gallery {
     width: 100%;
 }
@@ -60,8 +62,8 @@
     cursor: pointer;
     position: absolute;
     top: 250px;
-    width: auto;
-    height: auto;
+    width: 55px;
+    height: 55px;
     /* margin-top: -190px; */
     padding-top: 15px;
     padding-bottom: 17px;
@@ -133,9 +135,6 @@
     height: 0px;
 }
 
-@media (max-width: 1000px) {
-    #nav-tab-wrapper,
-    #sort-tab-wrapper {
-        display: -webkit-box;
-    }
+.museum-footer-row .post-head {
+    margin-top: 0;
 }
