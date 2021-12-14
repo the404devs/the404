@@ -65,3 +65,7 @@ h3 {
     font-family: "Gilroy";
     text-decoration: underline;
 }
+
+input {
+    font-size: 2em;
+}
