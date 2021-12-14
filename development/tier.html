@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tierlist</title>
+    <meta name="theme-color" content="#800080">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/controls.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/tier.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="manifest" href="..//site.webmanifest">
+    <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1 id="header-text">ULTIMATE ROBO DEATH BATTLE</h1>
+    </div>
+    <div class="content" style="width: -webkit-fill-available;">
+        <div class="row">
+            <div class="column">
+                <h3>Round 1</h3>
+                <div id="1-1">
+                    <form>
+                        <input id="1-1-1" class="tier-entry" type="text" placeholder="Team name...">
+                        <input type="radio" name="1-1" id="1-1-1-b" value="1" onclick="$('#2-1-1').val($('#1-1-1').val())">
+                        <input id="1-1-2" class="tier-entry" type="text" placeholder="Team name...">
+                        <input type="radio" name="1-1" id="1-1-2-b" value="1" onclick="$('#2-1-1').val($('#1-1-2').val())">
+                    </form>
+                </div>
+                <br>
+                <br>
+                <div id="1-2">
+                    <form>
+                        <input id="1-2-1" class="tier-entry" type="text" placeholder="Team name...">
+                        <input type="radio" name="1-2" id="1-2-1-b" value="1" onclick="$('#2-1-2').val($('#1-2-1').val())">
+                        <input id="1-2-2" class="tier-entry" type="text" placeholder="Team name...">
+                        <input type="radio" name="1-2" id="1-2-2-b" value="1" onclick="$('#2-1-2').val($('#1-2-2').val())">
+                    </form>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="column" style="border-left: 1px solid white; border-right: 1px solid white;">
+                <h3>Round 2</h3>
+                <div id="2-1" style="margin-top: 100px;">
+                    <form>
+                        <input id="2-1-1" class="tier-entry" type="text" placeholder="Team name...">
+                        <input type="radio" name="2-1" id="2-1-1-b" value="1" onclick="$('#3-1-1').val($('#2-1-1').val())">
+                        <input id="2-1-2" class="tier-entry" type="text" placeholder="Team name...">
+                        <input type="radio" name="2-1" id="2-1-2-b" value="1" onclick="$('#3-1-1').val($('#2-1-2').val())">
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <h3>Grand Champion</h3>
+                <div id="3-1" style="margin-top: 125px;">
+                    <input id="3-1-1" class="tier-entry" type="text" placeholder="Team name...">
+                    <br>
+                    <br>
+                    <button class="button" onclick="reset()"><span>Reset</span></button>
+                </div>
+            </div>
+        </div>
+        <script>
+            function reset() {
+                $('#1-1-1').val('');
+                $('#1-1-2').val('');
+                $('#1-2-1').val('');
+                $('#1-2-2').val('');
+                $('#2-1-1').val('');
+                $('#2-1-2').val('');
+                $('#3-1-1').val('');
+                $('input[type=radio]').prop('checked', false);
+            }
+        </script>
+    </div>
+</body>
+
+</html>
