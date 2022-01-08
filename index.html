@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
@@ -45,76 +45,36 @@
             </div>
         </div>
         <div id="about" class="pane">
-            <div class="row">
-                <p>
+            <div class="row" style="text-align: center;">
+                <p style="width: 100%;">
                     Welcome! I started the404 on January 18th, 2018. This site has become my own little corner of the internet, and hosts a variety of different projects I have worked on over the years.
                 </p>
             </div>
             <br>
             <div class="row">
                 <div class="column">
-                    <h3>Get in touch!</h3>
-                    <button class="big-button button" id="twitter" onclick="location.href='https://twitter.com/the404devs'">
-						<i class="fab fa-twitter"></i> @the404devs
-					</button>
+                    <h3>What have I been working on lately?</h3>
+                    <p>A list of all my GitHub repositories, sorted by most recent commit.</p>
+                    <div id="git-container"></div>
                     <br>
-                    <button class="big-button button" id="email" onclick="location.href='mailto:the404devs@gmail.com'">
-						<i class="fa fa-envelope"></i> the404devs@gmail.com
-					</button>
-                    <br>
-                    <button class="big-button button" id="discord">
-						<i class="fab fa-discord"></i> @the404devs#0810
-					</button>
-                    <br>
-                    <button class="big-button button" id="github" onclick="location.href='https://github.com/the404devs'">
-						<i class="fab fa-github"></i> the404devs
-					</button>
-                    <br>
-                    <button class="big-button button" id="reddit" onclick="location.href='https://www.reddit.com/user/the404devs'">
-						<i class="fab fa-reddit"></i> u/the404devs
-					</button>
-                    <br>
-                    <h4 style="margin-bottom:5px">List of all Git Repositories</h4>
-                    <button class="button" id="github2" onclick="location.href='dev.html'">
-						<span><i class="fab fa-github"></i> Repo List</span>
-                    </button>
-                    <h4 style="margin-bottom:5px">404 logo renders!</h4>
-                    <button class="button" id="logo" onclick="location.href='img/logo/index.html'">
-						<i class="fas fa-images"></i><span>Take a look</span>
-					</button>
-                </div>
-                <div class="column">
-                    <h3>Send feedback here!</h3>
-                    <input id="feed-email" type="email" name="return-address" placeholder="Your e-mail address">
-                    <br>
-                    <textarea id="feed-body" name="emailContent" rows="12" cols="40" placeholder="Type your thoughts here..."></textarea>
-                    <br>
-                    <br>
-                    <button class="button" onclick="sendFeedback()"><span>Send!</span></button>
-                    <br>
-                    <br>
-                    <h4 style="margin-bottom:5px">Old-school development page:</h4>
-                    <button class="button" id="development" onclick="location.href='development/index.html'">
-						<i class="fas fa-code"></i><span>Memory lane</span>
-                    </button>
-                    <br>
-                    <h4 style="margin-bottom:5px">The404 Museum: A historical record</h4>
-                    <button class="button" id="museum" onclick="location.href='archive/'">
-						<i class="fas fa-landmark"></i><span>Take a tour</span>
+                    <h3>Feel free to browse my GitHub page.</h3>
+                    <button class="button" id="github" onclick="location.href='https://github.com/the404devs'">
+						<i class="fab fa-github"></i><span>the404devs</span>
 					</button>
                 </div>
                 <div class="column">
                     <h3>The404 Archives!</h3>
+                    <p>Old iterations of the404, and some other old sites made for various projects.</p>
                     <button class="big-button button archive" onclick="location.href='archive/v1/'">
-						<i class="fas fa-archive"></i> The404 v1 <label>(01/18/18 - 08/27/18)</label>
+						<i class="fas fa-archive"></i> The404 v1 <label>(2018-01-18 - 2018-08-27)</label>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='archive/v2/'">
-						<i class="fas fa-archive"></i> The404 v2 <label>(08/27/18 - 03/10/19)</label>
+						<i class="fas fa-archive"></i> The404 v2 <label>(2018-08-27 - 2019-03-10)</label>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='archive/v3/'">
-						<i class="fas fa-archive"></i> The404 v3 <label>(03/10/19 - 06/07/20)</label>
+						<i class="fas fa-archive"></i> The404 v3 <label>(2019-03-10 - 2020-06-07)</label>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='https://ics11.the404.nl'">
@@ -137,7 +97,15 @@
 						<i class="fas fa-archive"></i> Birthday Retro Style <label>(2020)</label>
 					</button>
                     <br>
+                    <h4 style="margin-bottom:5px">Old-school development page:</h4>
+                    <button class="button" id="development" onclick="location.href='development/index.html'">
+						<i class="fas fa-code"></i><span>Memory lane</span>
+					</button>
                     <br>
+                    <h4 style="margin-bottom:5px">The404 Museum: A historical record</h4>
+                    <button class="button" id="museum" onclick="location.href='archive/'">
+						<i class="fas fa-landmark"></i><span>Take a tour</span>
+					</button>
                 </div>
             </div>
             <br>
@@ -162,12 +130,12 @@
                     <br>
                     <button class="button" id="changelog" onclick="location.href='README.md'">
 						<i class="fas fa-history"></i><span>Changelog</span>
-                    </button>
+					</button>
                     <br>
                     <br>
                     <button class="button" id="github3" onclick="location.href='https://github.com/the404devs/the404'">
 						<span><i class="fab fa-github"></i> View Repo</span>
-                    </button>
+					</button>
                 </div>
             </div>
             <br>
@@ -194,6 +162,7 @@
         <script type="text/javascript" src="js/firebase.js"></script>
         <script type="text/javascript" src="js/birthday.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/git.js"></script>
         <script type="text/javascript" src="js/mc.js"></script>
     </div>
 </body>

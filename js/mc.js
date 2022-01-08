@@ -1,4 +1,4 @@
-var url = "https://api.mcsrvstat.us/2/mc.the404.nl";
+let url = "https://api.mcsrvstat.us/2/mc.the404.nl";
 $.getJSON(url, function(r) {
     //data is the JSON string
     if (r.online == false) {

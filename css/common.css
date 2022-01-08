@@ -1,19 +1,19 @@
 /* common.css contains style rules that are used across multiple pages, such as colours. */
 
 :root {
-    --foreground: #ffffff;
-    --background: #151824;
-    --background-transparent: rgba(21, 24, 36, 0.5);
     --accent: #b20acb;
-    --highlight: #800080;
-    --highlight-transparent: rgba(128, 0, 128, 0.8);
-    --text: #f1d7df;
-    --border: #ffffff;
-    --important: #b20acb;
-    --bold: #b20acb;
-    --link: #0acbb2;
     --background-gradient: linear-gradient(90deg, rgba(89, 193, 115, 1) 0%, rgba(161, 127, 224, 1) 62%, rgba(110, 76, 172, 1) 100%);
+    --background-transparent: rgba(21, 24, 36, 0.5);
+    --background: #151824;
+    --bold: #b20acb;
+    --border: #ffffff;
+    --foreground: #ffffff;
+    --highlight-transparent: rgba(128, 0, 128, 0.8);
+    --highlight: #800080;
+    --important: #b20acb;
+    --link: #0acbb2;
     --text-dark: #151824;
+    --text: #f1d7df;
 }
 
 @font-face {
@@ -52,106 +52,104 @@ b {
 
 body {
     background: var(--background-gradient);
-    text-shadow: 1px 1px 5px black, -1px 2px 5px black;
     font-family: "Roboto";
+    height: max-content;
     margin: 0;
     overflow-x: hidden;
-    height: max-content;
+    text-shadow: 1px 1px 5px black, -1px 2px 5px black;
 }
 
 .header {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, var(--foreground) 50%, var(--foreground) calc(50% + 2px), rgba(255, 255, 255, 0) calc(50% + 2px));
+    border-bottom: solid var(--border) 2px;
+    box-shadow: black 0px 2px 10px, black 0px -2px 10px;
+    color: black;
     font-family: "Camaraderie";
     font-size: 2em;
-    color: black;
-    width: 100%;
+    height: 3.2em;
     position: fixed;
     text-shadow: 1px 2px 3px black, -1px 2px 3px black;
-    box-shadow: black 0px 2px 10px, black 0px -2px 10px;
     top: 0;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
     z-index: 10;
-    height: 3.2em;
-    border-bottom: solid var(--border) 2px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, var(--foreground) 50%, var(--foreground) calc(50% + 2px), rgba(255, 255, 255, 0) calc(50% + 2px));
 }
 
 #header-text {
-    margin: 0px 20px 20px 2.5%;
-    padding-top: 8px;
-    font-weight: normal;
     -webkit-text-stroke-color: var(--accent);
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke: var(--accent) 2px;
+    cursor: pointer;
+    font-weight: normal;
+    margin: 0px 20px 20px 2.5%;
+    padding-top: 8px;
     paint-order: fill stroke;
     width: min-content;
-    cursor: pointer;
 }
 
 #header-text:before {
+    -webkit-text-stroke: 0;
+    color: var(--foreground);
     content: "Owen Bowden";
     font-family: "Raleway";
-    color: var(--foreground);
-    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
-    position: absolute;
     font-size: 18px;
-    text-align: right;
     font-weight: normal;
-    top: 76px;
     left: calc(2.5% + 106px);
-    -webkit-text-stroke: 0;
+    position: absolute;
+    text-align: right;
+    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    top: 76px;
 }
 
 #header-text:after {
-    position: absolute;
-    /* background-color: var(--background); */
     background-color: black;
-    width: 229px;
+    border: 2px solid var(--accent);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    content: " ";
     height: 10px;
     left: 2.5%;
-    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
-    top: 65px;
-    z-index: -1;
     margin: -1px;
-    border: 2px solid var(--accent);
-    content: " ";
+    position: absolute;
+    top: 65px;
+    width: 229px;
+    z-index: -1;
 }
 
 .content {
     background: transparent;
     color: var(--text);
+    font-size: 18px;
     margin-left: 2.5%;
     margin-right: 2.5%;
     margin-top: 110px;
-    padding-top: 15px;
-    font-size: 18px;
     overflow: hidden;
-    /* display: table; */
+    padding-top: 15px;
 }
 
 .link {
+    border-color: var(--link);
+    border-style: solid;
+    border-width: 0;
     color: var(--link);
     font-weight: bold;
-    text-decoration: none;
-    border-style: solid;
-    border-color: var(--link);
-    border-width: 0;
-    position: sticky;
-    z-index: 0;
     padding: 0 !important;
+    position: sticky;
+    text-decoration: none;
+    z-index: 0;
 }
 
 .link:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px !important;
-    bottom: 0;
-    left: 0;
-    border-bottom: 2px solid;
     -webkit-transition: all 0.1s;
-    transition: all 0.1s;
+    border-bottom: 2px solid;
+    bottom: 0;
     box-shadow: black 0px 2px 5px;
+    content: "";
+    height: 2px !important;
+    left: 0;
+    position: absolute;
+    transition: all 0.1s;
+    width: 0;
     z-index: -1;
 }
 
@@ -161,19 +159,18 @@ body {
 }
 
 hr {
+    border-top: 1px solid var(--border);
     border: none;
     height: 1px;
-    border-top: 1px solid var(--border);
 }
 
 .row {
+    background-color: var(--background-transparent);
+    border: 1px solid var(--border);
     display: -webkit-flex;
     display: flex;
     margin-left: 0px;
-    background-color: var(--background-transparent);
-    /* backdrop-filter: blur(10px); */
     padding: 10px;
-    border: 1px solid var(--border);
 }
 
 @media (max-width: 1050px) {
@@ -184,19 +181,19 @@ hr {
 }
 
 .column {
-    -webkit-flex: 1;
     -ms-flex: 1;
+    -webkit-flex: 1;
     flex: 1;
+    font-family: Roboto;
     padding: 10px;
     text-align: center;
-    font-family: Roboto;
 }
 
 i {
     font-size: 40px;
-    vertical-align: middle;
     padding-bottom: 2px;
     text-align: center;
+    vertical-align: middle;
     width: 50px;
 }
 
@@ -207,10 +204,10 @@ h4 {
 
 @media (max-width: 1000px) {
     .nav {
-        right: -230px;
         backdrop-filter: blur(5px);
-        width: 200px;
+        right: -230px;
         transition: 0.2s all;
+        width: 200px;
     }
     .post,
     .blob {
@@ -219,10 +216,4 @@ h4 {
     #close {
         display: -webkit-box;
     }
-    /* .header {
-        width: 68%;
-        left: 16%;
-        top: 26px;
-        transform: scale(1.5);
-    } */
 }

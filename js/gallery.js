@@ -1,4 +1,4 @@
-var slideIndex = 1;
+let slideIndex = 1;
 // Next/previous controls
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -10,9 +10,9 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("gallery-slide");
-    var dots = document.getElementsByClassName("dot");
+    let i;
+    const slides = document.getElementsByClassName("gallery-slide");
+    const dots = document.getElementsByClassName("dot");
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
@@ -26,7 +26,7 @@ function showSlides(n) {
 }
 
 
-var loadMuseumFromFire = async function() {
+async function loadMuseumFromFire() {
     const museum = [];
     let museumSnapshot = await db.collection("museum").get({ source: 'cache' });
     if (museumSnapshot) {
@@ -44,8 +44,8 @@ var loadMuseumFromFire = async function() {
         museumSnapshot = await db.collection("museum").get({ source: 'server' });
         console.log("%cGrabbed updated database", "color:yellow;font-weight:bold;font-style:italic;");
         console.log("%cSet new cookie. Cache good for 1 hour.", "color:lightblue;font-weight:bold;font-style:italic;");
-        var d = new Date();
-        var e = new Date(d.getTime() + 3600000); //expiry in 1 hour
+        let d = new Date();
+        let e = new Date(d.getTime() + 3600000); //expiry in 1 hour
         document.cookie = "cache-time = " + d.getTime() + "; expires = " + e.toUTCString();
         console.log("%cReloading!", "color:lightblue;font-weight:bold;font-style:italic;");
         loadMuseumFromFire();

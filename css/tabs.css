@@ -1,12 +1,12 @@
 .tab-wrapper {
-    text-align: right;
     color: var(--foreground);
-    text-shadow: none;
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    font-family: "Raleway";
     display: block;
+    font-family: "Raleway";
+    position: fixed;
+    right: 0px;
+    text-align: right;
+    text-shadow: none;
+    top: 0px;
     z-index: 1;
 }
 
@@ -18,49 +18,48 @@
 #sort-tab-wrapper {
     top: 132px;
     transition: 0.2s all;
-    /* display: none; */
 }
 
 .tab {
-    border-bottom: solid var(--border) 1px;
     background: linear-gradient(135deg, transparent 20.75px, var(--border) 20.75px, var(--border) 21.75px, transparent 21.75px);
-    text-align: left;
-    font-size: 18px;
-    transition: 0.1s padding ease-in;
+    border-bottom: solid var(--border) 1px;
     cursor: pointer;
+    font-size: 18px;
     height: 75px;
-    padding-right: 30px;
-    padding-left: 51px;
-    padding-bottom: 4.5px;
-    padding-top: 3.5px;
-    overflow: hidden;
-    text-align: right;
     margin-right: -16px;
+    overflow: hidden;
+    padding-bottom: 4.5px;
+    padding-left: 51px;
+    padding-right: 30px;
+    padding-top: 3.5px;
     position: relative;
-    z-index: 2;
-    top: -3px;
+    text-align: left;
+    text-align: right;
     text-shadow: 1px 2px 2px var(--background-transparent), -1px 2px 2px var(--background-transparent);
+    top: -3px;
+    transition: 0.1s padding ease-in;
+    z-index: 2;
 }
 
 .tab:before {
-    content: "";
-    position: absolute;
-    width: calc(100% - 30px);
-    height: 1px !important;
-    top: 0;
-    left: 30px;
     border-top: 1px solid var(--border);
+    content: "";
+    height: 1px !important;
+    left: 30px;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 30px);
 }
 
 #tab2 {
-    padding-right: 40px;
     padding-left: 60px;
+    padding-right: 40px;
     top: -11px;
 }
 
 #tab3 {
-    padding-right: 50px;
     padding-left: 62px;
+    padding-right: 50px;
     top: -19px;
 }
 
@@ -68,19 +67,19 @@
 #sort-tab {
     background: linear-gradient(135deg, transparent 21.5px, var(--border) 21.5px, var(--border) 22.5px, var(--background) 22.5px);
     font-size: 19px;
+    padding-bottom: 3.5px;
     padding-left: 40px;
     padding-top: 4.5px;
-    padding-bottom: 3.5px;
 }
 
 #home-tab i {
-    font-size: 21px
+    font-size: 21px;
 }
 
 #home-tab {
     padding-left: 20px;
     padding-right: 20px;
-    top: 26px
+    top: 26px;
 }
 
 #nav-tab:hover,
@@ -116,11 +115,11 @@
 }
 
 .pane {
-    transition: 0.25s all;
-    position: absolute;
     margin-right: 2.5%;
     opacity: 0;
     overflow: hidden;
+    position: absolute;
+    transition: 0.25s all;
     width: 95%;
 }
 

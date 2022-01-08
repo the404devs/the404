@@ -5,6 +5,18 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.2.0 (01/08/2022)*
+------------------------
+- Changed up the About tab.
+    - Removed social media buttons.
+    - Removed feedback submission box and related functionality.
+    - Added a thing that lists all my git repos, sorted by last commit.
+        - This essentially replaces `dev.html`, which has been removed.
+- Major JS optimization.
+    - Replaced all instances of `var` with `let` and `const`, because that's what smart people do.
+        - I am now smart.
+- CSS cleanup, things are sorted alphabetically.
+
 ### *4.1.7 (10/23/2021)*
 ------------------------
 - Lots of CSS fixes and changes.

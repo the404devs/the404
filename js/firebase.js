@@ -1,5 +1,5 @@
 // Initialize Cloud Firestore through Firebase
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyAgr0eoCO6hOcxM-5OWXM8sE8BogIsMMiA",
     authDomain: "the404-518d9.firebaseapp.com",
     databaseURL: "https://the404-518d9.firebaseio.com",
@@ -18,12 +18,12 @@ firebase.firestore().settings({
 firebase.firestore().enablePersistence({
     synchronizeTabs: true
 });
-var db = firebase.firestore();
+const db = firebase.firestore();
 
-var loadFromFire = async function() {
-    var posts = [];
-    var software = [];
-    var tags = [];
+async function loadFromFire() {
+    let posts = [];
+    let software = [];
+    let tags = [];
 
     let blogSnapshot = await db.collection("blog").get({ source: 'cache' });
     if (blogSnapshot) {
@@ -50,8 +50,8 @@ var loadFromFire = async function() {
         softSnapshot = await db.collection("software").get({ source: 'server' });
         console.log("%cGrabbed updated database", "color:yellow;font-weight:bold;font-style:italic;");
         console.log("%cSet new cookie. Cache good for 1 hour.", "color:lightblue;font-weight:bold;font-style:italic;");
-        var d = new Date();
-        var e = new Date(d.getTime() + 3600000); //expiry in 1 hour
+        const d = new Date();
+        const e = new Date(d.getTime() + 3600000); //expiry in 1 hour
         document.cookie = "cache-time = " + d.getTime() + "; expires = " + e.toUTCString();
         console.log("%cReloading!", "color:lightblue;font-weight:bold;font-style:italic;");
         loadFromFire();
@@ -62,7 +62,7 @@ var loadFromFire = async function() {
         posts.push({ id: doc.id, ...doc.data() })
     });
     posts.reverse().forEach(post => {
-        var date = ('0' + post.Month).slice(-2) + "/" + ('0' + post.Day).slice(-2) + "/" + post.Year;
+        const date = ('0' + post.Month).slice(-2) + "/" + ('0' + post.Day).slice(-2) + "/" + post.Year;
         $("#home").append(
             $("<div>").addClass("post").append(
                 $("<h3>").addClass("post-head").html(post.Title)
@@ -92,15 +92,15 @@ var loadFromFire = async function() {
 
     software.reverse().forEach(soft => {
         //check for additional buttons
-        var btn2, btn3 = "";
+        let btn2, btn3 = "";
         if (soft.Button2 && soft.Button2 != [] && soft.Button2[1] != "" && soft.Button2[0] != "") {
-            var btn2 = $("<a>").addClass("downloadLink").attr("href", soft.Button2[1]).append($("<button>").addClass("button").append($("<span>").html(soft.Button2[0])));
+            btn2 = $("<a>").addClass("downloadLink").attr("href", soft.Button2[1]).append($("<button>").addClass("button").append($("<span>").html(soft.Button2[0])));
         }
         if (soft.Button3 && soft.Button3 != [] && soft.Button3[1] != "" && soft.Button3[0] != "") {
-            var btn3 = $("<a>").addClass("downloadLink").attr("href", soft.Button3[1]).append($("<button>").addClass("button").append($("<span>").html(soft.Button3[0])));
+            btn3 = $("<a>").addClass("downloadLink").attr("href", soft.Button3[1]).append($("<button>").addClass("button").append($("<span>").html(soft.Button3[0])));
         }
         //check for image
-        var img = "";
+        let img = "";
         if (soft.Image) {
             img = $("<img>").attr("width", "100px").attr("src", soft.Image)
         }
@@ -231,80 +231,14 @@ var loadFromFire = async function() {
     showPanes(1);
 }
 
-var sendFeedback = function() {
-    var email = $("#feed-email").val();
-    var feedback = $("#feed-body").val();
-    if (email == "" || feedback == "") {
-        alert("Please fill in all fields before submitting!");
-        return;
-    } else {
-        var d = new Date();
-        var month = d.getMonth() + 1;
-        var dateStr = d.getFullYear() + "-" + ('0' + month).slice(-2) + "-" + d.getDate()
-        db.collection("feedback").add({
-            Email: email,
-            Feedback: feedback,
-            Date: dateStr
-        });
-        $("#feed-email").val("");
-        $("#feed-body").val("");
-        alert("Success!\nI'll get back to you soon.");
-    }
-}
-
-var resetCookie = function() {
-    var d = new Date();
-    document.cookie = "cache-time = " + d.getTime() + "; expires = " + d.toUTCString();
-}
-
-var logout = function() {
-    document.cookie = "state=unlogged"
-    console.log("%cUser logged out, bye bye!", "color:green;font-weight:bold;font-style:italic;");
-    firebase.auth().signOut();
-    resetCookie();
-    location.href = '../';
-}
-
-var login = function() {
-    console.log("%cthe403 login system (hi zee)", "color:cyan;font-weight:bold;font-style:italic;");
-    console.log("%cInit login attempt...", "color:yellow;font-weight:bold;font-style:italic;");
-    let fields = $("#login-form").serializeArray();
-    let email = fields[0]['value'];
-    let password = fields[1]['value'];
-
-    firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(function(user) {
-            document.cookie = "state=logged;";
-            console.log("%cLogin successful, redirecting...", "color:green;font-weight:bold;font-style:italic;");
-            adminLoadFromFire();
-            $("#home-tabs").fadeOut();
-            $("#edit-tabs").fadeIn();
-            $("#login-box").fadeOut();
-            $("#sign-out").fadeIn();
-            $("#refresh").fadeIn();
-        })
-        .catch(function(error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
-            $("#errmsg").html(error.message).css("opacity", "1");
-            $("#errmsg").html(error.message).css("height", "50px");
-            setTimeout(() => { $("#errmsg").css("opacity", "0"); }, 2000);
-            setTimeout(() => { $("#errmsg").css("height", "0"); }, 2000);
-            setTimeout(() => { $("#errmsg").html(""); }, 2000);
-        });
-}
-
-var adminLoadFromFire = async function() {
+async function adminLoadFromFire() {
     const posts = [];
     const software = [];
-    const feedback = [];
     const museum = [];
 
-    let blogSnapshot = await db.collection("blog").get({ source: 'server' });
-    let softSnapshot = await db.collection("software").get({ source: 'server' });
-    let feedSnapshot = await db.collection("feedback").get({ source: 'server' });
-    let museumSnapshot = await db.collection("museum").get({ source: 'server' });
+    const blogSnapshot = await db.collection("blog").get({ source: 'server' });
+    const softSnapshot = await db.collection("software").get({ source: 'server' });
+    const museumSnapshot = await db.collection("museum").get({ source: 'server' });
     console.log("%cGrabbed entries from server", "color:green;font-weight:bold;font-style:italic;");
 
     if (document.cookie.includes("state=logged")) {
@@ -318,7 +252,7 @@ var adminLoadFromFire = async function() {
         posts.push({ id: doc.id, ...doc.data() })
     });
     posts.reverse().forEach(post => {
-        var date = ('0' + post.Month).slice(-2) + "/" + ('0' + post.Day).slice(-2) + "/" + post.Year;
+        const date = ('0' + post.Month).slice(-2) + "/" + ('0' + post.Day).slice(-2) + "/" + post.Year;
         $("#home").append(
             $("<div>").addClass("post").append(
                 $("<p>").addClass("id-label").html(post.id).css(
@@ -368,10 +302,10 @@ var adminLoadFromFire = async function() {
     });
     softSnapshot.forEach((doc) => {
         software.push({ id: doc.id, ...doc.data() })
-    })
+    });
     software.reverse().forEach(soft => {
         //check for additional buttons
-        var btn2t, btn2l, btn3t, btn3l = "";
+        let btn2t, btn2l, btn3t, btn3l = "";
         if (soft.Button2 && soft.Button2 != [] && soft.Button2[1] != "" && soft.Button2[0] != "") {
             btn2t = soft.Button2[0];
             btn2l = soft.Button2[1];
@@ -381,9 +315,8 @@ var adminLoadFromFire = async function() {
             btn3l = soft.Button3[1];
         }
         //check for image
-        var img = "";
         if (soft.Image) {
-            img = $("<img>").attr("width", "100px").attr("src", soft.Image)
+            $("<img>").attr("width", "100px").attr("src", soft.Image)
         }
         $("#soft").append(
             $("<div>").addClass("post").append(
@@ -462,34 +395,11 @@ var adminLoadFromFire = async function() {
             $("<a>").addClass("link").attr("title", soft.id).attr("onclick", "scrollToElem('" + soft.id + "')").html(soft.Name)
         ).append($("<br>")).append($("<br>"));
     });
-    feedSnapshot.forEach((doc) => {
-        feedback.push({ id: doc.id, ...doc.data() })
-    })
-    feedback.reverse().forEach(feed => {
-        $("#feed").append(
-            $("<div>").addClass("post").append(
-                $("<h3>").addClass("post-head link").html(feed.Email).attr(
-                    "onclick", "window.open('mailto:" + feed.Email + "')"
-                ).attr(
-                    "style", "cursor: pointer; width: min-content"
-                ).attr(
-                    "title", "Send reply"
-                )
-            ).append(
-                $("<h4>").addClass("post-date").html(feed.Date)
-            ).append(
-                $("<p>").addClass("post-body").html(feed.Feedback)
-            ).attr(
-                "style", "width: 70%;padding-top:10px;padding-bottom:10px"
-            )
-        )
-    })
-
     museumSnapshot.forEach((doc) => {
         museum.push({ id: doc.id, ...doc.data() })
-    })
+    });
     museum.reverse().forEach(exhibit => {
-        $("#museum").append(
+        $("#about").append(
             $("<div>").addClass("post").append(
                 $("<p>").addClass("id-label").html(exhibit.id).css(
                     "font-size", "18px"
@@ -518,7 +428,7 @@ var adminLoadFromFire = async function() {
                 "style", "width: 70%;padding-top:10px;padding-bottom:10px"
             )
         )
-    })
+    });
 
     $("#new-post").fadeIn();
     $("#new-soft").fadeIn();
@@ -526,14 +436,14 @@ var adminLoadFromFire = async function() {
     determinePane();
 }
 
-var updateBlog = async function(id) {
-    var id2 = "#" + id;
-    var title = $(id2).children(".title").val();
-    var year = $(id2).children(".year").val();
-    var month = $(id2).children(".month").val();
-    var day = $(id2).children(".day").val();
-    var content = $(id2).children(".post-content").val();
-    var x = await db.collection("blog").doc(id).set({
+async function updateBlog(id) {
+    const id2 = "#" + id;
+    const title = $(id2).children(".title").val();
+    const year = $(id2).children(".year").val();
+    const month = $(id2).children(".month").val();
+    const day = $(id2).children(".day").val();
+    const content = $(id2).children(".post-content").val();
+    await db.collection("blog").doc(id).set({
         Title: title,
         Year: year,
         Month: month,
@@ -541,28 +451,28 @@ var updateBlog = async function(id) {
         Content: content
     }).catch(function(error) {
         alert("Something went very wrong while pushing update.");
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        const errorCode = error.code;
+        const errorMessage = error.message;
         console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
         return;
     }).then(alert("Success!"));
     resetCookie();
 }
 
-var updateSoft = async function(id) {
-    var id2 = "#" + id;
-    var name = $(id2).children(".name").val();
-    var version = $(id2).children(".version").val();
-    var release = $(id2).children(".release").val();
-    var current = $(id2).children(".current").val();
-    var language = $(id2).children(".language").val().split(", ");
-    var tags = $(id2).children(".tags").val().split(", ");
-    var image = $(id2).children(".image").val();
-    var button1 = [$(id2).children(".btn1t").val(), $(id2).children(".btn1l").val()];
-    var button2 = [$(id2).children(".btn2t").val(), $(id2).children(".btn2l").val()];
-    var button3 = [$(id2).children(".btn3t").val(), $(id2).children(".btn3l").val()];
-    var description = $(id2).children(".description").val();
-    var x = await db.collection("software").doc(id).set({
+async function updateSoft(id) {
+    const id2 = "#" + id;
+    const name = $(id2).children(".name").val();
+    const version = $(id2).children(".version").val();
+    const release = $(id2).children(".release").val();
+    const current = $(id2).children(".current").val();
+    const language = $(id2).children(".language").val().split(", ");
+    const tags = $(id2).children(".tags").val().split(", ");
+    const image = $(id2).children(".image").val();
+    const button1 = [$(id2).children(".btn1t").val(), $(id2).children(".btn1l").val()];
+    const button2 = [$(id2).children(".btn2t").val(), $(id2).children(".btn2l").val()];
+    const button3 = [$(id2).children(".btn3t").val(), $(id2).children(".btn3l").val()];
+    const description = $(id2).children(".description").val();
+    await db.collection("software").doc(id).set({
         Name: name,
         Version: version,
         Release: release,
@@ -576,41 +486,41 @@ var updateSoft = async function(id) {
         Description: description
     }).catch(function(error) {
         alert("Something went very wrong while pushing update.");
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        const errorCode = error.code;
+        const errorMessage = error.message;
         console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
         return;
     }).then(alert("Success!"));
     resetCookie();
 }
 
-var updateMuseum = async function(id) {
-    var id2 = "#" + id;
-    var date = $(id2).children(".date").val();
-    var path = $(id2).children(".path").val();
-    var content = $(id2).children(".description").val();
-    var x = await db.collection("museum").doc(id).set({
+async function updateMuseum(id) {
+    const id2 = "#" + id;
+    const date = $(id2).children(".date").val();
+    const path = $(id2).children(".path").val();
+    const content = $(id2).children(".description").val();
+    await db.collection("museum").doc(id).set({
         date: date,
         path: path,
         text: content
     }).catch(function(error) {
         alert("Something went very wrong while pushing update.");
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        const errorCode = error.code;
+        const errorMessage = error.message;
         console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
         return;
     }).then(alert("Success!"));
     resetCookie();
 }
 
-var newPost = async function() {
-    var title = $("#new-post").children(".title").val();
-    var year = $("#new-post").children(".year").val();
-    var month = $("#new-post").children(".month").val();
-    var day = $("#new-post").children(".day").val();
-    var content = $("#new-post").children(".post-content").val();
-    var id = year.replace(/\D/g, '') + "-" + ('0' + month).slice(-2) + "-" + ('0' + day).slice(-2);
-    var x = await db.collection("blog").doc(id).set({
+async function newPost() {
+    const title = $("#new-post").children(".title").val();
+    const year = $("#new-post").children(".year").val();
+    const month = $("#new-post").children(".month").val();
+    const day = $("#new-post").children(".day").val();
+    const content = $("#new-post").children(".post-content").val();
+    const id = year.replace(/\D/g, '') + "-" + ('0' + month).slice(-2) + "-" + ('0' + day).slice(-2);
+    await db.collection("blog").doc(id).set({
         Title: title,
         Year: year,
         Month: month,
@@ -618,8 +528,8 @@ var newPost = async function() {
         Content: content
     }).catch(function(error) {
         alert("Something went very wrong while pushing update.");
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        let errorCode = error.code;
+        let errorMessage = error.message;
         console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
         return;
     }).then(alert("Success!"));
@@ -627,20 +537,20 @@ var newPost = async function() {
     resetCookie();
 }
 
-var newSoft = async function() {
-    var name = $("#new-soft").children(".name").val();
-    var version = $("#new-soft").children(".version").val();
-    var release = $("#new-soft").children(".release").val();
-    var current = $("#new-soft").children(".current").val();
-    var language = $("#new-soft").children(".language").val().split(", ");
-    var tags = $("#new-soft").children(".tags").val().split(", ");
-    var image = $("#new-soft").children(".image").val();
-    var button1 = [$("#new-soft").children(".btn1t").val(), $("#new-soft").children(".btn1l").val()];
-    var button2 = [$("#new-soft").children(".btn2t").val(), $("#new-soft").children(".btn2l").val()];
-    var button3 = [$("#new-soft").children(".btn3t").val(), $("#new-soft").children(".btn3l").val()];
-    var description = $("#new-soft").children(".description").val();
-    var id = $("#new-soft").children(".id").val();
-    var x = await db.collection("software").doc(id).set({
+async function newSoft() {
+    const name = $("#new-soft").children(".name").val();
+    const version = $("#new-soft").children(".version").val();
+    const release = $("#new-soft").children(".release").val();
+    const current = $("#new-soft").children(".current").val();
+    const language = $("#new-soft").children(".language").val().split(", ");
+    const tags = $("#new-soft").children(".tags").val().split(", ");
+    const image = $("#new-soft").children(".image").val();
+    const button1 = [$("#new-soft").children(".btn1t").val(), $("#new-soft").children(".btn1l").val()];
+    const button2 = [$("#new-soft").children(".btn2t").val(), $("#new-soft").children(".btn2l").val()];
+    const button3 = [$("#new-soft").children(".btn3t").val(), $("#new-soft").children(".btn3l").val()];
+    const description = $("#new-soft").children(".description").val();
+    const id = $("#new-soft").children(".id").val();
+    await db.collection("software").doc(id).set({
         Name: name,
         Version: version,
         Release: release,
@@ -654,8 +564,8 @@ var newSoft = async function() {
         Description: description
     }).catch(function(error) {
         alert("Fuck!");
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        const errorCode = error.code;
+        const errorMessage = error.message;
         console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
         return;
     }).then(alert("Success!"));
@@ -663,19 +573,19 @@ var newSoft = async function() {
     resetCookie();
 }
 
-var newMuseum = async function(id) {
-    var id = $("#new-museum").children(".id").val();
-    var date = $("#new-museum").children(".date").val();
-    var path = $("#new-museum").children(".path").val();
-    var content = $("#new-museum").children(".description").val();
-    var x = await db.collection("museum").doc(id).set({
+async function newMuseum() {
+    const id = $("#new-museum").children(".id").val();
+    const date = $("#new-museum").children(".date").val();
+    const path = $("#new-museum").children(".path").val();
+    const content = $("#new-museum").children(".description").val();
+    await db.collection("museum").doc(id).set({
         date: date,
         path: path,
         text: content
     }).catch(function(error) {
         alert("Fuck!");
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        const errorCode = error.code;
+        const errorMessage = error.message;
         console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
         return;
     }).then(alert("Success!"));
@@ -683,11 +593,54 @@ var newMuseum = async function(id) {
     resetCookie();
 }
 
-var sortTags = function() {
-    var matchTag = "";
-    var matchLang = "";
-    var t = 0;
-    var l = 0;
+function resetCookie() {
+    const d = new Date();
+    document.cookie = "cache-time = " + d.getTime() + "; expires = " + d.toUTCString();
+}
+
+function logout() {
+    document.cookie = "state=unlogged"
+    console.log("%cUser logged out, bye bye!", "color:green;font-weight:bold;font-style:italic;");
+    firebase.auth().signOut();
+    resetCookie();
+    location.href = '../';
+}
+
+function login() {
+    console.log("%cthe403 login system (hi zee)", "color:cyan;font-weight:bold;font-style:italic;");
+    console.log("%cInit login attempt...", "color:yellow;font-weight:bold;font-style:italic;");
+    const fields = $("#login-form").serializeArray();
+    const email = fields[0]['value'];
+    const password = fields[1]['value'];
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(function(user) {
+            document.cookie = "state=logged;";
+            console.log("%cLogin successful, redirecting...", "color:green;font-weight:bold;font-style:italic;");
+            adminLoadFromFire();
+            $("#home-tabs").fadeOut();
+            $("#edit-tabs").fadeIn();
+            $("#login-box").fadeOut();
+            $("#sign-out").fadeIn();
+            $("#refresh").fadeIn();
+        })
+        .catch(function(error) {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log("%c" + errorCode + ": " + errorMessage, "color:red;font-weight:bold;font-style:italic;");
+            $("#errmsg").html(error.message).css("opacity", "1");
+            $("#errmsg").html(error.message).css("height", "50px");
+            setTimeout(() => { $("#errmsg").css("opacity", "0"); }, 2000);
+            setTimeout(() => { $("#errmsg").css("height", "0"); }, 2000);
+            setTimeout(() => { $("#errmsg").html(""); }, 2000);
+        });
+}
+
+function sortTags() {
+    let matchTag = "";
+    let matchLang = "";
+    let t = 0;
+    let l = 0;
     $("#soft-tag-zone").children("input").each(function() {
         if ($(this).is(":checked")) {
             matchTag += $(this).attr("id").replace(/ /g, "_");
@@ -703,10 +656,10 @@ var sortTags = function() {
 
     $(".blob").each(function() {
         $(this).css("display", "none")
-        var tags = $(this).attr("tag").replace(/ /g, "_").split(",_");
+        const tags = $(this).attr("tag").replace(/ /g, "_").split(",_");
         tags.forEach(tag => {
             if (matchTag.includes(tag) || t == 0) {
-                var langs = $(this).attr("lang").replace(/ /g, "_").split(",_");
+                const langs = $(this).attr("lang").replace(/ /g, "_").split(",_");
                 langs.forEach(lang => {
                     if (matchLang.includes(lang) || l == 0) {
                         $(this).css("display", "block")
@@ -720,10 +673,10 @@ var sortTags = function() {
 
     $("#soft-id-zone").children().each(function() {
         if ($(this).attr("tag")) {
-            var tags = $(this).attr("tag").replace(/ /g, "_").split(",_");
+            const tags = $(this).attr("tag").replace(/ /g, "_").split(",_");
             tags.forEach(tag => {
                 if (matchTag.includes(tag) || t == 0) {
-                    var langs = $(this).attr("lang").replace(/ /g, "_").split(",_");
+                    const langs = $(this).attr("lang").replace(/ /g, "_").split(",_");
                     langs.forEach(lang => {
                         if (matchLang.includes(lang) || l == 0) {
                             $(this).css("display", "inline")
@@ -738,7 +691,7 @@ var sortTags = function() {
     showPanes(3);
 }
 
-var clearTags = function() {
+function clearTags() {
     $("#soft-tag-zone").children("input").each(function() {
         $(this).prop("checked", false);
     });
@@ -748,7 +701,7 @@ var clearTags = function() {
     sortTags();
 }
 
-var refresh = function() {
+function refresh() {
     $("#new-soft").children(".id").val("");
     $("#new-soft").children(".name").val("");
     $("#new-soft").children(".version").val("");
@@ -775,7 +728,7 @@ var refresh = function() {
     $("#new-museum").children(".description").val("");
     $("#home").children('.post').slice(1).remove();
     $("#feed").children('.post').remove();
-    $("#museum").children('.post').slice(1).remove();
+    $("#about").children('.post').slice(1).remove();
     $("#soft").children('.post').slice(1).remove();
     $("#blog-nav").children('a').remove();
     $("#blog-nav").children('br').remove();
@@ -785,14 +738,14 @@ var refresh = function() {
     adminLoadFromFire();
 }
 
-var softDateFlip = function() {
-    var parent = $("#software");
-    var children = parent.children(".blob");
+function softDateFlip() {
+    const parent = $("#software");
+    const children = parent.children(".blob");
     parent.append(children.get().reverse());
 
-    var parent2 = $("#soft-id-zone");
+    const parent2 = $("#soft-id-zone");
     parent2.children().slice(-2).remove()
-    var children2 = parent2.children();
+    const children2 = parent2.children();
     parent2.append(children2.get().reverse()).append($("<br>")).append($("<br>"));
 
     if ($("#softFlipper").html() == "↑") {
@@ -804,14 +757,14 @@ var softDateFlip = function() {
     sortTags();
 }
 
-var blogDateFlip = function() {
-    var parent = $("#home");
-    var children = parent.children(".post");
+function blogDateFlip() {
+    const parent = $("#home");
+    const children = parent.children(".post");
     parent.append(children.get().reverse());
 
-    var parent2 = $("#blog-nav");
+    const parent2 = $("#blog-nav");
     parent2.children().slice(-2).remove()
-    var children2 = parent2.children().slice(2);
+    const children2 = parent2.children().slice(2);
     parent2.append(children2.get().reverse()).append($("<br>")).append($("<br>"));
 
     if ($("#blogFlipper").html() == "↑") {

@@ -32,36 +32,36 @@ body {
 
 .header {
     background: white;
-    width: 100%;
     color: var(--brown);
-    text-align: center;
     font-family: Candara;
-    padding-top: 5px;
-    padding-bottom: 2px;
     font-size: 24px;
+    padding-bottom: 2px;
+    padding-top: 5px;
+    text-align: center;
+    width: 100%;
 }
 
 hr {
     border-color: turquoise;
     border-width: 5px;
-    margin-top: 0;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .header2 {
     background-color: var(--silver);
-    padding-top: 15px;
     padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 h2 {
     background-color: white;
-    font-family: Candara;
     color: var(--brown);
+    font-family: Candara;
     font-size: 24px;
-    text-align: center;
-    padding-top: 30px;
     padding-bottom: 25px;
+    padding-top: 30px;
+    text-align: center;
 }
 
 h4,
@@ -72,18 +72,14 @@ h5 {
 .pane {
     background-color: var(--silver);
     font-family: "Segoe UI";
-    /* transition: 0.25s all; */
-    /* position: absolute; */
     margin-right: 20px;
-    width: 100%;
     opacity: 0;
     overflow: hidden;
+    width: 100%;
 }
 
 .body-image {
     width: 370px;
-    /* border: 1px solid var(--border);
-    box-shadow: 1px 2px 3px black, -1px 2px 3px black; */
 }
 
 .inner-line {

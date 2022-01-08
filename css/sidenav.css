@@ -1,52 +1,51 @@
 /* sidenav.css contains all styling rules for the right-side navigation menus featured in index.html */
 
 .nav {
-    width: 15%;
+    background-color: var(--background-transparent);
+    border: 1px solid var(--border);
+    font-size: 10px;
+    max-height: calc(100% - 160px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 0px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 18px;
-    padding-bottom: 0px;
-    border: 1px solid var(--border);
-    background-color: var(--background-transparent);
-    right: 2.5%;
-    top: 125px;
     position: fixed;
-    font-size: 10px;
-    max-height: calc(100% - 160px);
-    overflow-y: scroll;
-    overflow-x: hidden;
-    z-index: 1;
-    /* for firefox */
+    right: 2.5%;
     scrollbar-width: none;
+    top: 125px;
+    width: 15%;
+    z-index: 1;
 }
 
 .nav::-webkit-scrollbar {
-    width: 0px;
-    visibility: hidden !important;
     display: none !important;
+    visibility: hidden !important;
+    width: 0px;
 }
 
 #close,
 #softFlipper,
 #blogFlipper {
-    position: fixed;
+    backdrop-filter: blur(5px);
+    background-color: var(--background-transparent);
     border: 1px solid var(--border);
-    text-align: center;
+    cursor: pointer;
+    display: none;
+    font-family: "Inconsolata";
+    font-size: 16px !important;
+    height: 16px !important;
+    margin-left: 193px;
+    margin-top: -19px;
     padding-left: 4px !important;
     padding-right: 4px !important;
-    cursor: pointer;
-    height: 16px !important;
-    transition: 0.25s all;
-    font-family: "Inconsolata";
-    background-color: var(--background-transparent);
-    margin-top: -19px;
-    margin-left: 193px;
-    font-size: 16px !important;
-    display: none;
+    position: fixed;
+    text-align: center;
     text-shadow: none;
-    z-index: 1;
+    transition: 0.25s all;
     width: unset !important;
-    backdrop-filter: blur(5px);
+    z-index: 1;
 }
 
 #close:hover,
@@ -57,22 +56,22 @@
 
 #softFlipper,
 #blogFlipper {
+    display: -webkit-box;
+    font-size: 15px !important;
+    margin-left: -11px !important;
     padding-left: 4px !important;
     padding-right: 4px !important;
-    margin-left: -11px !important;
-    font-size: 15px !important;
-    display: -webkit-box;
 }
 
 .nav .link {
-    cursor: pointer;
+    font-size: 15px;
     font-family: "Raleway";
-    font-size: 15px
+    cursor: pointer;
 }
 
 .nav h2 {
     font-size: 16px;
-    margin-top: 0;
     margin-bottom: 6px;
     margin-left: -4px;
+    margin-top: 0;
 }
