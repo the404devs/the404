@@ -1,0 +1,58 @@
+{
+    "Flower Car": {
+        "type": "WeDo 2.0",
+        "description": "My world-famous Flower Car, the most prestigious vehicle to ever grace the library. Originally created in 2016 shortly after the library got their WeDo sets, I set out to create something cool with the simplistic single-motored sets, and created a local icon in the process. Long Live the Flower Car!",
+        "galleries": [{
+                "name": "Flower Car V1 (2016-12-30)",
+                "path": "./images/Flower Car/v1/",
+                "images": [
+                    "20161230_143401.jpg",
+                    "20161230_143425.jpg"
+                ]
+            },
+            {
+                "name": "Flower Car V2 (2018-08-20)",
+                "path": "./images/Flower Car/v2/",
+                "images": [
+                    "20180820_142356.jpg",
+                    "20180820_142400.jpg",
+                    "20180820_142406.jpg",
+                    "20180820_142417.jpg",
+                    "20180820_142425.jpg",
+                    "20180820_142431.jpg"
+                ]
+            },
+            {
+                "name": "Flower Car V3 (2019-06-01)",
+                "path": "./images/Flower Car/v3/",
+                "images": [
+                    "20190601_110551.jpg",
+                    "20190601_110554.jpg",
+                    "20190601_110600.jpg",
+                    "20190601_110605.jpg",
+                    "20190601_110617.jpg",
+                    "20190601_110641.jpg",
+                    "20190601_110649.jpg",
+                    "20190601_110717.jpg"
+                ]
+            },
+            {
+                "name": "Flower Car V4 (2021-12-31)",
+                "path": "./images/Flower Car/v4/",
+                "images": [
+                    "20211231_090343.jpg",
+                    "20211231_090348.jpg",
+                    "20211231_090354.jpg",
+                    "20211231_090359.jpg",
+                    "20211231_090403.jpg",
+                    "20211231_101043.jpg",
+                    "20211231_101101.jpg",
+                    "20211231_101110.jpg",
+                    "20211231_110819.jpg",
+                    "20211231_111927.jpg",
+                    "20211231_111930.jpg"
+                ]
+            }
+        ]
+    }
+}

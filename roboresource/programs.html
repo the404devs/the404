@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programs - Robotics Resources</title>
+    <meta name="theme-color" content="#800080">
+
+    <link rel="stylesheet" type="text/css" href="../css/controls.css">
+    <link rel="stylesheet" type="text/css" href="../css/sidenav.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/tabs.css">
+    <link rel="stylesheet" type="text/css" href="css/robo.css">
+    <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+
+<body onload="loadProgramsFromJSON()">
+    <div class="header">
+        <h1 id="header-text" onclick="location.href = 'https://the404.nl/'">THE404.NL</h1>
+        <div class="tab-wrapper">
+            <span class="tab" id="home-tab" onclick="location.href = './index.html'" title="Robo Home"><i class="fas fa-arrow-left"></i></span>
+        </div>
+    </div>
+
+    <div class="content" id="main">
+        <div class="nav" id="robo-nav">
+            <span class="button flipper" id="roboFlipper" onclick="roboDateFlip()" title="Sorting Ascending">↑</span>
+            <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
+            <div id="robo-id-zone">
+            </div>
+            <div id="robo-type-zone" style="border-top:1px solid var(--border); padding-top: 10px;">
+                <h2>Sort by Type:</h2>
+            </div>
+            <div id="robo-tag-zone">
+                <h2>Sort by Tag:</h2>
+            </div>
+            <button class="button" onclick="clearTags()" style="font-size:18px;height:25px; width: -webkit-fill-available;"><span>Clear Tags</span></button>
+            <br><br>
+        </div>
+        <div class="tab-wrapper" id="sort-tab-wrapper">
+            <span class="tab" id="sort-tab" onclick="showSort()" title="Projects Menu">☰</span>
+        </div>
+        <div class="post robo-blob">
+            <h2 class="post-head">NXT & EV3 Program Archive</h2>
+            <p class="post-body">Several programs from throughout my robotics career, from my own personal projects to instructional demos and kid-made creations from my time teaching robotics to others.</p>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

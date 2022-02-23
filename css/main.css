@@ -16,6 +16,15 @@
     padding-top: 0;
 }
 
+.post-author {
+    color: var(--foreground);
+    font-family: Raleway;
+    font-weight: normal;
+    margin-top: 5px;
+    padding-top: 0;
+    font-size: 16px;
+}
+
 .post {
     background-color: var(--background-transparent);
     border: 1px solid var(--border);

@@ -27,7 +27,8 @@
 
 #close,
 #softFlipper,
-#blogFlipper {
+#blogFlipper,
+#roboFlipper {
     backdrop-filter: blur(5px);
     background-color: var(--background-transparent);
     border: 1px solid var(--border);
@@ -50,12 +51,14 @@
 
 #close:hover,
 #softFlipper:hover,
-#blogFlipper:hover {
+#blogFlipper:hover,
+#roboFlipper:hover {
     color: var(--text-dark);
 }
 
 #softFlipper,
-#blogFlipper {
+#blogFlipper,
+#roboFlipper {
     display: -webkit-box;
     font-size: 15px !important;
     margin-left: -11px !important;
