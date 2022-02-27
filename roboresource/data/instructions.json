@@ -1,0 +1,91 @@
+{
+    "Bevel Bot": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Bevel Bot.pdf"]
+    },
+    "Colour Sorter": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Colour Sorter.pdf"]
+    },
+    "Communication Robot": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Communication Robot.pdf"]
+    },
+    "Driving Base": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": [
+            "Driving Base.pdf",
+            "Driving Base - Medium Motor Arm.pdf",
+            "Driving Base - Colour Sensor (Down).pdf",
+            "Driving Base - Colour Sensor (Forward).pdf",
+            "Driving Base - Gyro Sensor.pdf",
+            "Driving Base - Ultrasonic Sensor.pdf",
+            "Driving Base - Touch Sensor.pdf",
+            "Driving Base - Useless Cube.pdf"
+        ]
+    },
+    "Elephant": {
+        "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
+        "files": ["Elephant.pdf"]
+    },
+    "Flower": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Flower.pdf"]
+    },
+    "Gear Bot": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Gear Bot.pdf"]
+    },
+    "Gyro Boy": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Gyro Boy.pdf"]
+    },
+    "Insect": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Insect.pdf"]
+    },
+    "Mindcuber": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["https://www.mindcuber.com/mindcub3r/mindcub3r.html"]
+    },
+    "Plot Bot": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Plot Bot.pdf"]
+    },
+    "Puppy": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Puppy.pdf"]
+    },
+    "Remote Control": {
+        "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
+        "files": ["Remote Control.pdf"]
+    },
+    "Robot Arm H25": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Robot Arm H25.pdf"]
+    },
+    "Smart Turtle": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Smart Turtle.pdf"]
+    },
+    "Speed Bot": {
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Speed Bot.pdf"]
+    },
+    "Spinner Factory": {
+        "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
+        "files": ["Spinner Factory.pdf"]
+    },
+    "Stair Climber": {
+        "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
+        "files": ["Stair Climber.pdf"]
+    },
+    "Tank Bot": {
+        "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
+        "files": ["Tank Bot.pdf"]
+    },
+    "Znap": {
+        "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
+        "files": ["Znap.pdf"]
+    }
+}

@@ -25,6 +25,56 @@ function getJSON(url, callback) {
     xhr.send();
 }
 
+function loadInstructionsFromJSON() {
+    $.getJSON("./data/instructions.json", function(jsonData) {
+        Object.keys(jsonData).forEach(key => {
+            let id = clean(key);
+            $("#main").append(
+                $("<div>").addClass("post").attr("id", id).append(
+                    $("<h3>").addClass("post-head").html(key)
+                ).append(
+                    $("<div>").addClass("post-body").html("<b>Requires Sets:</b>")
+                ).append(
+                    $("<ul>").attr("id", id + "-sets")
+                ).append(
+                    $("<div>").addClass("post-body").html("<b>Files:</b>")
+                ).append(
+                    $("<ul>").attr("id", id + "-files")
+                )
+            );
+
+            jsonData[key].sets.forEach(set => {
+                $("#" + id + "-sets").append(
+                    $("<li>").html(set)
+                );
+            });
+
+            jsonData[key].files.forEach(file => {
+                let prefix = "instructions/";
+                if (file.startsWith("http")) {
+                    prefix = "";
+                }
+                $("#" + id + "-files").append(
+                    $("<li>").append($("<a>").addClass("link").attr("href", prefix + file).html(file))
+                );
+            });
+            $("#robo-id-zone").append(
+                $("<a>").addClass("link").attr(
+                    "title", key
+                ).attr(
+                    "onclick", "scrollToElem('" + id + "')"
+                ).html(key)
+            ).append(
+                $("<br>")
+            ).append(
+                $("<br>")
+            );
+        });
+
+
+    });
+}
+
 function loadImagesFromJSON() {
     $.getJSON("./data/images.json", function(jsonData) {
         Object.keys(jsonData).forEach(key => {

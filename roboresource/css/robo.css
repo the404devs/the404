@@ -139,3 +139,7 @@
     transition: 0.1s all;
     filter: brightness(0.5);
 }
+
+h5 {
+    margin-bottom: 0;
+}

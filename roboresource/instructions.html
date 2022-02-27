@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Instructions - Robotics Resources</title>
+    <meta name="theme-color" content="#800080">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/controls.css">
+    <link rel="stylesheet" type="text/css" href="../css/sidenav.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/tabs.css">
+    <link rel="stylesheet" type="text/css" href="css/robo.css">
+    <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body onload="loadInstructionsFromJSON()">
+    <div class="header">
+        <h1 id="header-text" onclick="location.href = './index.html'">THE404.NL</h1>
+        <div class="tab-wrapper">
+            <span class="tab" id="home-tab" onclick="location.href = './index.html'" title="Robo Home"><i class="fas fa-arrow-left"></i></span>
+        </div>
+    </div>
+
+    <div class="content" id="main">
+        <div class="nav" id="robo-nav">
+            <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
+            <div id="robo-id-zone">
+            </div>
+        </div>
+        <div class="tab-wrapper" id="sort-tab-wrapper">
+            <span class="tab" id="sort-tab" onclick="showSort()" title="Instructions Menu">☰</span>
+        </div>
+        <div class="post robo-blob">
+            <h2 class="post-head">EV3 Building Instructions</h2>
+            <p class="post-body">A few PDFs of instructions, for use in robotics classes.</p>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

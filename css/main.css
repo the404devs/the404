@@ -137,7 +137,7 @@ ul {
 #git-container {
     border: 1px solid var(--border);
     display: inline-block;
-    height: 500px;
+    height: 450px;
     overflow-y: scroll;
     text-align: center;
     width: 550px;
@@ -150,4 +150,10 @@ ul {
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
+}
+
+.important-top-thing {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;
 }

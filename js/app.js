@@ -1,6 +1,6 @@
-const VERSION = "4.2.2";
-const DATE = "02/12/2022";
-const TIME = "23:26";
+const VERSION = "4.2.3";
+const DATE = "02/27/2022";
+const TIME = "12:06";
 
 function showPanes(n) {
     let i;
@@ -56,7 +56,7 @@ function determinePane() {
 
 function scrollToElem(id) {
     console.log(id);
-    const offset = document.getElementById(id).offsetTop - 0;
+    const offset = document.getElementById(id).offsetTop + 0;
     window.scrollTo({
         top: offset,
         behavior: "smooth"

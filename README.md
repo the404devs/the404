@@ -5,9 +5,11 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
-### *4.2.3 (02/23/2022)*
+### *4.2.3 (02/27/2022)*
 ------------------------
-- Add Robotics Resources page.
+- Add Robotics Resources pages.
+    - Contains archives of programs, instructions and images.
+    - Moved Battlebots tournament rankings from `/development` to `/roboresource`
 - Make 404 error page a little more friendly, with a potential for young children to be seeing it with the new Robo Resources page.
 
 ### *4.2.2 (02/12/2022)*
