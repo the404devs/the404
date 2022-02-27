@@ -100,7 +100,7 @@ function loadImagesFromJSON() {
                 let j = 0;
                 gallery.images.forEach(image => {
                     $("#" + id + "-" + i).append(
-                        $("<img>").attr("src", path + image).addClass("robo-gallery-image").attr("id", id + "-" + i + "-" + j).attr("gallery", id + "-" + i).attr("onclick", "showImageOverlay('" + id + "-" + i + "-" + j + "')")
+                        $("<img>").attr("src", path + image).addClass("robo-gallery-image").attr("id", id + "-" + i + "-" + j).attr("gallery", id + "-" + i).attr("onclick", "showImageOverlay('" + id + "-" + i + "-" + j + "')").attr("loading", "lazy")
                     )
                     j++;
                 });
