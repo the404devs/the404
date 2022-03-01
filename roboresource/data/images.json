@@ -1,4 +1,20 @@
 {
+    "Plot Bot": {
+        "type": "EV3",
+        "description": "One of the Lego Education models, I had never got around to building it until I was working at Idea Labs. Plot Bot uses a marker, pencil, or some other form of utensil to draw as it drives. We successfully made some basic shapes, but complex drawings were a little more challenge.",
+        "galleries": [{
+            "name": "Plot Bot (2022-02-22)",
+            "path": "./images/Plot Bot/",
+            "images": [
+                "20220301_162819.jpg",
+                "20220301_164208.jpg",
+                "20220301_164229.jpg",
+                "20220301_164304.jpg",
+                "20220301_164313.jpg",
+                "20220301_164326.jpg"
+            ]
+        }]
+    },
     "Neo TaskBot": {
         "type": "NXT",
         "description": "Inspired by the TaskBots of old that I built several times between 2009 & 2011 during my time with my elementary school robotics team. Meant to be simple and easily adaptable, just like old times, although this one is a bit more flashy. Built as a way to refresh my skills after a few years off of robotics.",
