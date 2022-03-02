@@ -12,7 +12,7 @@
     "Malfunction!": {
         "type": "NXT",
         "date": "2011-09-10",
-        "description": "The robot wobbles back and forth, screaming \"Malfunction!\" at the top of its electronic lungs and flashing lights.",
+        "description": "The robot wobbles back and forth, screaming \"Malfunction!\" at the top of its electronic lungs while flashing lights.",
         "author": "Myself",
         "tags": ["Personal", "Silly"],
         "files": [
@@ -293,7 +293,7 @@
     "Colour Sensor Test": {
         "type": "EV3",
         "date": "2015-09-29",
-        "description": "The first program I wrote while volunteering at the library, shortly after they got their 6 EV3s. It was a simple test program, that displays the detected colour on the screen.",
+        "description": "The first program I wrote while volunteering at the library, shortly after they got their 6 EV3s. It was a simple test program that displays the detected colour on the screen.",
         "author": "Myself",
         "tags": ["Library", "Tutorial", "Colour Sensor"],
         "files": [
@@ -440,6 +440,16 @@
             "poop.ev3"
         ]
     },
+    "Owen 2021-10-19": {
+        "type": "EV3",
+        "date": "2021-10-19",
+        "description": "The most basic movement demo there is, showing how to use the move blocks, and for showing kids how to navigate the interface of the EV3 software (saving, downloading, projects/programs, where to find different blocks, etc.).",
+        "author": "Myself",
+        "tags": ["Tutorial", "Movement"],
+        "files": [
+            "Owen 2021-10-19.ev3"
+        ]
+    },
     "Plot Bot Starter": {
         "type": "EV3",
         "date": "2021-11-16",
@@ -470,6 +480,26 @@
             "frogbot.ev3",
             "joe mama.ev3",
             "johnny fell off the mountain.ev3"
+        ]
+    },
+    "Confused": {
+        "type": "EV3",
+        "date": "2021-12-29",
+        "description": "A bunch of programs some kids wrote with my assistance. Some fun concepts like loop interrupts and more line followers(!). Not sure why I never bothered to show loop interrupts and that sort of logic before, but I did this time.",
+        "author": "Library kids",
+        "tags": ["Library", "Touch Sensor", "Ultrasonic Sensor", "Colour Sensor", "Line Followers"],
+        "files": [
+            "confused by J and N.ev3"
+        ]
+    },
+    "Touch": {
+        "type": "EV3",
+        "date": "2022-02-15",
+        "description": "A lot of different programs, with some concepts I did not teach these kids, and have no memory of them using in this class??? It was only the second week and according to my notes, we were only supposed to be driving in basic shapes???<br>Anyways, there are programs for detecting the touch sensors being pressed, both in simple and advanced dual-wield forms, as well as other smaller movement experiments they made. I guess I can use this as a Touch Sensor tutorial in the future.",
+        "author": "Library kids",
+        "tags": ["Library", "Silly", "Movement", "Touch Sensor", "Tutorial"],
+        "files": [
+            "Touch.ev3"
         ]
     }
 }

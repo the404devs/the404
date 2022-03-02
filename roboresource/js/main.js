@@ -350,14 +350,18 @@ function showImageOverlay(imageID) {
     $("body").css('overflow', 'hidden');
     let targetGallery = $('#' + imageID).attr('gallery');
     $("#image-overlay-gallery").html($("#" + targetGallery).html());
-    $("#image-overlay-gallery").children("h4")[0].remove();
+    let badTitleElem = $("#image-overlay-gallery").children("h4")[0]
+    $("#image-overlay-title").html($(badTitleElem).html());
+    $(badTitleElem).remove();
     $('#' + imageID).removeClass("active");
+    slideIndex = parseInt(imageID.slice(imageID.lastIndexOf('-') + 1)) + 1;
 }
 
 function hideImageOverlay() {
     $('#image-overlay').fadeOut(400, function() {
         $("body").css('overflow', 'scroll');
     });
+    slideIndex = 1;
 }
 
 function plusSlides(n) {

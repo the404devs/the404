@@ -35,9 +35,12 @@
     </div>
 
     <div id="image-overlay">
-        <img id="image-overlay-img" src="" alt="">
-        <span id="image-overlay-close" onclick="hideImageOverlay()">×</span>
+        <h4 id="image-overlay-title" class="post-date"></h4>
+        <img id="image-overlay-img" src="" onclick="window.open(this.src)">
+        <span id="image-overlay-close" onclick="hideImageOverlay()" title="Close Image">×</span>
         <div id="image-overlay-gallery"></div>
+        <button id="leftArrow" class="prev button" onclick="plusSlides(-1)"><span>❮</span></button>
+        <button id="rightArrow" class="next button" onclick="plusSlides(1)"><span>❯</span></button>
     </div>
     <script src="js/main.js"></script>
 </body>

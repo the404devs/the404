@@ -93,9 +93,10 @@
 }
 
 #image-overlay-img {
-    width: auto;
-    height: 90%;
-    object-fit: cover;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: calc(100% - 102px);
+    object-fit: contain;
 }
 
 #image-overlay-close {
@@ -104,7 +105,8 @@
     right: 0;
     width: 30px;
     height: 30px;
-    background-color: var(--background);
+    background-color: var(--background-transparent);
+    backdrop-filter: blur(5px);
     color: var(--foreground);
     text-shadow: none;
     transition: 0.25s all;
@@ -123,12 +125,25 @@
 
 #image-overlay-gallery {
     width: -webkit-fill-available;
+    width: -moz-available;
     overflow-x: scroll;
     display: flex;
+    border-top: 1px solid var(--foreground);
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0px 0px 5px 2px black;
+    backdrop-filter: blur(5px);
+    z-index: 12;
 }
 
-#image-overlay-gallery .post-date {
-    margin: 0;
+#image-overlay-title {
+    position: fixed;
+    top: 0;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px black, -1px 2px 5px black;
+    font-size: 22px;
 }
 
 #image-overlay-gallery .robo-gallery-image.active,
@@ -139,8 +154,55 @@
 #image-overlay-gallery .robo-gallery-image {
     transition: 0.1s all;
     filter: brightness(0.5);
+    margin-bottom: 0;
 }
 
 h5 {
     margin-bottom: 0;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    font-family: "Roboto";
+    font-size: 50px;
+    font-weight: bold;
+    height: auto;
+    padding-bottom: 17px;
+    padding-top: 15px;
+    position: absolute;
+    text-shadow: 1px 1px 5px black, -1px 2px 5px black;
+    top: calc(50% - 102px);
+    width: 55px;
+    z-index: 12;
+    background: none;
+    border: none;
+}
+
+.prev:hover span,
+.next:hover span {
+    color: var(--accent);
+    padding: initial;
+}
+
+.prev:hover::before,
+.next:hover::before {
+    background: none;
+    color: var(--accent);
+}
+
+.prev span:after,
+.next span:after {
+    content: '';
+    position: initial;
+    right: initial;
+    top: initial;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
 }
