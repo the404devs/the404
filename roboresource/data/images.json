@@ -33,7 +33,7 @@
         "type": "EV3",
         "description": "EV3 version of the classic Rubik's Cube solver. Was a show piece at the library while I worked there in the summer of 2019, and a big hit during our open hours drop-ins.<br>I had to adapt the model slightly, since its designed for the EV3 Home Edition, which doesn't contain the same pieces as the Education Edition.<br><a class='link' href='http://mindcuber.com/'>Find info on Mindcuber here.</a><br><a class='link' href='https://www.youtube.com/watch?v=pIYwZb2Kr7c'>A video of the bot in action.</a>",
         "galleries": [{
-            "name": "Mindcuber EV3 (2019-08-30)",
+            "name": "Mindcuber EV3 (2019-05-29)",
             "path": "./images/Mindcuber (EV3)/",
             "images": [
                 "20190529_153633.jpg",
