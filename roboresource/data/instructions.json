@@ -1,9 +1,17 @@
 {
+    "Alpha Rex 2.0": {
+        "sets": ["NXT 2.0 (8547)"],
+        "files": ["8547 - Mindstorms - NXT 2.0 (Alpha Rex 2.0).pdf"]
+    },
     "Bevel Bot": {
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Bevel Bot.pdf"]
     },
-    "Colour Sorter": {
+    "Colour Sorter (NXT)": {
+        "sets": ["NXT 2.0 (8547)"],
+        "files": ["8547 - Mindstorms - NXT 2.0 (Color Sorter).pdf"]
+    },
+    "Colour Sorter (EV3)": {
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Colour Sorter.pdf"]
     },
@@ -45,7 +53,7 @@
         "files": ["Insect.pdf"]
     },
     "Mindcuber": {
-        "sets": ["EV3 Education Core (45544)"],
+        "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["https://www.mindcuber.com/mindcub3r/mindcub3r.html"]
     },
     "Plot Bot": {
@@ -60,9 +68,17 @@
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["Remote Control.pdf"]
     },
+    "Robogator": {
+        "sets": ["NXT 2.0 (8547)"],
+        "files": ["8547 - Mindstorms - NXT 2.0 (Robogator).pdf"]
+    },
     "Robot Arm H25": {
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Robot Arm H25.pdf"]
+    },
+    "Shooterbot": {
+        "sets": ["NXT 2.0 (8547)"],
+        "files": ["8547 - Mindstorms - NXT 2.0 (Shooterbot).pdf"]
     },
     "Smart Turtle": {
         "sets": ["EV3 Education Core (45544)"],
@@ -83,6 +99,10 @@
     "Tank Bot": {
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["Tank Bot.pdf"]
+    },
+    "Task Bot": {
+        "sets": ["NXT Education Base (9797)", "NXT Education Resource Set (9648)"],
+        "files": ["NXT TaskBot.pdf"]
     },
     "Znap": {
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
