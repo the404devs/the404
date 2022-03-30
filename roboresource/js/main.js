@@ -26,11 +26,12 @@ function getJSON(url, callback) {
 }
 
 function loadInstructionsFromJSON() {
+    let sets = [];
     $.getJSON("./data/instructions.json", function(jsonData) {
         Object.keys(jsonData).forEach(key => {
             let id = clean(key);
             $("#main").append(
-                $("<div>").addClass("post").attr("id", id).append(
+                $("<div>").addClass("post").addClass("model").attr("id", id).append(
                     $("<h3>").addClass("post-head").html(key)
                 ).append(
                     $("<div>").addClass("post-body").html("<b>Requires Sets:</b>")
@@ -40,7 +41,7 @@ function loadInstructionsFromJSON() {
                     $("<div>").addClass("post-body").html("<b>Files:</b>")
                 ).append(
                     $("<ul>").attr("id", id + "-files")
-                )
+                ).attr("tag", jsonData[key].sets.join().replace(/,/g, ", ")).attr("type", jsonData[key].base)
             );
 
             jsonData[key].sets.forEach(set => {
@@ -50,17 +51,23 @@ function loadInstructionsFromJSON() {
             });
 
             jsonData[key].files.forEach(file => {
-                let prefix = "instructions/";
+                let prefix1 = "instructions/";
+                let prefix2 = jsonData[key].base + "/";
                 if (file.startsWith("http")) {
-                    prefix = "";
+                    prefix1 = "";
+                    prefix2 = "";
                 }
+                let prefix = prefix1 + prefix2;
                 $("#" + id + "-files").append(
                     $("<li>").append($("<a>").addClass("link").attr("href", prefix + file).html(file))
                 );
             });
+
             $("#robo-id-zone").append(
                 $("<a>").addClass("link").attr(
                     "title", key
+                ).attr(
+                    "tag", jsonData[key].sets.join().replace(/,/g, ", ")
                 ).attr(
                     "onclick", "scrollToElem('" + id + "')"
                 ).html(key)
@@ -69,6 +76,41 @@ function loadInstructionsFromJSON() {
             ).append(
                 $("<br>")
             );
+
+            jsonData[key].sets.forEach(set => {
+                if (!sets.includes(set)) {
+                    sets.push(set);
+                    $("#robo-tag-zone").append(
+                        $("<input>").attr(
+                            "type", "checkbox"
+                        ).attr(
+                            "onclick", "sortTags('.model')"
+                        ).attr(
+                            "name", set
+                        ).attr(
+                            "style", "width:auto"
+                        ).attr(
+                            "id", set
+                        )
+                    ).append(
+                        $("<label>").attr(
+                            "for", set
+                        ).attr(
+                            "onclick", "sortTags('.model')"
+                        ).html(
+                            set
+                        ).addClass(
+                            "link"
+                        ).append(
+                            $("<span>").addClass("checkmark")
+                        )
+                    ).append(
+                        $("<br>")
+                    ).append(
+                        $("<br>")
+                    );
+                }
+            });
         });
 
 
@@ -205,7 +247,7 @@ function loadProgramsFromJSON() {
                     $("<input>").attr(
                         "type", "checkbox"
                     ).attr(
-                        "onclick", "sortTags()"
+                        "onclick", "sortTags('.program')"
                     ).attr(
                         "name", jsonData[key].type
                     ).attr(
@@ -217,7 +259,7 @@ function loadProgramsFromJSON() {
                     $("<label>").attr(
                         "for", jsonData[key].type
                     ).attr(
-                        "onclick", "sortTags()"
+                        "onclick", "sortTags('.program')"
                     ).html(
                         jsonData[key].type
                     ).addClass(
@@ -234,7 +276,7 @@ function loadProgramsFromJSON() {
     });
 }
 
-function sortTags() {
+function sortTags(className) {
     let matchTag = "";
     let matchLang = "";
     let t = 0;
@@ -252,8 +294,8 @@ function sortTags() {
         }
     });
 
-    $(".program").each(function() {
-        $(this).css("display", "none")
+    $(className).each(function() {
+        $(this).css("display", "none");
         const tags = $(this).attr("tag").replace(/ /g, "_").split(",_");
         tags.forEach(tag => {
             if (matchTag.includes(tag) || t == 0) {
@@ -274,14 +316,20 @@ function sortTags() {
             const tags = $(this).attr("tag").replace(/ /g, "_").split(",_");
             tags.forEach(tag => {
                 if (matchTag.includes(tag) || t == 0) {
-                    const langs = $(this).attr("type").replace(/ /g, "_").split(",_");
-                    langs.forEach(lang => {
-                        if (matchLang.includes(lang) || l == 0) {
-                            $(this).css("display", "inline")
-                            $(this).next("br").css("display", "inline");
-                            $(this).next("br").next("br").css("display", "inline");
-                        }
-                    })
+                    try {
+                        const langs = $(this).attr("type").replace(/ /g, "_").split(",_");
+                        langs.forEach(lang => {
+                            if (matchLang.includes(lang) || l == 0) {
+                                $(this).css("display", "inline")
+                                $(this).next("br").css("display", "inline");
+                                $(this).next("br").next("br").css("display", "inline");
+                            }
+                        });
+                    } catch (error) {
+                        $(this).css("display", "inline")
+                        $(this).next("br").css("display", "inline");
+                        $(this).next("br").next("br").css("display", "inline");
+                    }
                 }
             })
         }
@@ -327,7 +375,7 @@ function showSort() {
 }
 
 function hideSort() {
-    $('#robo-nav').css('right', '-230px');
+    $('#robo-nav').css('right', '-300px');
     $('#sort-tab-wrapper').css('right', '0px');
 }
 
@@ -377,8 +425,12 @@ function showSlides(n) {
         $(thumbs[i]).removeClass("active");
     }
     $(thumbs[slideIndex - 1]).addClass("active");
-    $("#image-overlay-img").attr('src', $("#image-overlay-gallery").children("img")[slideIndex - 1].src);
-    $("#image-overlay-gallery").children("img")[slideIndex - 1].scrollIntoView({ behavior: 'smooth' });
+    try {
+        $("#image-overlay-img").attr('src', $("#image-overlay-gallery").children("img")[slideIndex - 1].src);
+        $("#image-overlay-gallery").children("img")[slideIndex - 1].scrollIntoView({ behavior: 'smooth' });
+    } catch (error) {
+
+    }
 }
 
 $(document).keyup(function(e) {

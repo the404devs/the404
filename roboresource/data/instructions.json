@@ -1,25 +1,36 @@
 {
     "Alpha Rex 2.0": {
+        "base": "NXT",
         "sets": ["NXT 2.0 (8547)"],
         "files": ["8547 - Mindstorms - NXT 2.0 (Alpha Rex 2.0).pdf"]
     },
+    "Bee & Flower": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["bee-and-flower-instructions.pdf"]
+    },
     "Bevel Bot": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Bevel Bot.pdf"]
     },
     "Colour Sorter (NXT)": {
+        "base": "NXT",
         "sets": ["NXT 2.0 (8547)"],
         "files": ["8547 - Mindstorms - NXT 2.0 (Color Sorter).pdf"]
     },
     "Colour Sorter (EV3)": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Colour Sorter.pdf"]
     },
     "Communication Robot": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Communication Robot.pdf"]
     },
     "Driving Base": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": [
             "Driving Base.pdf",
@@ -32,79 +43,143 @@
             "Driving Base - Useless Cube.pdf"
         ]
     },
+    "Earthquake": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["earthquake-instructions.pdf"]
+    },
     "Elephant": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["Elephant.pdf"]
     },
     "Flower": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Flower.pdf"]
     },
+    "Floodgate": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["floodgate-instructions.pdf"]
+    },
     "Gear Bot": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Gear Bot.pdf"]
     },
     "Gyro Boy": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Gyro Boy.pdf"]
     },
+    "Helicopter": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["helicopter-instructions.pdf"]
+    },
     "Insect": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Insect.pdf"]
     },
+    "Milo's Science Rover": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["Milo's Science Rover.pdf", "Milo's Motion Sensor.pdf", "Milo's Tilt Sensor.pdf", "Milo Collaborating.pdf"]
+    },
     "Mindcuber": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["https://www.mindcuber.com/mindcub3r/mindcub3r.html"]
     },
     "Plot Bot": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Plot Bot.pdf"]
     },
+    "PullBot": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["pull-robot-instructions.pdf"]
+    },
     "Puppy": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Puppy.pdf"]
     },
+    "Race Car": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["race-car-instructions.pdf"]
+    },
+    "Recycling Truck": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["recycling-truck-instructions.pdf"]
+    },
     "Remote Control": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["Remote Control.pdf"]
     },
     "Robogator": {
+        "base": "NXT",
         "sets": ["NXT 2.0 (8547)"],
         "files": ["8547 - Mindstorms - NXT 2.0 (Robogator).pdf"]
     },
     "Robot Arm H25": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Robot Arm H25.pdf"]
     },
     "Shooterbot": {
+        "base": "NXT",
         "sets": ["NXT 2.0 (8547)"],
         "files": ["8547 - Mindstorms - NXT 2.0 (Shooterbot).pdf"]
     },
     "Smart Turtle": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Smart Turtle.pdf"]
     },
     "Speed Bot": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Speed Bot.pdf"]
     },
     "Spinner Factory": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["Spinner Factory.pdf"]
     },
     "Stair Climber": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["Stair Climber.pdf"]
     },
+    "Tadpole": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["tadpole-instructions.pdf"]
+    },
     "Tank Bot": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["Tank Bot.pdf"]
     },
     "Task Bot": {
+        "base": "NXT",
         "sets": ["NXT Education Base (9797)", "NXT Education Resource Set (9648)"],
         "files": ["NXT TaskBot.pdf"]
     },
+    "WeDo Simple Base Models": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["crank.pdf", "drive.pdf", "flex.pdf", "grab.pdf", "motion.pdf", "push.pdf", "reel.pdf", "revolve.pdf", "spin.pdf", "steer.pdf", "sweep.pdf", "tilt.pdf", "walk.pdf", "wobble.pdf"]
+    },
     "Znap": {
+        "base": "EV3",
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["Znap.pdf"]
     }

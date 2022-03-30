@@ -5,6 +5,12 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.2.4 (03/30/2022)*
+------------------------
+- Migrated to Font Awesome 6
+- Made menu sort order and close buttons sticky, so they don't disappear when the side menu is scrolled down.
+- Added WeDo instructions to the Robo Resources page.
+
 ### *4.2.3 (02/27/2022)*
 ------------------------
 - Add Robotics Resources pages.

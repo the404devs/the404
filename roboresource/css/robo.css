@@ -206,3 +206,14 @@ h5 {
 .next {
     right: 0;
 }
+
+@media (max-width: 1000px) {
+    .nav {
+        width: 270px;
+        right: -300px;
+    }
+}
+
+#close {
+    margin-left: 263px;
+}

@@ -41,11 +41,13 @@
     margin-top: -19px;
     padding-left: 4px !important;
     padding-right: 4px !important;
-    position: fixed;
+    position: sticky;
+    position: -webkit-sticky;
     text-align: center;
     text-shadow: none;
     transition: 0.25s all;
-    width: unset !important;
+    top: -19px;
+    width: 8px !important;
     z-index: 1;
 }
 
@@ -64,6 +66,8 @@
     margin-left: -11px !important;
     padding-left: 4px !important;
     padding-right: 4px !important;
+    /* top: -19px; */
+    /* width: 8px!important; */
 }
 
 .nav .link {
