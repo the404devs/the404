@@ -34,6 +34,8 @@ function loadInstructionsFromJSON() {
                 $("<div>").addClass("post").addClass("model").attr("id", id).append(
                     $("<h3>").addClass("post-head").html(key)
                 ).append(
+                    $("<h4>").addClass("post-date").html(jsonData[key].base)
+                ).append(
                     $("<div>").addClass("post-body").html("<b>Requires Sets:</b>")
                 ).append(
                     $("<ul>").attr("id", id + "-sets")
