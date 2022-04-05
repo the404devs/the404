@@ -215,7 +215,7 @@ function loadProgramsFromJSON() {
                         $("<input>").attr(
                             "type", "checkbox"
                         ).attr(
-                            "onclick", "sortTags()"
+                            "onclick", "sortTags('.program')"
                         ).attr(
                             "name", tag
                         ).attr(
@@ -227,7 +227,7 @@ function loadProgramsFromJSON() {
                         $("<label>").attr(
                             "for", tag
                         ).attr(
-                            "onclick", "sortTags()"
+                            "onclick", "sortTags('.program')"
                         ).html(
                             tag
                         ).addClass(
