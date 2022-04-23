@@ -13,6 +13,8 @@ The current iteration of The404 was created on January 18th, 2018. The404 origin
         - Hey future me, you should do this.
 - We also no longer load Firebase Analytics, since I only had it enabled for a while during the migration.
     - Performance boost, maybe?
+- Fix pages that were using old jQuery versions, all now use 3.6.0
+- Also fixed some FontAwesome stragglers, everything should use the current version.
 
 ### *4.2.4 (03/30/2022)*
 ------------------------
