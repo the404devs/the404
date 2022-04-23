@@ -5,6 +5,15 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *4.2.5 (04/23/2022)*
+------------------------
+- Bump Firebase to 8.10.1, from 7.15.0.
+    - The site had been using 7.15.0 since the migration to Firebase in June 2020. Oops.
+    - Latest Firebase version is 9.6.11, but 9.X has massive changes that would require rewriting all of my Firebase code, which I don't want to do right now.
+        - Hey future me, you should do this.
+- We also no longer load Firebase Analytics, since I only had it enabled for a while during the migration.
+    - Performance boost, maybe?
+
 ### *4.2.4 (03/30/2022)*
 ------------------------
 - Migrated to Font Awesome 6

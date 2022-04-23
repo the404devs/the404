@@ -13,13 +13,17 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
 firebase.firestore().settings({
-    cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
+    cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED,
+    merge: true
 });
+// funky stuff happens in firefox private browsing, seems related to db persistence
+// i can't figure it out, its your problem now.
+// https://github.com/firebase/firebase-js-sdk/issues/5377
+// ^ seems like firebase just can't operate without indexedDB in a private session
 firebase.firestore().enablePersistence({
     synchronizeTabs: true
 });
 const db = firebase.firestore();
-
 async function loadFromFire() {
     let posts = [];
     let software = [];

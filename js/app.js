@@ -1,5 +1,5 @@
-const VERSION = "4.2.4";
-const DATE = "03/30/2022";
+const VERSION = "4.2.5";
+const DATE = "04/23/2022";
 const TIME = "11:08";
 
 function showPanes(n) {
@@ -119,6 +119,10 @@ function widthCheck() {
 }
 
 function firefoxCheck() {
+    // Realistically, we should check if the browser supports CSS backdrop-filter, but from my testing it seems like Firefox falsely claims it does
+    // Firefox doesn't support backdrop-filter out of the box, rather, it hides it deep within config where no normal user would ever find it.
+    // Boy, i sure hope there aren't other browsers out there that also don't support it that this check would miss :monkas:
+    // remind me to check if safari supports it next week at work
     if (navigator.userAgent.indexOf("Firefox") > -1) {
         console.log("%cFirefox detected, making things that use backdrop-filter opague.", "color:red; font-weight: bold;");
         $(".header").css("background-color", "var(--background)");
