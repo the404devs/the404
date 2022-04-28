@@ -1,4 +1,21 @@
 {
+    "Gyro Boy": {
+        "type": "EV3",
+        "description": "My personal favourite of the Lego Education models. Gyro Boy is a self-balancing robot that is very good at keeping the attention of 8-year-olds when they finish their activities early and I have nothing else for them to do. We've only built this one at the library one other time, back in 2015, and I'm hoping I can get a chance to mess around with it properly this time.",
+        "galleries": [{
+            "name": "Gyro Boy (2022-04-26)",
+            "path": "./images/Gyro Boy/",
+            "images": [
+                "20220426_190609.jpg",
+                "20220426_190618.jpg",
+                "20220426_190624.jpg",
+                "20220427_171043.jpg",
+                "20220427_171057.jpg",
+                "20220427_171136.jpg",
+                "20220427_171140.jpg"
+            ]
+        }]
+    },
     "Plot Bot": {
         "type": "EV3",
         "description": "One of the Lego Education models, I had never got around to building it until I was working at Idea Labs. Plot Bot uses a marker, pencil, or some other form of utensil to draw as it drives. We successfully made some basic shapes, but complex drawings were a little more challenging.",

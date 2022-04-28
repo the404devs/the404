@@ -338,14 +338,14 @@ function sortTags(className) {
     });
 }
 
-function clearTags() {
+function clearTags(className) {
     $("#robo-tag-zone").children("input").each(function() {
         $(this).prop("checked", false);
     });
     $("#robo-type-zone").children("input").each(function() {
         $(this).prop("checked", false);
     });
-    sortTags();
+    sortTags(className);
 }
 
 function roboDateFlip() {
