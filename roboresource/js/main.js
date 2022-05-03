@@ -120,11 +120,14 @@ function loadInstructionsFromJSON() {
 }
 
 function loadImagesFromJSON() {
+    tags = [];
     $.getJSON("./data/images.json", function(jsonData) {
         Object.keys(jsonData).forEach(key => {
             let id = clean(key);
             $("#main").append(
-                $("<div>").addClass("post").attr("id", id).append(
+                $("<div>").addClass("post").addClass("botimage").attr("id", id).attr("tag", "dummy").attr(
+                    "type", jsonData[key].type
+                ).append(
                     $("<h3>").addClass("post-head").html(key)
                 ).append(
                     $("<h4>").addClass("post-date").html(jsonData[key].type)
@@ -150,6 +153,51 @@ function loadImagesFromJSON() {
                 });
                 i++;
             });
+
+            $("#robo-id-zone").append(
+                $("<a>").addClass("link").attr(
+                    "title", key
+                ).attr(
+                    "onclick", "scrollToElem('" + id + "')"
+                ).attr("tag", "dummy").attr(
+                    "type", jsonData[key].type
+                ).html(key)
+            ).append(
+                $("<br>")
+            ).append(
+                $("<br>")
+            );
+
+            if (!tags.includes(jsonData[key].type)) {
+                tags.push(jsonData[key].type);
+                $("#robo-type-zone").append(
+                    $("<input>").attr(
+                        "type", "checkbox"
+                    ).attr(
+                        "onclick", "sortTags('.botimage')"
+                    ).attr(
+                        "name", jsonData[key].type
+                    ).attr(
+                        "style", "width:auto"
+                    ).attr(
+                        "id", jsonData[key].type
+                    )
+                ).append(
+                    $("<label>").attr(
+                        "for", jsonData[key].type
+                    ).attr(
+                        "onclick", "sortTags('.botimage')"
+                    ).html(
+                        jsonData[key].type
+                    ).addClass(
+                        "link"
+                    ).append($("<span>").addClass("checkmark"))
+                ).append(
+                    $("<br>")
+                ).append(
+                    $("<br>")
+                );
+            }
         });
     });
 }

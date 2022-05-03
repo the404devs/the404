@@ -24,6 +24,20 @@
     </div>
 
     <div class="content" id="main">
+        <div class="nav" id="robo-nav">
+            <span class="button flipper" id="roboFlipper" onclick="roboDateFlip()" title="Sorting Ascending">↑</span>
+            <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
+            <div id="robo-id-zone">
+            </div>
+            <div id="robo-type-zone" style="border-top:1px solid var(--border); padding-top: 10px;">
+                <h2>Sort by Type:</h2>
+            </div>
+            <button class="button" onclick="clearTags('.botimage')" style="font-size:18px;height:25px; width: -webkit-fill-available;"><span>Clear Tags</span></button>
+            <br><br>
+        </div>
+        <div class="tab-wrapper" id="sort-tab-wrapper">
+            <span class="tab" id="sort-tab" onclick="showSort()" title="Images Menu">☰</span>
+        </div>
         <div class="post robo-blob">
             <h2 class="post-head">Robot Image Gallery</h2>
             <p class="post-body">
