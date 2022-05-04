@@ -48,7 +48,7 @@
     },
     "Mindcuber (EV3)": {
         "type": "EV3",
-        "description": "EV3 version of the classic Rubik's Cube solver. Was a show piece at the library while I worked there in the summer of 2019, and a big hit during our open hours drop-ins.<br>I had to adapt the model slightly, since its designed for the EV3 Home Edition, which doesn't contain the same pieces as the Education Edition.<br><a class='link' href='http://mindcuber.com/'>Find info on Mindcuber here.</a><br><br><iframe width='355' height='200' src='https://www.youtube-nocookie.com/embed/pIYwZb2Kr7c?controls=1' title='Mindcuber Video' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+        "description": "EV3 version of the classic Rubik's Cube solver. Was a show piece at the library while I worked there in the summer of 2019, and a big hit during our open hours drop-ins.<br>I had to adapt the model slightly, since its designed for the EV3 Home Edition, which doesn't contain the same pieces as the Education Edition.<br><a class='link' href='http://mindcuber.com/'>Find info on Mindcuber here.</a><br><br><iframe class='robo-gallery-image' src='https://www.youtube-nocookie.com/embed/pIYwZb2Kr7c?controls=1' title='Mindcuber Video' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
         "galleries": [{
             "name": "Mindcuber EV3 (2019-05-29)",
             "path": "./images/Mindcuber (EV3)/",

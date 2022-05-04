@@ -3,7 +3,7 @@ let slideIndex = 1;
 function scrollToElem(id) {
     console.log(id);
     const elem = document.getElementById(id);
-    const offset = elem.offsetTop - 120;
+    const offset = elem.offsetTop - 125;
     window.scrollTo({
         top: offset,
         behavior: "smooth"

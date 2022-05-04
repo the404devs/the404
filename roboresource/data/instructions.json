@@ -1,4 +1,9 @@
 {
+    "Alarm Device": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["alarm.pdf"]
+    },
     "Alpha Rex 2.0": {
         "base": "NXT",
         "sets": ["NXT 2.0 (8547)"],
@@ -13,6 +18,11 @@
         "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Bevel Bot.pdf"]
+    },
+    "Cody": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["cody.pdf", "cody_tilt_sensor.pdf", "cody_motion_sensor.pdf"]
     },
     "Colour Sorter (NXT)": {
         "base": "NXT",
@@ -82,6 +92,11 @@
         "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Insect.pdf"]
+    },
+    "Luna Rover": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["luna_rover.pdf"]
     },
     "Milo's Science Rover": {
         "base": "WeDo",
@@ -153,6 +168,11 @@
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["Spinner Factory.pdf"]
     },
+    "Spy Robot": {
+        "base": "WeDo",
+        "sets": ["WeDo 2.0 (45300)"],
+        "files": ["Spy Robot.pdf"]
+    },
     "Stair Climber": {
         "base": "EV3",
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
@@ -176,7 +196,7 @@
     "WeDo Simple Base Models": {
         "base": "WeDo",
         "sets": ["WeDo 2.0 (45300)"],
-        "files": ["crank.pdf", "drive.pdf", "flex.pdf", "grab.pdf", "motion.pdf", "push.pdf", "reel.pdf", "revolve.pdf", "spin.pdf", "steer.pdf", "sweep.pdf", "tilt.pdf", "walk.pdf", "wobble.pdf"]
+        "files": ["crank.pdf", "drive.pdf", "fan.pdf", "flex.pdf", "grab.pdf", "motion.pdf", "push.pdf", "reel.pdf", "revolve.pdf", "satellite.pdf", "snail.pdf", "spin.pdf", "steer.pdf", "sweep.pdf", "tilt.pdf", "walk.pdf", "wobble.pdf"]
     },
     "Znap": {
         "base": "EV3",

@@ -79,7 +79,12 @@
     margin-right: 5px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     cursor: pointer;
-    content-visibility: auto;
+    /* content-visibility: auto; */
+}
+
+iframe.robo-gallery-image {
+    width: 355px;
+    height: 200px;
 }
 
 #image-overlay {
