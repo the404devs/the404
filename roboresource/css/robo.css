@@ -219,11 +219,16 @@ h5 {
 
 @media (max-width: 1000px) {
     .nav {
-        width: 270px;
-        right: -300px;
+        width: 290px;
+        right: -320px;
     }
 }
 
 #close {
-    margin-left: 263px;
+    margin-left: 283px;
+}
+
+.counter {
+    color: gold;
+    font-weight: normal;
 }

@@ -217,7 +217,7 @@
     },
     "BattleBot 2015": {
         "type": "NXT",
-        "description": "Some kind of Battlebot I built in early 2015. We were probably showing the kids line followers and colour sensors at the library, and were planning a tournament, with this acting as our StaffBot. No idea how it performed in battle, but I think it's safe to say I destroyed those kids.",
+        "description": "Some kind of Battlebot I built in early 2015, improving on the \"Big Bully\" design from the previous year.",
         "galleries": [{
             "name": "BattleBot 2015 (2015-01-30)",
             "path": "./images/BattleBot 2015/",
@@ -386,7 +386,7 @@
     },
     "Little Tank": {
         "type": "NXT",
-        "description": "Its a compact and cute little tank.",
+        "description": "It's a compact and cute little tank.",
         "galleries": [{
             "name": "Little Tank (2014-07-20)",
             "path": "./images/Little Tank/",
@@ -567,6 +567,37 @@
                 "100_2604.JPG",
                 "100_2606.JPG",
                 "100_2607.JPG"
+            ]
+        }]
+    },
+    "RC Car": {
+        "type": "NXT",
+        "description": "A big chonky mess of a car. So big and heavy, it was more bus than car. It also had a little remote made with two touch sensors and a colour sensor.",
+        "galleries": [{
+            "name": "RC Car (2013-12-31)",
+            "path": "./images/RC Car/",
+            "images": [
+                "100_2503.JPG",
+                "100_2504.JPG",
+                "100_2505.JPG",
+                "100_2508.JPG",
+                "100_2509.JPG",
+                "100_2511.JPG",
+                "100_2512.JPG",
+                "100_2514.JPG",
+                "100_2515.JPG",
+                "100_2517.JPG",
+                "100_2521.JPG",
+                "100_2522.JPG",
+                "100_2523.JPG",
+                "100_2524.JPG",
+                "100_2525.JPG",
+                "100_2526.JPG",
+                "100_2527.JPG",
+                "100_2528.JPG",
+                "100_2535.JPG",
+                "100_2538.JPG",
+                "100_2539.JPG"
             ]
         }]
     },
@@ -767,6 +798,18 @@
                 ]
             }
         ]
+    },
+    "Multi-Bot": {
+        "type": "NXT",
+        "description": "A great modular build from nxtprograms.com, with a bunch of little attachments to swap out.<br>Based on the instructions found here: <a class='link' href='https://www.nxtprograms.com/NXT2/multi-bot/'>https://www.nxtprograms.com/NXT2/multi-bot/</a>",
+        "galleries": [{
+            "name": "Multi-Bot V1 (2013-07-12)",
+            "path": "./images/Multi-Bot/",
+            "images": [
+                "119_0861.JPG",
+                "119_1198.JPG"
+            ]
+        }]
     },
     "Elephant Car": {
         "type": "NXT",

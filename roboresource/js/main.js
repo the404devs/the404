@@ -27,6 +27,7 @@ function getJSON(url, callback) {
 
 function loadInstructionsFromJSON() {
     let sets = [];
+    let counts = [];
     $.getJSON("./data/instructions.json", function(jsonData) {
         Object.keys(jsonData).forEach(key => {
             let id = clean(key);
@@ -43,7 +44,7 @@ function loadInstructionsFromJSON() {
                     $("<div>").addClass("post-body").html("<b>Files:</b>")
                 ).append(
                     $("<ul>").attr("id", id + "-files")
-                ).attr("tag", jsonData[key].sets.join().replace(/,/g, ", ")).attr("type", jsonData[key].base)
+                ).attr("tag", jsonData[key].sets.join().replace(/[^0-9a-zA-Z:,]+/g, "").replace(/,/g, ", ")).attr("type", jsonData[key].base)
             );
 
             jsonData[key].sets.forEach(set => {
@@ -69,7 +70,7 @@ function loadInstructionsFromJSON() {
                 $("<a>").addClass("link").attr(
                     "title", key
                 ).attr(
-                    "tag", jsonData[key].sets.join().replace(/,/g, ", ")
+                    "tag", jsonData[key].sets.join().replace(/[^0-9a-zA-Z:,]+/g, "").replace(/,/g, ", ")
                 ).attr(
                     "onclick", "scrollToElem('" + id + "')"
                 ).html(key)
@@ -80,23 +81,25 @@ function loadInstructionsFromJSON() {
             );
 
             jsonData[key].sets.forEach(set => {
-                if (!sets.includes(set)) {
-                    sets.push(set);
+                const cleanedSet = clean(set, true);
+                if (!sets.includes(cleanedSet)) {
+                    sets.push(cleanedSet);
+                    counts.push(0);
                     $("#robo-tag-zone").append(
                         $("<input>").attr(
                             "type", "checkbox"
                         ).attr(
                             "onclick", "sortTags('.model')"
                         ).attr(
-                            "name", set
+                            "name", cleanedSet
                         ).attr(
                             "style", "width:auto"
                         ).attr(
-                            "id", set
+                            "id", cleanedSet
                         )
                     ).append(
                         $("<label>").attr(
-                            "for", set
+                            "for", cleanedSet
                         ).attr(
                             "onclick", "sortTags('.model')"
                         ).html(
@@ -112,21 +115,26 @@ function loadInstructionsFromJSON() {
                         $("<br>")
                     );
                 }
+                counts[sets.indexOf(cleanedSet)]++;
+                const label = $("#" + cleanedSet).next();
+                const x = counts[sets.indexOf(cleanedSet)];
+                const cache = label.children("span");
+                label.html(set + " <b class='counter'>[" + x + "]</b>").append(cache);
             });
         });
-
-
     });
 }
 
 function loadImagesFromJSON() {
     tags = [];
+    counts = [];
     $.getJSON("./data/images.json", function(jsonData) {
         Object.keys(jsonData).forEach(key => {
-            let id = clean(key);
+            const id = clean(key);
+            const cleanedType = clean(jsonData[key].type);
             $("#main").append(
                 $("<div>").addClass("post").addClass("botimage").attr("id", id).attr("tag", "dummy").attr(
-                    "type", jsonData[key].type
+                    "type", cleanedType
                 ).append(
                     $("<h3>").addClass("post-head").html(key)
                 ).append(
@@ -160,7 +168,7 @@ function loadImagesFromJSON() {
                 ).attr(
                     "onclick", "scrollToElem('" + id + "')"
                 ).attr("tag", "dummy").attr(
-                    "type", jsonData[key].type
+                    "type", cleanedType
                 ).html(key)
             ).append(
                 $("<br>")
@@ -170,6 +178,7 @@ function loadImagesFromJSON() {
 
             if (!tags.includes(jsonData[key].type)) {
                 tags.push(jsonData[key].type);
+                counts.push(0);
                 $("#robo-type-zone").append(
                     $("<input>").attr(
                         "type", "checkbox"
@@ -180,11 +189,11 @@ function loadImagesFromJSON() {
                     ).attr(
                         "style", "width:auto"
                     ).attr(
-                        "id", jsonData[key].type
+                        "id", cleanedType
                     )
                 ).append(
                     $("<label>").attr(
-                        "for", jsonData[key].type
+                        "for", cleanedType
                     ).attr(
                         "onclick", "sortTags('.botimage')"
                     ).html(
@@ -198,12 +207,19 @@ function loadImagesFromJSON() {
                     $("<br>")
                 );
             }
+
+            counts[tags.indexOf(jsonData[key].type)]++;
+            const label = $("#" + cleanedType).next();
+            const x = counts[tags.indexOf(jsonData[key].type)];
+            const cache = label.children("span");
+            label.html(jsonData[key].type + " <b class='counter'>[" + x + "]</b>").append(cache);
         });
     });
 }
 
 function loadProgramsFromJSON() {
     let tags = [];
+    let counts = [];
     $.getJSON("./data/programs.json", function(jsonData) {
         let ids = [];
         console.log(Object.keys(jsonData));
@@ -231,7 +247,7 @@ function loadProgramsFromJSON() {
                     $("<div>").addClass("post-body").html("<b>Files:</b>")
                 ).append(
                     $("<ul>").attr("id", id + "-files")
-                ).attr("tag", jsonData[key].tags.join().replace(/,/g, ", ")).attr("type", jsonData[key].type)
+                ).attr("tag", jsonData[key].tags.join().replace(/ /g, "").replace(/,/g, ", ")).attr("type", jsonData[key].type)
             );
 
             jsonData[key].files.forEach(file => {
@@ -244,7 +260,7 @@ function loadProgramsFromJSON() {
                 $("<a>").addClass("link").attr(
                     "title", key
                 ).attr(
-                    "tag", jsonData[key].tags.join().replace(/,/g, ", ")
+                    "tag", jsonData[key].tags.join().replace(/ /g, "").replace(/,/g, ", ")
                 ).attr(
                     "onclick", "scrollToElem('" + id + "')"
                 ).attr(
@@ -257,8 +273,10 @@ function loadProgramsFromJSON() {
             );
 
             jsonData[key].tags.forEach(tag => {
-                if (!tags.includes(tag)) {
-                    tags.push(tag);
+                const cleanedTag = clean(tag);
+                if (!tags.includes(cleanedTag)) {
+                    tags.push(cleanedTag);
+                    counts.push(0);
                     $("#robo-tag-zone").append(
                         $("<input>").attr(
                             "type", "checkbox"
@@ -269,11 +287,11 @@ function loadProgramsFromJSON() {
                         ).attr(
                             "style", "width:auto"
                         ).attr(
-                            "id", tag
+                            "id", cleanedTag
                         )
                     ).append(
                         $("<label>").attr(
-                            "for", tag
+                            "for", cleanedTag
                         ).attr(
                             "onclick", "sortTags('.program')"
                         ).html(
@@ -289,10 +307,16 @@ function loadProgramsFromJSON() {
                         $("<br>")
                     );
                 }
+                counts[tags.indexOf(cleanedTag)]++;
+                const label = $("#" + cleanedTag).next();
+                const x = counts[tags.indexOf(cleanedTag)];
+                const cache = label.children("span");
+                label.html(tag + " <b class='counter'>[" + x + "]</b>").append(cache);
             });
 
             if (!tags.includes(jsonData[key].type)) {
                 tags.push(jsonData[key].type);
+                counts.push(0);
                 $("#robo-type-zone").append(
                     $("<input>").attr(
                         "type", "checkbox"
@@ -321,8 +345,12 @@ function loadProgramsFromJSON() {
                     $("<br>")
                 );
             }
+            counts[tags.indexOf(jsonData[key].type)]++;
+            const label = $("#" + jsonData[key].type).next();
+            const x = counts[tags.indexOf(jsonData[key].type)];
+            const cache = label.children("span");
+            label.html(jsonData[key].type + " <b class='counter'>[" + x + "]</b>").append(cache);
         });
-
     });
 }
 
@@ -412,11 +440,14 @@ function roboDateFlip() {
         $("#roboFlipper").attr("title", "Sorting Ascending").html("↑");
     }
 
-    sortTags();
+    sortTags(".program");
 }
 
-function clean(str) {
-    return str.replace(/\W/g, '')
+function clean(str, nuke) {
+    if (nuke)
+        return str.replace(/[^0-9a-zA-Z:,]+/g, "");
+    else
+        return str.replace(/\W/g, '')
 }
 
 function showSort() {
@@ -425,7 +456,7 @@ function showSort() {
 }
 
 function hideSort() {
-    $('#robo-nav').css('right', '-300px');
+    $('#robo-nav').css('right', '-320px');
     $('#sort-tab-wrapper').css('right', '0px');
 }
 
