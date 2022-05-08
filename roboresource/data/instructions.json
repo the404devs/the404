@@ -63,6 +63,11 @@
         "sets": ["EV3 Education Core (45544)", "EV3 Education Expansion (45560)"],
         "files": ["Elephant.pdf"]
     },
+    "EV3-D4": {
+        "base": "EV3",
+        "sets": ["EV3 Home Edition (31313)"],
+        "files": ["EV3D4.pdf"]
+    },
     "Flower": {
         "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],

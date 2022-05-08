@@ -1,4 +1,27 @@
 {
+    "NX-D4": {
+        "type": "NXT",
+        "description": "My first NXT model in several years (not counting the practice TaskBot I did last summer).<br>Since I first got my NXT back in 2011 I had dreamed of building an astromech droid like R2-D2, but I never really had the resources to do so. This model is adapted from the official EV3-D4 model from the EV3 Home Edition, using parts from an NXT 2.0, EV3 Education Expansion, Technic Arctic Truck, and other various bits and bobs I've accumulated over the years, including an EV3 Medium Motor.<br>Was designed at first to be remote controlled via an adaptation of mty old remote control program, but I also wrote a rudimentary program to allow the robot to navigate on its own.",
+        "galleries": [{
+            "name": "NX-D4 (2022-05-06)",
+            "path": "./images/NX-D4/",
+            "images": [
+
+                "20220507_201057.jpg",
+                "20220507_201025.jpg",
+                "20220507_201110.jpg",
+                "20220507_201136.jpg",
+                "20220507_201202.jpg",
+                "20220507_201215.jpg",
+                "20220507_201244.jpg",
+                "20220507_201352.jpg",
+                "20220507_200335.jpg",
+                "20220506_130837.jpg",
+                "20220506_140703.jpg",
+                "20220506_160535.jpg"
+            ]
+        }]
+    },
     "Gyro Boy": {
         "type": "EV3",
         "description": "My personal favourite of the Lego Education models. Gyro Boy is a self-balancing robot that is very good at keeping the attention of 8-year-olds when they finish their activities early and I have nothing else for them to do. We've only built this one at the library one other time, back in 2015, and I'm hoping I can get a chance to mess around with it properly this time.",

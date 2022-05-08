@@ -511,5 +511,16 @@
         "files": [
 
         ]
+    },
+    "NX-D4": {
+        "type": "Both",
+        "date": "2022-05-06",
+        "description": "The programs for my astromech droid, NX-D4. I made two programs: the first is a remote-control program relying on the Hi Technic IR Receiver (written in NXT-G), and the second is an autonomous navigation program where the bot uses its sensors to get around (written in EV3-G).",
+        "author": "Myself",
+        "tags": ["Personal", "IR Sensor", "Ultrasonic Sensor", "Touch Sensor", "Colour Sensor"],
+        "files": [
+            "NX-D4 Remote.rbt",
+            "NX-D4 Navigation.ev3"
+        ]
     }
 }
