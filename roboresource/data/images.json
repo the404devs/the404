@@ -247,6 +247,26 @@
             ]
         }]
     },
+    "Race Car 2": {
+        "type": "NXT",
+        "description": "My second racecar model, this time wholly original. I had just gotten my EV3 Education Expansion Set for Christmas, and I made this to test out all the new parts I had at my disposal.",
+        "galleries": [{
+            "name": "Race Car 2 (2014-12-29)",
+            "path": "./images/Race Car 2/",
+            "images": [
+                "100_3182.JPG",
+                "100_3184.JPG",
+                "100_3185.JPG",
+                "100_3186.JPG",
+                "100_3188.JPG",
+                "100_3192.JPG",
+                "100_3193.JPG",
+                "100_3194.JPG",
+                "100_3195.JPG",
+                "100_3196.JPG"
+            ]
+        }]
+    },
     "Slot Machine": {
         "type": "NXT",
         "description": "The Slot Machine was probably one of my most memorable creations, I remember posting it on the old Mindstorms forums several times with its many iterations. It had a very complex program that I was quite proud of at the time.",
@@ -400,7 +420,7 @@
     },
     "Forklift": {
         "type": "NXT",
-        "description": "A forklift model I found online, and was quite fond of.",
+        "description": "A forklift model I was quite fond of.<br>Originally, I thought this was based on the <a class='link' href='https://www.nxtprograms.com/NXT2/forklift/'>Forklift model from nxtprograms.com</a>, but upon closer inspection it seems to be an original.",
         "galleries": [{
             "name": "Forklift (2014-06-29)",
             "path": "./images/Forklift/",
@@ -457,13 +477,119 @@
             ]
         }]
     },
+
+    "Race Car": {
+        "type": "NXT",
+        "description": "Another model from my favourite source for NXT models, nxtprograms.com<br>I built upon and modified the design over a month or so, adding a back bumper and a sound sensor under the hood.<br>Adapted from the instructions found here: <a class='link' href='https://www.nxtprograms.com/NXT2/race_car/'>https://www.nxtprograms.com/NXT2/race_car/</a>",
+        "galleries": [{
+            "name": "Race Car (2014-02-06)",
+            "path": "./images/Race Car/",
+            "images": [
+                "100_2824.JPG",
+                "100_2826.JPG",
+                "100_2827.JPG",
+                "100_2828.JPG",
+                "100_2829.JPG",
+                "100_2830.JPG",
+                "100_2833.JPG",
+                "100_2834.JPG",
+                "100_2835.JPG",
+                "100_2836.JPG",
+                "100_2857.JPG",
+                "100_2859.JPG",
+                "100_2860.JPG",
+                "100_2863.JPG",
+                "100_2869.JPG",
+                "100_2871.JPG",
+                "100_2881.JPG"
+            ]
+        }]
+    },
+    "Modular Tank": {
+        "type": "NXT",
+        "description": "A small tank. Unclear if it had a name of its own.",
+        "galleries": [{
+            "name": "Modular Tank (2014-01-31)",
+            "path": "./images/Modular Tank/",
+            "images": [
+                "100_2796.JPG",
+                "100_2797.JPG",
+                "100_2798.JPG",
+                "100_2799.JPG",
+                "100_2802.JPG",
+                "100_2804.JPG",
+                "100_2805.JPG",
+                "100_2806.JPG",
+                "100_2807.JPG",
+                "100_2810.JPG",
+                "100_2811.JPG",
+                "100_2812.JPG"
+            ]
+        }]
+    },
+    "Safe": {
+        "type": "NXT",
+        "description": "A combination-lock safe, very secure with a customizable combination.<br>Adapted from the instructions found here: <a class='link' href='https://www.nxtprograms.com/lock_box/'>https://www.nxtprograms.com/lock_box/</a>",
+        "galleries": [{
+            "name": "Safe (2014-01-07)",
+            "path": "./images/Safe/",
+            "images": [
+                "100_2718.JPG",
+                "100_2719.JPG",
+                "100_2720.JPG",
+                "100_2721.JPG",
+                "100_2723.JPG",
+                "100_2724.JPG",
+                "100_2726.JPG",
+                "100_2727.JPG",
+                "100_2728.JPG",
+                "100_2729.JPG",
+                "100_2730.JPG"
+            ]
+        }]
+    },
+    "Puppy": {
+        "type": "NXT",
+        "description": "A puppy model I found online, complete with a \"leash\" to control it with. My real dog was not pleased.<br>Adapted from the instructions found here: <a class='link' href='https://www.nxtprograms.com/puppy'>https://www.nxtprograms.com/puppy</a>",
+        "galleries": [{
+            "name": "Puppy (2014-01-03)",
+            "path": "./images/Puppy/",
+            "images": [
+                "100_2593.JPG",
+                "100_2594.JPG",
+                "100_2595.JPG",
+                "100_2598.JPG",
+                "100_2599.JPG",
+                "100_2600.JPG",
+                "100_2601.JPG",
+                "100_2602.JPG",
+                "100_2603.JPG",
+                "100_2604.JPG",
+                "100_2606.JPG",
+                "100_2607.JPG"
+            ]
+        }]
+    },
     "Compacto": {
         "type": "NXT",
-        "description": "A compact little robot that was not well designed to run on carpet, as I soon found out.",
+        "description": "A compact little robot that was not well designed to run on carpet, as I soon found out. There were a few iterations on this design, as you'll see in the images.",
         "galleries": [{
-            "name": "Compacto (2013-12-25)",
+            "name": "Compacto (2013-12-15)",
             "path": "./images/Compacto/",
             "images": [
+                "100_2366.JPG",
+                "100_2367.JPG",
+                "100_2368.JPG",
+                "100_2369.JPG",
+                "100_2370.JPG",
+                "100_2371.JPG",
+                "100_2372.JPG",
+                "100_2379.JPG",
+                "100_2380.JPG",
+                "100_2381.JPG",
+                "100_2392.JPG",
+                "100_2393.JPG",
+                "100_2426.JPG",
                 "100_2469.JPG",
                 "100_2471.JPG",
                 "100_2472.JPG",
@@ -490,8 +616,8 @@
         "type": "NXT",
         "description": "TankBot was my obsession for a while, and had several different iterations (9, I think), and each one was posted on the Mindstorms forums. It was hideous and overstuffed with useless impractical things, and that's what made it great.",
         "galleries": [{
-                "name": "TankBot V2 (2013-09-20)",
-                "path": "./images/TankBot/v2/",
+                "name": "TankBot V1 (2013-09-20)",
+                "path": "./images/TankBot/v1/",
                 "images": [
                     "100_2019.JPG",
                     "100_2020.JPG",
@@ -504,8 +630,8 @@
                 ]
             },
             {
-                "name": "TankBot V3 (2013-09-21)",
-                "path": "./images/TankBot/v3/",
+                "name": "TankBot V2 (2013-09-21)",
+                "path": "./images/TankBot/v2/",
                 "images": [
                     "100_2031.JPG",
                     "100_2032.JPG",
@@ -516,6 +642,16 @@
                 ]
             },
             {
+                "name": "TankBot V3 (2013-09-23)",
+                "path": "./images/TankBot/v3/",
+                "images": [
+                    "100_2038.JPG",
+                    "100_2039.JPG",
+                    "100_2040.JPG",
+                    "100_2041.JPG"
+                ]
+            },
+            {
                 "name": "TankBot V4 (2013-10-04)",
                 "path": "./images/TankBot/v4/",
                 "images": [
@@ -523,10 +659,6 @@
                     "000_0003.JPG",
                     "000_0004.JPG",
                     "000_0005.JPG",
-                    "100_2038.JPG",
-                    "100_2039.JPG",
-                    "100_2040.JPG",
-                    "100_2041.JPG",
                     "100_2049.JPG",
                     "100_2053.JPG"
                 ]
@@ -599,10 +731,59 @@
                 "name": "TankBot V8 (2013-11-17)",
                 "path": "./images/TankBot/v8/",
                 "images": [
-                    "100_2180.JPG"
+                    "2013-11-30 11.46.55.jpg",
+                    "2013-11-30 11.55.42.jpg",
+                    "2013-11-30 11.56.15.jpg",
+                    "2013-11-30 11.57.21.jpg",
+                    "2013-11-30 11.57.51.jpg",
+                    "2013-11-30 11.58.59.jpg",
+                    "2013-11-30 11.59.39.jpg",
+                    "2013-11-30 12.01.05.jpg",
+                    "2013-11-30 12.01.38.jpg",
+                    "2013-11-30 12.02.56.jpg",
+                    "2013-11-30 12.03.24.jpg",
+                    "2013-11-30 12.04.21.jpg",
+                    "2013-11-30 12.04.44.jpg",
+                    "2013-11-30 12.04.55.jpg",
+                    "2013-11-30 12.05.15.jpg",
+                    "2013-11-30 12.05.31.jpg",
+                    "2013-11-30 12.05.37.jpg",
+                    "2013-11-30 12.06.29.jpg",
+                    "2013-11-30 12.07.16.jpg",
+                    "2013-11-30 12.31.42.jpg"
+                ]
+            },
+            {
+                "name": "TankBot V9 (2013-12-17)",
+                "path": "./images/TankBot/v9/",
+                "images": [
+                    "100_2351.JPG",
+                    "100_2352.JPG",
+                    "100_2353.JPG",
+                    "100_2354.JPG",
+                    "100_2355.JPG",
+                    "100_2356.JPG",
+                    "100_2357.JPG"
                 ]
             }
         ]
+    },
+    "Elephant Car": {
+        "type": "NXT",
+        "description": "This bot looks AWFUL. Structurally disgusting. I am ashamed of this mess. Please, never build robots like this. This is the worst example you'll find on this page. It looks like an elephant, though. I'll give it that.",
+        "galleries": [{
+            "name": "Elephant Car (2012-05-12)",
+            "path": "./images/Elephant Car/",
+            "images": [
+                "119_0740.JPG",
+                "119_0741.JPG",
+                "119_0742.JPG",
+                "119_0743.JPG",
+                "119_0744.JPG",
+                "119_0745.JPG",
+                "119_0746.JPG"
+            ]
+        }]
     },
     "Mindcuber (NXT)": {
         "type": "NXT",
