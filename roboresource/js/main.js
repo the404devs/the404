@@ -1,4 +1,5 @@
 let slideIndex = 1;
+let overlayActive = false;
 
 function scrollToElem(id) {
     console.log(id);
@@ -471,6 +472,7 @@ window.onresize = function() {
 }
 
 function showImageOverlay(imageID) {
+    overlayActive = true;
     console.log(imageID);
     $('#image-overlay').fadeIn();
     $('#' + imageID).addClass("active");
@@ -487,6 +489,7 @@ function showImageOverlay(imageID) {
 }
 
 function hideImageOverlay() {
+    overlayActive = false;
     $('#image-overlay').fadeOut(400, function() {
         $("body").css('overflow', 'scroll');
     });
@@ -506,21 +509,19 @@ function showSlides(n) {
         $(thumbs[i]).removeClass("active");
     }
     $(thumbs[slideIndex - 1]).addClass("active");
-    try {
-        $("#image-overlay-img").attr('src', $("#image-overlay-gallery").children("img")[slideIndex - 1].src);
-        $("#image-overlay-gallery").children("img")[slideIndex - 1].scrollIntoView({ behavior: 'smooth' });
-    } catch (error) {
-
-    }
+    $("#image-overlay-img").attr('src', $("#image-overlay-gallery").children("img")[slideIndex - 1].src);
+    $("#image-overlay-gallery").children("img")[slideIndex - 1].scrollIntoView({ behavior: 'smooth' });
 }
 
 $(document).keyup(function(e) {
-    if (e.key === "Escape") {
-        hideImageOverlay();
-    } else if (e.key === "ArrowRight") {
-        plusSlides(1);
-    } else if (e.key === "ArrowLeft") {
-        plusSlides(-1);
+    if (overlayActive) {
+        if (e.key === "Escape") {
+            hideImageOverlay();
+        } else if (e.key === "ArrowRight") {
+            plusSlides(1);
+        } else if (e.key === "ArrowLeft") {
+            plusSlides(-1);
+        }
     }
 });
 widthCheck();

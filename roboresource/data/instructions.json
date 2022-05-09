@@ -39,6 +39,11 @@
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Communication Robot.pdf"]
     },
+    "COR3": {
+        "base": "EV3",
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["COR3.pdf"]
+    },
     "Driving Base": {
         "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
