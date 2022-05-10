@@ -19,7 +19,17 @@
                 "20220506_140703.jpg",
                 "20220506_160535.jpg"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                "id": "NXD4",
+                "text": "Programs for NX-D4"
+            }],
+            "instructions": [{
+                "id": "EV3D4",
+                "text": "Instructions for EV3-D4, which this model is based upon"
+            }]
+        }
     },
     "Gyro Boy": {
         "type": "EV3",
@@ -36,7 +46,22 @@
                 "20220427_171136.jpg",
                 "20220427_171140.jpg"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                    "id": "Gyroboy2015",
+                    "text": "Program for Gyroboy (2015)"
+                },
+                {
+                    "id": "Gyroboy2022",
+                    "text": "Program for Gyroboy (2022)"
+                }
+            ],
+            "instructions": [{
+                "id": "GyroBoy",
+                "text": "Instructions for GyroBoy"
+            }]
+        }
     },
     "Plot Bot": {
         "type": "EV3",
@@ -54,7 +79,17 @@
                 "20220301_183330.jpg",
                 "20220301_183721.jpg"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                "id": "PlotBotStarter",
+                "text": "Starter program for Plot Bot"
+            }],
+            "instructions": [{
+                "id": "PlotBot",
+                "text": "Instructions for PlotBot"
+            }]
+        }
     },
     "Neo TaskBot": {
         "type": "NXT",
@@ -81,7 +116,17 @@
                 "20190529_153643.jpg",
                 "20190821_120632.jpg"
             ]
-        }]
+        }],
+        "interlink": {
+            "instructions": [{
+                "id": "Mindcuber",
+                "text": "Instructions for Mindcuber"
+            }],
+            "images": [{
+                "id": "MindcuberNXT",
+                "text": "Images of the NXT version of Mindcuber"
+            }]
+        }
     },
     "Catapult": {
         "type": "WeDo 2.0",
@@ -173,7 +218,13 @@
                 "100_3369.JPG",
                 "100_3371.JPG"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                "id": "IRRemote",
+                "text": "IR Remote program"
+            }]
+        }
     },
     "The Beast": {
         "type": "NXT",
@@ -198,7 +249,13 @@
                 "20151121_093654.jpg",
                 "20151121_093732.jpg"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                "id": "IRRemote",
+                "text": "IR Remote program"
+            }]
+        }
     },
     "4-Wheel Drive Car": {
         "type": "NXT",
@@ -381,7 +438,13 @@
                     "100_3481.JPG"
                 ]
             }
-        ]
+        ],
+        "interlink": {
+            "programs": [{
+                "id": "SlotMachine",
+                "text": "Programs for the Slot Machine"
+            }]
+        }
     },
     "Little Tank": {
         "type": "NXT",
@@ -415,7 +478,13 @@
                 "100_3058.JPG",
                 "100_3062.JPG"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                "id": "SensorTests",
+                "text": "Program for the Sensor Test Car"
+            }]
+        }
     },
     "Forklift": {
         "type": "NXT",
@@ -474,7 +543,18 @@
                 "100_2967.JPG",
                 "100_2969.JPG"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                    "id": "BigBully",
+                    "text": "Programs for Big Bully"
+                },
+                {
+                    "id": "sumo",
+                    "text": "Generic sumobots program"
+                }
+            ]
+        }
     },
 
     "Race Car": {
@@ -545,7 +625,13 @@
                 "100_2729.JPG",
                 "100_2730.JPG"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                "id": "Safe",
+                "text": "Programs for the Safe"
+            }]
+        }
     },
     "Puppy": {
         "type": "NXT",
@@ -640,7 +726,13 @@
                 "100_2498.JPG",
                 "100_2499.JPG"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                "id": "Compacto",
+                "text": "Compacto auto-drive program"
+            }]
+        }
     },
     "TankBot": {
         "type": "NXT",
@@ -796,7 +888,18 @@
                     "100_2357.JPG"
                 ]
             }
-        ]
+        ],
+        "interlink": {
+            "programs": [{
+                    "id": "Tankbot",
+                    "text": "TankBot program (NXT version)"
+                },
+                {
+                    "id": "FirstEV3Project",
+                    "text": "TankBot program (EV3 version)"
+                }
+            ]
+        }
     },
     "Multi-Bot": {
         "type": "NXT",
@@ -808,7 +911,13 @@
                 "119_0861.JPG",
                 "119_1198.JPG"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                "id": "MultiBotShooter",
+                "text": "Program for Multi-Bot (Shooter)"
+            }]
+        }
     },
     "Elephant Car": {
         "type": "NXT",
@@ -848,7 +957,13 @@
                 "119_0617.JPG",
                 "119_0723.JPG"
             ]
-        }]
+        }],
+        "interlink": {
+            "images": [{
+                "id": "MindcuberEV3",
+                "text": "Images of the EV3 version of Mindcuber"
+            }]
+        }
     },
     "Alpha Rex": {
         "type": "NXT",
@@ -863,7 +978,22 @@
                 "119_0582.JPG",
                 "119_0583.JPG"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                    "id": "AlphaRex",
+                    "text": "Programs for Alpha Rex"
+                },
+                {
+                    "id": "RoboDance",
+                    "text": "RoboDance program for Alpha Rex"
+                }
+            ],
+            "instructions": [{
+                "id": "AlphaRex20",
+                "text": "Instructions for Alpha Rex"
+            }]
+        }
     },
     "Robogator": {
         "type": "NXT",
@@ -882,6 +1012,16 @@
                 "HPIM4466.JPG",
                 "HPIM4468.JPG"
             ]
-        }]
+        }],
+        "interlink": {
+            "programs": [{
+                "id": "Robogator",
+                "text": "Programs for Robogator"
+            }],
+            "instructions": [{
+                "id": "Robogator",
+                "text": "Instructions for Robogator"
+            }]
+        }
     }
 }

@@ -80,6 +80,8 @@
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     cursor: pointer;
     /* content-visibility: auto; */
+    display: inline-block;
+    /* width: 133px; */
 }
 
 iframe.robo-gallery-image {
@@ -231,4 +233,69 @@ h5 {
 .counter {
     color: gold;
     font-weight: normal;
+}
+
+.post {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+    /* animation: postHighlightScale 0.6s ease-in-out; */
+}
+
+.post::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px gold, -5px -5px 15px gold;
+    transition: opacity 0.3s ease-in-out;
+    /* animation: postHighlightShadow 0.6s ease-in-out; */
+}
+
+@keyframes postHighlightScale {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.96);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(0.96);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes postHighlightShadow {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.animated {
+    animation: postHighlightScale 0.6s ease-in-out;
+}
+
+.animated::after {
+    animation: postHighlightShadow 0.6s ease-in-out;
 }

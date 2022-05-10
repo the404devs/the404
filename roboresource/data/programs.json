@@ -41,7 +41,17 @@
             "Robogator 2.rbt",
             "Robogator 3.rbt",
             "Robogator 4.rbt"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "Robogator",
+                "text": "Images of Robogator"
+            }],
+            "instructions": [{
+                "id": "Robogator",
+                "text": "Instructions for Robogator"
+            }]
+        }
     },
     "Color Sorter": {
         "type": "NXT",
@@ -55,7 +65,13 @@
             "Color Sorter 3.rbt",
             "Color Sorter 4.rbt",
             "Colour Sorter 5.rbt"
-        ]
+        ],
+        "interlink": {
+            "instructions": [{
+                "id": "ColorSorterNXT",
+                "text": "Instructions for Color Sorter (NXT)"
+            }]
+        }
     },
     "Shooterbot": {
         "type": "NXT",
@@ -68,7 +84,13 @@
             "Shooterbot 2.rbt",
             "Shooterbot 3.rbt",
             "Shooterbot 4.rbt"
-        ]
+        ],
+        "interlink": {
+            "instructions": [{
+                "id": "Shooterbot",
+                "text": "Instructions for Shooterbot"
+            }]
+        }
     },
     "Alpha Rex": {
         "type": "NXT",
@@ -82,7 +104,17 @@
             "Alpha Rex 3.rbt",
             "Alpha Rex 4.rbt",
             "I Am Alpha Rex.rbt"
-        ]
+        ],
+        "interlink": {
+            "instructions": [{
+                "id": "AlphaRex20",
+                "text": "Instructions for Alpha Rex"
+            }],
+            "images": [{
+                "id": "AlphaRex",
+                "text": "Images of Alpha Rex"
+            }]
+        }
     },
     "Hello, Please Move": {
         "type": "NXT",
@@ -97,12 +129,22 @@
     "Robo Dance": {
         "type": "NXT",
         "date": "2012-04-02",
-        "description": "The robot wobbles around and flashes lights.",
+        "description": "The robot wobbles around and flashes lights. This program was probably made for the Alpha Rex model.",
         "author": "Myself",
         "tags": ["Personal", "Silly"],
         "files": [
             "Robo Dance.rbt"
-        ]
+        ],
+        "interlink": {
+            "instructions": [{
+                "id": "AlphaRex20",
+                "text": "Instructions for Alpha Rex"
+            }],
+            "images": [{
+                "id": "AlphaRex",
+                "text": "Images of Alpha Rex"
+            }]
+        }
     },
     "Motion Sensor": {
         "type": "NXT",
@@ -122,17 +164,29 @@
         "tags": ["Personal", "Colour Sensor", "Silly"],
         "files": [
             "Color Catapult.rbt"
-        ]
+        ],
+        "interlink": {
+            "instructions": [{
+                "id": "ColorSorterNXT",
+                "text": "Instructions for Color Sorter (NXT)"
+            }]
+        }
     },
     "Multi-Bot Shooter": {
         "type": "NXT",
         "date": "2012-09-01",
-        "description": "I believe \"Multi-Bot\" was a robot design I found online, however I'm not sure if this program was provided alongside it, or written by myself.",
+        "description": "\"Multi-Bot\" was a robot design I found online, however I'm not sure if this program was provided alongside it, or written by myself.<br><a class='link' href='https://www.nxtprograms.com/NXT2/multi-bot/'>https://www.nxtprograms.com/NXT2/multi-bot/</a>",
         "author": "Unknown",
         "tags": ["Personal", "Movement", "Ultrasonic Sensor"],
         "files": [
             "Multi-Bot Shooter.rbt"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "MultiBot",
+                "text": "Images of MultiBot"
+            }]
+        }
     },
     "Light Test": {
         "type": "NXT",
@@ -173,7 +227,13 @@
         "files": [
             "First EV3 Project.ev3",
             "Detector (2).ev3"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "TankBot",
+                "text": "Images of TankBot"
+            }]
+        }
     },
     "Tankbot": {
         "type": "NXT",
@@ -183,7 +243,13 @@
         "tags": ["Personal", "Movement", "Ultrasonic Sensor", "Touch Sensor", "Light Sensor", "Colour Sensor"],
         "files": [
             "Detector.rbt"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "TankBot",
+                "text": "Images of TankBot"
+            }]
+        }
     },
     "Compacto": {
         "type": "NXT",
@@ -193,7 +259,13 @@
         "tags": ["Personal", "Movement", "Ultrasonic Sensor", "Touch Sensor"],
         "files": [
             "COMPACTO AUTO DRIVE.rbt"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "Compacto",
+                "text": "Images of Compacto"
+            }]
+        }
     },
     "car test": {
         "type": "NXT",
@@ -208,13 +280,19 @@
     "Safe": {
         "type": "Both",
         "date": "2014-01-07",
-        "description": "A robotic safe. I seem to have made programs in both the NXT and EV3 software, but I don't know which is the original and which is the port.",
+        "description": "A robotic safe. I seem to have made programs in both the NXT and EV3 software, but I don't know which is the original and which is the port.<br><a class='link' href='https://www.nxtprograms.com/lock_box/'>https://www.nxtprograms.com/lock_box/</a>",
         "author": "Myself",
         "tags": ["Personal", "Movement", "Ultrasonic Sensor", "Colour Sensor"],
         "files": [
             "SAFE.rbt",
             "SAFE.ev3"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "Safe",
+                "text": "Images of the Safe"
+            }]
+        }
     },
     "Auto Drive": {
         "type": "NXT",
@@ -255,7 +333,13 @@
         "files": [
             "Big Bully.rbt",
             "Big Bully.ev3"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "BigBully",
+                "text": "Images of Big Bully"
+            }]
+        }
     },
     "Calculator": {
         "type": "EV3",
@@ -277,7 +361,13 @@
             "BOT.ev3",
             "Sensor Test.ev3",
             "thing.ev3"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "SensorTestCar",
+                "text": "Images of the Sensor Test Car"
+            }]
+        }
     },
     "Slot Machine": {
         "type": "Both",
@@ -288,7 +378,13 @@
         "files": [
             "Slot Machine.rbt",
             "Slot Machine (July 2016).ev3"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "SlotMachine",
+                "text": "Images of the Slot Machine"
+            }]
+        }
     },
     "Colour Sensor Test": {
         "type": "EV3",
@@ -308,7 +404,21 @@
         "tags": ["Library", "Movement", "Gyro Sensor"],
         "files": [
             "gyroboy2015.ev3"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "GyroBoy",
+                "text": "Images of GyroBoy"
+            }],
+            "instructions": [{
+                "id": "GyroBoy",
+                "text": "Instructions for GyroBoy"
+            }],
+            "programs": [{
+                "id": "Gyroboy2022",
+                "text": "2022 version of the Gyroboy program"
+            }]
+        }
     },
     "Answerer": {
         "type": "EV3",
@@ -328,7 +438,13 @@
         "tags": ["Personal", "Movement", "IR Sensor"],
         "files": [
             "IR Remote.rbt"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "RCRacecar",
+                "text": "Images of an RC Racecar that made use of this program"
+            }]
+        }
     },
     "Virus": {
         "type": "NXT",
@@ -458,7 +574,17 @@
         "tags": ["Tutorial", "Movement", "Plot Bot"],
         "files": [
             "Plot Bot Starter.ev3"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "PlotBot",
+                "text": "Images of Plot Bot"
+            }],
+            "instructions": [{
+                "id": "PlotBot",
+                "text": "Instructions for Plot Bot"
+            }]
+        }
     },
     "Sensor Demos": {
         "type": "EV3",
@@ -510,7 +636,21 @@
         "tags": ["Tutorial", "Movement", "Gyro Sensor", "Library"],
         "files": [
 
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "GyroBoy",
+                "text": "Images of GyroBoy"
+            }],
+            "instructions": [{
+                "id": "GyroBoy",
+                "text": "Instructions for GyroBoy"
+            }],
+            "programs": [{
+                "id": "Gyroboy2015",
+                "text": "2015 version of the Gyroboy program"
+            }]
+        }
     },
     "NX-D4": {
         "type": "Both",
@@ -521,6 +661,16 @@
         "files": [
             "NX-D4 Remote.rbt",
             "NX-D4 Navigation.ev3"
-        ]
+        ],
+        "interlink": {
+            "images": [{
+                "id": "NXD4",
+                "text": "Images of NX-D4"
+            }],
+            "instructions": [{
+                "id": "EV3D4",
+                "text": "Instructions for EV3-D4, upon which NX-D4 is based"
+            }]
+        }
     }
 }

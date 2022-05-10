@@ -1,13 +1,38 @@
 let slideIndex = 1;
 let overlayActive = false;
 
-function scrollToElem(id) {
-    console.log(id);
+function scrollToElem(id, offset = -125) {
     const elem = document.getElementById(id);
-    const offset = elem.offsetTop - 125;
+    elem.classList.remove("animated");
+    const rect = elem.getBoundingClientRect();
+    let targetPosition = rect.top + self.pageYOffset + offset;
     window.scrollTo({
-        top: offset,
-        behavior: "smooth"
+        top: targetPosition,
+        behavior: 'smooth'
+    });
+
+    return new Promise((resolve, reject) => {
+        const failed = setTimeout(() => {
+            elem.classList.add("animated");
+            resolve();
+        }, 500);
+
+        const scrollHandler = () => {
+            if (self.pageYOffset === targetPosition) {
+                elem.classList.add("animated");
+                window.removeEventListener("scroll", scrollHandler);
+                clearTimeout(failed);
+                resolve();
+            }
+        };
+        if (self.pageYOffset === targetPosition) {
+            elem.classList.add("animated");
+            clearTimeout(failed);
+            resolve();
+        } else {
+            window.addEventListener("scroll", scrollHandler);
+            elem.getBoundingClientRect();
+        }
     });
 }
 
@@ -47,6 +72,13 @@ function loadInstructionsFromJSON() {
                     $("<ul>").attr("id", id + "-files")
                 ).attr("tag", jsonData[key].sets.join().replace(/[^0-9a-zA-Z:,]+/g, "").replace(/,/g, ", ")).attr("type", jsonData[key].base)
             );
+
+            if (jsonData[key].interlink) {
+                $("#" + id).append(
+                    $("<div>").addClass("post-body").html("<b>Additional Resources:</b>")
+                )
+                constructInterlinks(id, jsonData[key].interlink);
+            }
 
             jsonData[key].sets.forEach(set => {
                 $("#" + id + "-sets").append(
@@ -123,7 +155,7 @@ function loadInstructionsFromJSON() {
                 label.html(set + " <b class='counter'>[" + x + "]</b>").append(cache);
             });
         });
-    });
+    }).then(() => { getIdFromURL(); });;
 }
 
 function loadImagesFromJSON() {
@@ -144,6 +176,13 @@ function loadImagesFromJSON() {
                     $("<p>").addClass("post-body").html(jsonData[key].description)
                 )
             );
+
+            if (jsonData[key].interlink) {
+                $("#" + id).append(
+                    $("<div>").addClass("post-body").html("<b>Resources:</b>")
+                )
+                constructInterlinks(id, jsonData[key].interlink);
+            }
 
             let i = 0;
             jsonData[key].galleries.forEach(gallery => {
@@ -215,7 +254,7 @@ function loadImagesFromJSON() {
             const cache = label.children("span");
             label.html(jsonData[key].type + " <b class='counter'>[" + x + "]</b>").append(cache);
         });
-    });
+    }).then(() => { getIdFromURL(); });;
 }
 
 function loadProgramsFromJSON() {
@@ -248,8 +287,17 @@ function loadProgramsFromJSON() {
                     $("<div>").addClass("post-body").html("<b>Files:</b>")
                 ).append(
                     $("<ul>").attr("id", id + "-files")
-                ).attr("tag", jsonData[key].tags.join().replace(/ /g, "").replace(/,/g, ", ")).attr("type", jsonData[key].type)
+                ).attr(
+                    "tag", jsonData[key].tags.join().replace(/ /g, "").replace(/,/g, ", ")
+                ).attr("type", jsonData[key].type)
             );
+
+            if (jsonData[key].interlink) {
+                $("#" + id).append(
+                    $("<div>").addClass("post-body").html("<b>Additional Resources:</b>")
+                )
+                constructInterlinks(id, jsonData[key].interlink);
+            }
 
             jsonData[key].files.forEach(file => {
                 $("#" + id + "-files").append(
@@ -352,7 +400,7 @@ function loadProgramsFromJSON() {
             const cache = label.children("span");
             label.html(jsonData[key].type + " <b class='counter'>[" + x + "]</b>").append(cache);
         });
-    });
+    }).then(() => { getIdFromURL(); });
 }
 
 function sortTags(className) {
@@ -511,6 +559,69 @@ function showSlides(n) {
     $(thumbs[slideIndex - 1]).addClass("active");
     $("#image-overlay-img").attr('src', $("#image-overlay-gallery").children("img")[slideIndex - 1].src);
     $("#image-overlay-gallery").children("img")[slideIndex - 1].scrollIntoView({ behavior: 'smooth' });
+}
+
+function getIdFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const requestedId = urlParams.get('id');
+    if (requestedId != null) {
+        if (document.getElementById(requestedId)) {
+            console.log("Scrolling to " + requestedId);
+            scrollToElem(requestedId);
+            if (location.href.includes("images.html")) {
+                // hack to fix timing issue with images loading in adjusting page size
+                setTimeout(function() {
+                    scrollToElem(requestedId);
+                }, 1500);
+            }
+        } else {
+            alert("Nothing for " + requestedId + "!");
+        }
+    }
+}
+
+function constructInterlinks(id, interlinkData) {
+    if (!interlinkData) return;
+    const progURL = "./programs.html?id=";
+    const instURL = "./instructions.html?id=";
+    const imagURL = "./images.html?id=";
+    const interlinkId = id + "-interlink-zone";
+    $("#" + id).append(
+        $("<ul>").attr("id", interlinkId).addClass("interlink-zone")
+    );
+    if (interlinkData.programs) {
+        interlinkData.programs.forEach(program => {
+            $("#" + interlinkId).append(
+                $("<li>").append(
+                    $("<a>").addClass("link")
+                    .attr("href", progURL + program.id)
+                    .html(program.text)
+                )
+            );
+        });
+    }
+    if (interlinkData.instructions) {
+        interlinkData.instructions.forEach(instruction => {
+            $("#" + interlinkId).append(
+                $("<li>").append(
+                    $("<a>").addClass("link")
+                    .attr("href", instURL + instruction.id)
+                    .html(instruction.text)
+                )
+            );
+        });
+    }
+    if (interlinkData.images) {
+        interlinkData.images.forEach(image => {
+            $("#" + interlinkId).append(
+                $("<li>").append(
+                    $("<a>").addClass("link")
+                    .attr("href", imagURL + image.id)
+                    .html(image.text)
+                )
+            );
+        });
+    }
 }
 
 $(document).keyup(function(e) {
