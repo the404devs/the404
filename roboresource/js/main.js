@@ -4,8 +4,8 @@ let overlayActive = false;
 function scrollToElem(id, offset = -125) {
     const elem = document.getElementById(id);
     elem.classList.remove("animated");
-    const rect = elem.getBoundingClientRect();
-    let targetPosition = rect.top + self.pageYOffset + offset;
+    let rect = elem.getBoundingClientRect();
+    let targetPosition = rect.top + self.scrollY + offset;
     window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
@@ -13,22 +13,38 @@ function scrollToElem(id, offset = -125) {
 
     return new Promise((resolve, reject) => {
         const failed = setTimeout(() => {
-            elem.classList.add("animated");
+            console.log("bingus");
+            // if it fails, just call it again lol
+            // works like a charm
+            if (self.scrollY != targetPosition) {
+                elem.classList.remove("animated");
+                rect = elem.getBoundingClientRect();
+                targetPosition = rect.top + self.scrollY + offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                setTimeout(() => {
+                    elem.classList.add("animated");
+                }, 1000);
+            } else {
+                elem.classList.add("animated");
+            }
             resolve();
-        }, 500);
+        }, 1000);
 
         const scrollHandler = () => {
-            if (self.pageYOffset === targetPosition) {
+            if (self.scrollY === targetPosition || self.scrollY > document.body.scrollHeight - window.innerHeight) {
                 elem.classList.add("animated");
                 window.removeEventListener("scroll", scrollHandler);
                 clearTimeout(failed);
-                resolve();
+                // resolve();
             }
         };
-        if (self.pageYOffset === targetPosition) {
+        if (self.pageYOffset === targetPosition || self.scrollY > document.body.scrollHeight - window.innerHeight) {
             elem.classList.add("animated");
             clearTimeout(failed);
-            resolve();
+            // resolve();
         } else {
             window.addEventListener("scroll", scrollHandler);
             elem.getBoundingClientRect();
@@ -568,12 +584,6 @@ function getIdFromURL() {
         if (document.getElementById(requestedId)) {
             console.log("Scrolling to " + requestedId);
             scrollToElem(requestedId);
-            if (location.href.includes("images.html")) {
-                // hack to fix timing issue with images loading in adjusting page size
-                setTimeout(function() {
-                    scrollToElem(requestedId);
-                }, 1500);
-            }
         } else {
             alert("Nothing for " + requestedId + "!");
         }
