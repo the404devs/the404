@@ -34,17 +34,17 @@ function scrollToElem(id, offset = -125) {
         }, 1000);
 
         const scrollHandler = () => {
-            if (self.scrollY === targetPosition || self.scrollY > document.body.scrollHeight - window.innerHeight) {
+            if (self.scrollY === targetPosition || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
                 elem.classList.add("animated");
                 window.removeEventListener("scroll", scrollHandler);
                 clearTimeout(failed);
                 // resolve();
             }
         };
-        if (self.pageYOffset === targetPosition || self.scrollY > document.body.scrollHeight - window.innerHeight) {
+        if (self.pageYOffset === targetPosition || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
             elem.classList.add("animated");
             clearTimeout(failed);
-            // resolve();
+            resolve();
         } else {
             window.addEventListener("scroll", scrollHandler);
             elem.getBoundingClientRect();
