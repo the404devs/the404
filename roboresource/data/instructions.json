@@ -10,7 +10,7 @@
         "files": ["8547 - Mindstorms - NXT 2.0 (Alpha Rex 2.0).pdf"],
         "interlink": {
             "programs": [{
-                    "id": "AlphaRex20",
+                    "id": "AlphaRex",
                     "text": "Programs for Alpha Rex"
                 },
                 {

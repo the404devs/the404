@@ -645,4 +645,12 @@ $(document).keyup(function(e) {
         }
     }
 });
+
+$(".button, #home-tab, #header-text").on("mouseup", function(e) {
+    if (e.which === 2) {
+        e.preventDefault();
+        const URL = $(this).attr("onclick").replace(/\s+/g, '').replace("location.href='", "").replace("'", "");
+        window.open(URL, "_blank");
+    }
+});
 widthCheck();
