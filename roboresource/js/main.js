@@ -210,8 +210,11 @@ function loadImagesFromJSON() {
                 let path = gallery.path;
                 let j = 0;
                 gallery.images.forEach(image => {
+                    const thumbifiedPath = path.replace("images/", "images/.thumbs/");
+                    const ext = image.split(".").pop();
+                    const thumbifiedImage = image.replace("." + ext, "_thumb." + ext);
                     $("#" + id + "-" + i).append(
-                        $("<img>").attr("src", path + image).addClass("robo-gallery-image").attr("id", id + "-" + i + "-" + j).attr("gallery", id + "-" + i).attr("onclick", "showImageOverlay('" + id + "-" + i + "-" + j + "')").attr("loading", "lazy")
+                        $("<img>").attr("src", thumbifiedPath + thumbifiedImage).addClass("robo-gallery-image").attr("id", id + "-" + i + "-" + j).attr("gallery", id + "-" + i).attr("onclick", "showImageOverlay('" + id + "-" + i + "-" + j + "')").attr("loading", "lazy")
                     )
                     j++;
                 });
@@ -538,9 +541,8 @@ window.onresize = function() {
 function showImageOverlay(imageID) {
     overlayActive = true;
     console.log(imageID);
-    $('#image-overlay').fadeIn();
     $('#' + imageID).addClass("active");
-    let imageSource = $('#' + imageID).attr('src');
+    let imageSource = unthumbifySource($('#' + imageID).attr('src'));
     $("#image-overlay-img").attr('src', imageSource);
     $("body").css('overflow', 'hidden');
     let targetGallery = $('#' + imageID).attr('gallery');
@@ -549,7 +551,14 @@ function showImageOverlay(imageID) {
     $("#image-overlay-title").html($(badTitleElem).html());
     $(badTitleElem).remove();
     $('#' + imageID).removeClass("active");
+    $('#image-overlay').fadeIn();
     slideIndex = parseInt(imageID.slice(imageID.lastIndexOf('-') + 1)) + 1;
+}
+
+function unthumbifySource(src) {
+    const unthumbed = src.replace(".thumbs/", "").replace("_thumb", "");
+    // console.log("Unthumbified " + src, unthumbed);
+    return unthumbed;
 }
 
 function hideImageOverlay() {
@@ -573,7 +582,7 @@ function showSlides(n) {
         $(thumbs[i]).removeClass("active");
     }
     $(thumbs[slideIndex - 1]).addClass("active");
-    $("#image-overlay-img").attr('src', $("#image-overlay-gallery").children("img")[slideIndex - 1].src);
+    $("#image-overlay-img").attr('src', unthumbifySource($("#image-overlay-gallery").children("img")[slideIndex - 1].src));
     $("#image-overlay-gallery").children("img")[slideIndex - 1].scrollIntoView({ behavior: 'smooth' });
 }
 
