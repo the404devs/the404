@@ -539,6 +539,7 @@ window.onresize = function() {
 }
 
 function showImageOverlay(imageID) {
+    $("#image-overlay-img").attr('src', '');
     overlayActive = true;
     console.log(imageID);
     $('#' + imageID).addClass("active");
