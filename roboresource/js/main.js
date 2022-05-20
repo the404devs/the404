@@ -210,7 +210,7 @@ function loadImagesFromJSON() {
                 let path = gallery.path;
                 let j = 0;
                 gallery.images.forEach(image => {
-                    const thumbifiedPath = path.replace("images/", "images/.thumbs/");
+                    const thumbifiedPath = path.replace("images/", "images/_thumbs/");
                     const ext = image.split(".").pop();
                     const thumbifiedImage = image.replace("." + ext, "_thumb." + ext);
                     $("#" + id + "-" + i).append(
@@ -542,12 +542,12 @@ function showImageOverlay(imageID) {
     overlayActive = true;
     console.log(imageID);
     $('#' + imageID).addClass("active");
-    let imageSource = unthumbifySource($('#' + imageID).attr('src'));
+    const imageSource = unthumbifySource($('#' + imageID).attr('src'));
     $("#image-overlay-img").attr('src', imageSource);
     $("body").css('overflow', 'hidden');
-    let targetGallery = $('#' + imageID).attr('gallery');
+    const targetGallery = $('#' + imageID).attr('gallery');
     $("#image-overlay-gallery").html($("#" + targetGallery).html());
-    let badTitleElem = $("#image-overlay-gallery").children("h4")[0]
+    const badTitleElem = $("#image-overlay-gallery").children("h4")[0]
     $("#image-overlay-title").html($(badTitleElem).html());
     $(badTitleElem).remove();
     $('#' + imageID).removeClass("active");
@@ -556,7 +556,7 @@ function showImageOverlay(imageID) {
 }
 
 function unthumbifySource(src) {
-    const unthumbed = src.replace(".thumbs/", "").replace("_thumb", "");
+    const unthumbed = src.replace("_thumbs/", "").replace("_thumb", "");
     // console.log("Unthumbified " + src, unthumbed);
     return unthumbed;
 }
