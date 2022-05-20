@@ -210,7 +210,7 @@ function loadImagesFromJSON() {
                 let path = gallery.path;
                 let j = 0;
                 gallery.images.forEach(image => {
-                    const thumbifiedPath = path.replace("images/", "images/_thumbs/");
+                    const thumbifiedPath = path.replace("images/", "images/THUMBS/");
                     const ext = image.split(".").pop();
                     const thumbifiedImage = image.replace("." + ext, "_thumb." + ext);
                     $("#" + id + "-" + i).append(
@@ -556,7 +556,7 @@ function showImageOverlay(imageID) {
 }
 
 function unthumbifySource(src) {
-    const unthumbed = src.replace("_thumbs/", "").replace("_thumb", "");
+    const unthumbed = src.replace("THUMBS/", "").replace("_thumb", "");
     // console.log("Unthumbified " + src, unthumbed);
     return unthumbed;
 }

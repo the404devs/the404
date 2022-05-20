@@ -3,7 +3,7 @@
 # Generate thumbnails for RoboResources images (2022-05-20)
 # https://stackoverflow.com/questions/12913667/bash-script-to-create-customized-thumbnails
 
-THUMBS_FOLDER=/home/the404/Development/the404/roboresource/images/_thumbs
+THUMBS_FOLDER=/home/the404/Development/the404/roboresource/images/THUMBS
 BASE_FOLDER=/home/the404/Development/the404/roboresource/images
 CURDIR=""
 mkdir -p $THUMBS_FOLDER
@@ -31,9 +31,9 @@ while IFS= read -d $'\0' -r file ; do
 
         elif [ $IMAGE_TYPE = "inode" ]; then
             CURDIR="$file"
-            mkdir -p "_thumbs/$CURDIR/"
-            echo "CREATING: _thumbs/$CURDIR"
+            mkdir -p "THUMBS/$CURDIR/"
+            echo "CREATING: THUMBS/$CURDIR"
         fi
 done < <(find . -iname '*' -print0 -not -name '.*')
 # dumb workaround
-rm -r "$THUMBS_FOLDER/_thumbs"
+rm -r "$THUMBS_FOLDER/THUMBS"
