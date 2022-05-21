@@ -63,7 +63,13 @@
     "COR3": {
         "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
-        "files": ["COR3.pdf"]
+        "files": ["COR3.pdf"],
+        "interlink": {
+            "images": [{
+                "id": "COR3",
+                "text": "Images of COR3"
+            }]
+        }
     },
     "Driving Base": {
         "base": "EV3",

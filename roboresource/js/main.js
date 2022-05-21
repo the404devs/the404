@@ -539,7 +539,6 @@ window.onresize = function() {
 }
 
 function showImageOverlay(imageID) {
-    $("#image-overlay-img").attr('src', '');
     overlayActive = true;
     console.log(imageID);
     $('#' + imageID).addClass("active");
@@ -566,6 +565,7 @@ function hideImageOverlay() {
     overlayActive = false;
     $('#image-overlay').fadeOut(400, function() {
         $("body").css('overflow', 'scroll');
+        $("#image-overlay-img").attr('src', '');
     });
     slideIndex = 1;
 }

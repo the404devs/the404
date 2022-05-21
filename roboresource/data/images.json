@@ -1,11 +1,35 @@
 {
+    "COR3": {
+        "type": "EV3",
+        "description": "COR3 (pronounced \"Core\") is meant to be a simple base robot, easily adaptable for all sorts of tasks. I found the instructions online, and decided to have my senior robotics class build these to use in a battlebots contest. I built one for myself to serve as a demo, and we showcased it at the Stouffville Farmers' Market alongside NX-D4 to promote Idea Labs' summer day camps.",
+        "galleries": [{
+            "name": "COR3 (2022-05-18)",
+            "path": "./images/COR3/",
+            "images": [
+                "20220521_093000.jpg",
+                "20220521_093009.jpg",
+                "20220521_093016.jpg",
+                "20220521_093023.jpg",
+                "20220521_093033.jpg",
+                "20220521_093054.jpg"
+            ]
+        }],
+        "interlink": {
+            "instructions": [{
+                "id": "COR3",
+                "text": "Instructions for COR3"
+            }]
+        }
+    },
     "NX-D4": {
         "type": "NXT",
-        "description": "My first NXT model in several years (not counting the practice TaskBot I did last summer).<br>Since I first got my NXT back in 2011 I had dreamed of building an astromech droid like R2-D2, but I never really had the resources to do so. This model is adapted from the official EV3-D4 model from the EV3 Home Edition, using parts from an NXT 2.0, EV3 Education Expansion, Technic Arctic Truck, and other various bits and bobs I've accumulated over the years, including an EV3 Medium Motor.<br>Was designed at first to be remote controlled via an adaptation of my old remote control program, but I also wrote a rudimentary program to allow the robot to navigate on its own.",
+        "description": "My first NXT model in several years (not counting the practice TaskBot I did last summer).<br>Since I first got my NXT back in 2011 I had dreamed of building an astromech droid like R2-D2, but I never really had the resources to do so. This model is adapted from the official EV3-D4 model from the EV3 Home Edition, using parts from an NXT 2.0, EV3 Education Expansion, Technic Arctic Truck, and other various bits and bobs I've accumulated over the years, including an EV3 Medium Motor.<br>Was designed at first to be remote controlled via an adaptation of my old remote control program, but I also wrote a rudimentary program to allow the robot to navigate on its own.<br>NX-D4 and COR3 were showcased at the Stouffville Farmers' Market on May 21, 2022, to promote Idea Labs' summer day camps.",
         "galleries": [{
             "name": "NX-D4 (2022-05-06)",
             "path": "./images/NX-D4/",
             "images": [
+                "20220521_093143.jpg",
+                "20220521_093148.jpg",
                 "20220507_201057.jpg",
                 "20220507_201025.jpg",
                 "20220507_201110.jpg",
