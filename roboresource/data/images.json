@@ -1,7 +1,7 @@
 {
     "COR3": {
         "type": "EV3",
-        "description": "COR3 (pronounced \"Core\") is meant to be a simple base robot, easily adaptable for all sorts of tasks. I found the instructions online, and decided to have my senior robotics class build these to use in a battlebots contest. I built one for myself to serve as a demo, and we showcased it at the Stouffville Farmers' Market alongside NX-D4 to promote Idea Labs' summer day camps.",
+        "description": "COR3 (pronounced \"Core\") is meant to be a simple base robot, easily adaptable for all sorts of tasks. I found the instructions online, and decided to have my senior robotics class build these to use in a battlebots contest. I built one for myself to serve as a demo, and we showcased it at the Stouffville Farmers' Market on May 21, 2022 alongside NX-D4 to promote Idea Labs' summer day camps.",
         "galleries": [{
             "name": "COR3 (2022-05-18)",
             "path": "./images/COR3/",

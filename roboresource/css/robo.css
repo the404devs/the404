@@ -299,3 +299,37 @@ h5 {
 .animated::after {
     animation: postHighlightShadow 0.6s ease-in-out;
 }
+
+#loading-anim {
+    position: fixed;
+    left: calc(50% - 40px);
+    top: calc(50% - 120px);
+    z-index: -1;
+    margin: 0;
+    border: 8px solid white;
+    border-radius: 50%;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
