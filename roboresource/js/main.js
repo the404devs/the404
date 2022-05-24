@@ -578,6 +578,7 @@ function showSlides(n) {
     let i;
     const thumbs = $("#image-overlay-gallery").children("img");
     $("#image-overlay-img").attr('src', "images/null.png");
+    $("#image-overlay-img").css('opacity', '0');
     $("#image-overlay-img").attr('onclick', "");
     if (n > thumbs.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = thumbs.length }
@@ -586,6 +587,7 @@ function showSlides(n) {
     }
     $(thumbs[slideIndex - 1]).addClass("active");
     $("#image-overlay-img").attr('src', unthumbifySource($("#image-overlay-gallery").children("img")[slideIndex - 1].src));
+    $("#image-overlay-img").css('opacity', '1');
     $("#image-overlay-img").attr('onclick', "window.open(this.src)");
     $("#image-overlay-gallery").children("img")[slideIndex - 1].scrollIntoView({ behavior: 'smooth' });
 }
