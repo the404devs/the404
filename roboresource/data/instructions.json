@@ -149,6 +149,11 @@
         "sets": ["EV3 Education Core (45544)"],
         "files": ["Gear Bot.pdf"]
     },
+    "Geared Vehicle": {
+        "base": "EV3",
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Geared Vehicle.pdf"]
+    },
     "Gyro Boy": {
         "base": "EV3",
         "sets": ["EV3 Education Core (45544)"],
@@ -315,6 +320,11 @@
         "base": "NXT",
         "sets": ["NXT Education Base (9797)", "NXT Education Resource Set (9648)"],
         "files": ["NXT TaskBot.pdf"]
+    },
+    "Tilting Platform": {
+        "base": "EV3",
+        "sets": ["EV3 Education Core (45544)"],
+        "files": ["Tilting Platform.pdf"]
     },
     "WeDo Simple Base Models": {
         "base": "WeDo",

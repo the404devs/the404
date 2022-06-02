@@ -5,7 +5,7 @@ function scrollToElem(id, offset = -125) {
     const elem = document.getElementById(id);
     elem.classList.remove("animated");
     let rect = elem.getBoundingClientRect();
-    let targetPosition = rect.top + self.scrollY + offset;
+    let targetPosition = Math.ceil(rect.top + self.scrollY + offset);
     window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
@@ -34,14 +34,14 @@ function scrollToElem(id, offset = -125) {
         }, 1000);
 
         const scrollHandler = () => {
-            if (self.scrollY === targetPosition || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
+            if ((self.scrollY >= targetPosition - 5 && self.scrollY <= targetPosition + 5) || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
                 elem.classList.add("animated");
                 window.removeEventListener("scroll", scrollHandler);
                 clearTimeout(failed);
                 // resolve();
             }
         };
-        if (self.pageYOffset === targetPosition || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
+        if ((self.scrollY >= targetPosition - 5 && self.scrollY <= targetPosition + 5) || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
             elem.classList.add("animated");
             clearTimeout(failed);
             resolve();
