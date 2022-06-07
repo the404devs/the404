@@ -34,14 +34,24 @@ function scrollToElem(id, offset = -125) {
         }, 1000);
 
         const scrollHandler = () => {
-            if ((self.scrollY >= targetPosition - 5 && self.scrollY <= targetPosition + 5) || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
+            if ((self.scrollY >= targetPosition - 1 && self.scrollY <= targetPosition + 1) || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
+                console.log(self.scrollY, targetPosition);
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
                 elem.classList.add("animated");
                 window.removeEventListener("scroll", scrollHandler);
                 clearTimeout(failed);
                 // resolve();
             }
         };
-        if ((self.scrollY >= targetPosition - 5 && self.scrollY <= targetPosition + 5) || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
+        if ((self.scrollY >= targetPosition - 1 && self.scrollY <= targetPosition + 1) || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
+            console.log(self.scrollY, targetPosition);
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
             elem.classList.add("animated");
             clearTimeout(failed);
             resolve();
@@ -214,7 +224,8 @@ function loadImagesFromJSON() {
                     const ext = image.split(".").pop();
                     const thumbifiedImage = image.replace("." + ext, "_thumb." + ext);
                     $("#" + id + "-" + i).append(
-                        $("<img>").attr("src", thumbifiedPath + thumbifiedImage).addClass("robo-gallery-image").attr("id", id + "-" + i + "-" + j).attr("gallery", id + "-" + i).attr("onclick", "showImageOverlay('" + id + "-" + i + "-" + j + "')").attr("loading", "lazy")
+                        $("<img>").attr("src", thumbifiedPath + thumbifiedImage).addClass("robo-gallery-image").attr("id", id + "-" + i + "-" + j).attr("gallery", id + "-" + i).attr("onclick", "showImageOverlay('" + id + "-" + i + "-" + j + "')")
+                        // lazy loading here .attr('loading', 'lazy')
                     )
                     j++;
                 });
@@ -293,7 +304,7 @@ function loadProgramsFromJSON() {
                 ).append(
                     $("<h4>").addClass("post-author").html("<b>Author:</b> " + jsonData[key].author)
                 ).append(
-                    $("<h4>").addClass("post-author").html("<b>Type:</b> " + jsonData[key].type)
+                    $("<h4>").addClass("post-author").html("<b>Language:</b> " + jsonData[key].type.join().replace(/ /g, "").replace(/,/g, ", "))
                 ).append(
                     $("<h4>").addClass("post-author").html("<b>Tags:</b> " + jsonData[key].tags.join().replace(/,/g, ", "))
                 ).append(
@@ -308,7 +319,7 @@ function loadProgramsFromJSON() {
                     $("<ul>").attr("id", id + "-files")
                 ).attr(
                     "tag", jsonData[key].tags.join().replace(/ /g, "").replace(/,/g, ", ")
-                ).attr("type", jsonData[key].type)
+                ).attr("type", jsonData[key].type.join().replace(/ /g, "").replace(/,/g, ", "))
             );
 
             if (jsonData[key].interlink) {
@@ -332,7 +343,7 @@ function loadProgramsFromJSON() {
                 ).attr(
                     "onclick", "scrollToElem('" + id + "')"
                 ).attr(
-                    "type", jsonData[key].type
+                    "type", jsonData[key].type.join().replace(/ /g, "").replace(/,/g, ", ")
                 ).html(key)
             ).append(
                 $("<br>")
@@ -382,42 +393,44 @@ function loadProgramsFromJSON() {
                 label.html(tag + " <b class='counter'>[" + x + "]</b>").append(cache);
             });
 
-            if (!tags.includes(jsonData[key].type)) {
-                tags.push(jsonData[key].type);
-                counts.push(0);
-                $("#robo-type-zone").append(
-                    $("<input>").attr(
-                        "type", "checkbox"
-                    ).attr(
-                        "onclick", "sortTags('.program')"
-                    ).attr(
-                        "name", jsonData[key].type
-                    ).attr(
-                        "style", "width:auto"
-                    ).attr(
-                        "id", jsonData[key].type
-                    )
-                ).append(
-                    $("<label>").attr(
-                        "for", jsonData[key].type
-                    ).attr(
-                        "onclick", "sortTags('.program')"
-                    ).html(
-                        jsonData[key].type
-                    ).addClass(
-                        "link"
-                    ).append($("<span>").addClass("checkmark"))
-                ).append(
-                    $("<br>")
-                ).append(
-                    $("<br>")
-                );
-            }
-            counts[tags.indexOf(jsonData[key].type)]++;
-            const label = $("#" + jsonData[key].type).next();
-            const x = counts[tags.indexOf(jsonData[key].type)];
-            const cache = label.children("span");
-            label.html(jsonData[key].type + " <b class='counter'>[" + x + "]</b>").append(cache);
+            jsonData[key].type.forEach(type => {
+                if (!tags.includes(type)) {
+                    tags.push(type);
+                    counts.push(0);
+                    $("#robo-type-zone").append(
+                        $("<input>").attr(
+                            "type", "checkbox"
+                        ).attr(
+                            "onclick", "sortTags('.program')"
+                        ).attr(
+                            "name", type
+                        ).attr(
+                            "style", "width:auto"
+                        ).attr(
+                            "id", type
+                        )
+                    ).append(
+                        $("<label>").attr(
+                            "for", type
+                        ).attr(
+                            "onclick", "sortTags('.program')"
+                        ).html(
+                            type
+                        ).addClass(
+                            "link"
+                        ).append($("<span>").addClass("checkmark"))
+                    ).append(
+                        $("<br>")
+                    ).append(
+                        $("<br>")
+                    );
+                }
+                counts[tags.indexOf(type)]++;
+                const label = $("#" + type).next();
+                const x = counts[tags.indexOf(type)];
+                const cache = label.children("span");
+                label.html(type + " <b class='counter'>[" + x + "]</b>").append(cache);
+            });
         });
     }).then(() => { getIdFromURL(); });
 }

@@ -36,4 +36,4 @@ while IFS= read -d $'\0' -r file ; do
             mkdir -p "THUMBS/$CURDIR/"
             echo "CREATING: THUMBS/$CURDIR"
         fi
-done < <(find . \( -not -path "*./THUMBS/*" \) -print0)
+done < <(find . \( -not -path "*./THUMBS*" \) -print0)
