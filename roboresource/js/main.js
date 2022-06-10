@@ -3,7 +3,7 @@ let overlayActive = false;
 
 function scrollToElem(id, offset = -125) {
     const elem = document.getElementById(id);
-    elem.classList.remove("animated");
+    $(".post").removeClass("animated");
     let rect = elem.getBoundingClientRect();
     let targetPosition = Math.ceil(rect.top + self.scrollY + offset);
     window.scrollTo({
@@ -17,7 +17,7 @@ function scrollToElem(id, offset = -125) {
             // if it fails, just call it again lol
             // works like a charm
             if (self.scrollY != targetPosition) {
-                elem.classList.remove("animated");
+//                 elem.classList.remove("animated");
                 rect = elem.getBoundingClientRect();
                 targetPosition = rect.top + self.scrollY + offset;
                 window.scrollTo({
