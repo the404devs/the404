@@ -684,7 +684,8 @@
             "Line Follower Advanced 2022.lmsp",
             "Dual Sensor Line Follow.lmsp",
             "Touch Sensor Demo 2022.lmsp",
-            "Ultrasonic Sensor Demo 2022.lmsp"
+            "Ultrasonic Demo 2022.lmsp",
+            "Relative Speed Demo.lmsp"
         ]
     }
 }
