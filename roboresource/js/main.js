@@ -224,8 +224,7 @@ function loadImagesFromJSON() {
                     const ext = image.split(".").pop();
                     const thumbifiedImage = image.replace("." + ext, "_thumb." + ext);
                     $("#" + id + "-" + i).append(
-                        $("<img>").attr("src", thumbifiedPath + thumbifiedImage).addClass("robo-gallery-image").attr("id", id + "-" + i + "-" + j).attr("gallery", id + "-" + i).attr("onclick", "showImageOverlay('" + id + "-" + i + "-" + j + "')")
-                        // lazy loading here .attr('loading', 'lazy')
+                        $("<img>").attr("src", thumbifiedPath + thumbifiedImage).addClass("robo-gallery-image").attr("id", id + "-" + i + "-" + j).attr("gallery", id + "-" + i).attr("onclick", "showImageOverlay('" + id + "-" + i + "-" + j + "')").attr('loading', 'lazy')
                     )
                     j++;
                 });
