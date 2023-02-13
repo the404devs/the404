@@ -7,39 +7,41 @@
     <link rel="stylesheet" type="text/css" href="css/controls.css">
     <link rel="stylesheet" type="text/css" href="css/sidenav.css">
     <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/tabs.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 </head>
 
 <body onload="widthCheck()">
+
     <div class="header">
-        <h1 id="header-text" onclick="location.href = 'https://the404.nl/'">THE404.NL</h1>
-        <div class="tab-wrapper" id="edit-tabs" style="margin-top: 0px; display: none;">
-            <span class="tab" id="tab1" onclick="showPanes(1)">Main</span>
-            <br>
-            <span class="tab" id="tab2" onclick="showPanes(2)">About</span>
-            <br>
-            <span class="tab" id="tab3" onclick="showPanes(3)">Projects</span>
-            <br>
-        </div>
-        <div class="head-button-wrapper">
-            <button id="sign-out" class="button head-button" onclick="logout()" style="display: none;"><span>Sign Out</span></button>
-            <br>
-            <button id="refresh" class="button head-button" onclick="refresh()" style="display: none;"><span>Refresh</span></button>
-        </div>
-        <div class="tab-wrapper" id="home-tabs">
-            <span class="tab" id="home-tab" onclick="location.href = 'https://the404.nl/'"><i class="fas fa-home"></i></span>
+        <a href="https://the404.nl">
+            <div class="logo">THE404.NL</div>
+        </a>
+        <span class="navbar-toggle" id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <div class="nav-wrapper" id="main-nav">
+            <span class="nav-link init-hidden active" onclick="showPanes(1)"><b>HOME</b></span>
+            <span class="spacer init-hidden"><b>⋄</b></span>
+            <span class="nav-link init-hidden" onclick="showPanes(2)"><b>PROJECTS</b></span>
+            <span class="spacer init-hidden"><b>⋄</b></span>
+            <span class="nav-link init-hidden" onclick="showPanes(3)"><b>MUSEUM</b></span>
+            <span class="spacer init-hidden"><b>⋄</b></span>
+            <span class="nav-link init-hidden" onclick="refresh()"><b>REFRESH</b></span>
+            <span class="spacer init-hidden"><b>⋄</b></span>
+            <span class="nav-link init-hidden" onclick="logout()"><b>SIGN OUT</b></span>
+            <span class="nav-link init-shown" onclick="location.href='https://the404.nl'"><b>HOME</b></span>
         </div>
     </div>
 
@@ -62,13 +64,13 @@
             <h4 class="post-date" id="errmsg"></h4>
         </div>
         <div class="pane" id="home">
-            <div class="nav" id="blog-nav">
+            <div class="sidenav" id="blog-nav">
                 <span class="button flipper" id="blogFlipper" onclick="blogDateFlip()" title="Sorting Ascending">↑</span>
-                <span class="button" id="close" onclick="hideNav()" title="Close Menu">×</span>
+                <span class="button" id="close" onclick="hideSideNav('blog-nav')" title="Close Menu">×</span>
+                <h3 class="sidenav-head">Blog Posts</h3>
+                <div id="blog-id-zone"></div>
             </div>
-            <div class="tab-wrapper" id="nav-tab-wrapper">
-                <span class="tab" id="nav-tab" onclick="showNav()" title="Blog Menu">☰</span>
-            </div>
+            <span class="sidenav-toggle" id="blog-nav-toggle" onclick="showSideNav('blog-nav')" title="Blog Menu"><i class="fa-solid fa-list"></i></span>
             <div class="post" id="new-post" style="width: 70%;padding-top:10px;padding-bottom:10px;display:none">
                 <label for="title">Title: </label>
                 <input name="title" class="title">
@@ -88,32 +90,13 @@
                 <br>
             </div>
         </div>
-        <div class="pane" id="about">
-            <div class="post" id="new-museum" style="width: 70%;padding-top:10px;padding-bottom:10px; display: none;">
-                <label for="id">ID: </label>
-                <input name="id" class="id">
-                <br>
-                <label for="date">Date: </label>
-                <input name="date" class="date">
-                <br>
-                <label for="path">Path: </label>
-                <input name="path" class="path">
-                <br>
-                <textarea name="description" class="description"></textarea>
-                <button class="button" onclick="newMuseum()">
-                    <span>New Exhibit</span>
-                </button>
-                <br>
-            </div>
-        </div>
         <div class="pane" id="soft">
-            <div class="nav" id="soft-nav">
+            <div class="sidenav" id="soft-nav">
                 <span class="button flipper" id="softFlipper" onclick="softDateFlip()" title="Sorting Descending">↓</span>
-                <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
+                <span class="button" id="close" onclick="hideSideNav('soft-nav')" title="Close Menu">×</span>
+                <h3 class="sidenav-head">All Projects</h3>
             </div>
-            <div class="tab-wrapper" id="sort-tab-wrapper">
-                <span class="tab" id="sort-tab" onclick="showSort()" title="Software Menu">☰</span>
-            </div>
+            <span class="sidenav-toggle" id="soft-nav-toggle" onclick="showSideNav('soft-nav')" title="Projects Menu"><i class="fa-solid fa-list"></i></span>
             <div class="post" id="new-soft" style="width: 70%;padding-top:10px;padding-bottom:10px;display:none">
                 <label for="id">ID: </label>
                 <input name="id" class="id">
@@ -166,6 +149,25 @@
                 <br>
             </div>
         </div>
+        <div class="pane" id="about">
+            <div class="post" id="new-museum" style="width: 70%;padding-top:10px;padding-bottom:10px; display: none;">
+                <label for="id">ID: </label>
+                <input name="id" class="id">
+                <br>
+                <label for="date">Date: </label>
+                <input name="date" class="date">
+                <br>
+                <label for="path">Path: </label>
+                <input name="path" class="path">
+                <br>
+                <textarea name="description" class="description"></textarea>
+                <button class="button" onclick="newMuseum()">
+                    <span>New Exhibit</span>
+                </button>
+                <br>
+            </div>
+        </div>
+
     </div>
 
     <script type="text/javascript" src="js/app.js"></script>

@@ -1,0 +1,159 @@
+/* main.css conatins styling rules for commonly used components like .post */
+
+.post-head {
+    color: var(--important);
+    font-family: Gilroy;
+    font-size: 1.3em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.post-date {
+    color: var(--important);
+    font-family: Raleway;
+    font-weight: normal;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.post-author {
+    color: var(--foreground);
+    font-family: Raleway;
+    font-weight: normal;
+    margin-top: 5px;
+    padding-top: 0;
+    font-size: 16px;
+}
+
+.post {
+    background-color: var(--background-transparent);
+    border: 1px solid var(--border);
+    font-family: "Roboto";
+    margin-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: left;
+    transition: 0.2s width;
+    width: 75%;
+}
+
+.post label {
+    clear: left;
+    display: inline-block;
+    margin-right: 20px;
+    text-align: right;
+    width: 80px;
+}
+
+.post input {
+    display: inline-block;
+    max-width: 300px;
+}
+
+.post textarea {
+    height: 300px;
+    width: 100%;
+}
+
+.id-label {
+    font-family: "Inconsolata";
+    font-size: 12px;
+}
+
+.blob {
+    background-color: var(--background-transparent);
+    border: 1px solid var(--border);
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    padding: 10px;
+    width: 75%;
+}
+
+.blob h2 {
+    color: var(--important);
+    font-family: Gilroy;
+    font-size: 1.75em;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.blob img {
+    float: left;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+.blob button {
+    margin: 5px 0 5px 0;
+}
+
+.blob .downloadLink {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.blob p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#time {
+    font-family: "Gilroy Light";
+    font-size: 16px;
+    font-weight: normal;
+    padding-bottom: 5px;
+}
+
+.foot-text {
+    display: inline-block;
+    margin: 2px;
+}
+
+h4.foot-text {
+    font-family: "Gilroy Light";
+}
+
+#version {
+    cursor: pointer;
+}
+
+.inner-line {
+    display: none;
+}
+
+.body-image {
+    border: 1px solid var(--border);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    width: 370px;
+}
+
+ul {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#git-container {
+    border: 1px solid var(--border);
+    display: inline-block;
+    height: 450px;
+    overflow-y: scroll;
+    text-align: center;
+    width: 550px;
+}
+
+.git-box {
+    background: var(--background-transparent);
+    border: 1px solid var(--border);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.important-top-thing {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+}

@@ -1,6 +1,6 @@
 :root {
     --accent: #60ecff;
-    --background-gradient: linear-gradient(90deg, rgb(0, 89, 161) 0%, rgb(38, 126, 177) 33%, rgb(132, 163, 204) 100%);
+    --background-gradient: linear-gradient(0deg, rgb(0, 89, 161) 0%, rgb(38, 126, 177) 33%, rgb(132, 163, 204) 100%);
     --background-transparent: rgba(21, 24, 36, 0.5);
     --background: #151824;
     --bold: #60ecff;
@@ -17,7 +17,7 @@
 .robo-subhead {
     font-size: 1.25em;
     font-weight: bold;
-    color: gold;
+    color: var(--primary);
     text-decoration: underline;
     margin-left: 10px;
     margin-bottom: 0;
@@ -48,15 +48,19 @@
     color: var(--accent);
 }
 
+.robo-gallery .post-date::before {
+    content: unset;
+}
+
 .program .post-author {
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
 .robo-blob h2 {
-    color: gold;
-    font-family: Gilroy;
-    font-size: 1.75em;
+    color: var(--primary);
+    font-family: "Gilroy";
+    font-size: 2em;
     margin-bottom: 15px;
     margin-top: 15px;
     text-decoration: underline;
@@ -220,14 +224,14 @@ h5 {
 }
 
 @media (max-width: 1000px) {
-    .nav {
+    .sidenav {
         width: 290px;
         right: -320px;
     }
 }
 
 #close {
-    margin-left: 283px;
+    margin-left: 193px;
 }
 
 .counter {
@@ -236,7 +240,7 @@ h5 {
 }
 
 .post {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); */
     transition: all 0.2s ease-in-out;
     /* animation: postHighlightScale 0.6s ease-in-out; */
 }
@@ -251,53 +255,13 @@ h5 {
     left: 0;
     opacity: 0;
     border-radius: 5px;
-    box-shadow: 5px 5px 15px gold, -5px -5px 15px gold;
+    box-shadow: 5px 5px 15px var(--primary), -5px -5px 15px var(--primary);
     transition: opacity 0.3s ease-in-out;
     /* animation: postHighlightShadow 0.6s ease-in-out; */
 }
 
-@keyframes postHighlightScale {
-    0% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(0.96);
-    }
-    50% {
-        transform: scale(1);
-    }
-    75% {
-        transform: scale(0.96);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes postHighlightShadow {
-    0% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    75% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-.animated {
-    animation: postHighlightScale 0.6s ease-in-out;
-}
-
-.animated::after {
-    animation: postHighlightShadow 0.6s ease-in-out;
+.content {
+    width: 95%;
 }
 
 #loading-anim {

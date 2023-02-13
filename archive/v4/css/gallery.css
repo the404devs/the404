@@ -1,0 +1,139 @@
+/* gallery.css contains styling rules for image galleries, such as the one in museum.html */
+
+.gallery {
+    width: 100%;
+}
+
+.gallery-slide {
+    animation: fade 1.5s;
+    display: none;
+    height: 150px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.museum .gallery-slide {
+    height: auto;
+}
+
+.gallery-slide img {
+    max-height: 100px;
+    max-width: 100%;
+}
+
+.museum .gallery-slide img {
+    border: 1px solid var(--border);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    max-height: 400px;
+}
+
+.gallery-slide .lore-img {
+    border: 1px solid var(--border);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    max-height: 100%;
+}
+
+.gallery-slide h4 {
+    margin-top: 0
+}
+
+.museum .gallery-slide h4 {
+    color: var(--link);
+    margin: 5px;
+}
+
+.gallery-slide p {
+    padding-left: 20%;
+    padding-right: 20%;
+    width: 60%;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.prev,
+.next {
+    backdrop-filter: blur(5px);
+    background-color: var(--background-transparent);
+    border-radius: 50%;
+    border: 1.25px solid var(--border);
+    cursor: pointer;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: bold;
+    height: 55px;
+    padding-bottom: 17px;
+    padding-left: 17px;
+    padding-right: 21px;
+    padding-top: 15px;
+    position: absolute;
+    text-shadow: none;
+    top: 250px;
+    width: 55px;
+    z-index: 1;
+}
+
+.museum .prev,
+.museum .next {
+    top: 465px;
+}
+
+.prev:hover span,
+.next:hover span {
+    padding-right: initial;
+}
+
+.prev span:after,
+.next span:after {
+    content: '';
+    position: initial;
+    right: initial;
+    top: initial;
+}
+
+.prev:hover:before,
+.next:hover:before {
+    border-radius: 50%;
+    height: calc(100% + 1px);
+    width: calc(100% + 1px);
+}
+
+.next {
+    padding-left: 20px;
+    padding-right: 18px;
+    right: 6.1%;
+}
+
+#dots {
+    cursor: default;
+    text-align: center;
+}
+
+.dot {
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    margin: 0 2px;
+    transition: 0.2s all;
+    width: 15px;
+}
+
+.dot:hover,
+.dot.active {
+    background-color: var(--border);
+    border-width: 8.5px;
+    height: 0px;
+    width: 0px;
+}
+
+.museum-footer-row .post-head {
+    margin-top: 0;
+}

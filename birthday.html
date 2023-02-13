@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/birthday.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/faviconold.ico">
     <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
@@ -28,11 +28,11 @@
 
         <div id="home" class="pane">
             <br>
-            <a class="tab" href="#" onclick="showPanes(1)">Home</a>
+            <a class="nav-link" href="#" onclick="showPanes(1)">Home</a>
             <br>
-            <a class="tab" href="#" onclick="showPanes(3)">Software Downloads</a>
+            <a class="nav-link" href="#" onclick="showPanes(3)">Software Downloads</a>
             <br>
-            <a class="tab" href="#" onclick="showPanes(2)">About</a>
+            <a class="nav-link" href="#" onclick="showPanes(2)">About</a>
             <br>
             <br> Your browser shouldn't be saying this site is malicious.... I sorted that problem out years ago, so don't worry, it's perfectly safe now!
             <br>
@@ -81,6 +81,10 @@
                     <br>
                     <button class="big-button button archive" onclick="location.href='archive/v3/'">
 						<span><i class="fas fa-archive"></i> The404 v3 <label>(2019-03-10 - 2020-06-07)</label></span>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='archive/v4/'">
+						<span><i class="fas fa-archive"></i> The404 v4 <label>(2020-06-07 - 2023-02-12)</label></span>
 					</button>
                     <br>
                     <button class="big-button button archive" onclick="location.href='https://ics11.the404.nl'">

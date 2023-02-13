@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>404 - Goodwin's Site</title>
+    <!-- <meta name="theme-color" content="#800080"> -->
+    <link rel="stylesheet" type="text/css" href="css/birthday.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/faviconold.ico">
+    <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+
+<body onload="load()">
+    <div class="header">
+        <h1 id="header-text">Welcome to 404!</h1>
+    </div>
+    <br>
+    <br>
+    <div class="content">
+        <hr>
+        <div class="header2">
+            <h2 id="banner-text"></h2>
+        </div>
+        <hr>
+        <br>
+
+        <div id="home" class="pane">
+            <br>
+            <a class="tab" href="#" onclick="showPanes(1)">Home</a>
+            <br>
+            <a class="tab" href="#" onclick="showPanes(3)">Software Downloads</a>
+            <br>
+            <a class="tab" href="#" onclick="showPanes(2)">About</a>
+            <br>
+            <br> Your browser shouldn't be saying this site is malicious.... I sorted that problem out years ago, so don't worry, it's perfectly safe now!
+            <br>
+            <img src="img/spook.gif">
+            <button class="button" id="return-button" onclick="location.href='./index.html'">
+                <span id="return-button2"><i class="fas fa-redo"></i> Return to </span>
+            </button>
+            <hr class='inner-line'>
+        </div>
+        <div id="about" class="pane">
+            <br>
+            <a href="#" onclick="showPanes(1)">Home</a>
+            <br>
+            <a href="#" onclick="showPanes(3)">Software Downloads</a>
+            <br>
+            <a href="#" onclick="showPanes(2)">About</a>
+            <br>
+            <br>
+            <div class="row" style="text-align: center;">
+                <p style="width: 100%;">
+                    Welcome! I started the404 on January 18th, 2018. This site has become my own little corner of the internet, and hosts a variety of different projects I have worked on over the years.
+                </p>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column">
+                    <h3>What have I been working on lately?</h3>
+                    <p>A list of all my GitHub repositories, sorted by most recent commit.</p>
+                    <div id="git-container"></div>
+                    <br>
+                    <h3>Feel free to browse my GitHub page.</h3>
+                    <button class="button icon-button" id="github" onclick="location.href='https://github.com/the404devs'">
+						<i class="fab fa-github"></i><span>the404devs</span>
+					</button>
+                </div>
+                <div class="column">
+                    <h3>The404 Archives!</h3>
+                    <p>Old iterations of the404, and some other old sites made for various projects.</p>
+                    <button class="big-button button archive" onclick="location.href='archive/v1/'">
+						<span><i class="fas fa-archive"></i> The404 v1 <label>(2018-01-18 - 2018-08-27)</label></span>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='archive/v2/'">
+						<span><i class="fas fa-archive"></i> The404 v2 <label>(2018-08-27 - 2019-03-10)</label></span>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='archive/v3/'">
+						<span><i class="fas fa-archive"></i> The404 v3 <label>(2019-03-10 - 2020-06-07)</label></span>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='https://ics11.the404.nl'">
+						<span><i class="fas fa-archive"></i> ICS 11 <label>(2017)</label></span>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='https://ics12.the404.nl'">
+						<span><i class="fas fa-archive"></i> ICS 12 <label>(2018)</label></span>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='https://stuco.the404.nl/indexNEW.html'">
+						<span><i class="fas fa-archive"></i> Stuco <label>(2018)</label></span>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='https://cps530.the404.nl'">
+						<span><i class="fas fa-archive"></i> CPS530 <label>(2019)</label></span>
+					</button>
+                    <br>
+                    <button class="big-button button archive" onclick="location.href='birthday.html'">
+						<span><i class="fas fa-archive"></i> Birthday Retro Style <label>(2020)</label></span>
+					</button>
+                    <br>
+                    <h4 style="margin-bottom:5px">Old-school development page:</h4>
+                    <button class="button icon-button" id="development" onclick="location.href='development/index.html'">
+						<i class="fas fa-code"></i><span>Memory lane</span>
+					</button>
+                    <br>
+                    <h4 style="margin-bottom:5px">The404 Museum: A historical record</h4>
+                    <button class="button icon-button" id="museum" onclick="location.href='archive/'">
+						<i class="fas fa-landmark"></i><span>Take a tour</span>
+					</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column" style="text-align: center;">
+                    <h3 class="foot-text post-head">The404 Minecraft Server</h3>
+                    <br>
+                    <h4 class="foot-text">Connect to <b style="color: var(--link)">mc.the404.nl</b> to join!</h4>
+                    <br>
+                    <h4 class="foot-text">Supports both <b style="color: var(--link)">Java</b> and <b style="color: var(--link)">Bedrock</b> Editions.</h4>
+                    <br>
+                    <div id="rest"></div>
+                </div>
+                <div class="column" style="text-align: center;">
+                    <h3 class="foot-text post-head">the404.nl</h3>
+                    <br>
+                    <h4 class="foot-text" onclick="location.href='admin.html'" id="version"></h4>
+                    <br>
+                    <h4 class="foot-text" id="date"></h4>
+                    <br>
+                    <h5 class="foot-text" id="time"></h5>
+                    <br>
+                    <button class="button icon-button" id="changelog" onclick="location.href='README.md'">
+						<i class="fas fa-history"></i><span>Changelog</span>
+					</button>
+                    <br>
+                    <br>
+                    <button class="button icon-button" id="github3" onclick="location.href='https://github.com/the404devs/the404'">
+						<span><i class="fab fa-github"></i> View Repo</span>
+					</button>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div id="software" class="pane">
+            <br>
+            <a href="#" onclick="showPanes(1)">Home</a>
+            <br>
+            <a href="#" onclick="showPanes(3)">Software Downloads</a>
+            <br>
+            <a href="#" onclick="showPanes(2)">About</a>
+            <br>
+            <br>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/firebase.js"></script>
+    <script type="text/javascript" src="js/git.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/mc.js"></script>
+    <script>
+        let d = new Date();
+        let n = d.getFullYear() - 2018;
+        $("#banner-text").text("This is Owen's " + n + "-year-old site! STILL under maintenance, in case you're wondering.");
+        $("#return-button2").append(d.getFullYear());
+    </script>
+</body>
+
+</html>

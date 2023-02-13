@@ -1,0 +1,84 @@
+/* sidenav.css contains all styling rules for the right-side navigation menus featured in index.html */
+
+.nav {
+    background-color: var(--background-transparent);
+    border: 1px solid var(--border);
+    font-size: 10px;
+    max-height: calc(100% - 160px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 18px;
+    position: fixed;
+    right: 2.5%;
+    scrollbar-width: none;
+    top: 125px;
+    width: 15%;
+    z-index: 1;
+}
+
+.nav::-webkit-scrollbar {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0px;
+}
+
+#close,
+#softFlipper,
+#blogFlipper,
+#roboFlipper {
+    backdrop-filter: blur(5px);
+    background-color: var(--background-transparent);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    display: none;
+    font-family: "Inconsolata";
+    font-size: 16px !important;
+    height: 16px !important;
+    margin-left: 193px;
+    margin-top: -19px;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    position: sticky;
+    position: -webkit-sticky;
+    text-align: center;
+    text-shadow: none;
+    transition: 0.25s all;
+    top: -19px;
+    width: 8px !important;
+    z-index: 1;
+}
+
+#close:hover,
+#softFlipper:hover,
+#blogFlipper:hover,
+#roboFlipper:hover {
+    color: var(--text-dark);
+}
+
+#softFlipper,
+#blogFlipper,
+#roboFlipper {
+    display: -webkit-box;
+    font-size: 15px !important;
+    margin-left: -11px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    /* top: -19px; */
+    /* width: 8px!important; */
+}
+
+.nav .link {
+    font-size: 15px;
+    font-family: "Raleway";
+    cursor: pointer;
+}
+
+.nav h2 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    margin-left: -4px;
+    margin-top: 0;
+}

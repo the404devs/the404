@@ -9,23 +9,38 @@
     <link rel="stylesheet" type="text/css" href="../css/sidenav.css">
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/tabs.css">
+    <link rel="stylesheet" type="text/css" href="css/robonav.css">
     <link rel="stylesheet" type="text/css" href="css/robo.css">
     <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body onload="loadInstructionsFromJSON()">
     <div class="header">
-        <h1 id="header-text" onclick="location.href = './index.html'">THE404.NL</h1>
-        <div class="tab-wrapper">
-            <span class="tab" id="home-tab" onclick="location.href = './index.html'" title="Robo Home"><i class="fas fa-arrow-left"></i></span>
+        <a href="https://the404.nl">
+            <div class="logo">THE404.NL</div>
+        </a>
+        <span class="navbar-toggle" id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <div class="nav-wrapper" id="main-nav">
+            <a href="./instructions.html"><span class="nav-link active"><b>INSTRUCTIONS</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./programs.html"><span class="nav-link"><b>PROGRAMS</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./images.html"><span class="nav-link"><b>IMAGES</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./software.html"><span class="nav-link"><b>SOFTWARE</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./battle.html"><span class="nav-link"><b>BATTLEBOTS</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./index.html"><span class="nav-link"><b>ROBOTICS HOME</b></span></a>
         </div>
     </div>
 
     <div class="content" id="main">
-        <div class="nav" id="robo-nav">
-            <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
+        <div class="sidenav" id="robo-nav">
+            <span class="button" id="close" onclick="hideSideNav('robo-nav')" title="Close Menu">×</span>
             <div id="robo-tag-zone">
                 <h2>Sort by Set:</h2>
             </div>
@@ -34,9 +49,7 @@
             <div id="robo-id-zone" style="border-top:1px solid var(--border); padding-top: 10px;">
             </div>
         </div>
-        <div class="tab-wrapper" id="sort-tab-wrapper">
-            <span class="tab" id="sort-tab" onclick="showSort()" title="Instructions Menu">☰</span>
-        </div>
+        <span class="sidenav-toggle" id="robo-nav-toggle" onclick="showSideNav('robo-nav')" title="Models Menu"><i class="fa-solid fa-list"></i></span>
         <div class="post robo-blob">
             <h2 class="post-head">Mindstorms Building Instructions</h2>
             <p class="post-body">A few PDFs of instructions, for use in robotics classes.</p>

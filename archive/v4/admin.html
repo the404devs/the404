@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin - the404</title>
+    <meta name="theme-color" content="#800080">
+    <link rel="stylesheet" type="text/css" href="css/controls.css">
+    <link rel="stylesheet" type="text/css" href="css/sidenav.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/tabs.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+</head>
+
+<body onload="widthCheck()">
+    <div class="header">
+        <h1 id="header-text" onclick="location.href = 'https://the404.nl/'">THE404.NL</h1>
+        <div class="tab-wrapper" id="edit-tabs" style="margin-top: 0px; display: none;">
+            <span class="tab" id="tab1" onclick="showPanes(1)">Main</span>
+            <br>
+            <span class="tab" id="tab2" onclick="showPanes(2)">About</span>
+            <br>
+            <span class="tab" id="tab3" onclick="showPanes(3)">Projects</span>
+            <br>
+        </div>
+        <div class="head-button-wrapper">
+            <button id="sign-out" class="button head-button" onclick="logout()" style="display: none;"><span>Sign Out</span></button>
+            <br>
+            <button id="refresh" class="button head-button" onclick="refresh()" style="display: none;"><span>Refresh</span></button>
+        </div>
+        <div class="tab-wrapper" id="home-tabs">
+            <span class="tab" id="home-tab" onclick="location.href = 'https://the404.nl/'"><i class="fas fa-home"></i></span>
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="login-box" class="post" style="position: absolute; width: 460px; padding-bottom:15px">
+            <h3 class="post-head">The404 Admin Zone</h3>
+            <br>
+            <form id="login-form">
+                <label for="login-email">Email: </label>
+                <input type="email" id="login-email" name="login-email">
+                <br>
+                <br>
+                <label for="login-pass">Password: </label>
+                <input type="password" id="login-pass" name="login-pass" onkeypress="function k(e){if (e.keyCode==13)login()} k(event)">
+                <br>
+                <br>
+            </form>
+            <button class="button" onclick="login()"><span>Log In</span></button>
+            <br>
+            <h4 class="post-date" id="errmsg"></h4>
+        </div>
+        <div class="pane" id="home">
+            <div class="nav" id="blog-nav">
+                <span class="button flipper" id="blogFlipper" onclick="blogDateFlip()" title="Sorting Ascending">↑</span>
+                <span class="button" id="close" onclick="hideNav()" title="Close Menu">×</span>
+            </div>
+            <div class="tab-wrapper" id="nav-tab-wrapper">
+                <span class="tab" id="nav-tab" onclick="showNav()" title="Blog Menu">☰</span>
+            </div>
+            <div class="post" id="new-post" style="width: 70%;padding-top:10px;padding-bottom:10px;display:none">
+                <label for="title">Title: </label>
+                <input name="title" class="title">
+                <br>
+                <label for="year">Year: </label>
+                <input name="year" class="year">
+                <br>
+                <label for="month">Month: </label>
+                <input name="month" type="number" class="month">
+                <br>
+                <label for="day">Day: </label>
+                <input name="day" type="number" class="day">
+                <br>
+                <br>
+                <textarea name="content" class="post-content"></textarea>
+                <button class="button" onclick="newPost()"><span>New Post</span></button>
+                <br>
+            </div>
+        </div>
+        <div class="pane" id="about">
+            <div class="post" id="new-museum" style="width: 70%;padding-top:10px;padding-bottom:10px; display: none;">
+                <label for="id">ID: </label>
+                <input name="id" class="id">
+                <br>
+                <label for="date">Date: </label>
+                <input name="date" class="date">
+                <br>
+                <label for="path">Path: </label>
+                <input name="path" class="path">
+                <br>
+                <textarea name="description" class="description"></textarea>
+                <button class="button" onclick="newMuseum()">
+                    <span>New Exhibit</span>
+                </button>
+                <br>
+            </div>
+        </div>
+        <div class="pane" id="soft">
+            <div class="nav" id="soft-nav">
+                <span class="button flipper" id="softFlipper" onclick="softDateFlip()" title="Sorting Descending">↓</span>
+                <span class="button" id="close" onclick="hideSort()" title="Close Menu">×</span>
+            </div>
+            <div class="tab-wrapper" id="sort-tab-wrapper">
+                <span class="tab" id="sort-tab" onclick="showSort()" title="Software Menu">☰</span>
+            </div>
+            <div class="post" id="new-soft" style="width: 70%;padding-top:10px;padding-bottom:10px;display:none">
+                <label for="id">ID: </label>
+                <input name="id" class="id">
+                <br>
+                <label for="name">Name: </label>
+                <input name="name" class="name">
+                <br>
+                <label for="version">Version: </label>
+                <input name="version" class="version">
+                <br>
+                <label for="release">Release: </label>
+                <input name="release" class="release">
+                <br>
+                <label for="current">Current: </label>
+                <input name="current" class="current">
+                <br>
+                <label for="language">Lang: </label>
+                <input name="language" class="language">
+                <br>
+                <label for="tags">Tags: </label>
+                <input name="tags" class="tags">
+                <br>
+                <label for="image">Image: </label>
+                <input name="image" class="image">
+                <br>
+                <label for="btn1t">Btn1 Text: </label>
+                <input name="btn1t" class="btn1t">
+                <br>
+                <label for="btn1l">Btn1 Link: </label>
+                <input name="btn1l" class="btn1l">
+                <br>
+                <label for="btn2t">Btn2 Text: </label>
+                <input name="btn2t" class="btn2t">
+                <br>
+                <label for="btn2l">Btn2 Link: </label>
+                <input name="btn2l" class="btn2l">
+                <br>
+                <label for="btn3t">Btn3 Text: </label>
+                <input name="btn3t" class="btn3t">
+                <br>
+                <label for="btn3l">Btn3 Link: </label>
+                <input name="btn3l" class="btn3l">
+                <br>
+                <br>
+                <br>
+                <textarea name="description" class="description"></textarea>
+                <button class="button" onclick="newSoft()">
+                    <span>New Project</span>
+                </button>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/firebase.js"></script>
+    <script>
+        window.onbeforeunload = function() {
+            logout();
+        }
+    </script>
+</body>
+
+</html>

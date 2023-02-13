@@ -1,0 +1,202 @@
+.header {
+    /* text-align: center; */
+    font-size: 2em;
+    border-bottom: var(--border) 4px;
+    border-bottom-style: double;
+    background-color: var(--background-transparent);
+    box-shadow: black 0px 2px 10px, black 0px -2px 10px;
+    position: fixed;
+    width: 100%;
+    width: -webkit-fill-available;
+    top: 0;
+    z-index: 2;
+    font-family: "Camaraderie";
+    /* transition: 0.25s all; */
+    backdrop-filter: blur(10px);
+    /* height: 110px; */
+}
+
+.nav-wrapper {
+    text-align: center;
+    color: black;
+    text-shadow: none;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    font-size: 0.65em;
+    transition: 0.25s height, 0.25s padding;
+}
+
+.nav-wrapper.active {
+    /* display: block; */
+    height: var(--nav-dynamic-height);
+    padding-top: 15px;
+}
+
+.nav-link {
+    width: 50%;
+    margin: 2px;
+    font-family: "Raleway";
+    /* background-color: rgba(24, 21, 36, 0.7); */
+    /* border-radius: 10px 10px 0 0; */
+    border-color: var(--border);
+    color: var(--primary);
+    border-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-style: none;
+    border-right-style: none;
+    display: inline-block;
+    position: relative;
+    transition: color 0.2s ease;
+    vertical-align: bottom;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    top: 2px;
+    cursor: pointer;
+    /* box-shadow: rgba(0, 0, 0, 0.5) 0px -2px 10px; */
+    /* border-radius: 5px 5px 0 0; */
+}
+
+.nav-link:hover,
+.nav-link.active {
+    /* background-color: var(--primary); */
+    color: var(--text-dark);
+}
+
+.nav-link::before {
+    background-color: var(--primary);
+    width: 0;
+    height: 100%;
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    transition: 0.2s all;
+    z-index: -1;
+    vertical-align: middle;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.spacer {
+    border-color: var(--border);
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-style: none;
+    border-right-style: none;
+    font-size: 26px;
+    /* display: inline-block; */
+    padding: 5px 10px 5px 10px;
+    color: var(--primary);
+    display: none;
+    transform: translateY(2px)
+}
+
+.navbar-toggle i {
+    position: absolute;
+    top: 33px;
+    right: 20px;
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 30px;
+    width: auto;
+}
+
+.logo {
+    -webkit-text-stroke-color: var(--accent);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke: var(--accent) 2px;
+    cursor: pointer;
+    font-weight: normal;
+    /* margin: 0px 20px 20px 2.5%; */
+    margin-top: 0px;
+    margin-left: 30px;
+    paint-order: fill stroke;
+    width: min-content;
+    display: inline-block;
+    font-size: 2em;
+    color: black;
+}
+
+.logo:before {
+    -webkit-text-stroke: 0;
+    color: var(--foreground);
+    content: "Owen Bowden";
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: normal;
+    /* left: calc(2.5% + 106px); */
+    position: relative;
+    text-align: right;
+    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    top: 70px;
+    display: block;
+    height: 0;
+}
+
+.logo:after {
+    background-color: black;
+    border: 2px solid var(--accent);
+    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
+    content: " ";
+    height: 10px;
+    /* left: 2.5%; */
+    /* margin: -1px; */
+    position: relative;
+    top: -18px;
+    width: 229px;
+    z-index: -1;
+    display: block;
+}
+
+.pane {
+    margin-right: 2.5%;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    transition: 0.25s all;
+    width: 95%;
+}
+
+@media screen and (min-width: 1000px) {
+    /* 768px */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        align-items: center;
+    }
+    .nav-wrapper {
+        display: flex;
+        margin-right: 30px;
+        margin-top: 10px;
+        flex-direction: row;
+        justify-content: flex-end;
+        height: auto;
+        text-align: right;
+    }
+    .navbar-toggle {
+        display: none;
+    }
+    .spacer {
+        display: block;
+    }
+    .nav-wrapper .nav-link {
+        width: auto;
+    }
+}

@@ -1,11 +1,11 @@
-const VERSION = "4.2.5";
-const DATE = "04/23/2022";
-const TIME = "11:08";
+const VERSION = "5.0.0";
+const DATE = "02/12/2023";
+const TIME = "18:48";
 
 function showPanes(n) {
     let i;
     const panes = $(".pane");
-    const tabs = $(".tab");
+    const tabs = $(".nav-link");
 
     if (n > panes.length) { n = 1; } //don't fuck up
     if (n < 1) { n = panes.length; }
@@ -24,6 +24,12 @@ function showPanes(n) {
         //remove the "active" class from all the tabs
         tabs[i].className = tabs[i].className.replace(" active", "");
     }
+
+    if (mainNav) {
+        mainNav.classList.remove("active");
+    }
+    $(".post").removeClass("animated");
+
 
     //fade in the correct pane
     const id = "#" + panes[n - 1].id;
@@ -54,37 +60,44 @@ function determinePane() {
     }
 }
 
-function scrollToElem(id) {
-    console.log(id);
-    const offset = document.getElementById(id).offsetTop + 0;
-    window.scrollTo({
-        top: offset,
-        behavior: "smooth"
-    });
+
+function scrollToElem(id, offset = -125) {
+    const elem = document.getElementById(id);
+    $(".post").removeClass("animated");
+    let rect = elem.getBoundingClientRect();
+    let targetPosition = Math.ceil(rect.top + self.scrollY + offset);
+
+    if (window.scrollY != targetPosition) {
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+        window.onscroll = e => {
+            let currentScrollOffset = window.scrollY || document.documentElement.scrollTop
+                // Scroll reach the target
+            if (currentScrollOffset === targetPosition || currentScrollOffset === document.documentElement.scrollHeight - window.innerHeight) {
+                elem.classList.add("animated");
+                window.onscroll = null // remove listener
+            }
+        }
+    } else {
+        elem.classList.add("animated");
+    }
+
     if (window.innerWidth < 1000) {
-        hideNav();
-        hideSort();
+        hideSideNav('blog-nav');
+        hideSideNav('soft-nav');
     }
 }
 
-function showNav() {
-    $('#blog-nav').css('right', '2.5%');
-    $('#nav-tab-wrapper').css('right', '-250px');
+function showSideNav(id) {
+    $('#' + id).css('right', '2.5%');
+    $('#' + id + '-toggle').css('right', '-250px');
 }
 
-function hideNav() {
-    $('#blog-nav').css('right', '-230px');
-    $('#nav-tab-wrapper').css('right', '0px');
-}
-
-function showSort() {
-    $('#soft-nav').css('right', '2.5%');
-    $('#sort-tab-wrapper').css('right', '-250px');
-}
-
-function hideSort() {
-    $('#soft-nav').css('right', '-230px');
-    $('#sort-tab-wrapper').css('right', '0px');
+function hideSideNav(id) {
+    $('#' + id).css('right', '-250px');
+    $('#' + id + '-toggle').css('right', '10px');
 }
 
 function getVersionInfo() {
@@ -113,8 +126,11 @@ function load() {
 
 function widthCheck() {
     if (window.innerWidth >= 1000) {
-        $('#nav-tab-wrapper').css('right', '-250px');
-        $('#sort-tab-wrapper').css('right', '-250px');
+        showSideNav('blog-nav');
+        showSideNav('soft-nav');
+    } else {
+        hideSideNav('blog-nav');
+        hideSideNav('soft-nav');
     }
 }
 
@@ -123,6 +139,7 @@ function firefoxCheck() {
     // Firefox doesn't support backdrop-filter out of the box, rather, it hides it deep within config where no normal user would ever find it.
     // Boy, i sure hope there aren't other browsers out there that also don't support it that this check would miss :monkas:
     // remind me to check if safari supports it next week at work
+    // oh no i forgot
     if (navigator.userAgent.indexOf("Firefox") > -1) {
         console.log("%cFirefox detected, making things that use backdrop-filter opague.", "color:red; font-weight: bold;");
         $(".header").css("background-color", "var(--background)");
@@ -134,7 +151,7 @@ function firefoxCheck() {
 
 window.onresize = function() {
     //to ensure we don't end up out of bounds when the window resizes itself
-    const tabs = $(".tab");
+    const tabs = $(".nav-link");
     for (i = 0; i < tabs.length; i++) {
         if ($(tabs[i]).hasClass("active")) { //Find active tab
             const y = window.pageYOffset; //store page scroll pos
@@ -146,9 +163,27 @@ window.onresize = function() {
             }); //restore old scroll position
         }
     }
-    showNav();
-    showSort();
+    showSideNav('blog-nav');
+    showSideNav('soft-nav');
+
+    mainNav.classList.remove("active");
+
 }
+
+let mainNav = document.getElementById("main-nav");
+let navBarToggle = document.getElementById("navbar-toggle");
+
+if (navBarToggle) {
+    navBarToggle.addEventListener("click", function() {
+        mainNav.classList.toggle("active");
+    });
+}
+
+const navDynamicHeight = $('#main-nav').find('.nav-link').length * 41;
+$('#main-nav').css('--nav-dynamic-height', navDynamicHeight + 'px');
+
+
+
 
 //this seems like a horrible way to do this.
 const art1 = " _________________    _______________    _________________    _______________";

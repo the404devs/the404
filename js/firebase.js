@@ -68,7 +68,7 @@ async function loadFromFire() {
     posts.reverse().forEach(post => {
         const date = ('0' + post.Month).slice(-2) + "/" + ('0' + post.Day).slice(-2) + "/" + post.Year;
         $("#home").append(
-            $("<div>").addClass("post").append(
+            $("<div>").addClass("post blog").append(
                 $("<h3>").addClass("post-head").html(post.Title)
             ).append(
                 $("<h4>").addClass("post-date").html(date)
@@ -81,11 +81,11 @@ async function loadFromFire() {
             )
         ).append($("<hr>").addClass("inner-line"));
         if (post.Title) {
-            $("#blog-nav").append(
+            $("#blog-id-zone").append(
                 $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(post.Title)
             ).append($("<br>")).append($("<br>"));
         } else {
-            $("#blog-nav").append(
+            $("#blog-id-zone").append(
                 $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(date)
             ).append($("<br>")).append($("<br>"));
         }
@@ -106,11 +106,11 @@ async function loadFromFire() {
         //check for image
         let img = "";
         if (soft.Image) {
-            img = $("<img>").attr("width", "100px").attr("src", soft.Image)
+            img = $("<img>").addClass("post-soft-icon").attr("src", soft.Image)
         }
         $("#software").append(
-            $("<div>").addClass("blob").append(
-                $("<h2>").html(soft.Name)
+            $("<div>").addClass("post soft").append(
+                $("<h3>").addClass("post-head").html(soft.Name)
             ).append(img).append(
                 $("<ul>").append(
                     $("<li>").html("<b>Version:</b> " + soft.Version)
@@ -622,8 +622,8 @@ function login() {
             document.cookie = "state=logged;";
             console.log("%cLogin successful, redirecting...", "color:green;font-weight:bold;font-style:italic;");
             adminLoadFromFire();
-            $("#home-tabs").fadeOut();
-            $("#edit-tabs").fadeIn();
+            $(".init-shown").hide();
+            $(".init-hidden").show();
             $("#login-box").fadeOut();
             $("#sign-out").fadeIn();
             $("#refresh").fadeIn();
@@ -658,7 +658,7 @@ function sortTags() {
         }
     });
 
-    $(".blob").each(function() {
+    $(".soft").each(function() {
         $(this).css("display", "none")
         const tags = $(this).attr("tag").replace(/ /g, "_").split(",_");
         tags.forEach(tag => {
@@ -692,7 +692,7 @@ function sortTags() {
             })
         }
     });
-    showPanes(3);
+    showPanes(2);
 }
 
 function clearTags() {
@@ -744,7 +744,7 @@ function refresh() {
 
 function softDateFlip() {
     const parent = $("#software");
-    const children = parent.children(".blob");
+    const children = parent.children(".post");
     parent.append(children.get().reverse());
 
     const parent2 = $("#soft-id-zone");
@@ -766,9 +766,9 @@ function blogDateFlip() {
     const children = parent.children(".post");
     parent.append(children.get().reverse());
 
-    const parent2 = $("#blog-nav");
+    const parent2 = $("#blog-id-zone");
     parent2.children().slice(-2).remove()
-    const children2 = parent2.children().slice(2);
+    const children2 = parent2.children();
     parent2.append(children2.get().reverse()).append($("<br>")).append($("<br>"));
 
     if ($("#blogFlipper").html() == "↑") {

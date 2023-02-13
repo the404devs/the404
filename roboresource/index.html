@@ -9,22 +9,37 @@
     <link rel="stylesheet" type="text/css" href="../css/sidenav.css">
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/tabs.css">
+    <link rel="stylesheet" type="text/css" href="css/robonav.css">
     <link rel="stylesheet" type="text/css" href="css/robo.css">
     <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="header">
-        <h1 id="header-text" onclick="location.href = 'https://the404.nl/'">THE404.NL</h1>
-        <div class="tab-wrapper">
-            <span class="tab" id="home-tab" onclick="location.href = 'https://the404.nl/'" title="The404 Home"><i class="fas fa-home"></i></span>
+        <a href="https://the404.nl">
+            <div class="logo">THE404.NL</div>
+        </a>
+        <span class="navbar-toggle" id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <div class="nav-wrapper" id="main-nav">
+            <a href="./instructions.html"><span class="nav-link"><b>INSTRUCTIONS</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./programs.html"><span class="nav-link"><b>PROGRAMS</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./images.html"><span class="nav-link"><b>IMAGES</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./software.html"><span class="nav-link"><b>SOFTWARE</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./battle.html"><span class="nav-link"><b>BATTLEBOTS</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./index.html"><span class="nav-link active"><b>ROBOTICS HOME</b></span></a>
         </div>
     </div>
 
     <div class="content">
-        <div class="blob robo-blob">
+        <div class="post robo-blob">
             <h2 class="post-head">Owen's Robotics Resource Collection!</h2>
             <p>I've been involved in Lego Robotics since 2009, and have accumulated plenty of resources over the years, so I've decided to compile them in one place for future reference.</p>
             <ul>

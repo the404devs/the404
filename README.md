@@ -5,6 +5,20 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *5.0.0 (02/12/2023)*
+------------------------
+- Makeover time!
+    - New header design, this is the largest change.
+    - Horizontal menu entries will automatically condense into a hamburger menu when the screen is too narrow to display them all.
+    - Lots of new colours. Introducing: yellow! 50% more purple than before.
+    - More probably to come.
+        - CSS now needs a major cleanup.
+    - Backported from RoboResources the highlight animation when scrollToElem is called from the sidenav.
+    - Same new style also applied to RoboResources.
+- Added v4.2.5 to the archive.
+- Bump jQuery to v3.6.3.
+- Todo: Replace Firebase with something else.
+
 ### *4.2.5 (04/23/2022)*
 ------------------------
 - Bump Firebase to 8.10.1, from 7.15.0.

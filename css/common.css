@@ -2,11 +2,13 @@
 
 :root {
     --accent: #b20acb;
-    --background-gradient: linear-gradient(90deg, rgba(89, 193, 115, 1) 0%, rgba(161, 127, 224, 1) 62%, rgba(110, 76, 172, 1) 100%);
+    /* --background-gradient: linear-gradient(90deg, rgba(89, 193, 115, 1) 0%, rgba(161, 127, 224, 1) 62%, rgba(110, 76, 172, 1) 100%); */
+    --background-gradient: linear-gradient(180deg, #FC466B 0%, #3F5EFB 90%);
+    --button-gradient: linear-gradient(90deg, #FC466B 0%, #3F5EFB 90%);
     --background-transparent: rgba(21, 24, 36, 0.5);
-    --background: #151824;
+    /* --background: #151824; */
     --bold: #b20acb;
-    --border: #ffffff;
+    /* --border: #ffffff; */
     --foreground: #ffffff;
     --highlight-transparent: rgba(128, 0, 128, 0.8);
     --highlight: #800080;
@@ -14,6 +16,14 @@
     --link: #0acbb2;
     --text-dark: #151824;
     --text: #f1d7df;
+    --border: goldenrod;
+    --background: #020b14;
+    --background-alt: black;
+    --primary: goldenrod;
+    --shadow: rgb(0 0 0 / 50%) 0px 2px 10px, rgb(0 0 0 / 50%) 0px -2px 10px;
+    /* --text: white; */
+    /* --text-dark: black; */
+    /* --background-transparent: rgba(21, 24, 36, 0.5); */
 }
 
 @font-face {
@@ -46,74 +56,19 @@
     src: url("font/Gilroy-Light.otf");
 }
 
-b {
+.post b,
+.blob b {
     color: var(--bold);
 }
 
 body {
     background: var(--background-gradient);
+    background-attachment: fixed;
     font-family: "Roboto";
     height: max-content;
     margin: 0;
     overflow-x: hidden;
     text-shadow: 1px 1px 5px black, -1px 2px 5px black;
-}
-
-.header {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, var(--foreground) 50%, var(--foreground) calc(50% + 2px), rgba(255, 255, 255, 0) calc(50% + 2px));
-    border-bottom: solid var(--border) 2px;
-    box-shadow: black 0px 2px 10px, black 0px -2px 10px;
-    color: black;
-    font-family: "Camaraderie";
-    font-size: 2em;
-    height: 3.2em;
-    position: fixed;
-    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-}
-
-#header-text {
-    -webkit-text-stroke-color: var(--accent);
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke: var(--accent) 2px;
-    cursor: pointer;
-    font-weight: normal;
-    margin: 0px 20px 20px 2.5%;
-    padding-top: 8px;
-    paint-order: fill stroke;
-    width: min-content;
-}
-
-#header-text:before {
-    -webkit-text-stroke: 0;
-    color: var(--foreground);
-    content: "Owen Bowden";
-    font-family: "Raleway";
-    font-size: 18px;
-    font-weight: normal;
-    left: calc(2.5% + 106px);
-    position: absolute;
-    text-align: right;
-    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
-    top: 76px;
-}
-
-#header-text:after {
-    background-color: black;
-    border: 2px solid var(--accent);
-    box-shadow: 1px 2px 3px black, -1px 2px 3px black;
-    content: " ";
-    height: 10px;
-    left: 2.5%;
-    margin: -1px;
-    position: absolute;
-    top: 65px;
-    width: 229px;
-    z-index: -1;
 }
 
 .content {
@@ -122,9 +77,10 @@ body {
     font-size: 18px;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    margin-top: 110px;
+    margin-top: 100px;
     overflow: hidden;
     padding-top: 15px;
+    width: 100%;
 }
 
 .link {
@@ -167,10 +123,13 @@ hr {
 .row {
     background-color: var(--background-transparent);
     border: 1px solid var(--border);
+    border-radius: 10px;
     display: -webkit-flex;
     display: flex;
-    margin-left: 0px;
+    margin: 10px;
     padding: 10px;
+    /* width: 95%; */
+    box-shadow: var(--shadow);
 }
 
 @media (max-width: 1050px) {

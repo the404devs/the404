@@ -1,6 +1,6 @@
 /* sidenav.css contains all styling rules for the right-side navigation menus featured in index.html */
 
-.nav {
+.sidenav {
     background-color: var(--background-transparent);
     border: 1px solid var(--border);
     font-size: 10px;
@@ -15,11 +15,17 @@
     right: 2.5%;
     scrollbar-width: none;
     top: 125px;
+    max-width: 15%;
     width: 15%;
     z-index: 1;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    transition: right 0.25s;
+    min-width: 200px;
 }
 
-.nav::-webkit-scrollbar {
+.sidenav::-webkit-scrollbar {
     display: none !important;
     visibility: hidden !important;
     width: 0px;
@@ -70,15 +76,83 @@
     /* width: 8px!important; */
 }
 
-.nav .link {
+.sidenav .link {
     font-size: 15px;
     font-family: "Raleway";
     cursor: pointer;
 }
 
-.nav h2 {
+.sidenav h2 {
     font-size: 16px;
     margin-bottom: 6px;
     margin-left: -4px;
     margin-top: 0;
+}
+
+.sidenav-toggle {
+    /* background: linear-gradient(135deg, transparent 21.5px, var(--border) 21.5px, var(--border) 22.5px, var(--background) 22.5px); */
+    font-size: 19px;
+    padding-bottom: 3.5px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 0;
+    overflow: hidden;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    top: 125px;
+    transition: 0.1s all ease-in;
+    z-index: 1;
+    position: fixed;
+    right: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+}
+
+.sidenav-toggle i {
+    font-size: 30px;
+    height: 32px;
+    width: 32px;
+}
+
+.sidenav-toggle:hover {
+    /* background: linear-gradient(135deg, rgba(0, 0, 0, 0) 21.5px, var(--foreground) 21.5px, var(--foreground) 22.5px, #fc466b 22.5px, #3f5efb) !important; */
+    /* padding-right: 60px; */
+    color: var(--text-dark);
+    text-shadow: none;
+}
+
+.sidenav-toggle:before {
+    content: "";
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: var(--primary);
+    z-index: -1;
+    transition: 0.1s all;
+    border-radius: 50%;
+}
+
+.sidenav-toggle:hover:before {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sidenav-head {
+    color: var(--primary);
+    text-decoration: underline;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 15px;
 }

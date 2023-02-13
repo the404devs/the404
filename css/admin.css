@@ -16,3 +16,7 @@
 #museum .post textarea {
     height: 150px;
 }
+
+.init-hidden {
+    display: none;
+}

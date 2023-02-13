@@ -17,7 +17,7 @@ function scrollToElem(id, offset = -125) {
             // if it fails, just call it again lol
             // works like a charm
             if (self.scrollY != targetPosition) {
-//                 elem.classList.remove("animated");
+                //                 elem.classList.remove("animated");
                 rect = elem.getBoundingClientRect();
                 targetPosition = rect.top + self.scrollY + offset;
                 window.scrollTo({
@@ -224,7 +224,7 @@ function loadImagesFromJSON() {
                     const ext = image.split(".").pop();
                     const thumbifiedImage = image.replace("." + ext, "_thumb." + ext);
                     $("#" + id + "-" + i).append(
-                        $("<img>").attr("src", thumbifiedPath + thumbifiedImage).addClass("robo-gallery-image").attr("id", id + "-" + i + "-" + j).attr("gallery", id + "-" + i).attr("onclick", "showImageOverlay('" + id + "-" + i + "-" + j + "')").attr('loading', 'lazy')
+                        $("<img>").attr("src", thumbifiedPath + thumbifiedImage).addClass("robo-gallery-image").attr("id", id + "-" + i + "-" + j).attr("gallery", id + "-" + i).attr("onclick", "showImageOverlay('" + id + "-" + i + "-" + j + "')")
                     )
                     j++;
                 });
@@ -530,24 +530,27 @@ function clean(str, nuke) {
         return str.replace(/\W/g, '')
 }
 
-function showSort() {
-    $('#robo-nav').css('right', '2.5%');
-    $('#sort-tab-wrapper').css('right', '-250px');
+function showSideNav(id) {
+    $('#' + id).css('right', '2.5%');
+    $('#' + id + '-toggle').css('right', '-250px');
 }
 
-function hideSort() {
-    $('#robo-nav').css('right', '-320px');
-    $('#sort-tab-wrapper').css('right', '0px');
+function hideSideNav(id) {
+    $('#' + id).css('right', '-250px');
+    $('#' + id + '-toggle').css('right', '10px');
 }
+
 
 function widthCheck() {
     if (window.innerWidth >= 1000) {
-        $('#sort-tab-wrapper').css('right', '-250px');
+        showSideNav('robo-nav');
+    } else {
+        hideSideNav('robo-nav');
     }
 }
 
 window.onresize = function() {
-    showSort();
+    showSideNav('robo-nav');
 }
 
 function showImageOverlay(imageID) {
@@ -680,4 +683,27 @@ $(".button, #home-tab, #header-text").on("mouseup", function(e) {
         window.open(URL, "_blank");
     }
 });
+
+let mainNav = document.getElementById("main-nav");
+let navBarToggle = document.getElementById("navbar-toggle");
+
+navBarToggle.addEventListener("click", function() {
+    mainNav.classList.toggle("active");
+});
+
+const navDynamicHeight = $('#main-nav').find('.nav-link').length * 41;
+$('html').css('--nav-dynamic-height', navDynamicHeight + 'px');
+
+let navDynamicWidth = 0;
+$('#main-nav').find('.nav-link').each(function() {
+    navDynamicWidth += $(this).width()
+});
+
+$('#main-nav').find('.spacer').each(function() {
+    navDynamicWidth += $(this).width()
+});
+
+console.log(navDynamicWidth);
+$('html').css('--nav-dynamic-width', navDynamicWidth + 'px');
+
 widthCheck();

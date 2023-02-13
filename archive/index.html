@@ -8,23 +8,28 @@
     <link rel="stylesheet" type="text/css" href="../css/gallery.css">
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/tabs.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
     <link rel="manifest" href="../site.webmanifest">
     <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 
 <body onload="loadMuseumFromFire()">
     <div class="header">
-        <h1 id="header-text" onclick="location.href = 'https://the404.nl/'">THE404.NL</h1>
-        <div class="tab-wrapper">
-            <span class="tab" id="home-tab" onclick="location.href = 'https://the404.nl/'"><i class="fas fa-home"></i></span>
+        <a href="https://the404.nl">
+            <div class="logo">THE404.NL</div>
+        </a>
+        <span class="navbar-toggle" id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <div class="nav-wrapper" id="main-nav">
+            <a href="../"><span class="nav-link"><b>HOME</b></span></a>
         </div>
     </div>
 
@@ -58,15 +63,19 @@
                 <h3 class="post-head">Archived Versions</h3>
                 <br>
                 <button class="big-button button archive" onclick="location.href='v1'">
-                    <i class="fas fa-archive"></i> The404 v1 <label>(01/18/18 - 08/27/18)</label>
+                    <i class="fas fa-archive"></i> The404 v1 <label>(2018-01-18 - 2018-08-27)</label>
                 </button>
                 <br>
                 <button class="big-button button archive" onclick="location.href='v2'">
-                    <i class="fas fa-archive"></i> The404 v2 <label>(08/27/18 - 03/10/19)</label>
+                    <i class="fas fa-archive"></i> The404 v2 <label>(2018-08-27 - 2019-03-10)</label>
                 </button>
                 <br>
                 <button class="big-button button archive" onclick="location.href='v3'">
-                    <i class="fas fa-archive"></i> The404 v3 <label>(03/10/19 - 06/07/20)</label>
+                    <i class="fas fa-archive"></i> The404 v3 <label>(2019-03-10 - 2020-06-07)</label>
+                </button>
+                <br>
+                <button class="big-button button archive" onclick="location.href='v4'">
+                    <i class="fas fa-archive"></i> The404 v4 <label>(2020-06-07 - 2023-02-12)</label>
                 </button>
             </div>
             <div class="column">

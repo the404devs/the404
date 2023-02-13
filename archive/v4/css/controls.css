@@ -1,0 +1,160 @@
+/* controls.css contains styling rules for buttons, inputs, etc. */
+
+.button {
+    border: 1px solid var(--border);
+    background-color: transparent;
+    color: var(--foreground);
+    text-align: center;
+    font-size: 20px;
+    width: 200px;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-family: "Raleway";
+    overflow: hidden;
+    height: 30px;
+    position: sticky;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.2s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: -2px;
+    right: -50px;
+    transition: 0.2s;
+}
+
+.button:hover i {
+    color: var(--text-dark);
+}
+
+.button:hover span {
+    padding-right: 25px;
+    color: var(--text-dark);
+}
+
+.button:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    /*     height: 0%; */
+    background-color: transparent;
+    transition: all 0.1s ease-out;
+    z-index: -1;
+}
+
+.button:hover:before {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    /* background-color: var(--highlight); */
+    background: var(--background-gradient);
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0px;
+    color: var(--text-dark);
+}
+
+.button i {
+    font-size: 20px;
+    width: auto;
+    /* padding-bottom: 3px; */
+    padding-right: 5px;
+}
+
+.big-button {
+    display: inline-block;
+    text-align: left;
+    font-size: 19px;
+    width: 320px;
+    height: 62px;
+    padding: 10px;
+    margin-top: -1px;
+}
+
+.big-button i {
+    font-size: 40px;
+    width: 50px;
+    padding-right: 0;
+    padding-bottom: 2px;
+}
+
+.big-button label {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.big-button:hover {
+    color: var(--text-dark);
+}
+
+.head-button {
+    width: 105px;
+    font-size: 16px;
+}
+
+.head-button-wrapper {
+    position: fixed;
+    top: 10px;
+    left: 57%;
+}
+
+input,
+textarea {
+    background-color: transparent;
+    color: var(--foreground);
+    border: 1px solid var(--border);
+    resize: none;
+    font-family: "Raleway";
+    margin-top: -1px;
+    width: 300px;
+    padding: 2px;
+    transition: 0.25s all;
+}
+
+textarea {
+    height: 199px;
+}
+
+input {
+    font-size: 16px;
+}
+
+input:hover,
+textarea:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input[type="checkbox"] {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked+label .checkmark {
+    background-image: url("../img/CHECKED.png");
+}
+
+.checkmark {
+    position: absolute;
+    left: -22px;
+    height: 16px;
+    width: 16px;
+    background-image: url("../img/UNCHECKED.png");
+    background-size: 16px 16px;
+    transition: 0.1s background-image;
+}

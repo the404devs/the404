@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/controls.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/robonav.css">
+    <link rel="stylesheet" type="text/css" href="css/robo.css">
     <link rel="stylesheet" type="text/css" href="css/battle.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
@@ -19,9 +21,30 @@
 
 <body>
     <div class="header">
-        <h1 id="header-text">ULTIMATE ROBO DEATH BATTLE</h1>
+        <a href="https://the404.nl">
+            <div class="logo">THE404.NL</div>
+        </a>
+        <span class="navbar-toggle" id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <div class="nav-wrapper" id="main-nav">
+            <a href="./instructions.html"><span class="nav-link"><b>INSTRUCTIONS</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./programs.html"><span class="nav-link"><b>PROGRAMS</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./images.html"><span class="nav-link"><b>IMAGES</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./software.html"><span class="nav-link"><b>SOFTWARE</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./battle.html"><span class="nav-link active"><b>BATTLEBOTS</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./index.html"><span class="nav-link"><b>ROBOTICS HOME</b></span></a>
+        </div>
     </div>
     <div class="content" style="width: -webkit-fill-available;">
+        <div class="header-old">
+            <h1 class="header-text">ULTIMATE ROBO DEATH BATTLE</h1>
+        </div>
         <div class="row">
             <div class="column">
                 <h3>Round 1</h3>
@@ -54,7 +77,6 @@
                     </form>
                 </div>
                 <br>
-                <br>
             </div>
             <div class="column" style="border-left: 1px solid white; border-right: 1px solid white;">
                 <h3>Round 2</h3>
@@ -79,8 +101,8 @@
                 </div>
             </div>
         </div>
-        <p style="margin-bottom: 0;">v0.0.4 - 02/24/2022</p>
-        <a class="link" href="./index.html">Back</a>
+        <p style="margin-bottom: 0;">v0.0.5 - 02/12/2023</p>
+        <!-- <a class="link" href="./index.html">Back</a> -->
         <script>
             function reset() {
                 $('#1-1-1').val('');
@@ -102,6 +124,7 @@
                 $(id).css('color', 'limegreen');
             }
         </script>
+        <script src="js/main.js"></script>
     </div>
 </body>
 
