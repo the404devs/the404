@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/sidenav.css">
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
     <link rel="stylesheet" type="text/css" href="css/robonav.css">
     <link rel="stylesheet" type="text/css" href="css/robo.css">
     <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
@@ -48,10 +49,10 @@
             <div class="sidenav-list" id="robo-type-zone">
                 <h2>Sort by Type:</h2>
             </div>
-            <button class="button" onclick="clearTags('.botimage')" style="font-size:18px;height:25px; width: 90%;"><span>Clear Tags</span></button>
+            <button class="button sidenav-button" onclick="clearTags('.botimage')"><span>Clear Tags</span></button>
             <br><br>
 
-            <div class="sidenav-list" id="robo-id-zone" style="border-top:1px solid var(--border); padding-top: 10px;">
+            <div class="sidenav-list with-top-border" id="robo-id-zone">
             </div>
         </div>
         <span class="sidenav-toggle" id="robo-nav-toggle" onclick="showSideNav('robo-nav')" title="Images Menu"><i class="fa-solid fa-list"></i></span>
@@ -73,6 +74,7 @@
         <button id="leftArrow" class="prev button" onclick="plusSlides(-1)"><span>❮</span></button>
         <button id="rightArrow" class="next button" onclick="plusSlides(1)"><span>❯</span></button>
     </div>
+    <script src="../js/app.js"></script>
     <script src="js/main.js"></script>
 </body>
 

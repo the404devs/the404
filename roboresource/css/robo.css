@@ -70,16 +70,6 @@
     text-decoration: underline;
 }
 
-.tab:hover {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 20.75px, var(--foreground) 20.75px, var(--foreground) 21.75px, rgb(132, 163, 204) 21.75px, rgb(38, 126, 177), rgb(0, 89, 161)) !important;
-    color: var(--text-dark);
-    text-shadow: none;
-}
-
-#sort-tab:hover {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 21.5px, var(--foreground) 21.5px, var(--foreground) 22.5px, rgb(132, 163, 204) 22.5px, rgb(38, 126, 177), rgb(0, 89, 161)) !important;
-}
-
 .robo-gallery-image {
     width: auto;
     height: 100px;
@@ -227,15 +217,21 @@ h5 {
     right: 0;
 }
 
-@media (max-width: 1000px) {
-    .sidenav {
-        /* width: 290px; */
-        right: -320px;
+.sidenav {
+    min-width: 320px;
+    /* right: -320px; */
+}
+
+@media screen and (min-width: 1000px) {
+    .sidenav-close {
+        display: initial;
     }
 }
 
-.sidenav {
-    min-width: 320px;
+@media screen and (min-width: 1575px) {
+    .sidenav-close {
+        display: none;
+    }
 }
 
 .counter {

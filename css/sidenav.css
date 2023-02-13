@@ -4,18 +4,14 @@
     background-color: var(--background-transparent);
     border: 1px solid var(--border);
     font-size: 10px;
-    max-height: calc(100% - 160px);
     overflow-x: hidden;
     overflow-y: scroll;
-    /* padding-bottom: 0px; */
-    /* padding-left: 10px; */
-    /* padding-right: 10px; */
-    /* padding-top: 18px; */
     position: fixed;
     right: 2.5%;
     scrollbar-width: none;
     top: 125px;
-    max-width: 15%;
+    bottom: 25px;
+    max-width: 300px;
     width: 15%;
     z-index: 1;
     border-radius: 10px;
@@ -34,7 +30,7 @@
 
 .sidenav-tinybutton {
     position: sticky;
-    display: inline-block;
+    display: block;
     width: 32px;
     height: 32px;
     margin: 0;
@@ -107,6 +103,7 @@
     font-size: 15px;
     font-family: "Raleway";
     cursor: pointer;
+    display: inline-block;
 }
 
 .sidenav h2 {
@@ -184,8 +181,38 @@
     padding-top: 18px;
     margin-bottom: 15px;
     text-align: center;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+.sidenav-button {
+    font-size: 18px;
+    height: 25px;
+    width: 90%;
+}
+
+.sidenav a.link {
+    margin-left: 15px;
+}
+
+.sidenav a.link::before {
+    content: '-';
+    color: var(--text);
+    position: absolute;
+    left: -15px;
+}
+
+.with-top-border {
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
 }
 
 .flipped i {
     transform: rotate(-180deg);
+}
+
+@media screen and (min-width: 1001px) {
+    .sidenav-close {
+        display: none;
+    }
 }

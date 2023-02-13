@@ -106,7 +106,7 @@ function showSideNav(id) {
 }
 
 function hideSideNav(id) {
-    $('#' + id).css('right', '-250px');
+    $('#' + id).css('right', '-350px');
     $('#' + id + '-toggle').css('right', '10px');
 }
 
@@ -161,23 +161,9 @@ function firefoxCheck() {
 }
 
 window.onresize = function() {
-    //to ensure we don't end up out of bounds when the window resizes itself
-    const tabs = $(".nav-link");
-    for (i = 0; i < tabs.length; i++) {
-        if ($(tabs[i]).hasClass("active")) { //Find active tab
-            const y = window.pageYOffset; //store page scroll pos
-            showPanes(i + 1); //Show corresponding pane to recalculate window height
-            window.scrollTo({
-                top: y,
-                left: 0,
-                behavior: "smooth"
-            }); //restore old scroll position
-        }
-    }
     showSideNav('blog-nav');
     showSideNav('soft-nav');
     hideMainNav();
-
 }
 
 
@@ -189,7 +175,7 @@ window.addEventListener("click", function(e) {
     const clicked = $(e.target);
 
     //Hide sidenav if clicked outside of.
-    if (!e.target.className.includes('sidenav') && clicked.parents('.sidenav').length == 0 && clicked.parents('.sidenav-toggle').length == 0) {
+    if (window.innerWidth <= 1000 && !e.target.className.includes('sidenav') && clicked.parents('.sidenav').length == 0 && clicked.parents('.sidenav-toggle').length == 0) {
         hideSideNav('blog-nav');
         hideSideNav('soft-nav');
     }

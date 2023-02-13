@@ -295,11 +295,11 @@ async function adminLoadFromFire() {
             )
         );
         if (post.Title) {
-            $("#blog-nav").append(
+            $("#blog-id-zone").append(
                 $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(post.Title)
             ).append($("<br>")).append($("<br>"));
         } else {
-            $("#blog-nav").append(
+            $("#blog-id-zone").append(
                 $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(date)
             ).append($("<br>")).append($("<br>"));
         }
@@ -395,7 +395,7 @@ async function adminLoadFromFire() {
                 "style", "width: 70%;padding-top:10px;padding-bottom:10px"
             )
         );
-        $("#soft-nav").append(
+        $("#soft-id-zone").append(
             $("<a>").addClass("link").attr("title", soft.id).attr("onclick", "scrollToElem('" + soft.id + "')").html(soft.Name)
         ).append($("<br>")).append($("<br>"));
     });

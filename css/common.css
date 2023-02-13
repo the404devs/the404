@@ -95,7 +95,7 @@ body {
     z-index: 0;
 }
 
-.link:before {
+.link:after {
     -webkit-transition: all 0.1s;
     border-bottom: 2px solid;
     bottom: 0;
@@ -109,7 +109,7 @@ body {
     z-index: -1;
 }
 
-.link:hover:before {
+.link:hover:after {
     visibility: visible;
     width: calc(100% + 1px);
 }

@@ -67,10 +67,14 @@
         </div>
         <div class="pane" id="home">
             <div class="sidenav" id="blog-nav">
-                <span class="button flipper" id="blogFlipper" onclick="blogDateFlip()" title="Sorting Ascending">↑</span>
-                <span class="button" id="close" onclick="hideSideNav('blog-nav')" title="Close Menu">×</span>
+                <span class="button sidenav-tinybutton sidenav-sort" id="blog-sidenav-sort-icon" onclick="blogDateFlip()" title="Sorting Ascending">
+                    <i class="fas fa-arrow-up"></i>
+                </span>
+                <span class="button sidenav-tinybutton sidenav-close" id="close" onclick="hideSideNav('blog-nav')" title="Close Menu">
+                    <i class="fas fa-x"></i>
+                </span>
                 <h3 class="sidenav-head">Blog Posts</h3>
-                <div id="blog-id-zone"></div>
+                <div class="sidenav-list" id="blog-id-zone"></div>
             </div>
             <span class="sidenav-toggle" id="blog-nav-toggle" onclick="showSideNav('blog-nav')" title="Blog Menu"><i class="fa-solid fa-list"></i></span>
             <div class="post" id="new-post" style="width: 70%;padding-top:10px;padding-bottom:10px;display:none">
@@ -94,9 +98,14 @@
         </div>
         <div class="pane" id="soft">
             <div class="sidenav" id="soft-nav">
-                <span class="button flipper" id="softFlipper" onclick="softDateFlip()" title="Sorting Descending">↓</span>
-                <span class="button" id="close" onclick="hideSideNav('soft-nav')" title="Close Menu">×</span>
+                <span class="button sidenav-tinybutton sidenav-sort" id="soft-sidenav-sort-icon" onclick="softDateFlip()" title="Sorting Ascending">
+                    <i class="fas fa-arrow-up"></i>
+                </span>
+                <span class="button sidenav-tinybutton sidenav-close" id="close" onclick="hideSideNav('soft-nav')" title="Close Menu">
+                    <i class="fas fa-x"></i>
+                </span>
                 <h3 class="sidenav-head">All Projects</h3>
+                <div class="sidenav-list" id="soft-id-zone"></div>
             </div>
             <span class="sidenav-toggle" id="soft-nav-toggle" onclick="showSideNav('soft-nav')" title="Projects Menu"><i class="fa-solid fa-list"></i></span>
             <div class="post" id="new-soft" style="width: 70%;padding-top:10px;padding-bottom:10px;display:none">

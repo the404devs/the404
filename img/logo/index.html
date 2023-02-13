@@ -8,21 +8,27 @@
     <link rel="stylesheet" type="text/css" href="../../css/gallery.css">
     <link rel="stylesheet" type="text/css" href="../../css/common.css">
     <link rel="stylesheet" type="text/css" href="../../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../../css/tabs.css">
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css">
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="manifest" href="../../site.webmanifest">
     <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="header">
-        <h1 id="header-text" onclick="location.href = 'https://the404.nl/'">THE404.NL</h1>
-        <div class="tab-wrapper">
-            <span class="tab" id="home-tab" onclick="location.href = 'https://the404.nl/'"><i class="fas fa-home"></i></span>
+        <a href="https://the404.nl">
+            <div class="logo">THE404.NL</div>
+        </a>
+        <span class="navbar-toggle" id="navbar-toggle" onclick="showMainNav()">
+            <i class="open-icon fas fa-bars"></i>
+            <i class="close-icon fas fa-x"></i>
+        </span>
+        <div class="nav-wrapper" id="main-nav">
+            <a href="../../index.html"><span class="nav-link"><b>HOME</b></span></a>
         </div>
     </div>
     <div class="content" style="width: -webkit-fill-available; width: -moz-available;">

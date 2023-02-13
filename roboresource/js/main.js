@@ -1,67 +1,6 @@
 let slideIndex = 1;
 let overlayActive = false;
 
-function scrollToElem(id, offset = -125) {
-    const elem = document.getElementById(id);
-    $(".post").removeClass("animated");
-    let rect = elem.getBoundingClientRect();
-    let targetPosition = Math.ceil(rect.top + self.scrollY + offset);
-    window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-    });
-
-    return new Promise((resolve, reject) => {
-        const failed = setTimeout(() => {
-            console.log("bingus");
-            // if it fails, just call it again lol
-            // works like a charm
-            if (self.scrollY != targetPosition) {
-                //                 elem.classList.remove("animated");
-                rect = elem.getBoundingClientRect();
-                targetPosition = rect.top + self.scrollY + offset;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                setTimeout(() => {
-                    elem.classList.add("animated");
-                }, 1000);
-            } else {
-                elem.classList.add("animated");
-            }
-            resolve();
-        }, 1000);
-
-        const scrollHandler = () => {
-            if ((self.scrollY >= targetPosition - 1 && self.scrollY <= targetPosition + 1) || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
-                console.log(self.scrollY, targetPosition);
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                elem.classList.add("animated");
-                window.removeEventListener("scroll", scrollHandler);
-                clearTimeout(failed);
-                // resolve();
-            }
-        };
-        if ((self.scrollY >= targetPosition - 1 && self.scrollY <= targetPosition + 1) || (self.scrollY > document.body.scrollHeight - window.innerHeight && self.scrollY < targetPosition)) {
-            console.log(self.scrollY, targetPosition);
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-            elem.classList.add("animated");
-            clearTimeout(failed);
-            resolve();
-        } else {
-            window.addEventListener("scroll", scrollHandler);
-            elem.getBoundingClientRect();
-        }
-    });
-}
-
 function getJSON(url, callback) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -514,11 +453,7 @@ function roboDateFlip() {
     const children2 = parent2.children();
     parent2.append(children2.get().reverse()).append($("<br>")).append($("<br>"));
 
-    if ($("#roboFlipper").html() == "↑") {
-        $("#roboFlipper").attr("title", "Sorting Descending").html("↓");
-    } else {
-        $("#roboFlipper").attr("title", "Sorting Ascending").html("↑");
-    }
+    flipIcon($('#robo-sidenav-sort-icon'));
 
     sortTags(".program");
 }
@@ -528,35 +463,6 @@ function clean(str, nuke) {
         return str.replace(/[^0-9a-zA-Z:,]+/g, "");
     else
         return str.replace(/\W/g, '')
-}
-
-function showMainNav() {
-    $('#main-nav').addClass('active');
-    $('#navbar-toggle').addClass('active').attr('onclick', 'hideMainNav()').attr('title', 'Close Navigation Menu');
-}
-
-function hideMainNav() {
-    $('#main-nav').removeClass('active');
-    $('#navbar-toggle').removeClass('active').attr('onclick', 'showMainNav()').attr('title', 'Open Navigation Menu');
-}
-
-function showSideNav(id) {
-    $('#' + id).css('right', '2.5%');
-    $('#' + id + '-toggle').css('right', '-250px');
-}
-
-function hideSideNav(id) {
-    $('#' + id).css('right', '-350px');
-    $('#' + id + '-toggle').css('right', '10px');
-}
-
-
-function widthCheck() {
-    if (window.innerWidth >= 1000) {
-        showSideNav('robo-nav');
-    } else {
-        hideSideNav('robo-nav');
-    }
 }
 
 window.onresize = function() {
@@ -674,6 +580,15 @@ function constructInterlinks(id, interlinkData) {
     }
 }
 
+
+function widthCheck() {
+    if (window.innerWidth >= 1575) {
+        showSideNav('robo-nav');
+    } else {
+        hideSideNav('robo-nav');
+    }
+}
+
 $(document).keydown(function(e) {
     if (overlayActive) {
         if (e.key === "Escape") {
@@ -695,28 +610,27 @@ $(".button, #home-tab, #header-text").on("mouseup", function(e) {
 });
 
 
-const navDynamicHeight = $('#main-nav').find('.nav-link').length * 41;
-$('html').css('--nav-dynamic-height', navDynamicHeight + 'px');
 
 
-let navDynamicWidth = 0;
-$('#main-nav').find('.nav-link').each(function() {
-    navDynamicWidth += $(this).width()
-});
 
-$('#main-nav').find('.spacer').each(function() {
-    navDynamicWidth += $(this).width()
-});
+// let navDynamicWidth = 0;
+// $('#main-nav').find('.nav-link').each(function() {
+//     navDynamicWidth += $(this).width()
+// });
 
-// console.log(navDynamicWidth);
-$('html').css('--nav-dynamic-width', navDynamicWidth + 'px');
+// $('#main-nav').find('.spacer').each(function() {
+//     navDynamicWidth += $(this).width()
+// });
+
+// // console.log(navDynamicWidth);
+// $('html').css('--nav-dynamic-width', navDynamicWidth + 'px');
 
 
 window.addEventListener("click", function(e) {
     const clicked = $(e.target);
 
     //Hide sidenav if clicked outside of.
-    if (!e.target.className.includes('sidenav') && clicked.parents('.sidenav').length == 0 && clicked.parents('.sidenav-toggle').length == 0) {
+    if (window.innerWidth <= 1000 && !e.target.className.includes('sidenav') && clicked.parents('.sidenav').length == 0 && clicked.parents('.sidenav-toggle').length == 0) {
         hideSideNav('robo-nav');
     }
 
