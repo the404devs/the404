@@ -40,6 +40,8 @@ function showPanes(n) {
     $(id).css("opacity", "1");
     $(id).css("z-index", "auto");
 
+    window.scrollTo(0, 0);
+
     //give the corresponding tab the "active" class
     tabs[n - 1].className += " active";
 }

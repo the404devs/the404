@@ -43,6 +43,10 @@
     font-weight: bold;
 }
 
+.post-body {
+    margin-left: 15px;
+}
+
 .robo-gallery .post-date,
 #image-overlay .post-date {
     color: var(--accent);
