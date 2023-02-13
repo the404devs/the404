@@ -619,12 +619,11 @@ $(document).keydown(function(e) {
 // // console.log(navDynamicWidth);
 // $('html').css('--nav-dynamic-width', navDynamicWidth + 'px');
 
-
-window.addEventListener("click", function(e) {
+function menuHider(e) {
     const clicked = $(e.target);
 
     //Hide sidenav if clicked outside of.
-    if (window.innerWidth <= 1000 && !e.target.className.includes('sidenav') && clicked.parents('.sidenav').length == 0 && clicked.parents('.sidenav-toggle').length == 0) {
+    if (window.innerWidth <= 1010 && !e.target.className.includes('sidenav') && clicked.parents('.sidenav').length == 0 && clicked.parents('.sidenav-toggle').length == 0) {
         hideSideNav('robo-nav');
     }
 
@@ -632,6 +631,8 @@ window.addEventListener("click", function(e) {
     if ((e.target.className != 'header') && clicked.parents('.header').length == 0) {
         hideMainNav();
     }
-});
+}
+window.addEventListener("click", menuHider);
+window.addEventListener("touchStart", menuHider);
 
 widthCheck();

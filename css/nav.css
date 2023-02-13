@@ -189,7 +189,7 @@
     width: 95%;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1010px) {
     /* 768px */
     .header {
         display: flex;

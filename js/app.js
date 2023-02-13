@@ -220,11 +220,11 @@ const navDynamicHeight = $('#main-nav').find('.nav-link').length * 41;
 $('#main-nav').css('--nav-dynamic-height', navDynamicHeight + 'px');
 
 
-window.addEventListener("click", function(e) {
-    const clicked = $(e.target);
 
+function menuHider(e) {
+    const clicked = $(e.target);
     //Hide sidenav if clicked outside of.
-    if (window.innerWidth <= 1000 && !e.target.className.includes('sidenav') && clicked.parents('.sidenav').length == 0 && clicked.parents('.sidenav-toggle').length == 0) {
+    if (window.innerWidth <= 1010 && !e.target.className.includes('sidenav') && clicked.parents('.sidenav').length == 0 && clicked.parents('.sidenav-toggle').length == 0) {
         hideSideNav('blog-nav');
         hideSideNav('soft-nav');
     }
@@ -233,12 +233,9 @@ window.addEventListener("click", function(e) {
     if ((e.target.className != 'header') && clicked.parents('.header').length == 0) {
         hideMainNav();
     }
-});
-
-
-$('robo-gallery-image:last').attr('');
-
-
+}
+window.addEventListener("touchstart", menuHider);
+window.addEventListener("click", menuHider);
 
 //this seems like a horrible way to do this.
 const art1 = " _________________    _______________    _________________    _______________";
