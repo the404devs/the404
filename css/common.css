@@ -143,7 +143,7 @@ hr {
     -ms-flex: 1;
     -webkit-flex: 1;
     flex: 1;
-    font-family: Roboto;
+    font-family: "Roboto";
     padding: 10px;
     text-align: center;
 }
@@ -162,17 +162,7 @@ h4 {
 }
 
 @media (max-width: 1000px) {
-    .nav {
-        backdrop-filter: blur(5px);
-        right: -230px;
-        transition: 0.2s all;
-        width: 200px;
-    }
-    .post,
-    .blob {
+    .post {
         width: auto!important;
-    }
-    #close {
-        display: -webkit-box;
     }
 }

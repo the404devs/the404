@@ -7,10 +7,10 @@
     max-height: calc(100% - 160px);
     overflow-x: hidden;
     overflow-y: scroll;
-    padding-bottom: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 18px;
+    /* padding-bottom: 0px; */
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+    /* padding-top: 18px; */
     position: fixed;
     right: 2.5%;
     scrollbar-width: none;
@@ -23,6 +23,7 @@
     backdrop-filter: blur(10px);
     transition: right 0.25s;
     min-width: 200px;
+    text-align: center;
 }
 
 .sidenav::-webkit-scrollbar {
@@ -31,49 +32,75 @@
     width: 0px;
 }
 
-#close,
-#softFlipper,
-#blogFlipper,
-#roboFlipper {
-    backdrop-filter: blur(5px);
-    background-color: var(--background-transparent);
-    border: 1px solid var(--border);
-    cursor: pointer;
-    display: none;
-    font-family: "Inconsolata";
-    font-size: 16px !important;
-    height: 16px !important;
-    margin-left: 193px;
-    margin-top: -19px;
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+.sidenav-tinybutton {
     position: sticky;
-    position: -webkit-sticky;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    backdrop-filter: blur(5px);
+    z-index: 2;
     text-align: center;
+    top: 0;
+}
+
+.sidenav-tinybutton i {
+    font-size: 16px;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    transform: rotate(0deg);
+    transition: 0.25s transform;
+}
+
+.sidenav-tinybutton:hover {
     text-shadow: none;
-    transition: 0.25s all;
-    top: -19px;
-    width: 8px !important;
-    z-index: 1;
 }
 
-#close:hover,
-#softFlipper:hover,
-#blogFlipper:hover,
-#roboFlipper:hover {
-    color: var(--text-dark);
+.sidenav-tinybutton::before {
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    height: 0;
+    width: 0;
+    border-radius: inherit;
+    transition: 0.15s all;
 }
 
-#softFlipper,
-#blogFlipper,
-#roboFlipper {
-    display: -webkit-box;
-    font-size: 15px !important;
-    margin-left: -11px !important;
-    padding-left: 4px !important;
-    padding-right: 4px !important;
-    /* top: -19px; */
-    /* width: 8px!important; */
+.sidenav-tinybutton:hover:before {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+}
+
+.sidenav-sort {
+    left: 0;
+    float: left;
+    border-radius: 10px 0 10px 0;
+    transform: translateX(-1px) translateY(-1px);
+}
+
+.sidenav-close {
+    right: 0px;
+    float: right;
+    border-radius: 0 10px 0 10px;
+    transform: translateX(1px) translateY(-1px);
+}
+
+.sidenav-head,
+.sidenav-list {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.sidenav-list {
+    text-align: left;
 }
 
 .sidenav .link {
@@ -154,5 +181,11 @@
     text-decoration: underline;
     font-size: 20px;
     margin: 0;
+    padding-top: 18px;
     margin-bottom: 15px;
+    text-align: center;
+}
+
+.flipped i {
+    transform: rotate(-180deg);
 }

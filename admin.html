@@ -28,11 +28,14 @@
         <a href="https://the404.nl">
             <div class="logo">THE404.NL</div>
         </a>
-        <span class="navbar-toggle" id="navbar-toggle">
-            <i class="fas fa-bars"></i>
+        <span class="navbar-toggle" id="navbar-toggle" onclick="showMainNav()">
+            <i class="open-icon fas fa-bars"></i>
+            <i class="close-icon fas fa-x"></i>
         </span>
         <div class="nav-wrapper" id="main-nav">
-            <span class="nav-link init-hidden active" onclick="showPanes(1)"><b>HOME</b></span>
+            <span class="nav-link init-shown" onclick="location.href='https://the404.nl'"><b>HOME</b></span>
+            <!-- <span class="spacer init-hidden"><b>⋄</b></span> -->
+            <span class="nav-link init-hidden active" onclick="showPanes(1)"><b>BLOG</b></span>
             <span class="spacer init-hidden"><b>⋄</b></span>
             <span class="nav-link init-hidden" onclick="showPanes(2)"><b>PROJECTS</b></span>
             <span class="spacer init-hidden"><b>⋄</b></span>
@@ -41,7 +44,6 @@
             <span class="nav-link init-hidden" onclick="refresh()"><b>REFRESH</b></span>
             <span class="spacer init-hidden"><b>⋄</b></span>
             <span class="nav-link init-hidden" onclick="logout()"><b>SIGN OUT</b></span>
-            <span class="nav-link init-shown" onclick="location.href='https://the404.nl'"><b>HOME</b></span>
         </div>
     </div>
 

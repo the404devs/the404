@@ -1,9 +1,3 @@
-@font-face {
-    font-family: "Marcellus";
-    src: url("font/Gilroy-Light.otf");
-}
-
-
 /* main.css conatins styling rules for commonly used components like .post */
 
 .post-head {
@@ -58,7 +52,7 @@
     text-align: left;
     transition: 0.2s width;
     width: 75%;
-    font-family: "Roboto Light";
+    font-family: "Roboto";
     color: var(--text);
     border-radius: 10px;
     box-shadow: var(--shadow);

@@ -229,13 +229,13 @@ h5 {
 
 @media (max-width: 1000px) {
     .sidenav {
-        width: 290px;
+        /* width: 290px; */
         right: -320px;
     }
 }
 
-#close {
-    margin-left: 193px;
+.sidenav {
+    min-width: 320px;
 }
 
 .counter {

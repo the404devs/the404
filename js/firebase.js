@@ -623,7 +623,7 @@ function login() {
             console.log("%cLogin successful, redirecting...", "color:green;font-weight:bold;font-style:italic;");
             adminLoadFromFire();
             $(".init-shown").hide();
-            $(".init-hidden").show();
+            $(".init-hidden").removeClass("init-hidden");
             $("#login-box").fadeOut();
             $("#sign-out").fadeIn();
             $("#refresh").fadeIn();
@@ -752,13 +752,9 @@ function softDateFlip() {
     const children2 = parent2.children();
     parent2.append(children2.get().reverse()).append($("<br>")).append($("<br>"));
 
-    if ($("#softFlipper").html() == "↑") {
-        $("#softFlipper").attr("title", "Sorting Descending").html("↓");
-    } else {
-        $("#softFlipper").attr("title", "Sorting Ascending").html("↑");
-    }
-
     sortTags();
+
+    flipIcon($('#soft-sidenav-sort-icon'));
 }
 
 function blogDateFlip() {
@@ -771,9 +767,15 @@ function blogDateFlip() {
     const children2 = parent2.children();
     parent2.append(children2.get().reverse()).append($("<br>")).append($("<br>"));
 
-    if ($("#blogFlipper").html() == "↑") {
-        $("#blogFlipper").attr("title", "Sorting Descending").html("↓");
+    flipIcon($('#blog-sidenav-sort-icon'));
+
+}
+
+function flipIcon(sortIcon) {
+    sortIcon.toggleClass('flipped');
+    if (sortIcon.attr('title') == 'Sorting Ascending') {
+        sortIcon.attr('title', 'Sorting Descending')
     } else {
-        $("#blogFlipper").attr("title", "Sorting Ascending").html("↑");
+        sortIcon.attr('title', 'Sorting Ascending')
     }
 }

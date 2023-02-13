@@ -22,6 +22,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
 </head>
 
 <body onload="load()">
@@ -29,8 +30,9 @@
         <a href="https://the404.nl">
             <div class="logo">THE404.NL</div>
         </a>
-        <span class="navbar-toggle" id="navbar-toggle">
-            <i class="fas fa-bars"></i>
+        <span class="navbar-toggle" id="navbar-toggle" onclick="showMainNav()">
+            <i class="open-icon fas fa-bars"></i>
+            <i class="close-icon fas fa-x"></i>
         </span>
         <div class="nav-wrapper" id="main-nav">
             <span class="nav-link active" onclick="showPanes(1)"><b>HOME</b></span>
@@ -46,26 +48,34 @@
     <div class="content">
         <div id="home" class="pane">
             <div class="sidenav" id="blog-nav">
-                <span class="button flipper" id="blogFlipper" onclick="blogDateFlip()" title="Sorting Ascending">↑</span>
-                <span class="button" id="close" onclick="hideSideNav('blog-nav')" title="Close Menu">×</span>
+                <span class="button sidenav-tinybutton sidenav-sort" id="blog-sidenav-sort-icon" onclick="blogDateFlip()" title="Sorting Ascending">
+                    <i class="fas fa-arrow-up"></i>
+                </span>
+                <span class="button sidenav-tinybutton sidenav-close" id="close" onclick="hideSideNav('blog-nav')" title="Close Menu">
+                    <i class="fas fa-x"></i>
+                </span>
                 <h3 class="sidenav-head">Blog Posts</h3>
-                <div id="blog-id-zone"></div>
+                <div class="sidenav-list" id="blog-id-zone"></div>
             </div>
             <span class="sidenav-toggle" id="blog-nav-toggle" onclick="showSideNav('blog-nav')" title="Blog Menu"><i class="fa-solid fa-list"></i></span>
         </div>
         <div id="software" class="pane">
             <div class="sidenav" id="soft-nav">
-                <span class="button flipper" id="softFlipper" onclick="softDateFlip()" title="Sorting Ascending">↑</span>
-                <span class="button" id="close" onclick="hideSideNav('soft-nav')" title="Close Menu">×</span>
+                <span class="button sidenav-tinybutton sidenav-sort" id="soft-sidenav-sort-icon" onclick="softDateFlip()" title="Sorting Ascending">
+                    <i class="fas fa-arrow-up"></i>
+                </span>
+                <span class="button sidenav-tinybutton sidenav-close" id="close" onclick="hideSideNav('soft-nav')" title="Close Menu">
+                    <i class="fas fa-x"></i>
+                </span>
                 <h3 class="sidenav-head">All Projects</h3>
-                <div id="soft-id-zone"></div>
-                <div id="soft-tag-zone" style="border-top:1px solid var(--border); padding-top: 10px;">
+                <div class="sidenav-list" id="soft-id-zone"></div>
+                <div class="sidenav-list" id="soft-tag-zone" style="border-top:1px solid var(--border); padding-top: 10px;">
                     <h2>Sort by Tag:</h2>
                 </div>
-                <div id="soft-lang-zone">
+                <div class="sidenav-list" id="soft-lang-zone">
                     <h2>Sort by Language:</h2>
                 </div>
-                <button class="button" onclick="clearTags()" style="font-size:18px;height:25px; width: -webkit-fill-available;"><span>Clear Tags</span></button>
+                <button class="button" onclick="clearTags()" style="font-size:18px;height:25px; width: 90%;"><span>Clear Tags</span></button>
                 <br><br>
             </div>
             <span class="sidenav-toggle" id="soft-nav-toggle" onclick="showSideNav('soft-nav')" title="Projects Menu"><i class="fa-solid fa-list"></i></span>
@@ -171,7 +181,6 @@
             <br>
         </div>
     </div>
-
     <script type="text/javascript" src="js/firebase.js"></script>
     <script type="text/javascript" src="js/birthday.js"></script>
     <script type="text/javascript" src="js/app.js"></script>

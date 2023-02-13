@@ -25,9 +25,7 @@ function showPanes(n) {
         tabs[i].className = tabs[i].className.replace(" active", "");
     }
 
-    if (mainNav) {
-        mainNav.classList.remove("active");
-    }
+    hideMainNav();
     $(".post").removeClass("animated");
 
 
@@ -92,6 +90,16 @@ function scrollToElem(id, offset = -125) {
     }
 }
 
+function showMainNav() {
+    $('#main-nav').addClass('active');
+    $('#navbar-toggle').addClass('active').attr('onclick', 'hideMainNav()').attr('title', 'Close Navigation Menu');
+}
+
+function hideMainNav() {
+    $('#main-nav').removeClass('active');
+    $('#navbar-toggle').removeClass('active').attr('onclick', 'showMainNav()').attr('title', 'Open Navigation Menu');
+}
+
 function showSideNav(id) {
     $('#' + id).css('right', '2.5%');
     $('#' + id + '-toggle').css('right', '-250px');
@@ -111,6 +119,7 @@ function load() {
     console.log("%c" + art, "color:#b20acb; font-weight: bold; font-size:12px");
     getVersionInfo();
     loadFromFire();
+
 
     const e = new Date(2018, 0, 18, 18, 45);
     let d = new Date();
@@ -167,23 +176,29 @@ window.onresize = function() {
     }
     showSideNav('blog-nav');
     showSideNav('soft-nav');
-
-    mainNav.classList.remove("active");
+    hideMainNav();
 
 }
 
-let mainNav = document.getElementById("main-nav");
-let navBarToggle = document.getElementById("navbar-toggle");
-
-if (navBarToggle) {
-    navBarToggle.addEventListener("click", function() {
-        mainNav.classList.toggle("active");
-    });
-}
 
 const navDynamicHeight = $('#main-nav').find('.nav-link').length * 41;
 $('#main-nav').css('--nav-dynamic-height', navDynamicHeight + 'px');
 
+
+window.addEventListener("click", function(e) {
+    const clicked = $(e.target);
+
+    //Hide sidenav if clicked outside of.
+    if (!e.target.className.includes('sidenav') && clicked.parents('.sidenav').length == 0 && clicked.parents('.sidenav-toggle').length == 0) {
+        hideSideNav('blog-nav');
+        hideSideNav('soft-nav');
+    }
+
+    //Hide main nav if clicked outside of.
+    if ((e.target.className != 'header') && clicked.parents('.header').length == 0) {
+        hideMainNav();
+    }
+});
 
 
 

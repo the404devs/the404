@@ -115,6 +115,31 @@
     color: var(--primary);
     font-size: 30px;
     width: auto;
+    transition: 0.25s all;
+}
+
+.navbar-toggle .open-icon {
+    /* display: block; */
+    opacity: 1;
+    transform: none;
+}
+
+.navbar-toggle .close-icon {
+    /* display: none; */
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+.navbar-toggle.active .open-icon {
+    transform: rotate(90deg);
+    opacity: 0;
+    /* display: none; */
+}
+
+.navbar-toggle.active .close-icon {
+    /* display: block; */
+    opacity: 1;
+    transform: none;
 }
 
 .logo {

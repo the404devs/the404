@@ -17,6 +17,9 @@
     height: 150px;
 }
 
-.init-hidden {
+.init-hidden,
+.init-hidden.spacer {
     display: none;
+    /* width: 0; */
+    /* height: 0; */
 }
