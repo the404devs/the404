@@ -222,7 +222,12 @@ function loadImagesFromJSON() {
             const cache = label.children("span");
             label.html(jsonData[key].type + " <b class='counter'>[" + x + "]</b>").append(cache);
         });
-    }).then(() => { getIdFromURL(); });;
+    }).then(() => {
+        Promise.all(Array.from(document.querySelectorAll('.robo-gallery-image')).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+            console.log('Images loaded, scrolling now!');
+            getIdFromURL();
+        });
+    });;
 }
 
 function loadProgramsFromJSON() {
@@ -467,6 +472,7 @@ function clean(str, nuke) {
 
 window.onresize = function() {
     showSideNav('robo-nav');
+    hideMainNav();
 }
 
 function showImageOverlay(imageID) {
@@ -600,18 +606,6 @@ $(document).keydown(function(e) {
         }
     }
 });
-
-$(".button, #home-tab, #header-text").on("mouseup", function(e) {
-    if (e.which === 2) {
-        e.preventDefault();
-        const URL = $(this).attr("onclick").replace(/\s+/g, '').replace("location.href='", "").replace("'", "");
-        window.open(URL, "_blank");
-    }
-});
-
-
-
-
 
 // let navDynamicWidth = 0;
 // $('#main-nav').find('.nav-link').each(function() {

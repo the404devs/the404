@@ -102,6 +102,10 @@ iframe.robo-gallery-image {
     text-align: center;
 }
 
+#image-overlay .post-date::before {
+    content: unset;
+}
+
 #image-overlay-img {
     width: -webkit-fill-available;
     width: -moz-available;
@@ -220,6 +224,10 @@ h5 {
 .sidenav {
     min-width: 320px;
     /* right: -320px; */
+}
+
+.spacer {
+    color: var(--border);
 }
 
 @media screen and (min-width: 1000px) {

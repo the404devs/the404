@@ -5,6 +5,15 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *5.0.1 (02/13/2023)*
+------------------------
+- Mostly just bugfixes for things I forgot yesterday.
+- Top-level menu button in the header will now have a slick animation when clicked, turning into an X.
+- Arrow sort button in sidenavs also have an animation, turning 180deg when clicked to represent the change in sort direction.
+- Sidenav sort and close buttons have been made much larger, to be easier to interact with on all devices. 
+    - They also have nicer animations when hovered.
+- Sidenav entries are now prefixed by a dash, making it easier to pick out individual entries at a glance.
+
 ### *5.0.0 (02/12/2023)*
 ------------------------
 - Makeover time!

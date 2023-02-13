@@ -1,6 +1,6 @@
-const VERSION = "5.0.0";
-const DATE = "02/12/2023";
-const TIME = "18:48";
+const VERSION = "5.0.1";
+const DATE = "02/13/2023";
+const TIME = "15:46";
 
 function showPanes(n) {
     let i;
@@ -59,7 +59,6 @@ function determinePane() {
         showPanes(1);
     }
 }
-
 
 function scrollToElem(id, offset = -125) {
     const elem = document.getElementById(id);
@@ -160,7 +159,57 @@ function firefoxCheck() {
     }
 }
 
+function softDateFlip() {
+    const parent = $("#software");
+    const children = parent.children(".post");
+    parent.append(children.get().reverse());
+
+    const parent2 = $("#soft-id-zone");
+    parent2.children().slice(-2).remove()
+    const children2 = parent2.children();
+    parent2.append(children2.get().reverse()).append($("<br>")).append($("<br>"));
+
+    sortTags();
+    flipIcon($('#soft-sidenav-sort-icon'));
+}
+
+function blogDateFlip() {
+    const parent = $("#home");
+    const children = parent.children(".post");
+    parent.append(children.get().reverse());
+
+    const parent2 = $("#blog-id-zone");
+    parent2.children().slice(-2).remove()
+    const children2 = parent2.children();
+    parent2.append(children2.get().reverse()).append($("<br>")).append($("<br>"));
+
+    flipIcon($('#blog-sidenav-sort-icon'));
+}
+
+function flipIcon(sortIcon) {
+    sortIcon.toggleClass('flipped');
+    if (sortIcon.attr('title') == 'Sorting Ascending') {
+        sortIcon.attr('title', 'Sorting Descending')
+    } else {
+        sortIcon.attr('title', 'Sorting Ascending')
+    }
+}
+
 window.onresize = function() {
+    //to ensure we don't end up out of bounds when the window resizes itself
+    // i thought this block was useless. it was not.
+    const tabs = $(".nav-link");
+    for (i = 0; i < tabs.length; i++) {
+        if ($(tabs[i]).hasClass("active")) { //Find active tab
+            const y = window.pageYOffset; //store page scroll pos
+            showPanes(i + 1); //Show corresponding pane to recalculate window height
+            window.scrollTo({
+                top: y,
+                left: 0,
+                behavior: "instant"
+            }); //restore old scroll position
+        }
+    }
     showSideNav('blog-nav');
     showSideNav('soft-nav');
     hideMainNav();
@@ -185,6 +234,9 @@ window.addEventListener("click", function(e) {
         hideMainNav();
     }
 });
+
+
+$('robo-gallery-image:last').attr('');
 
 
 
