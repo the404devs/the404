@@ -297,12 +297,18 @@
     "Auto Drive": {
         "type": ["NXT-G"],
         "date": "2014-01-28",
-        "description": "An auto-driving program, likely a slimmed down version of the one for Compacto.",
+        "description": "An auto-driving program, likely a slimmed down version of the one for Compacto.<br>The program works by having the robot stop when approaching a wall, then turn itself left and right to measure which direction has more space, and drives off in that direction.",
         "author": "Myself",
         "tags": ["Personal", "Movement", "Ultrasonic Sensor", "Touch Sensor"],
         "files": [
             "Auto Drive.rbt"
-        ]
+        ],
+        "interlink": {
+            "programs": [{
+                "id": "AutoNavigation2023",
+                "text": "New EV3 navigation programs using this same concept."
+            }]
+        }
     },
     "troll": {
         "type": ["NXT-G"],
@@ -687,5 +693,22 @@
             "Ultrasonic Demo 2022.lmsp",
             "Relative Speed Demo.lmsp"
         ]
+    },
+    "Auto Navigation 2023": {
+        "type": ["EV3-Scratch"],
+        "date": "2023-02-27",
+        "description": "A program that allows the EV3 to navigate it's surrounding automatically, using the Ultrasonic Sensor.<br><br>Both programs see the robot choose to turn either left or right upon reaching a wall. In the simple program, the robot makes this choice randomly, while in the advanced program the robot uses the Ultrasonic and a bit of math to determine which way has more open space, and turns that way.",
+        "author": "Myself",
+        "tags": ["Tutorial", "Movement", "Ultrasonic Sensor"],
+        "files": [
+            "Simple Auto Navigation 2023.lmsp",
+            "Advanced Auto Navigation 2023.lmsp"
+        ],
+        "interlink": {
+            "programs": [{
+                "id": "AutoDrive",
+                "text": "An old NXT navigation program using this same concept."
+            }]
+        }
     }
 }
