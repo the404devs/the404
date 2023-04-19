@@ -17,6 +17,7 @@
     border-radius: 10px;
     box-shadow: var(--shadow);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: right 0.25s;
     min-width: 200px;
     text-align: center;
@@ -35,6 +36,7 @@
     height: 32px;
     margin: 0;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     z-index: 2;
     text-align: center;
     top: 0;
@@ -132,6 +134,7 @@
     position: fixed;
     right: 10px;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
 }
 
