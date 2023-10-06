@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blog - the404</title>
+    <meta name="theme-color" content="#800080">
+
+
+    <link rel="stylesheet" type="text/css" href="css/controls.css">
+    <link rel="stylesheet" type="text/css" href="css/sidenav.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+</head>
+
+<body onload="load(); fetchBlog();">
+    <div class="header">
+        <a href="https://the404.nl">
+            <div class="logo">THE404.NL</div>
+        </a>
+        <span class="navbar-toggle" id="navbar-toggle" onclick="showMainNav()">
+            <i class="open-icon fas fa-bars"></i>
+            <i class="close-icon fas fa-x"></i>
+        </span>
+        <div class="nav-wrapper" id="main-nav">
+            <a href="./index.html"><span class="nav-link"><b>HOME</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./blog.html"><span class="nav-link active"><b>BLOG</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="./software.html"><span class="nav-link"><b>PROJECTS</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="https://editor.the404.nl"><span class="nav-link"><b>EDITOR</b></span></a>
+            <span class="spacer"><b>⋄</b></span>
+            <a href="https://robotics.the404.nl"><span class="nav-link"><b>ROBOTICS</b></span></a>
+        </div>
+    </div>
+
+    <div class="content" id="blog">
+        <div class="sidenav" id="blog-nav">
+            <span class="button sidenav-tinybutton sidenav-sort" id="blog-sidenav-sort-icon" onclick="blogDateFlip()" title="Sorting Ascending">
+                <i class="fas fa-arrow-up"></i>
+            </span>
+            <span class="button sidenav-tinybutton sidenav-close" id="close" onclick="hideSideNav('blog-nav')" title="Close Menu">
+                <i class="fas fa-x"></i>
+            </span>
+            <h3 class="sidenav-head">Blog Posts</h3>
+            <div class="sidenav-list" id="blog-id-zone"></div>
+        </div>
+        <span class="sidenav-toggle" id="blog-nav-toggle" onclick="showSideNav('blog-nav')" title="Blog Menu"><i class="fa-solid fa-list"></i></span>
+    </div>
+    <script type="text/javascript" src="js/firebase.js"></script>
+    <script type="text/javascript" src="js/birthday.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/git.js"></script>
+    <script type="text/javascript" src="js/mc.js"></script>
+</body>
+
+</html>

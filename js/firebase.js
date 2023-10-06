@@ -24,11 +24,9 @@ firebase.firestore().enablePersistence({
     synchronizeTabs: true
 });
 const db = firebase.firestore();
-async function loadFromFire() {
-    let posts = [];
-    let software = [];
-    let tags = [];
 
+async function fetchBlog() {
+    let posts = [];
     let blogSnapshot = await db.collection("blog").get({ source: 'cache' });
     if (blogSnapshot) {
         console.log("%cUsing cached blog db", "color:green;font-weight:bold;font-style:italic;");
@@ -37,28 +35,19 @@ async function loadFromFire() {
         console.log("%cNo blog cache, falling back to server", "color:red;font-weight:bold;font-style:italic;");
     }
 
-    let softSnapshot = await db.collection("software").get({ source: 'cache' });
-    if (softSnapshot) {
-        console.log("%cUsing cached software db", "color:green;font-weight:bold;font-style:italic;");
-    } else {
-        softSnapshot = await db.collection("software").get({ source: 'server' });
-        console.log("%cNo software cache, falling back to server", "color:red;font-weight:bold;font-style:italic;");
-    }
-
-    console.log("%cQuerying cookie for cache status...", "color:lightblue;font-weight:bold;font-style:italic;");
-    if (document.cookie.includes("cache-time")) {
+    console.log("%cQuerying blog cookie for cache status...", "color:lightblue;font-weight:bold;font-style:italic;");
+    if (cookieExists('blog-cache-time')) {
         console.log("%cFound cache cookie. Cache is probably fresh, no need to update.", "color:green;font-weight:bold;font-style:italic;");
     } else {
         console.log("%cNo cache cookie, cache must be expired.", "color:orange;font-weight:bold;font-style:italic;");
         blogSnapshot = await db.collection("blog").get({ source: 'server' });
-        softSnapshot = await db.collection("software").get({ source: 'server' });
         console.log("%cGrabbed updated database", "color:yellow;font-weight:bold;font-style:italic;");
         console.log("%cSet new cookie. Cache good for 1 hour.", "color:lightblue;font-weight:bold;font-style:italic;");
         const d = new Date();
         const e = new Date(d.getTime() + 3600000); //expiry in 1 hour
-        document.cookie = "cache-time = " + d.getTime() + "; expires = " + e.toUTCString();
+        document.cookie = `blog-cache-time=${d.getTime()}; expires=${e.toUTCString()};`;
         console.log("%cReloading!", "color:lightblue;font-weight:bold;font-style:italic;");
-        loadFromFire();
+        fetchBlog();
         return;
     }
 
@@ -67,7 +56,7 @@ async function loadFromFire() {
     });
     posts.reverse().forEach(post => {
         const date = ('0' + post.Month).slice(-2) + "/" + ('0' + post.Day).slice(-2) + "/" + post.Year;
-        $("#home").append(
+        $("#blog").append(
             $("<div>").addClass("post blog").append(
                 $("<h3>").addClass("post-head").html(post.Title)
             ).append(
@@ -83,13 +72,43 @@ async function loadFromFire() {
         if (post.Title) {
             $("#blog-id-zone").append(
                 $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(post.Title)
-            ).append($("<br>")).append($("<br>"));
+            );
         } else {
             $("#blog-id-zone").append(
                 $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(date)
-            ).append($("<br>")).append($("<br>"));
+            );
         }
     });
+}
+
+async function fetchSoftware() {
+    let software = [];
+    let tags = [];
+
+    let softSnapshot = await db.collection("software").get({ source: 'cache' });
+    if (softSnapshot) {
+        console.log("%cUsing cached software db", "color:green;font-weight:bold;font-style:italic;");
+    } else {
+        softSnapshot = await db.collection("software").get({ source: 'server' });
+        console.log("%cNo software cache, falling back to server", "color:red;font-weight:bold;font-style:italic;");
+    }
+
+    console.log("%cQuerying software cookie for cache status...", "color:lightblue;font-weight:bold;font-style:italic;");
+    if (cookieExists('software-cache-time')) {
+        console.log("%cFound cache cookie. Cache is probably fresh, no need to update.", "color:green;font-weight:bold;font-style:italic;");
+    } else {
+        console.log("%cNo cache cookie, cache must be expired.", "color:orange;font-weight:bold;font-style:italic;");
+        softSnapshot = await db.collection("software").get({ source: 'server' });
+        console.log("%cGrabbed updated database", "color:yellow;font-weight:bold;font-style:italic;");
+        console.log("%cSet new cookie. Cache good for 1 hour.", "color:lightblue;font-weight:bold;font-style:italic;");
+        const d = new Date();
+        const e = new Date(d.getTime() + 3600000); //expiry in 1 hour
+        document.cookie = `software-cache-time=${d.getTime()};expires=${e.toUTCString()}`;
+        console.log("%cReloading!", "color:lightblue;font-weight:bold;font-style:italic;");
+        fetchSoftware();
+        return;
+    }
+
     softSnapshot.forEach((doc) => {
         software.push({ id: doc.id, ...doc.data() })
     })
@@ -157,10 +176,6 @@ async function loadFromFire() {
             ).attr(
                 "lang", soft.Language.join().replace(/,/g, ", ")
             ).html(soft.Name)
-        ).append(
-            $("<br>")
-        ).append(
-            $("<br>")
         );
 
         soft.Tags.forEach(tag => {
@@ -173,8 +188,6 @@ async function loadFromFire() {
                         "onclick", "sortTags()"
                     ).attr(
                         "name", tag
-                    ).attr(
-                        "style", "width:auto"
                     ).attr(
                         "id", tag
                     )
@@ -190,10 +203,6 @@ async function loadFromFire() {
                     ).append(
                         $("<span>").addClass("checkmark")
                     )
-                ).append(
-                    $("<br>")
-                ).append(
-                    $("<br>")
                 );
             }
         });
@@ -223,16 +232,10 @@ async function loadFromFire() {
                     ).addClass(
                         "link"
                     ).append($("<span>").addClass("checkmark"))
-                ).append(
-                    $("<br>")
-                ).append(
-                    $("<br>")
                 );
             }
         });
     });
-    $("#main-tab-wrapper").fadeIn();
-    showPanes(1);
 }
 
 async function adminLoadFromFire() {
@@ -659,21 +662,21 @@ function sortTags() {
     });
 
     $(".soft").each(function() {
-        $(this).css("display", "none")
+        $(this).addClass('hidden');
         const tags = $(this).attr("tag").replace(/ /g, "_").split(",_");
         tags.forEach(tag => {
             if (matchTag.includes(tag) || t == 0) {
                 const langs = $(this).attr("lang").replace(/ /g, "_").split(",_");
                 langs.forEach(lang => {
                     if (matchLang.includes(lang) || l == 0) {
-                        $(this).css("display", "block")
+                        $(this).removeClass('hidden');
                     }
                 })
             }
         })
     });
 
-    $("#soft-id-zone").children().each(function() { $(this).css("display", "none") });
+    $("#soft-id-zone").children().each(function() { $(this).addClass('hidden') });
 
     $("#soft-id-zone").children().each(function() {
         if ($(this).attr("tag")) {
@@ -683,16 +686,13 @@ function sortTags() {
                     const langs = $(this).attr("lang").replace(/ /g, "_").split(",_");
                     langs.forEach(lang => {
                         if (matchLang.includes(lang) || l == 0) {
-                            $(this).css("display", "inline")
-                            $(this).next("br").css("display", "inline");
-                            $(this).next("br").next("br").css("display", "inline");
+                            $(this).removeClass('hidden')
                         }
                     })
                 }
             })
         }
     });
-    showPanes(2);
 }
 
 function clearTags() {
@@ -740,4 +740,8 @@ function refresh() {
     $("#soft-nav").children('br').remove();
 
     adminLoadFromFire();
+}
+
+function cookieExists(str) {
+    return document.cookie.split(";").some((item) => item.trim().startsWith(`${str}=`));
 }

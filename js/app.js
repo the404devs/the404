@@ -1,6 +1,6 @@
-const VERSION = "5.0.2";
-const DATE = "09/09/2023";
-const TIME = "21:05";
+const VERSION = "5.1.0";
+const DATE = "10/06/2023";
+const TIME = "12:04";
 
 function showPanes(n) {
     let i;
@@ -62,21 +62,24 @@ function determinePane() {
 
 function scrollToElem(id, offset = -125) {
     const elem = document.getElementById(id);
+    const container = document.getElementsByClassName('content')[0];
     $(".post").removeClass("animated");
     let rect = elem.getBoundingClientRect();
-    let targetPosition = Math.ceil(rect.top + self.scrollY + offset);
+    let targetPosition = Math.ceil(rect.top + container.scrollTop + offset);
 
-    if (window.scrollY != targetPosition) {
-        window.scrollTo({
+    // console.log(`${id} is at ${targetPosition}`);
+
+    if (container.scrollTop != targetPosition) {
+        container.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
         });
-        window.onscroll = e => {
-            let currentScrollOffset = window.scrollY || document.documentElement.scrollTop
-                // Scroll reach the target
-            if (currentScrollOffset === targetPosition || currentScrollOffset === document.documentElement.scrollHeight - window.innerHeight) {
+        container.onscroll = e => {
+            let currentScrollOffset = container.scrollTop;
+
+            if (currentScrollOffset === targetPosition || currentScrollOffset === container.scrollHeight - container.offsetHeight) {
                 elem.classList.add("animated");
-                window.onscroll = null // remove listener
+                container.onscroll = null // remove listener
             }
         }
     } else {
@@ -117,12 +120,12 @@ function getVersionInfo() {
 function load() {
     console.log("%c" + art, "color:#b20acb; font-weight: bold; font-size:12px");
     getVersionInfo();
-    loadFromFire();
+    // loadFromFire();
 
 
     const e = new Date(2018, 0, 18, 18, 45);
     let d = new Date();
-    let dif = (d.getTime() - e.getTime()) / 1000;
+    let dif = Math.round((d.getTime() - e.getTime()) / 1000);
     $("#time").text(dif);
     setInterval(function() {
         d = new Date();
@@ -131,7 +134,6 @@ function load() {
     }, 1000);
 
     widthCheck();
-    firefoxCheck();
 }
 
 function widthCheck() {
@@ -196,27 +198,13 @@ function flipIcon(sortIcon) {
 }
 
 window.onresize = function() {
-    //to ensure we don't end up out of bounds when the window resizes itself
-    // i thought this block was useless. it was not.
-    const tabs = $(".nav-link");
-    for (i = 0; i < tabs.length; i++) {
-        if ($(tabs[i]).hasClass("active")) { //Find active tab
-            const y = window.pageYOffset; //store page scroll pos
-            showPanes(i + 1); //Show corresponding pane to recalculate window height
-            window.scrollTo({
-                top: y,
-                left: 0,
-                behavior: "instant"
-            }); //restore old scroll position
-        }
-    }
     showSideNav('blog-nav');
     showSideNav('soft-nav');
     hideMainNav();
 }
 
 
-const navDynamicHeight = $('#main-nav').find('.nav-link').length * 41;
+const navDynamicHeight = $('#main-nav').find('.nav-link').length * 45;
 $('#main-nav').css('--nav-dynamic-height', navDynamicHeight + 'px');
 
 

@@ -5,11 +5,10 @@
     <title>the404</title>
     <meta name="theme-color" content="#800080">
 
-
     <link rel="stylesheet" type="text/css" href="css/controls.css">
     <link rel="stylesheet" type="text/css" href="css/sidenav.css">
-    <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
     <link rel="stylesheet" type="text/css" href="css/nav.css">
 
 
@@ -25,7 +24,7 @@
 
 </head>
 
-<body onload="load()">
+<body class="theme-light" onload="load()">
     <div class="header">
         <a href="https://the404.nl">
             <div class="logo">THE404.NL</div>
@@ -35,11 +34,11 @@
             <i class="close-icon fas fa-x"></i>
         </span>
         <div class="nav-wrapper" id="main-nav">
-            <span class="nav-link active" onclick="showPanes(1)"><b>HOME</b></span>
+            <a href="./index.html"><span class="nav-link active"><b>HOME</b></span></a>
             <span class="spacer"><b>⋄</b></span>
-            <span class="nav-link" onclick="showPanes(2)"><b>PROJECTS</b></span>
+            <a href="./blog.html"><span class="nav-link"><b>BLOG</b></span></a>
             <span class="spacer"><b>⋄</b></span>
-            <span class="nav-link" onclick="showPanes(3)"><b>ABOUT</b></span>
+            <a href="./software.html"><span class="nav-link"><b>PROJECTS</b></span></a>
             <span class="spacer"><b>⋄</b></span>
             <a href="https://editor.the404.nl"><span class="nav-link"><b>EDITOR</b></span></a>
             <span class="spacer"><b>⋄</b></span>
@@ -48,146 +47,80 @@
     </div>
 
     <div class="content">
-        <div id="home" class="pane">
-            <div class="sidenav" id="blog-nav">
-                <span class="button sidenav-tinybutton sidenav-sort" id="blog-sidenav-sort-icon" onclick="blogDateFlip()" title="Sorting Ascending">
-                    <i class="fas fa-arrow-up"></i>
-                </span>
-                <span class="button sidenav-tinybutton sidenav-close" id="close" onclick="hideSideNav('blog-nav')" title="Close Menu">
-                    <i class="fas fa-x"></i>
-                </span>
-                <h3 class="sidenav-head">Blog Posts</h3>
-                <div class="sidenav-list" id="blog-id-zone"></div>
-            </div>
-            <span class="sidenav-toggle" id="blog-nav-toggle" onclick="showSideNav('blog-nav')" title="Blog Menu"><i class="fa-solid fa-list"></i></span>
+        <div class="blob wide noscale">
+            <h2 class="blob-header">Welcome to the404!</h2>
+            <p class="blob-description">
+                <span class="flavour">My name is Owen, and I am a software developer.</span>
+                <br>
+                <br>
+                Since high school, coding has been a hobby of mine, and on January 18th, 2018 I started <b>The404</b> as a place for me to host the projects I create.
+                <br>
+                <br>
+                I am experienced in web development, software, robotics, and 3D printing.
+                <br>
+                <br>
+                Below are some quick links to various parts of the site.
+            </p>
         </div>
-        <div id="software" class="pane">
-            <div class="sidenav" id="soft-nav">
-                <span class="button sidenav-tinybutton sidenav-sort" id="soft-sidenav-sort-icon" onclick="softDateFlip()" title="Sorting Ascending">
-                    <i class="fas fa-arrow-up"></i>
-                </span>
-                <span class="button sidenav-tinybutton sidenav-close" id="close" onclick="hideSideNav('soft-nav')" title="Close Menu">
-                    <i class="fas fa-x"></i>
-                </span>
-                <h3 class="sidenav-head">All Projects</h3>
-                <div class="sidenav-list" id="soft-id-zone"></div>
-                <div class="sidenav-list with-top-border" id="soft-tag-zone">
-                    <h2>Sort by Tag:</h2>
-                </div>
-                <div class="sidenav-list" id="soft-lang-zone">
-                    <h2>Sort by Language:</h2>
-                </div>
-                <button class="button sidenav-button" onclick="clearTags()"><span>Clear Tags</span></button>
-                <br><br>
-            </div>
-            <span class="sidenav-toggle" id="soft-nav-toggle" onclick="showSideNav('soft-nav')" title="Projects Menu"><i class="fa-solid fa-list"></i></span>
+        <div class="blob" onclick="location.href='./blog.html'">
+            <span class="blob-icon"><i class="fas fa-book"></i></span>
+            <h2 class="blob-header">Blog</h2>
+            <p class="blob-description">My words of wisdom...</p>
+            <a href="./blog.html"><button class="button"><span>Go</span></button></a>
         </div>
-        <div id="about" class="pane">
-            <div class="row" style="text-align: center;">
-                <p style="width: 100%;">
-                    Welcome! I started the404 on January 18th, 2018. This site has become my own little corner of the internet, and hosts a variety of different projects I have worked on over the years.
-                </p>
-            </div>
-            <br>
-            <div class="row">
-                <div class="column">
-                    <h4 class="about-header">What have I been working on lately?</h4>
-                    <p>A list of all my GitHub repositories, sorted by most recent commit.</p>
-                    <div id="git-container"></div>
-                    <br>
-                    <h4 class="about-header">Feel free to browse my GitHub page.</h4>
-                    <button class="button" id="github" onclick="location.href='https://github.com/the404devs'">
-						<i class="fab fa-github"></i><span>the404devs</span>
-					</button>
-                </div>
-                <div class="column">
-                    <h4 class="about-header">The404 Archives!</h4>
-                    <p>Old iterations of the404, and some other old sites made for various projects.</p>
-                    <button class="big-button button archive" onclick="location.href='archive/v1/'">
-						<i class="fas fa-archive"></i> The404 v1 <label>(2018-01-18 - 2018-08-27)</label>
-					</button>
-                    <br>
-                    <button class="big-button button archive" onclick="location.href='archive/v2/'">
-						<i class="fas fa-archive"></i> The404 v2 <label>(2018-08-27 - 2019-03-10)</label>
-					</button>
-                    <br>
-                    <button class="big-button button archive" onclick="location.href='archive/v3/'">
-						<i class="fas fa-archive"></i> The404 v3 <label>(2019-03-10 - 2020-06-07)</label>
-					</button>
-                    <br>
-                    <button class="big-button button archive" onclick="location.href='archive/v4/'">
-						<i class="fas fa-archive"></i> The404 v4 <label>(2020-06-07 - 2023-02-12)</label>
-					</button>
-                    <br>
-                    <button class="big-button button archive" onclick="location.href='https://ics11.the404.nl'">
-						<i class="fas fa-archive"></i> ICS 11 <label>(2017)</label>
-					</button>
-                    <br>
-                    <button class="big-button button archive" onclick="location.href='https://ics12.the404.nl'">
-						<i class="fas fa-archive"></i> ICS 12 <label>(2018)</label>
-					</button>
-                    <br>
-                    <button class="big-button button archive" onclick="location.href='https://stuco.the404.nl/indexNEW.html'">
-						<i class="fas fa-archive"></i> Stuco <label>(2018)</label>
-					</button>
-                    <br>
-                    <button class="big-button button archive" onclick="location.href='https://cps530.the404.nl'">
-						<i class="fas fa-archive"></i> CPS530 <label>(2019)</label>
-					</button>
-                    <br>
-                    <button class="big-button button archive" onclick="location.href='birthday.html'">
-						<i class="fas fa-archive"></i> Birthday Retro Style <label>(2020)</label>
-					</button>
-                    <br>
-                    <h4 class="about-header">Old-school development page:</h4>
-                    <button class="button" id="development" onclick="location.href='development/index.html'">
-						<i class="fas fa-code"></i><span>Memory lane</span>
-					</button>
-                    <br>
-                    <h4 class="about-header">The404 Museum: A historical record</h4>
-                    <button class="button" id="museum" onclick="location.href='archive/'">
-						<i class="fas fa-landmark"></i><span>Take a tour</span>
-					</button>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="column" style="text-align: center;">
-                    <h3 class="foot-text post-head">The404 Minecraft Server</h3>
-                    <br>
-                    <h4 class="foot-text">Connect to <b style="color: var(--link)">mc.the404.nl</b> to join!</h4>
-                    <br>
-                    <h4 class="foot-text">Supports both <b style="color: var(--link)">Java</b> and <b style="color: var(--link)">Bedrock</b> Editions.</h4>
-                    <br>
-                    <div id="rest"></div>
-                </div>
-                <div class="column" style="text-align: center;">
-                    <h3 class="foot-text post-head">the404.nl</h3>
-                    <br>
-                    <h4 class="foot-text" onclick="location.href='admin.html'" id="version"></h4>
-                    <br>
-                    <h4 class="foot-text" id="date"></h4>
-                    <br>
-                    <h5 class="foot-text" id="time"></h5>
-                    <br>
-                    <button class="button" id="changelog" onclick="location.href='README.md'">
-						<i class="fas fa-history"></i><span>Changelog</span>
-					</button>
-                    <br>
-                    <br>
-                    <button class="button" id="github3" onclick="location.href='https://github.com/the404devs/the404'">
-						<span><i class="fab fa-github"></i> View Repo</span>
-					</button>
-                </div>
-            </div>
-            <br>
+        <div class="blob" onclick="location.href='./software.html'">
+            <span class="blob-icon"><i class="fas fa-code"></i></span>
+            <h2 class="blob-header">Projects</h2>
+            <p class="blob-description">Archives of all my software projects, dating back to 2017.</p>
+            <a href="./software.html"><button class="button"><span>Go</span></button></a>
+        </div>
+        <div class="blob" onclick="location.href='https://editor.the404.nl'">
+            <span class="blob-icon"><i class="fas fa-file-pen"></i></span>
+            <h2 class="blob-header">Editor</h2>
+            <p class="blob-description">404-Editor, an online collaborative code editor.</p>
+            <a href="https://editor.the404.nl"><button class="button"><span>Go</span></button></a>
+        </div>
+        <div class="blob" onclick="location.href='https://robotics.the404.nl'">
+            <span class="blob-icon"><i class="fas fa-robot"></i></span>
+            <h2 class="blob-header">Robotics</h2>
+            <p class="blob-description">Lego Robotics Resource Hub: Building instructions, example programs, and more.</p>
+            <a href="https://robotics.the404.nl"><button class="button"><span>Go</span></button></a>
+        </div>
+        <div class="blob" onclick="location.href='https://start.the404.nl'">
+            <span class="blob-icon"><i class="fas fa-newspaper"></i></span>
+            <h2 class="blob-header">Start Page</h2>
+            <p class="blob-description">404-Start, a customizable start page for your browser.</p>
+            <a href="https://start.the404.nl"><button class="button"><span>Go</span></button></a>
+        </div>
+        <div class="blob" onclick="location.href='./archive'">
+            <span class="blob-icon"><i class="fas fa-clock-rotate-left"></i></span>
+            <h2 class="blob-header">Archives</h2>
+            <p class="blob-description">Old pages and snapshots of The404's history.</p>
+            <a href="./archive"><button class="button"><span>Go</span></button></a>
         </div>
     </div>
-    <script type="text/javascript" src="js/firebase.js"></script>
+
+    <div class="footer">
+        <div class="footer-box">
+            <a href="https://github.com/the404devs" class="socialButton-container">
+                <button class="socialButton" id="github">
+                    <i class="fab fa-github"></i>
+                    <span>
+                        My GitHub Profile
+                    </span>
+                </button>
+            </a>
+        </div>
+        
+        <div class="footer-box version-info">
+            <span class="foot-text foot-text-big">the404.nl</span>
+            <span class="foot-text" onclick="location.href='admin.html'" id="version"></span>
+            <span class="foot-text" id="date"></span>
+            <span class="foot-text foot-text-small" id="time"></span>
+        </div>
+    </div>
     <script type="text/javascript" src="js/birthday.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/git.js"></script>
-    <script type="text/javascript" src="js/mc.js"></script>
 </body>
 
 </html>
