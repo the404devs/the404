@@ -11,11 +11,27 @@
     --link: #0acbb2;
     --text-dark: #151824;
     --text: #fff;
-    --border: goldenrod;
+    --border: #fff;
     --border-radius: 8px;
     --background-alt: black;
     --primary: goldenrod;
     --shadow: rgb(0 0 0 / 50%) 0px 2px 10px, rgb(0 0 0 / 50%) 0px -2px 10px;
+}
+
+.theme-robo {
+    --accent: #60ecff;
+    --background-gradient: linear-gradient(0deg, rgb(0, 89, 161) 0%, rgb(38, 126, 177) 33%, rgb(132, 163, 204) 100%);
+    --background-transparent: rgba(21, 24, 36, 0.5);
+    --background: #151824;
+    --bold: #60ecff;
+    --border: #ffffff;
+    --foreground: #ffffff;
+    --highlight-transparent: rgba(128, 0, 128, 0.8);
+    --highlight: #800080;
+    --important: #60ecff;
+    --link: #db5926;
+    --text-dark: #151824;
+    --text: #f1d7df;
 }
 
 * {
