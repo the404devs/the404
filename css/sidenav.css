@@ -151,8 +151,8 @@
     z-index: 1;
     position: fixed;
     right: 10px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
     box-shadow: var(--shadow);
     display: flex;
     align-items: center;

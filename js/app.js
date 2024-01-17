@@ -125,6 +125,10 @@ function load() {
     getVersionInfo();
     // loadFromFire();
 
+    if (isMobile()) {
+        document.body.classList.add("mobile-performance-throttle");
+    }
+
 
     const e = new Date(2018, 0, 18, 18, 45);
     let d = new Date();
@@ -207,10 +211,15 @@ window.onresize = function() {
 }
 
 
+function isMobile() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+
+    return mobileKeywords.some(keyword => userAgent.includes(keyword));
+}
+
 const navDynamicHeight = $('#main-nav').find('.nav-link').length * 45;
 $('#main-nav').css('--nav-dynamic-height', navDynamicHeight + 'px');
-
-
 
 function menuHider(e) {
     const clicked = $(e.target);
