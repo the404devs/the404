@@ -47,12 +47,13 @@
     color: var(--primary);
     width: 80%;
     margin: 0;
-    font-family: 'Gilroy';
+    font-family: 'Camaraderie';
+    font-weight: normal;
     text-decoration: underline;
     font-size: 1.75em;
     height: 1.75em;
     line-height: 1.75em;
-    font-variant-caps: small-caps;
+    /* font-variant-caps: small-caps; */
 }
 
 .blob > .blob-description {
