@@ -97,7 +97,7 @@
 .spacer {
     font-size: 26px;
     padding: 5px 10px 5px 10px;
-    color: var(--primary);
+    color: var(--border);
     display: none;
     transform: translateY(2px);
 }
