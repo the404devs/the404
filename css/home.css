@@ -6,8 +6,8 @@
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
     background: var(--background-transparent);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
     box-shadow: var(--shadow);
     padding: 10px 5px;
     display: flex;
@@ -29,7 +29,7 @@
 }
 
 .blob > .blob-icon {
-    color: var(--highlight);
+    color: var(--link);
     width: 20%;
     display: flex;
     align-items: center;
