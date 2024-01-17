@@ -54,6 +54,7 @@
 
 .sidenav-tinybutton:hover {
     text-shadow: none;
+    transform: translateX(-1px) translateY(-1px)!important;
 }
 
 .sidenav-tinybutton::before {
@@ -89,6 +90,10 @@
     float: right;
     border-radius: 0 var(--border-radius) 0 var(--border-radius);
     transform: translateX(1px) translateY(-1px);
+}
+
+.sidenav-close:hover {
+    transform: translateX(1px) translateY(-1px)!important;
 }
 
 .sidenav-head,
@@ -158,6 +163,7 @@
     font-size: 30px;
     height: 32px;
     width: 32px;
+    padding: 0;
 }
 
 .sidenav-toggle:hover {

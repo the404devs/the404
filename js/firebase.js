@@ -273,25 +273,25 @@ async function adminLoadFromFire() {
                 $("<label for='title'>Title: </label>")
             ).append(
                 $("<input>").attr("name", "title").addClass('title').val(post.Title)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='year'>Year: </label>")
             ).append(
                 $("<input>").attr("name", "year").addClass('year').val(post.Year)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='month'>Month: </label>")
             ).append(
                 $("<input>").attr("name", "month").attr("type", "number").addClass('month').val(post.Month)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='day'>Day: </label>")
             ).append(
                 $("<input>").attr("name", "day").attr("type", "number").addClass('day').val(post.Day)
-            ).append($("<br>")).append($("<br>")).append(
+            ).append(
                 $("<textarea>").attr("name", "content").addClass('post-content').val(post.Content)
             ).append(
                 $("<button>").addClass("button").append(
                     $("<span>").html("Update")
                 ).attr("onclick", "updateBlog('" + post.id + "')")
-            ).append($("<br>")).attr(
+            ).attr(
                 "id", post.id
             ).attr(
                 "style", "width: 70%;padding-top:10px;padding-bottom:10px"
@@ -300,11 +300,11 @@ async function adminLoadFromFire() {
         if (post.Title) {
             $("#blog-id-zone").append(
                 $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(post.Title)
-            ).append($("<br>")).append($("<br>"));
+            );
         } else {
             $("#blog-id-zone").append(
                 $("<a>").addClass("link").attr("title", post.id).attr("onclick", "scrollToElem('" + post.id + "')").html(date)
-            ).append($("<br>")).append($("<br>"));
+            );
         }
     });
     softSnapshot.forEach((doc) => {
@@ -338,61 +338,61 @@ async function adminLoadFromFire() {
                 $("<label for='name'>Name: </label>")
             ).append(
                 $("<input>").attr("name", "name").addClass('name').val(soft.Name)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='version'>Version: </label>")
             ).append(
                 $("<input>").attr("name", "version").addClass('version').val(soft.Version)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='release'>Release: </label>")
             ).append(
                 $("<input>").attr("name", "release").addClass('release').val(soft.Release)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='current'>Current: </label>")
             ).append(
                 $("<input>").attr("name", "current").addClass('current').val(soft.Current)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='language'>Lang: </label>")
             ).append(
                 $("<input>").attr("name", "language").addClass('language').val(soft.Language.join().replace(/,/g, ", "))
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='tags'>Tags: </label>")
             ).append(
                 $("<input>").attr("name", "tags").addClass('tags').val(soft.Tags.join().replace(/,/g, ", "))
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='image'>Image: </label>")
             ).append(
                 $("<input>").attr("name", "image").addClass('image').val(soft.Image)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='btn1t'>Btn1 Text: </label>")
             ).append(
                 $("<input>").attr("name", "btn1t").addClass('btn1t').val(soft.Button1[0])
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='btn1l'>Btn1 Link: </label>")
             ).append(
                 $("<input>").attr("name", "btn1l").addClass('btn1l').val(soft.Button1[1])
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='btn2t'>Btn2 Text: </label>")
             ).append(
                 $("<input>").attr("name", "btn2t").addClass('btn2t').val(btn2t)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='btn2l'>Btn2 Link: </label>")
             ).append(
                 $("<input>").attr("name", "btn2l").addClass('btn2l').val(btn2l)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='btn3t'>Btn3 Text: </label>")
             ).append(
                 $("<input>").attr("name", "btn3t").addClass('btn3t').val(btn3t)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='btn3l'>Btn3 Link: </label>")
             ).append(
                 $("<input>").attr("name", "btn3l").addClass('btn3l').val(btn3l)
-            ).append($("<br>")).append($("<br>")).append($("<br>")).append(
+            ).append(
                 $("<textarea>").attr("name", "description").addClass('description').val(soft.Description)
             ).append(
                 $("<button>").addClass("button").append(
                     $("<span>").html("Update")
                 ).attr("onclick", "updateSoft('" + soft.id + "')")
-            ).append($("<br>")).attr(
+            ).attr(
                 "id", soft.id
             ).attr(
                 "style", "width: 70%;padding-top:10px;padding-bottom:10px"
@@ -400,7 +400,7 @@ async function adminLoadFromFire() {
         );
         $("#soft-id-zone").append(
             $("<a>").addClass("link").attr("title", soft.id).attr("onclick", "scrollToElem('" + soft.id + "')").html(soft.Name)
-        ).append($("<br>")).append($("<br>"));
+        );
     });
     museumSnapshot.forEach((doc) => {
         museum.push({ id: doc.id, ...doc.data() })
@@ -419,17 +419,17 @@ async function adminLoadFromFire() {
                 $("<label for='date'>Date: </label>")
             ).append(
                 $("<input>").attr("name", "date").addClass('date').val(exhibit.date)
-            ).append($("<br>")).append(
+            ).append(
                 $("<label for='path'>Path: </label>")
             ).append(
                 $("<input>").attr("name", "path").addClass('path').val(exhibit.path)
-            ).append($("<br>")).append(
+            ).append(
                 $("<textarea>").attr("name", "description").addClass('description').val(exhibit.text)
             ).append(
                 $("<button>").addClass("button").append(
                     $("<span>").html("Update")
                 ).attr("onclick", "updateMuseum('" + exhibit.id + "')")
-            ).append($("<br>")).attr(
+            ).attr(
                 "id", exhibit.id
             ).attr(
                 "style", "width: 70%;padding-top:10px;padding-bottom:10px"

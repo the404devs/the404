@@ -1,37 +1,27 @@
 :root {
-    --accent: #b20acb;
-    --background-gradient: linear-gradient(180deg, #FC466B 0%, #3F5EFB 90%);
-    --background-transparent: rgba(21, 24, 36, 0.5);
+    --accent: #0acbb2;
+    --background-image: url("../img/mystic-forest.png");
+    /* --background-image: url("../img/wallpaper_8.jpg"); */
+    --background-gradient: linear-gradient(0deg, #001c31 0%, #7db1db 90%);
+    --background-transparent: #111111a0;
     --background: #151824;
-    --bold: #d21eee;
-    --foreground: #ffffff;
+    --bold: #cb8784;
+    --foreground: #f5f5f5;
     --highlight-transparent: rgba(128, 0, 128, 0.8);
-    --highlight: #800080;
+    --highlight: #ff8879;
     --important: #b20acb;
     --link: #0acbb2;
     --text-dark: #151824;
-    --text: #fff;
-    --border: #fff;
+    --text: #f5f5f5;
+    --border: #508d9b;
+    --border-alt: #508d9b55;
     --border-radius: 8px;
-    --background-alt: black;
-    --primary: goldenrod;
-    --shadow: rgb(0 0 0 / 50%) 0px 2px 10px, rgb(0 0 0 / 50%) 0px -2px 10px;
-}
-
-.theme-robo {
-    --accent: #60ecff;
-    --background-gradient: linear-gradient(0deg, rgb(0, 89, 161) 0%, rgb(38, 126, 177) 33%, rgb(132, 163, 204) 100%);
-    --background-transparent: rgba(21, 24, 36, 0.5);
-    --background: #151824;
-    --bold: #60ecff;
-    --border: #ffffff;
-    --foreground: #ffffff;
-    --highlight-transparent: rgba(128, 0, 128, 0.8);
-    --highlight: #800080;
-    --important: #60ecff;
-    --link: #db5926;
-    --text-dark: #151824;
-    --text: #f1d7df;
+    --background-alt: #151824;
+    --primary: #c5fdf8;
+    --shadow: var(--shadow-color) 0px 2px 10px, var(--shadow-color) 0px -2px 10px;
+    --shadow-color: #222;
+    --shadow-color-alt: #222;
+    --shadow-alt: var(--shadow-color-alt) 0px 2px 10px, var(--shadow-color-alt) 0px -2px 10px;
 }
 
 * {
@@ -68,21 +58,27 @@
     src: url("font/Gilroy-Light.otf");
 }
 
-.post b,
-.blob b {
-    color: var(--bold);
-}
+/* Page Body */
 
 body {
-    background: var(--background-gradient);
+    background: var(--background-image);
     background-attachment: fixed;
+    background-position-x: center;
+    background-size: cover;
     font-family: "Roboto";
     height: 100%;
+    width: 100%;
     margin: 0;
     overflow-x: hidden;
     /* text-shadow: 1px 1px 5px black, -1px 2px 5px black; */
     text-shadow: var(--shadow);
     position: absolute;
+}
+
+
+.post b,
+.blob b {
+    color: var(--bold);
 }
 
 .content {
@@ -129,6 +125,7 @@ body {
 .content::-webkit-scrollbar-track {
     background-color: var(--background-transparent);
     width: 100%;
+    /* backdrop-filter: blur(10px); */
 }
 
 .content::-webkit-scrollbar-thumb {
@@ -198,7 +195,7 @@ h4 {
 
 .post-head {
     font-family: "Gilroy Light";
-    color: var(--primary);
+    color: var(--accent);
     text-decoration: underline;
     margin-top: 5px;
     font-size: 1.75em;
@@ -265,6 +262,8 @@ h4 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .post.hidden {
@@ -383,4 +382,3 @@ ul {
 .animated::after {
     animation: postHighlightShadow 0.6s ease-in-out;
 }
-

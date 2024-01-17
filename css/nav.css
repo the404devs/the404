@@ -1,10 +1,12 @@
+
+/* Page Header */
 .header {
     /* text-align: center; */
     font-size: 2em;
     border-bottom: var(--border) 4px;
     border-bottom-style: double;
-    background-color: var(--background-transparent);
-    box-shadow: black 0px 2px 10px, black 0px -2px 10px;
+    background-color: #11111100;
+    box-shadow: var(--shadow-color) 0px 2px 10px, var(--shadow-color) 0px -2px 10px;
     position: fixed;
     width: 100%;
     width: -webkit-fill-available;
@@ -95,7 +97,7 @@
 .spacer {
     font-size: 26px;
     padding: 5px 10px 5px 10px;
-    color: var(--border);
+    color: var(--primary);
     display: none;
     transform: translateY(2px);
 }
@@ -172,15 +174,6 @@
     width: 229px;
     z-index: -1;
     display: block;
-}
-
-.pane {
-    margin-right: 2.5%;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    transition: 0.25s all;
-    width: 95%;
 }
 
 @media screen and (min-width: 1010px) {

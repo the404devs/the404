@@ -1,11 +1,11 @@
-const VERSION = "5.1.0";
-const DATE = "10/06/2023";
-const TIME = "12:04";
+const VERSION = "5.2.0";
+const DATE = "01/17/2024";
+const TIME = "13:14";
 
 function showPanes(n) {
     let i;
     const panes = $(".pane");
-    const tabs = $(".nav-link");
+    const tabs = $(".nav-link").not(".init-shown");
 
     if (n > panes.length) { n = 1; } //don't fuck up
     if (n < 1) { n = panes.length; }
@@ -33,8 +33,8 @@ function showPanes(n) {
     const id = "#" + panes[n - 1].id;
     $(id).css("display", "block");
     $(id).css("height", "auto");
-    const h = $(id).height();
-    $(id).css("height", h);
+    // const h = $(id).height();
+    // $(id).css("height", h);
     $(id).css("opacity", "1");
     $(id).css("z-index", "auto");
 
@@ -62,7 +62,10 @@ function determinePane() {
 
 function scrollToElem(id, offset = -125) {
     const elem = document.getElementById(id);
-    const container = document.getElementsByClassName('content')[0];
+    let container = document.getElementsByClassName('content')[0];
+    // if (location.href.endsWith("/admin.html")) {
+    //     container = document.body;
+    // }
     $(".post").removeClass("animated");
     let rect = elem.getBoundingClientRect();
     let targetPosition = Math.ceil(rect.top + container.scrollTop + offset);

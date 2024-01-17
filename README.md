@@ -5,6 +5,10 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+## *5.2.0 (01/18/2024)*
+-----------------------
+- New lick of paint for the 6th anniversary.
+
 ## *5.1.0 (10/06/2023)*
 -----------------------
 - Added a new landing page, moving the blog and software bits to their own pages.

@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#800080">
     <link rel="stylesheet" type="text/css" href="css/controls.css">
     <link rel="stylesheet" type="text/css" href="css/sidenav.css">
-    <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
     <link rel="stylesheet" type="text/css" href="css/nav.css">
     <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -22,7 +22,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 </head>
 
-<body onload="widthCheck()">
+<body>
 
     <div class="header">
         <a href="https://the404.nl">
@@ -48,9 +48,8 @@
     </div>
 
     <div class="content">
-        <div id="login-box" class="post" style="position: absolute; width: 460px; padding-bottom:15px">
+        <div id="login-box" class="post">
             <h3 class="post-head">The404 Admin Zone</h3>
-            <br>
             <form id="login-form">
                 <label for="login-email">Email: </label>
                 <input type="email" id="login-email" name="login-email">
@@ -62,7 +61,6 @@
                 <br>
             </form>
             <button class="button" onclick="login()"><span>Log In</span></button>
-            <br>
             <h4 class="post-date" id="errmsg"></h4>
         </div>
         <div class="pane" id="home">
@@ -80,20 +78,14 @@
             <div class="post" id="new-post" style="width: 70%;padding-top:10px;padding-bottom:10px;display:none">
                 <label for="title">Title: </label>
                 <input name="title" class="title">
-                <br>
                 <label for="year">Year: </label>
                 <input name="year" class="year">
-                <br>
                 <label for="month">Month: </label>
                 <input name="month" type="number" class="month">
-                <br>
                 <label for="day">Day: </label>
                 <input name="day" type="number" class="day">
-                <br>
-                <br>
                 <textarea name="content" class="post-content"></textarea>
                 <button class="button" onclick="newPost()"><span>New Post</span></button>
-                <br>
             </div>
         </div>
         <div class="pane" id="soft">
@@ -111,48 +103,32 @@
             <div class="post" id="new-soft" style="width: 70%;padding-top:10px;padding-bottom:10px;display:none">
                 <label for="id">ID: </label>
                 <input name="id" class="id">
-                <br>
                 <label for="name">Name: </label>
                 <input name="name" class="name">
-                <br>
                 <label for="version">Version: </label>
                 <input name="version" class="version">
-                <br>
                 <label for="release">Release: </label>
                 <input name="release" class="release">
-                <br>
                 <label for="current">Current: </label>
                 <input name="current" class="current">
-                <br>
                 <label for="language">Lang: </label>
                 <input name="language" class="language">
-                <br>
                 <label for="tags">Tags: </label>
                 <input name="tags" class="tags">
-                <br>
                 <label for="image">Image: </label>
                 <input name="image" class="image">
-                <br>
                 <label for="btn1t">Btn1 Text: </label>
                 <input name="btn1t" class="btn1t">
-                <br>
                 <label for="btn1l">Btn1 Link: </label>
                 <input name="btn1l" class="btn1l">
-                <br>
                 <label for="btn2t">Btn2 Text: </label>
                 <input name="btn2t" class="btn2t">
-                <br>
                 <label for="btn2l">Btn2 Link: </label>
                 <input name="btn2l" class="btn2l">
-                <br>
                 <label for="btn3t">Btn3 Text: </label>
                 <input name="btn3t" class="btn3t">
-                <br>
                 <label for="btn3l">Btn3 Link: </label>
                 <input name="btn3l" class="btn3l">
-                <br>
-                <br>
-                <br>
                 <textarea name="description" class="description"></textarea>
                 <button class="button" onclick="newSoft()">
                     <span>New Project</span>
@@ -164,13 +140,10 @@
             <div class="post" id="new-museum" style="width: 70%;padding-top:10px;padding-bottom:10px; display: none;">
                 <label for="id">ID: </label>
                 <input name="id" class="id">
-                <br>
                 <label for="date">Date: </label>
                 <input name="date" class="date">
-                <br>
                 <label for="path">Path: </label>
                 <input name="path" class="path">
-                <br>
                 <textarea name="description" class="description"></textarea>
                 <button class="button" onclick="newMuseum()">
                     <span>New Exhibit</span>
