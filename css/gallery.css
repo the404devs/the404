@@ -45,7 +45,7 @@
 .gallery-slide p {
     padding-left: 20%;
     padding-right: 20%;
-    width: 60%;
+    width: 100%;
 }
 
 @keyframes fade {
@@ -81,7 +81,7 @@
 
 .museum .prev,
 .museum .next {
-    top: 465px;
+    top: 350px;
 }
 
 .prev:hover span,
@@ -118,10 +118,14 @@
     width: 100%;
 }
 
+.prev {
+    left: 5%;
+}
+
 .next {
     padding-left: 20px;
     padding-right: 18px;
-    right: 6.1%;
+    right: 5%;
 }
 
 #dots {
@@ -136,18 +140,34 @@
     display: inline-block;
     height: 15px;
     margin: 0 2px;
-    transition: 0.2s border-width, 0.2s width, 0.2s height;
+    transition: 0.2s background-color;
     width: 15px;
 }
 
 .dot:hover,
 .dot.active {
-    background-color: var(--border);
-    border-width: 8.5px;
-    height: 0px;
-    width: 0px;
+    background-color: var(--highlight);
 }
 
 .museum-footer-row .post-head {
     margin-top: 0;
+}
+
+.post {
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+
+.post#lower {
+    justify-content: center;
+}
+
+.post#lower div {
+    flex-basis: 33%;
+    text-align: center;
+}
+
+.content {
+    width: -webkit-fill-available;
+    width: -moz-available;
 }

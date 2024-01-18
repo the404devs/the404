@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Museum - the404</title>
+    <meta name="theme-color" content="#800080">
+    <link rel="stylesheet" type="text/css" href="../css/controls.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+    <link rel="stylesheet" type="text/css" href="../css/gallery.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+
+<body onload="loadMuseumFromFire()">
+    <div class="header">
+        <a href="https://the404.nl">
+            <div class="logo">THE404.NL</div>
+        </a>
+        <span class="navbar-toggle" id="navbar-toggle" onclick="showMainNav()">
+            <i class="open-icon fas fa-bars"></i>
+            <i class="close-icon fas fa-x"></i>
+        </span>
+        <div class="nav-wrapper" id="main-nav">
+            <a href="../"><span class="nav-link"><b>HOME</b></span></a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="post" id="upper">
+            <h3 class="post-head">Welcome to the404 Museum!</h3>
+            <p>This is an archive of 404's history, featuring screenshots and the like.</p>
+            <p>
+                The404 was originally created on February 11, 2017 by my good friend
+                <a class="link" href="https://the403.ml">Zeeshan</a>, who used it for pretty much the same thing I do, until I bought the site off him for the small price of 1¢ on January 18, 2018.
+            </p>
+            <!--This has not been copied from old high school projects, I swear-->
+            <div class="museum gallery" id="museum">
+                <!-- Next and previous buttons -->
+                <button id="leftArrow" class="prev button" onclick="plusSlides(-1)"><span>❮</span></button>
+                <button id="rightArrow" class="next button" onclick="plusSlides(1)"><span>❯</span></button>
+                <!-- Dots at the bottom -->
+                <div id="dots"></div>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="post" id="lower">
+            <div>
+                <h3 class="post-head">Domain History</h3>
+                <p><b style="color: var(--link);">the404.net16.net</b><br>01/18/2018 - 05/14/2018</p>
+                <p><b style="color: var(--link);">the404.ml</b><br>05/14/2018 - 02/12/2019</p>
+                <p><b style="color: var(--link);">the404.nl</b><br>02/12/2019 - present</p>
+            </div>
+            <div>
+                <h3 class="post-head">Archived Versions</h3>
+                <br>
+                <button class="big-button button archive" onclick="location.href='v1'">
+                    <i class="fas fa-archive"></i> The404 v1 <label>(2018-01-18 - 2018-08-27)</label>
+                </button>
+                <br>
+                <button class="big-button button archive" onclick="location.href='v2'">
+                    <i class="fas fa-archive"></i> The404 v2 <label>(2018-08-27 - 2019-03-10)</label>
+                </button>
+                <br>
+                <button class="big-button button archive" onclick="location.href='v3'">
+                    <i class="fas fa-archive"></i> The404 v3 <label>(2019-03-10 - 2020-06-07)</label>
+                </button>
+                <br>
+                <button class="big-button button archive" onclick="location.href='v4'">
+                    <i class="fas fa-archive"></i> The404 v4 <label>(2020-06-07 - 2023-02-12)</label>
+                </button>
+            </div>
+            <div>
+                <h3 class="post-head">Mr. Bones</h3>
+                <img src="../img/spook.gif" height="180px">
+                <p style="margin-top: 0;">The404's unofficial mascot.</p>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <script type="text/javascript" src="../js/app.js"></script>
+    <script type="text/javascript" src="../js/gallery.js"></script>
+    <script type="text/javascript" src="../js/firebase.js"></script>
+</body>
+
+</html>

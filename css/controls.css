@@ -23,6 +23,7 @@
 .button:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow-alt);
+    z-index: 1;
 }
 
 .button span {
@@ -149,9 +150,14 @@
 .big-button label {
     font-size: 12px;
     cursor: pointer;
+    text-wrap: nowrap;
 }
 
 .big-button:hover {
+    color: var(--text-dark);
+}
+
+.big-button:hover i {
     color: var(--text-dark);
 }
 

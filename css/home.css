@@ -82,6 +82,10 @@
     font-weight: bold;
 }
 
+.blob.potentially-overflowing {
+    height: auto;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
