@@ -30,6 +30,7 @@
 
 .blob:hover {
     transform: scale(1.023);
+    z-index: 2;
 }
 .blob.noscale:hover {
     transform: none;

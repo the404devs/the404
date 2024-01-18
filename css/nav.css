@@ -11,7 +11,7 @@
     width: 100%;
     width: -webkit-fill-available;
     top: 0;
-    z-index: 2;
+    z-index: 3;
     font-family: "Camaraderie";
     /* transition: 0.25s all; */
     backdrop-filter: blur(10px);
@@ -83,7 +83,7 @@
     bottom: 0;
     left: 50%;
     right: 50%;
-    transition: 0.2s all;
+    transition: all 0.2s ease;
     z-index: -1;
 }
 
@@ -110,7 +110,7 @@
     color: var(--primary);
     font-size: 32px;
     width: auto;
-    transition: 0.25s all;
+    transition: all 0.25s ease;
 }
 
 .navbar-toggle .open-icon {
@@ -120,11 +120,11 @@
 
 .navbar-toggle .close-icon {
     opacity: 0;
-    transform: rotate(-90deg);
+    transform: rotate(-270deg);
 }
 
 .navbar-toggle.active .open-icon {
-    transform: rotate(90deg);
+    transform: rotate(270deg);
     opacity: 0;
 }
 
