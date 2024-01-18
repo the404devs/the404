@@ -12,7 +12,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 
-<body onload="load()">
+<body onload="load(); fetchBlog(); fetchSoftware(); showPanes(1);">
     <div class="header">
         <h1 id="header-text">Welcome to 404!</h1>
     </div>
@@ -26,7 +26,7 @@
         <hr>
         <br>
 
-        <div id="home" class="pane">
+        <div id="blog" class="pane">
             <br>
             <a class="nav-link" href="#" onclick="showPanes(1)">Home</a>
             <br>
@@ -35,6 +35,7 @@
             <a class="nav-link" href="#" onclick="showPanes(2)">About</a>
             <br>
             <br> Your browser shouldn't be saying this site is malicious.... I sorted that problem out years ago, so don't worry, it's perfectly safe now!
+            <br> To celebrate the404's birthday on January 18th, the site has temporarily gone retro!
             <br>
             <img src="img/spook.gif">
             <button class="button" id="return-button" onclick="location.href='./index.html'">

@@ -20,6 +20,10 @@
     position: sticky;
 }
 
+.button.double-width {
+    width: 400px;
+}
+
 .button:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow-alt);
