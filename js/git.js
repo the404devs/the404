@@ -19,15 +19,7 @@ $.ajax({
                 let link = (repo.homepage) ? $("<a>").addClass("repo-link").addClass("link").attr("href", repo.homepage).html(repo.homepage) : null;
 
                 $(container).append(
-                    $("<div>").addClass("git-box").append(
-                        title
-                    ).append(
-                        date
-                    ).append(
-                        body  
-                    ).append(
-                        link
-                    )
+                    $("<div>").addClass("git-box").append(title).append(date).append(body).append(link)
                 );
             }
         });

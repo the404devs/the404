@@ -7,6 +7,10 @@ body {
     flex-direction: row;
 }
 
+.content {
+    padding-left: 5px;
+}
+
 .content.large {
     flex-basis: 75%;
     margin-left: 5%;
