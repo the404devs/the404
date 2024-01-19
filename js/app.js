@@ -1,6 +1,6 @@
-const VERSION = "5.2.1";
-const DATE = "01/18/2024";
-const TIME = "17:08";
+const VERSION = "5.2.2";
+const DATE = "01/19/2024";
+const TIME = "11:08";
 
 function showPanes(n) {
     let i;

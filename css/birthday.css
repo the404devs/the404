@@ -259,3 +259,11 @@ h5 {
     /* padding-bottom: 3px; */
     padding-right: 5px;
 }
+
+.post {
+    border-bottom: 1px solid black;
+}
+
+.post-soft-icon {
+    width: 100px;
+}

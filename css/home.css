@@ -2,6 +2,27 @@
 
 /* Index-Exclusive */
 
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+.content.large {
+    flex-basis: 75%;
+    margin-left: 5%;
+    margin-right: 0px;
+    padding-right: 10px;
+}
+
+.content.small {
+    flex-basis: 25%;
+    margin-left: 10px;
+}
+
+.divider {
+    display: none;
+}
+
 .blob {
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
@@ -17,7 +38,7 @@
     transition: 0.2s ease all;
     cursor: pointer;
     width: 400px;
-    height: 200px;
+    min-height: 200px;
     margin-bottom: 15px;
     flex-basis: 33%;
 }
@@ -25,6 +46,34 @@
 @media (max-width: 960px) {
     .blob {
         flex-basis: auto;
+    }
+
+    body {
+        flex-direction: column;
+        height: auto; 
+    }
+
+    .content {
+        overflow: visible;
+        flex-basis: 100%!important;
+        margin-left: 5%!important;
+        margin-right: 5%!important;
+    }
+
+    .content.small {
+        margin-top: 10px;
+    }
+
+    .content.large {
+        margin-bottom: 0;
+    }
+
+    .divider {
+        display: flex;
+        width: 100%;
+        border-top: 2px solid var(--background-transparent);
+        border-bottom: 2px solid var(--background-transparent);
+        height: 5px;
     }
 }
 
@@ -44,13 +93,14 @@
     justify-content: center;
 }
 
-.blob > .blob-header {
+.blob-header {
     color: var(--primary);
     width: 80%;
     margin: 0;
     font-family: 'Camaraderie';
     font-weight: normal;
     text-decoration: underline;
+    padding-left: 5px;
     font-size: 1.75em;
     height: 1.75em;
     line-height: 1.75em;
@@ -125,4 +175,109 @@
 .footer > .version-info > .foot-text.foot-text-small {
     font-weight: normal;
     font-size: 12px;
+}
+
+
+
+
+
+
+.git-container {
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    background-color: var(--background-transparent);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 10px 0px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin; 
+    scrollbar-color: var(--background-transparent) var(--background-transparent); 
+    scrollbar-button {
+        visibility: hidden;
+    }
+    scrollbar-corner {
+        visibility: hidden;
+    }
+}
+
+.git-container::-webkit-scrollbar {
+    height: 10px; 
+    width: 10px;
+}
+
+.git-container::-webkit-scrollbar-track {
+    background-color: var(--background-transparent);
+    width: 100%;
+    /* backdrop-filter: blur(10px); */
+}
+
+.git-container::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 5px;
+}
+
+.git-container::-webkit-scrollbar-button, .git-container::-webkit-scrollbar-corner {
+    background-color: var(--background-transparent);
+    border-radius: 0 var(--border-radius) 0 0;
+}
+
+.git-container::-webkit-scrollbar-button:single-button:vertical:increment {
+    border-radius: 0 0 var(--border-radius) 0;
+}
+
+.git-container > a, .git-container > a > .blob-header {
+    width: 100%;
+    text-align: center;
+    height: auto;
+}
+
+.git-box {
+    padding: 20px 5px;
+    border-top: 1px solid var(--border);
+}
+
+.git-box > .post-head.link {
+    cursor: pointer;
+    font-family: 'Inconsolata';
+}
+
+.git-box > .post-date {
+    font-family: 'Inconsolata';
+    font-size: 16px;
+    margin-left: 2px;
+}
+
+.git-box > .post-body {
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.git-box > .link.repo-link {
+    margin-left: 5px;
+    font-family: 'Inconsolata';
+    font-size: 16px;
+    font-weight: normal;
+}
+
+body::-webkit-scrollbar {
+    height: 10px; 
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--background);
+    width: 100%;
+    /* backdrop-filter: blur(10px); */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-button, body::-webkit-scrollbar-corner {
+    background-color: var(--background);
 }
