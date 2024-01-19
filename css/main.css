@@ -25,6 +25,33 @@
     --blur: blur(10px);
 }
 
+body.theme-dark {
+    --accent: #b20acb;
+    --background-image: url("../img/mystic-forest.png");
+    /* --background-image: url("../img/wallpaper_8.jpg"); */
+    --background-gradient: linear-gradient(0deg, #001c31 0%, #0b5875 90%);
+    --background-transparent: #111111a0;
+    --background: #151824;
+    --bold: #cb8784;
+    --foreground: #f5f5f5;
+    --highlight-transparent: rgba(128, 0, 128, 0.8);
+    --highlight: #ff8879;
+    --important: #b20acb;
+    --link: #60ecff;
+    --text-dark: #151824;
+    --text: #f5f5f5;
+    --border: #508d9b;
+    --border-alt: #508d9b55;
+    --border-radius: 8px;
+    --background-alt: #151824;
+    --primary: #b20acb;
+    --shadow: var(--shadow-color) 0px 2px 10px, var(--shadow-color) 0px -2px 10px;
+    --shadow-color: #222;
+    --shadow-color-alt: #222;
+    --shadow-alt: var(--shadow-color-alt) 0px 2px 10px, var(--shadow-color-alt) 0px -2px 10px;
+    --blur: blur(10px);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -431,4 +458,8 @@ body.mobile-performance-throttle {
     100% {
         transform: rotate(360deg);
     }
+}
+
+b.four-oh-four {
+    color: var(--important);
 }
