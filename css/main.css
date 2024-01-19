@@ -123,7 +123,7 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     padding-top: 15px;
     padding-bottom: 15px;
     height: -webkit-fill-available;
@@ -142,7 +142,6 @@ body {
 }
 
 .content#blog, .content#software {
-    margin-bottom: 0;
     justify-content: flex-start;
 }
 
