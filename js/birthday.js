@@ -16,7 +16,7 @@ function getCookie(cname) {
 
 function setCookie(cname){
     const d = new Date();
-    d.setTime(d.getTime() + 31104000000);
+    d.setTime(d.getTime() + 604800000);
     let expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=true;" + expires + ";path=/";
 }
