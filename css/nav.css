@@ -146,6 +146,7 @@
     display: inline-block;
     font-size: 2em;
     color: black;
+    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
 }
 
 .logo:before {
@@ -157,7 +158,6 @@
     font-weight: normal;
     position: relative;
     text-align: right;
-    text-shadow: 1px 2px 3px black, -1px 2px 3px black;
     top: 70px;
     display: block;
     height: 0;
@@ -171,7 +171,7 @@
     height: 10px;
     position: relative;
     top: -18px;
-    width: 229px;
+    width: calc(100% - 2px);
     z-index: -1;
     display: block;
 }

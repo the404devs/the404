@@ -218,7 +218,7 @@ function isMobile() {
     return mobileKeywords.some(keyword => userAgent.includes(keyword));
 }
 
-const navDynamicHeight = $('#main-nav').find('.nav-link').length * 45;
+const navDynamicHeight = $('#main-nav').find('.nav-link').length * 45 + 11;
 $('#main-nav').css('--nav-dynamic-height', navDynamicHeight + 'px');
 
 function menuHider(e) {

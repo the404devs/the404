@@ -101,7 +101,7 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
-    overflow-x: hidden;
+    overflow: hidden;
     /* text-shadow: 1px 1px 5px black, -1px 2px 5px black; */
     text-shadow: var(--shadow);
     position: absolute;
@@ -126,7 +126,9 @@ body {
     margin-bottom: 0px;
     padding-top: 15px;
     padding-bottom: 15px;
-    height: -webkit-fill-available;
+    height: 90%;
+    /* height: -webkit-fill-available; */
+    /* height: -moz-available; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

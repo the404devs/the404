@@ -5,10 +5,15 @@
 body {
     display: flex;
     flex-direction: row;
+    overflow-y: scroll;
+    height: -webkit-fill-available;
+    height: -moz-available;
 }
 
 .content {
     padding-left: 5px;
+    height: -webkit-fill-available;
+    height: -moz-available;
 }
 
 .content.large {
@@ -45,7 +50,7 @@ body {
     width: 400px;
     min-height: 200px;
     margin-bottom: 15px;
-    flex-basis: 33%;
+    flex-basis: 33%;    
 }
 
 @media (max-width: 1000px) {
@@ -56,6 +61,7 @@ body {
     body {
         flex-direction: column;
         height: auto; 
+        min-height: 100%;
     }
 
     .content {
@@ -67,6 +73,7 @@ body {
 
     .content.small {
         margin-top: 10px;
+        padding-bottom: 110px;
     }
 
     .content.large {
