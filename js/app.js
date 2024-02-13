@@ -205,6 +205,11 @@ function flipIcon(sortIcon) {
 }
 
 window.onresize = function() {
+    if (isMobile()) {
+        document.body.classList.add("mobile-performance-throttle");
+    } else {
+        document.body.classList.remove("mobile-performance-throttle");
+    }
     showSideNav('blog-nav');
     showSideNav('soft-nav');
     hideMainNav();
