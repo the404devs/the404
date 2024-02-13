@@ -290,8 +290,8 @@ h4 {
     margin-right: 15px;
     transition: 0.2s all ease-in-out;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
 }
