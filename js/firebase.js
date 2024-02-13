@@ -146,15 +146,17 @@ async function fetchSoftware() {
             ).append(
                 $("<p>").html(soft.Description)
             ).append(
-                $("<a>").addClass("downloadLink").attr("href", soft.Button1[1]).append(
-                    $("<button>").addClass("button").append(
-                        $("<span>").html(soft.Button1[0])
+                $("<div>").addClass('button-container').append(
+                    $("<a>").addClass("downloadLink").attr("href", soft.Button1[1]).append(
+                        $("<button>").addClass("button").append(
+                            $("<span>").html(soft.Button1[0])
+                        )
                     )
+                ).append(
+                    btn2
+                ).append(
+                    btn3
                 )
-            ).append(
-                btn2
-            ).append(
-                btn3
             ).append(
                 $("<p>").addClass("id-label").html(soft.id)
             ).attr(

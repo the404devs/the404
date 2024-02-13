@@ -112,7 +112,7 @@ function showSideNav(id) {
 
 function hideSideNav(id) {
     $('#' + id).css('right', '-350px');
-    $('#' + id + '-toggle').css('right', '10px');
+    $('#' + id + '-toggle').css('right', '15px');
 }
 
 function getVersionInfo() {

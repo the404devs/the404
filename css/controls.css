@@ -82,6 +82,11 @@
     background-color: var(--highlight);
 }
 
+.button-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .socialButton-container {
     text-decoration: none;
 }
