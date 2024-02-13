@@ -126,7 +126,7 @@ body {
     margin-bottom: 0px;
     padding-top: 15px;
     padding-bottom: 15px;
-    height: 90%;
+    height: calc(100% - 100px);
     /* height: -webkit-fill-available; */
     /* height: -moz-available; */
     display: flex;
