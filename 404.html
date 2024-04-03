@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/a79a931136.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="theme-dark" onload="setTheme()">
     <div class="header">
         <a href="https://the404.nl">
             <div class="logo">THE404.NL</div>
@@ -33,6 +33,13 @@
                 You really shouldn't be here, anyways. Why don't you head on <a href="https://the404.nl/" class="link">home?</a>
             </p>
         </div>
+    </div>
+
+    <div class="footer subtle">
+        <span class="foot-text foot-text-big">the404.nl</span>
+        <span class="foot-text" onclick="location.href='admin.html'" id="version"></span>
+        <span class="foot-text" id="date"></span>
+        <span class="foot-text foot-text-small" id="time"></span>
     </div>
     <script type="text/javascript" src="https://the404.nl/js/app.js"></script>
 </body>

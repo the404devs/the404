@@ -1,7 +1,7 @@
 /* sidenav.css contains all styling rules for the right-side navigation menus featured in index.html */
 
 .sidenav {
-    background-color: var(--background-transparent);
+    background-color: var(--background-alt2);
     border: 1px solid var(--border);
     font-size: 10px;
     overflow-x: hidden;
@@ -10,7 +10,7 @@
     right: 2.5%;
     scrollbar-width: none;
     top: 125px;
-    bottom: 25px;
+    bottom: 50px;
     max-width: 300px;
     width: 15%;
     z-index: 1;
@@ -40,6 +40,7 @@
     z-index: 2;
     text-align: center;
     top: 0;
+    border-color: var(--border);
 }
 
 .sidenav-tinybutton i {
@@ -182,7 +183,8 @@
     position: absolute;
     width: 0;
     height: 0;
-    background-color: var(--primary);
+    background-color: var(--theme);
+    opacity: 0.5;
     z-index: -1;
     transition: 0.1s all;
     border-radius: 50%;

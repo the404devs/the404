@@ -1,6 +1,6 @@
-const VERSION = "5.2.2";
-const DATE = "01/19/2024";
-const TIME = "11:08";
+const VERSION = "5.3.0";
+const DATE = "04/03/2024";
+const TIME = "14:08";
 
 function showPanes(n) {
     let i;
@@ -62,15 +62,15 @@ function determinePane() {
 
 function scrollToElem(id, offset = -125) {
     const elem = document.getElementById(id);
-    let container = document.getElementsByClassName('content')[0];
+    let container = window;
     // if (location.href.endsWith("/admin.html")) {
     //     container = document.body;
     // }
     $(".post").removeClass("animated");
     let rect = elem.getBoundingClientRect();
-    let targetPosition = Math.ceil(rect.top + container.scrollTop + offset);
+    let targetPosition = Math.ceil(rect.top + container.scrollY + offset);
 
-    // console.log(`${id} is at ${targetPosition}`);
+    console.log(`${id} is at ${targetPosition}`);
 
     if (container.scrollTop != targetPosition) {
         container.scrollTo({
@@ -78,7 +78,7 @@ function scrollToElem(id, offset = -125) {
             behavior: 'smooth'
         });
         container.onscroll = e => {
-            let currentScrollOffset = container.scrollTop;
+            let currentScrollOffset = container.scrollY;
 
             if (currentScrollOffset === targetPosition || currentScrollOffset === container.scrollHeight - container.offsetHeight) {
                 elem.classList.add("animated");
@@ -124,7 +124,7 @@ function load() {
     console.log("%c" + art, "color:#b20acb; font-weight: bold; font-size:12px");
     getVersionInfo();
     // loadFromFire();
-
+    setTheme();
     if (isMobile()) {
         document.body.classList.add("mobile-performance-throttle");
     }
@@ -239,8 +239,21 @@ function menuHider(e) {
         hideMainNav();
     }
 }
+
+function setTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.replace('theme-light', 'theme-dark');
+    } else {
+        document.body.classList.replace('theme-dark', 'theme-light');
+    }
+}
+
 window.addEventListener("touchstart", menuHider);
 window.addEventListener("click", menuHider);
+
+
+// Detect system light/dark mode change and apply them to the UI, if the user is set to AUTO theme mode.
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {setTheme();});
 
 //this seems like a horrible way to do this.
 const art1 = " _________________    _______________    _________________    _______________";

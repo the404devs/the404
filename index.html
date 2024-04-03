@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="theme-light" onload="load()">
+<body class="theme-dark" onload="load()">
     <div class="header">
         <a href="https://the404.nl">
             <div class="logo">THE404.NL</div>
@@ -45,88 +45,78 @@
         </div>
     </div>
 
-    <div class="content large">
-        <div class="blob wide noscale">
-            <h2 class="blob-header">Welcome to the404!</h2>
-            <p class="blob-description">
-                <span class="flavour">My name is Owen, and I am a software developer.</span>
-                <br>
-                <br>
-                Since high school, coding has been a hobby of mine, and on January 18th, 2018 I started <b class="four-oh-four">The404</b> as a place for me to host the projects I create.
-                <br>
-                <br>
-                I am experienced in web development, software, robotics, and 3D printing.
-                <br>
-                <br>
-                Below are some quick links to various parts of the site.
-            </p>
+    <div class="content-wrapper">
+        <div class="content large">
+            <div class="blob wide noscale">
+                <h2 class="blob-header">Welcome to the404!</h2>
+                <p class="blob-description">
+                    <span class="flavour">My name is Owen, and I am a software developer.</span>
+                    <br>
+                    <br>
+                    Since high school, coding has been a hobby of mine, and on January 18th, 2018 I started <b class="four-oh-four">The404</b> as a place for me to host the projects I create.
+                    <br>
+                    <br>
+                    I am experienced in web development, software, robotics, and 3D printing.
+                    <br>
+                    <br>
+                    Below are some quick links to various parts of the site.
+                </p>
+            </div>
+            <div class="blob" onclick="location.href='./blog.html'">
+                <span class="blob-icon"><i class="fas fa-book"></i></span>
+                <h2 class="blob-header">Blog</h2>
+                <p class="blob-description">My words of wisdom...</p>
+                <a href="./blog.html"><button class="button"><span>Go</span></button></a>
+            </div>
+            <div class="blob" onclick="location.href='./software.html'">
+                <span class="blob-icon"><i class="fas fa-code"></i></span>
+                <h2 class="blob-header">Projects</h2>
+                <p class="blob-description">Archives of all my software projects, dating back to 2017.</p>
+                <a href="./software.html"><button class="button"><span>Go</span></button></a>
+            </div>
+            <div class="blob" onclick="location.href='https://robotics.the404.nl'">
+                <span class="blob-icon"><i class="fas fa-robot"></i></span>
+                <h2 class="blob-header">Robotics</h2>
+                <p class="blob-description">Lego Robotics Resource Hub: Example programs, instructions, and more.</p>
+                <a href="https://robotics.the404.nl"><button class="button"><span>Go</span></button></a>
+            </div>
+            <div class="blob" onclick="location.href='https://editor.the404.nl'">
+                <span class="blob-icon"><i class="fas fa-file-pen"></i></span>
+                <h2 class="blob-header">Editor</h2>
+                <p class="blob-description">404-Editor, an online collaborative code editor.</p>
+                <a href="https://editor.the404.nl"><button class="button"><span>Go</span></button></a>
+            </div>
+            <div class="blob" onclick="location.href='https://start.the404.nl'">
+                <span class="blob-icon"><i class="fas fa-newspaper"></i></span>
+                <h2 class="blob-header">Start Page</h2>
+                <p class="blob-description">404-Start, a customizable start page for your browser.</p>
+                <a href="https://start.the404.nl"><button class="button"><span>Go</span></button></a>
+            </div>
+            <div class="blob" onclick="location.href='./archive'">
+                <span class="blob-icon"><i class="fas fa-clock-rotate-left"></i></span>
+                <h2 class="blob-header">Archives</h2>
+                <p class="blob-description">Old pages and snapshots of The404's history.</p>
+                <a href="./archive"><button class="button"><span>Go</span></button></a>
+            </div>
         </div>
-        <div class="blob" onclick="location.href='./blog.html'">
-            <span class="blob-icon"><i class="fas fa-book"></i></span>
-            <h2 class="blob-header">Blog</h2>
-            <p class="blob-description">My words of wisdom...</p>
-            <a href="./blog.html"><button class="button"><span>Go</span></button></a>
-        </div>
-        <div class="blob" onclick="location.href='./software.html'">
-            <span class="blob-icon"><i class="fas fa-code"></i></span>
-            <h2 class="blob-header">Projects</h2>
-            <p class="blob-description">Archives of all my software projects, dating back to 2017.</p>
-            <a href="./software.html"><button class="button"><span>Go</span></button></a>
-        </div>
-        <div class="blob" onclick="location.href='https://robotics.the404.nl'">
-            <span class="blob-icon"><i class="fas fa-robot"></i></span>
-            <h2 class="blob-header">Robotics</h2>
-            <p class="blob-description">Lego Robotics Resource Hub: Example programs, instructions, and more.</p>
-            <a href="https://robotics.the404.nl"><button class="button"><span>Go</span></button></a>
-        </div>
-        <div class="blob" onclick="location.href='https://editor.the404.nl'">
-            <span class="blob-icon"><i class="fas fa-file-pen"></i></span>
-            <h2 class="blob-header">Editor</h2>
-            <p class="blob-description">404-Editor, an online collaborative code editor.</p>
-            <a href="https://editor.the404.nl"><button class="button"><span>Go</span></button></a>
-        </div>
-        <div class="blob" onclick="location.href='https://start.the404.nl'">
-            <span class="blob-icon"><i class="fas fa-newspaper"></i></span>
-            <h2 class="blob-header">Start Page</h2>
-            <p class="blob-description">404-Start, a customizable start page for your browser.</p>
-            <a href="https://start.the404.nl"><button class="button"><span>Go</span></button></a>
-        </div>
-        <div class="blob" onclick="location.href='./archive'">
-            <span class="blob-icon"><i class="fas fa-clock-rotate-left"></i></span>
-            <h2 class="blob-header">Archives</h2>
-            <p class="blob-description">Old pages and snapshots of The404's history.</p>
-            <a href="./archive"><button class="button"><span>Go</span></button></a>
+    
+        <hr class="divider">
+    
+        <div class="content small">
+            <div class="git-container">
+                <a href="https://github.com/the404devs"><h2 class="blob-header">Github Repositories</h2></a>
+                <div class="loader"></div>
+            </div>
         </div>
     </div>
-
-    <hr class="divider">
-
-    <div class="content small">
-        <div class="git-container">
-            <a href="https://github.com/the404devs"><h2 class="blob-header">Github Repositories</h2></a>
-            <div class="loader"></div>
-        </div>
-    </div>
+    
 
 
-    <div class="footer">
-        <div class="footer-box">
-            <a href="https://github.com/the404devs" class="socialButton-container">
-                <button class="socialButton" id="github">
-                    <i class="fab fa-github"></i>
-                    <span>
-                        My GitHub Profile
-                    </span>
-                </button>
-            </a>
-        </div>
-        
-        <div class="footer-box version-info">
-            <span class="foot-text foot-text-big">the404.nl</span>
-            <span class="foot-text" onclick="location.href='admin.html'" id="version"></span>
-            <span class="foot-text" id="date"></span>
-            <span class="foot-text foot-text-small" id="time"></span>
-        </div>
+    <div class="footer subtle">
+        <span class="foot-text foot-text-big">the404.nl</span>
+        <span class="foot-text" onclick="location.href='admin.html'" id="version"></span>
+        <span class="foot-text" id="date"></span>
+        <span class="foot-text foot-text-small" id="time"></span>
     </div>
     <script type="text/javascript" src="js/birthday.js"></script>
     <script type="text/javascript" src="js/app.js"></script>

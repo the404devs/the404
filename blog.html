@@ -22,7 +22,7 @@
 
 </head>
 
-<body onload="load(); fetchBlog();">
+<body class="theme-dark" onload="load(); fetchBlog();">
     <div class="header">
         <a href="https://the404.nl">
             <div class="logo">THE404.NL</div>
@@ -56,6 +56,13 @@
             <div class="sidenav-list" id="blog-id-zone"></div>
         </div>
         <span class="sidenav-toggle" id="blog-nav-toggle" onclick="showSideNav('blog-nav')" title="Blog Menu"><i class="fa-solid fa-list"></i></span>
+    </div>
+
+    <div class="footer subtle">
+        <span class="foot-text foot-text-big">the404.nl</span>
+        <span class="foot-text" onclick="location.href='admin.html'" id="version"></span>
+        <span class="foot-text" id="date"></span>
+        <span class="foot-text foot-text-small" id="time"></span>
     </div>
     <script type="text/javascript" src="js/firebase.js"></script>
     <!-- <script type="text/javascript" src="js/birthday.js"></script> -->

@@ -20,7 +20,7 @@
 
 </head>
 
-<body onload="load(); fetchSoftware();">
+<body class="theme-dark" onload="load(); fetchSoftware();">
     <div class="header">
         <a href="https://the404.nl">
             <div class="logo">THE404.NL</div>
@@ -58,6 +58,13 @@
             <br>
         </div>
         <span class="sidenav-toggle" id="soft-nav-toggle" onclick="showSideNav('soft-nav')" title="Projects Menu"><i class="fa-solid fa-list"></i></span>
+    </div>
+
+    <div class="footer subtle">
+        <span class="foot-text foot-text-big">the404.nl</span>
+        <span class="foot-text" onclick="location.href='admin.html'" id="version"></span>
+        <span class="foot-text" id="date"></span>
+        <span class="foot-text foot-text-small" id="time"></span>
     </div>
     <script type="text/javascript" src="js/firebase.js"></script>
     <!-- <script type="text/javascript" src="js/birthday.js"></script> -->

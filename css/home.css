@@ -3,17 +3,22 @@
 /* Index-Exclusive */
 
 body {
+    background-color: var(--background);
+}
+
+.content-wrapper {
     display: flex;
     flex-direction: row;
     overflow-y: scroll;
-    height: -webkit-fill-available;
-    height: -moz-available;
+    /* height: -webkit-fill-available; */
+    /* height: -moz-available; */
+    height: 100%;
 }
 
 .content {
     padding-left: 5px;
-    height: -webkit-fill-available;
-    height: -moz-available;
+    /* height: -webkit-fill-available; */
+    /* height: -moz-available; */
 }
 
 .content.large {
@@ -36,7 +41,7 @@ body {
 .blob {
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
-    background: var(--background-transparent);
+    background: var(--background-alt);
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
     box-shadow: var(--shadow);
@@ -58,9 +63,9 @@ body {
         flex-basis: auto;
     }
 
-    body {
+    .content-wrapper {
         flex-direction: column;
-        height: auto; 
+        height: 100%; 
         min-height: 100%;
     }
 
@@ -71,10 +76,10 @@ body {
         margin-right: 5%!important;
     }
 
-    .content.small {
+    /* .content.small {
         margin-top: 10px;
         padding-bottom: 110px;
-    }
+    } */
 
     .content.large {
         margin-bottom: 0;
@@ -148,46 +153,6 @@ body {
     height: auto;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    width: -webkit-fill-available;
-    height: 100px;
-    border-top: var(--border) 4px double;
-    background-color: var(--background-transparent);
-    box-shadow: black 0px 2px 10px, black 0px -2px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.footer > .footer-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-}
-
-.footer > .version-info > .foot-text.foot-text-big {
-    color: var(--link);
-    font-size: 20px;
-    text-decoration: underline;
-}
-
-.footer > .version-info > .foot-text {
-    color: var(--text);
-    font-family: 'Gilroy Light';
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-.footer > .version-info > .foot-text.foot-text-small {
-    font-weight: normal;
-    font-size: 12px;
-}
 
 
 
@@ -197,16 +162,16 @@ body {
 .git-container {
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
-    background-color: var(--background-transparent);
+    background-color: var(--background-alt2);
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     padding: 10px 0px;
-    height: 100%;
+    height: calc(100% - 28px);
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-width: thin; 
-    scrollbar-color: var(--background-transparent) var(--background-transparent); 
+    scrollbar-color: var(--background-alt2) var(--background-alt2); 
     scrollbar-button {
         visibility: hidden;
     }
