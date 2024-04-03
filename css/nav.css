@@ -5,7 +5,7 @@
     font-size: 2em;
     border-bottom: var(--border) 4px;
     border-bottom-style: double;
-    background-color: var(--background-alt);
+    background-color: var(--background-alt2);
     box-shadow: var(--shadow-color) 0px 2px 10px, var(--shadow-color) 0px -2px 10px;
     position: fixed;
     width: 100%;
@@ -47,7 +47,7 @@
     font-family: "Raleway";
     /* background-color: rgba(24, 21, 36, 0.7); */
     /* border-radius: 10px 10px 0 0; */
-    border-color: var(--border-alt);
+    border-color: var(--border);
     color: var(--primary);
     border-style: solid;
     border-top-width: 1px;
@@ -97,7 +97,7 @@
 .spacer {
     font-size: 26px;
     padding: 5px 10px 5px 10px;
-    color: var(--border-alt);
+    color: var(--border);
     display: none;
     transform: translateY(2px);
 }

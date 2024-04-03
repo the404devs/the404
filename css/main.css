@@ -1,51 +1,54 @@
 body.theme-light {
     --background: #f1f5f8;
-    --background-alt: #e1e7ec;
-    --background-alt2: #e2e9efbf;
-    
-    /* --background-transparent: rgb(187, 215, 242, 0.75); */
-    --border: rgba(0,0,0,0.08);
-    --border-alt: rgba(0,0,0,0.2);
+    --background-alt2: #e1e7ec;
+    --background-alt: #e2e9efbf;
+    --background-image: none;
+    --background-gradient: linear-gradient(0deg, #cae8ff 0%, #ffffff 90%);
+    --border-alt: rgba(0,0,0,0.08);
+    --border: rgba(0,0,0,0.15);
     --border-radius: 8px;
     --text: #444; 
     --text-alt: #fff; 
     --button: #1886C4;
     --theme: #c779ce;
     --theme-alt: #06e0d0;
-    /* --primary: #b20acb; */
     --link: #1888C4;
     --important: #b20acb;
     --primary: #003E66;
 
-    --shadow-color: rgba(0, 0, 0, 0.5);
+    --shadow-color: rgba(0, 0, 0, 0.15);
     --shadow-color-alt: rgba(199, 121, 206, 0.5);
     --shadow: 0 3px 6px var(--shadow-color);
     --shadow-alt: 0 3px 6px var(--shadow-color-alt);
     --blur: blur(10px);
+
+    background: var(--background-gradient);
+    background-attachment: fixed;
  }
  
 body.theme-dark {
+    --background-image: url("../img/mystic-forest.png");
+    --background-gradient: linear-gradient(0deg, #001c31 0%, #0b5875 90%);
+    --background-alt: #111111a0;
+    --background-alt2: #00000000;
     --background: #151824;
-    --background-alt: #2c3441;
-    --background-alt2: #3c485433;
-    /* --background-transparent: rgba(21, 24, 36, 0.75); */
-    --border-alt: rgb(170, 170, 170);
-    --border: rgba(170,170,170,0.3);
-    --border-radius: 8px;
-    --text: #fff; 
-    --text-alt: #151824;
-    --button: #3dadee;
-    --theme: #06e0d0;
-    --theme-alt: #c779ce;
+    --bold: #cb8784;
+    --foreground: #f5f5f5;
+    --highlight-transparent: rgba(128, 0, 128, 0.8);
+    --highlight: #ff8879;
     --important: #b20acb;
-    --link: #06e0d0;
+    --link: #60ecff;
+    --theme: #06e0d0;
+    --text-alt: #151824;
+    --text: #f5f5f5;
+    --border: #508d9b;
+    --border-alt: #508d9b55;
+    --border-radius: 8px;
     --primary: goldenrod;
-
-    --shadow: 0 3px 6px var(--shadow-color);
-    --shadow-alt: 0 3px 6px var(--shadow-color-alt);
-    --shadow-color: rgba(0, 0, 0, 0.15);
-    --shadow-color-alt: rgba(6, 224, 208, 0.5);
-
+    --shadow: var(--shadow-color) 0px 2px 10px, var(--shadow-color) 0px -2px 10px;
+    --shadow-color: #222;
+    --shadow-color-alt: #222;
+    --shadow-alt: var(--shadow-color-alt) 0px 2px 10px, var(--shadow-color-alt) 0px -2px 10px;
     --blur: blur(10px);
   }
 
@@ -84,13 +87,13 @@ body.theme-dark {
 }
 
 /* Page Body */
-
 html {
     background: var(--background-gradient);
 }
 
+
 body {
-    background: var(--background);
+    background: var(--background-image);
     background-attachment: fixed;
     background-position-x: center;
     background-size: cover;
@@ -413,14 +416,10 @@ ul {
 
 
 body.mobile-performance-throttle {
-    background-image: none;
     background: var(--background-gradient);
-}
-
-body.mobile-performance-throttle {
+    background-attachment: fixed;
     --blur: none;
 }
-
 
 .loader {
     position: fixed;

@@ -1,7 +1,7 @@
 /* sidenav.css contains all styling rules for the right-side navigation menus featured in index.html */
 
 .sidenav {
-    background-color: var(--background-alt2);
+    background-color: var(--background-alt);
     border: 1px solid var(--border);
     font-size: 10px;
     overflow-x: hidden;
