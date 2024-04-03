@@ -46,7 +46,7 @@ body.theme-dark {
     --border-radius: 8px;
     --primary: goldenrod;
     --shadow: var(--shadow-color) 0px 2px 10px, var(--shadow-color) 0px -2px 10px;
-    --shadow-color: #222;
+    --shadow-color: #111;
     --shadow-color-alt: #222;
     --shadow-alt: var(--shadow-color-alt) 0px 2px 10px, var(--shadow-color-alt) 0px -2px 10px;
     --blur: blur(10px);
