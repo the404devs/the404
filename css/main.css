@@ -24,11 +24,12 @@ body.theme-light {
 
     background: var(--background-gradient);
     background-attachment: fixed;
- }
+}
  
 body.theme-dark {
-    --background-image: url("../img/mystic-forest.png");
-    --background-gradient: linear-gradient(0deg, #001c31 0%, #0b5875 90%);
+    --background-image: none;
+    /* --background-gradient: linear-gradient(0deg, #001c31 0%, #0b5875 90%); */
+    --background-gradient: linear-gradient(45deg, rgb(58 36 66) 0%, rgb(29 76 90) 100%);
     --background-alt: #111111a0;
     --background-alt2: #00000000;
     --background: #151824;
@@ -37,12 +38,12 @@ body.theme-dark {
     --highlight-transparent: rgba(128, 0, 128, 0.8);
     --highlight: #ff8879;
     --important: #b20acb;
-    --link: #60ecff;
-    --theme: #06e0d0;
+    --link: #60e1f8;
+    --theme: #c779ce;
     --text-alt: #151824;
     --text: #f5f5f5;
-    --border: #508d9b;
-    --border-alt: #508d9b55;
+    --border: #94cad6;
+    --border-alt: #8dbec955;
     --border-radius: 8px;
     --primary: goldenrod;
     --shadow: var(--shadow-color) 0px 2px 10px, var(--shadow-color) 0px -2px 10px;
@@ -50,7 +51,10 @@ body.theme-dark {
     --shadow-color-alt: #222;
     --shadow-alt: var(--shadow-color-alt) 0px 2px 10px, var(--shadow-color-alt) 0px -2px 10px;
     --blur: blur(10px);
-  }
+
+    background: var(--background-gradient);
+    background-attachment: fixed;
+}
 
 * {
     box-sizing: border-box;
@@ -98,7 +102,7 @@ body {
     background-position-x: center;
     background-size: cover;
     font-family: "Roboto";
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
     margin: 0;
     /* overflow: hidden; */
@@ -106,14 +110,14 @@ body {
     text-shadow: var(--shadow);
     position: absolute;
 
-    scrollbar-width: thin; 
+    /* scrollbar-width: thin; 
     scrollbar-color: var(--background-alt) var(--background-alt); 
     scrollbar-button {
         visibility: hidden;
     }
     scrollbar-corner {
         visibility: hidden;
-    }
+    } */
 }
 
 

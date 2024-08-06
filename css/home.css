@@ -12,7 +12,7 @@
 }
 
 .content {
-    padding-left: 5px;
+    padding-left: 15px;
     /* height: -webkit-fill-available; */
     /* height: -moz-available; */
 }
@@ -22,7 +22,7 @@
     margin-left: 5%;
     margin-right: 0px;
     padding-right: 10px;
-    padding-left: 5px;
+    padding-left: 15px;
 }
 
 .content.small {
@@ -163,10 +163,11 @@
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     padding: 10px 0px;
-    height: calc(100% - 28px);
+    height: calc(100vh - 155px);
+    width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    scrollbar-width: thin; 
+    scrollbar-width: none; 
     scrollbar-color: var(--background-alt2) var(--background-alt2); 
     scrollbar-button {
         visibility: hidden;
