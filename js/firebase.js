@@ -134,17 +134,16 @@ async function fetchSoftware() {
                 $("<div>").addClass("post-props").append(img).append(
                     $("<ul>").append(
                         $("<li>").html("<b>Version:</b> " + soft.Version)
+                    ).append(
+                        $("<li>").html("<b>Release Date:</b> " + soft.Release)
+                    ).append(
+                        $("<li>").html("<b>Last Update:</b> " + soft.Current)
+                    ).append(
+                        $("<li>").html("<b>Language:</b> " + soft.Language.join().replace(/,/g, ", "))
                     )
-                ).append(
-                    $("<li>").html("<b>Release Date:</b> " + soft.Release)
-                ).append(
-                    $("<li>").html("<b>Last Update:</b> " + soft.Current)
-                ).append(
-                    $("<li>").html("<b>Language:</b> " + soft.Language.join().replace(/,/g, ", "))
-                )
-                .append(
-                    $("<li>").html("<b>Tags:</b> " + soft.Tags.join().replace(/,/g, ", "))
-                )
+                    .append(
+                        $("<li>").html("<b>Tags:</b> " + soft.Tags.join().replace(/,/g, ", "))
+                    )
             ).append(
                 $("<p>").html(soft.Description)
             ).append(
