@@ -130,9 +130,11 @@ async function fetchSoftware() {
         $("#software").append(
             $("<div>").addClass("post soft").append(
                 $("<h3>").addClass("post-head").html(soft.Name)
-            ).append(img).append(
-                $("<ul>").append(
-                    $("<li>").html("<b>Version:</b> " + soft.Version)
+            ).append(
+                $("<div>").addClass("post-props").append(img).append(
+                    $("<ul>").append(
+                        $("<li>").html("<b>Version:</b> " + soft.Version)
+                    )
                 ).append(
                     $("<li>").html("<b>Release Date:</b> " + soft.Release)
                 ).append(
