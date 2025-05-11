@@ -144,6 +144,7 @@ async function fetchSoftware() {
                     .append(
                         $("<li>").html("<b>Tags:</b> " + soft.Tags.join().replace(/,/g, ", "))
                     )
+                )
             ).append(
                 $("<p>").html(soft.Description)
             ).append(
