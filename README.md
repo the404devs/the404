@@ -5,6 +5,12 @@ The404 is my personal site, where I speak my mind and host all sorts of things I
 
 The current iteration of The404 was created on January 18th, 2018. The404 originally belonged to my good friend Zeeshan, who sold me the site for a whopping 1 cent. He now has a new site called The403. 404 is **clearly** better.
 
+### *5.3.2 (05/12/2025)*
+------------------------
+- added a link to quackview3d on the homepage.
+- wow i really wanna refactor this to nuke the jquery
+    - soon™
+
 ### *5.3.1 (08/05/2024)*
 ------------------------
 - oh boy more theme changes

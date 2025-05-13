@@ -164,7 +164,9 @@
     box-shadow: var(--shadow);
     padding: 10px 0px;
     height: calc(100vh - 155px);
-    width: 100%;
+    width: min-content;
+    position: fixed;
+    min-width: 343px;
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-width: none; 
