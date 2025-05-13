@@ -229,3 +229,7 @@ input[type="checkbox"]:checked+label .checkmark {
     background-size: 16px 16px;
     transition: 0.1s background-image;
 }
+
+.theme-light .checkmark {
+    filter: invert(0.75);
+}
